@@ -1,0 +1,50 @@
+# --- 대용량/캐시 (릴리스 저장소에 넣지 않음; setup/link_local_assets.sh 로 원본에 링크) ---
+.hf_cache
+.torch_cache
+.libero/
+data/
+checkpoints/
+logs/*
+!logs/.gitkeep
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.hdf5
+*.h5
+*.npz
+*.mp4
+# --- 실행 산출물 ---
+rollouts/
+wandb/
+*.tar.gz
+review_pack*/
+referral_pack*/
+analysis_pack*/
+e4_decision_pack*/
+e4_closure_pack*/
+e5_design_pack*/
+e4r_pack*/
+e4r_final_pack*/
+e5_reading_pack_*/
+manuscript_pack_*/
+v11_manuscript_patch_*/
+realrobot_handoff_*/
+depth_ablation_pack_*/
+depth_ablation_data_pack_*/
+HabitVLA_RGB_only_full_rerun_*/
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+build/
+dist/
+# --- 편집기/OS ---
+.vscode/
+.idea/
+.DS_Store
+.claude/
+MUJOCO_LOG.TXT

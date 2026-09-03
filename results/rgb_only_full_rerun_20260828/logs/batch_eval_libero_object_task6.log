@@ -1,0 +1,22 @@
+
+===== batch_eval_libero_object_task6 attempt=0 start=2026-08-29 00:48:48 =====
+/home/asmr/miniconda3/envs/hv2_hab/bin/python -u habits/evaluate.py --cluster libero_object_task6 --suite libero_object --task 6 --ckpt-dir /home/asmr/workspace/habitvla2/checkpoints/rgb_only_rerun/batch/libero_object_task6 --n-grid 10 20 40 80 --n-heldout 20 --out /home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/01_batch_formation/curves
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/asmr/miniconda3/envs/hv2_hab/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+=== eval n=10 ===
+  n=10: s_hat=0.45 (9/20, infra=0)
+=== eval n=20 ===
+  n=20: s_hat=0.7 (14/20, infra=0)
+=== eval n=40 ===
+  n=40: s_hat=0.95 (19/20, infra=0)
+=== eval n=80 ===
+  n=80: s_hat=0.8 (16/20, infra=0)
+[EVAL-PASS] cluster=libero_object_task6 json=/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/01_batch_formation/curves/libero_object_task6_curve.json

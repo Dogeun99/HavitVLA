@@ -1,0 +1,24 @@
+{
+  "seed_idx": 0,
+  "n_episodes": 50,
+  "smoke": true,
+  "ledger_s": {
+    "operational_s": 321.7,
+    "formation_s": 356.2,
+    "formation_episodes": 40
+  },
+  "cf_queue_size": 12,
+  "final_states": {
+    "libero_object_task0": "X",
+    "libero_goal_task2": "M",
+    "libero_spatial_task5": "I",
+    "libero_spatial_task2": "I",
+    "libero_spatial_task6": "I",
+    "libero_spatial_task3": "I",
+    "libero_spatial_task4": "I"
+  },
+  "ineligible": [
+    "libero_object_task0"
+  ],
+  "total_wall_s": 686.9
+}

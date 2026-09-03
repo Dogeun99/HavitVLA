@@ -1,0 +1,447 @@
+{
+  "cluster": "libero_10_task0",
+  "n_heldout": 20,
+  "curve": [
+    {
+      "ckpt": "act_n10.pt",
+      "n_eval": 20,
+      "n_success": 4,
+      "n_infra_error": 0,
+      "s_hat": 0.2,
+      "per_episode": [
+        {
+          "uid": "8abe98ab359c345b",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "02100e8f6cf6e9e0",
+          "outcome": "success",
+          "steps": 265
+        },
+        {
+          "uid": "be24253b2eb9a133",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "ef6f786db1189f09",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "7982e193584a2352",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "08d3a099938c58af",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "686b4e8fb6a6b027",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "1067061e16c09f2b",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "6416bc2b77680bee",
+          "outcome": "success",
+          "steps": 313
+        },
+        {
+          "uid": "3638701bda3898d1",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "a1579eb0f1c260fb",
+          "outcome": "success",
+          "steps": 254
+        },
+        {
+          "uid": "69a9df165ddd8f10",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "8585906d5ea3bbe4",
+          "outcome": "success",
+          "steps": 316
+        },
+        {
+          "uid": "52804aecbc77cae4",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "aa11e672718954a5",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "cc5dabc5badf8ee1",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "49385e61fd7c365d",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "0b96275a1d28535f",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "21ce3d60d34b1abc",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "89e89799f26f9a45",
+          "outcome": "fail",
+          "steps": 520
+        }
+      ],
+      "n": 10
+    },
+    {
+      "ckpt": "act_n20.pt",
+      "n_eval": 20,
+      "n_success": 9,
+      "n_infra_error": 0,
+      "s_hat": 0.45,
+      "per_episode": [
+        {
+          "uid": "8abe98ab359c345b",
+          "outcome": "success",
+          "steps": 282
+        },
+        {
+          "uid": "02100e8f6cf6e9e0",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "be24253b2eb9a133",
+          "outcome": "success",
+          "steps": 258
+        },
+        {
+          "uid": "ef6f786db1189f09",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "7982e193584a2352",
+          "outcome": "success",
+          "steps": 295
+        },
+        {
+          "uid": "08d3a099938c58af",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "686b4e8fb6a6b027",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "1067061e16c09f2b",
+          "outcome": "success",
+          "steps": 258
+        },
+        {
+          "uid": "6416bc2b77680bee",
+          "outcome": "success",
+          "steps": 257
+        },
+        {
+          "uid": "3638701bda3898d1",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "a1579eb0f1c260fb",
+          "outcome": "success",
+          "steps": 263
+        },
+        {
+          "uid": "69a9df165ddd8f10",
+          "outcome": "success",
+          "steps": 285
+        },
+        {
+          "uid": "8585906d5ea3bbe4",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "52804aecbc77cae4",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "aa11e672718954a5",
+          "outcome": "success",
+          "steps": 243
+        },
+        {
+          "uid": "cc5dabc5badf8ee1",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "49385e61fd7c365d",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "0b96275a1d28535f",
+          "outcome": "success",
+          "steps": 254
+        },
+        {
+          "uid": "21ce3d60d34b1abc",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "89e89799f26f9a45",
+          "outcome": "fail",
+          "steps": 520
+        }
+      ],
+      "n": 20
+    },
+    {
+      "ckpt": "act_n40.pt",
+      "n_eval": 20,
+      "n_success": 13,
+      "n_infra_error": 0,
+      "s_hat": 0.65,
+      "per_episode": [
+        {
+          "uid": "8abe98ab359c345b",
+          "outcome": "success",
+          "steps": 272
+        },
+        {
+          "uid": "02100e8f6cf6e9e0",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "be24253b2eb9a133",
+          "outcome": "success",
+          "steps": 246
+        },
+        {
+          "uid": "ef6f786db1189f09",
+          "outcome": "success",
+          "steps": 241
+        },
+        {
+          "uid": "7982e193584a2352",
+          "outcome": "success",
+          "steps": 272
+        },
+        {
+          "uid": "08d3a099938c58af",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "686b4e8fb6a6b027",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "1067061e16c09f2b",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "6416bc2b77680bee",
+          "outcome": "success",
+          "steps": 250
+        },
+        {
+          "uid": "3638701bda3898d1",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "a1579eb0f1c260fb",
+          "outcome": "success",
+          "steps": 271
+        },
+        {
+          "uid": "69a9df165ddd8f10",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "8585906d5ea3bbe4",
+          "outcome": "success",
+          "steps": 279
+        },
+        {
+          "uid": "52804aecbc77cae4",
+          "outcome": "success",
+          "steps": 252
+        },
+        {
+          "uid": "aa11e672718954a5",
+          "outcome": "success",
+          "steps": 275
+        },
+        {
+          "uid": "cc5dabc5badf8ee1",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "49385e61fd7c365d",
+          "outcome": "success",
+          "steps": 253
+        },
+        {
+          "uid": "0b96275a1d28535f",
+          "outcome": "success",
+          "steps": 272
+        },
+        {
+          "uid": "21ce3d60d34b1abc",
+          "outcome": "success",
+          "steps": 244
+        },
+        {
+          "uid": "89e89799f26f9a45",
+          "outcome": "success",
+          "steps": 286
+        }
+      ],
+      "n": 40
+    },
+    {
+      "ckpt": "act_n80.pt",
+      "n_eval": 20,
+      "n_success": 15,
+      "n_infra_error": 0,
+      "s_hat": 0.75,
+      "per_episode": [
+        {
+          "uid": "8abe98ab359c345b",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "02100e8f6cf6e9e0",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "be24253b2eb9a133",
+          "outcome": "success",
+          "steps": 264
+        },
+        {
+          "uid": "ef6f786db1189f09",
+          "outcome": "success",
+          "steps": 260
+        },
+        {
+          "uid": "7982e193584a2352",
+          "outcome": "success",
+          "steps": 272
+        },
+        {
+          "uid": "08d3a099938c58af",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "686b4e8fb6a6b027",
+          "outcome": "success",
+          "steps": 272
+        },
+        {
+          "uid": "1067061e16c09f2b",
+          "outcome": "success",
+          "steps": 315
+        },
+        {
+          "uid": "6416bc2b77680bee",
+          "outcome": "success",
+          "steps": 264
+        },
+        {
+          "uid": "3638701bda3898d1",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "a1579eb0f1c260fb",
+          "outcome": "success",
+          "steps": 268
+        },
+        {
+          "uid": "69a9df165ddd8f10",
+          "outcome": "success",
+          "steps": 414
+        },
+        {
+          "uid": "8585906d5ea3bbe4",
+          "outcome": "success",
+          "steps": 262
+        },
+        {
+          "uid": "52804aecbc77cae4",
+          "outcome": "success",
+          "steps": 261
+        },
+        {
+          "uid": "aa11e672718954a5",
+          "outcome": "success",
+          "steps": 276
+        },
+        {
+          "uid": "cc5dabc5badf8ee1",
+          "outcome": "fail",
+          "steps": 520
+        },
+        {
+          "uid": "49385e61fd7c365d",
+          "outcome": "success",
+          "steps": 255
+        },
+        {
+          "uid": "0b96275a1d28535f",
+          "outcome": "success",
+          "steps": 254
+        },
+        {
+          "uid": "21ce3d60d34b1abc",
+          "outcome": "success",
+          "steps": 268
+        },
+        {
+          "uid": "89e89799f26f9a45",
+          "outcome": "success",
+          "steps": 286
+        }
+      ],
+      "n": 80
+    }
+  ],
+  "wall_seconds": 358.2
+}

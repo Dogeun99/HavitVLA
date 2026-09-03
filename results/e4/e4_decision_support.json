@@ -1,0 +1,677 @@
+{
+  "note": "판정 지원 시뮬레이션 (사전등록 아님). 재구성 = w_expand primary ∪ borrow primary; 재샘플 제외. long은 w=0.02 novel 미생성 — 재구성 macro에서 제외 명기.",
+  "clusters": {
+    "libero_object_task0": {
+      "recomposed_auc": 0.7053,
+      "n_novel": 19
+    },
+    "libero_object_task1": {
+      "recomposed_auc": 0.805,
+      "n_novel": 20
+    },
+    "libero_object_task2": {
+      "recomposed_auc": 0.98,
+      "n_novel": 20
+    },
+    "libero_object_task3": {
+      "recomposed_auc": 0.7025,
+      "n_novel": 20
+    },
+    "libero_object_task4": {
+      "recomposed_auc": 0.7658,
+      "n_novel": 19
+    },
+    "libero_object_task5": {
+      "recomposed_auc": 0.6842,
+      "n_novel": 19
+    },
+    "libero_object_task6": {
+      "recomposed_auc": 0.7882,
+      "n_novel": 17
+    },
+    "libero_object_task7": {
+      "recomposed_auc": 0.7875,
+      "n_novel": 20
+    },
+    "libero_object_task8": {
+      "recomposed_auc": 0.745,
+      "n_novel": 20
+    },
+    "libero_object_task9": {
+      "recomposed_auc": 0.7475,
+      "n_novel": 20
+    },
+    "libero_goal_task0": {
+      "recomposed_auc": 0.61,
+      "n_novel": 20
+    },
+    "libero_goal_task1": {
+      "recomposed_auc": 0.675,
+      "n_novel": 18
+    },
+    "libero_goal_task2": {
+      "recomposed_auc": 0.59,
+      "n_novel": 20
+    },
+    "libero_goal_task3": {
+      "recomposed_auc": 0.5575,
+      "n_novel": 20
+    },
+    "libero_goal_task4": {
+      "recomposed_auc": 0.4861,
+      "n_novel": 18
+    },
+    "libero_goal_task5": {
+      "recomposed_auc": 0.6447,
+      "n_novel": 19
+    },
+    "libero_goal_task6": {
+      "recomposed_auc": 0.5278,
+      "n_novel": 18
+    },
+    "libero_goal_task7": {
+      "recomposed_auc": 0.4395,
+      "n_novel": 19
+    },
+    "libero_goal_task8": {
+      "recomposed_auc": 0.63,
+      "n_novel": 20
+    },
+    "libero_goal_task9": {
+      "recomposed_auc": 0.6447,
+      "n_novel": 19
+    },
+    "libero_spatial_task0": {
+      "recomposed_auc": 0.7579,
+      "n_novel": 38
+    },
+    "libero_spatial_task1": {
+      "recomposed_auc": 0.7224,
+      "n_novel": 38
+    },
+    "libero_10_task0": {
+      "recomposed_auc": null,
+      "reason": "long — w=0.02 novel 미생성"
+    },
+    "libero_10_task2": {
+      "recomposed_auc": null,
+      "reason": "long — w=0.02 novel 미생성"
+    },
+    "libero_10_task5": {
+      "recomposed_auc": null,
+      "reason": "long — w=0.02 novel 미생성"
+    }
+  },
+  "geometry": {
+    "libero_object_task0": {
+      "calib": [
+        5.613,
+        1.052
+      ],
+      "known": [
+        7.087,
+        1.92
+      ],
+      "q": 7.108,
+      "resample__single": [
+        5.47,
+        0.516
+      ],
+      "w_expand__primary": [
+        8.667,
+        2.191
+      ],
+      "w_expand__secondary": [
+        6.91,
+        0.958
+      ]
+    },
+    "libero_object_task1": {
+      "calib": [
+        5.246,
+        0.815
+      ],
+      "known": [
+        6.501,
+        1.655
+      ],
+      "q": 6.263,
+      "resample__single": [
+        4.907,
+        0.609
+      ],
+      "w_expand__primary": [
+        8.459,
+        1.751
+      ],
+      "w_expand__secondary": [
+        6.681,
+        1.123
+      ]
+    },
+    "libero_object_task2": {
+      "calib": [
+        5.758,
+        0.981
+      ],
+      "known": [
+        5.731,
+        0.975
+      ],
+      "q": 7.259,
+      "resample__single": [
+        5.05,
+        0.336
+      ],
+      "w_expand__primary": [
+        8.515,
+        1.152
+      ],
+      "w_expand__secondary": [
+        7.784,
+        1.333
+      ]
+    },
+    "libero_object_task3": {
+      "calib": [
+        5.508,
+        0.687
+      ],
+      "known": [
+        6.956,
+        2.138
+      ],
+      "q": 6.365,
+      "resample__single": [
+        5.195,
+        0.481
+      ],
+      "w_expand__primary": [
+        8.294,
+        2.506
+      ],
+      "w_expand__secondary": [
+        7.165,
+        1.13
+      ]
+    },
+    "libero_object_task4": {
+      "calib": [
+        5.52,
+        0.856
+      ],
+      "known": [
+        6.339,
+        1.874
+      ],
+      "q": 6.716,
+      "resample__single": [
+        5.159,
+        0.595
+      ],
+      "w_expand__primary": [
+        7.941,
+        1.703
+      ],
+      "w_expand__secondary": [
+        7.626,
+        1.466
+      ]
+    },
+    "libero_object_task5": {
+      "calib": [
+        5.615,
+        0.988
+      ],
+      "known": [
+        5.961,
+        1.193
+      ],
+      "q": 7.189,
+      "resample__single": [
+        4.734,
+        0.61
+      ],
+      "w_expand__primary": [
+        6.868,
+        1.227
+      ],
+      "w_expand__secondary": [
+        6.467,
+        1.016
+      ]
+    },
+    "libero_object_task6": {
+      "calib": [
+        5.735,
+        1.319
+      ],
+      "known": [
+        6.74,
+        1.536
+      ],
+      "q": 7.774,
+      "resample__single": [
+        5.094,
+        0.459
+      ],
+      "w_expand__primary": [
+        8.291,
+        1.402
+      ],
+      "w_expand__secondary": [
+        7.462,
+        1.348
+      ]
+    },
+    "libero_object_task7": {
+      "calib": [
+        5.616,
+        0.973
+      ],
+      "known": [
+        6.109,
+        1.072
+      ],
+      "q": 7.091,
+      "resample__single": [
+        4.86,
+        0.645
+      ],
+      "w_expand__primary": [
+        7.438,
+        1.242
+      ],
+      "w_expand__secondary": [
+        6.762,
+        1.257
+      ]
+    },
+    "libero_object_task8": {
+      "calib": [
+        5.54,
+        1.088
+      ],
+      "known": [
+        6.028,
+        0.996
+      ],
+      "q": 6.925,
+      "resample__single": [
+        5.044,
+        0.347
+      ],
+      "w_expand__primary": [
+        7.024,
+        1.298
+      ],
+      "w_expand__secondary": [
+        6.539,
+        1.023
+      ]
+    },
+    "libero_object_task9": {
+      "calib": [
+        5.082,
+        0.76
+      ],
+      "known": [
+        6.179,
+        1.31
+      ],
+      "q": 6.165,
+      "resample__single": [
+        5.074,
+        0.37
+      ],
+      "w_expand__primary": [
+        7.403,
+        1.24
+      ],
+      "w_expand__secondary": [
+        7.433,
+        1.197
+      ]
+    },
+    "libero_goal_task0": {
+      "calib": [
+        5.063,
+        0.633
+      ],
+      "known": [
+        5.683,
+        0.959
+      ],
+      "q": 6.155,
+      "resample__single": [
+        5.022,
+        0.692
+      ],
+      "w_expand__primary": [
+        6.138,
+        0.931
+      ],
+      "w_expand__secondary": [
+        5.552,
+        0.938
+      ]
+    },
+    "libero_goal_task1": {
+      "calib": [
+        5.374,
+        0.885
+      ],
+      "known": [
+        5.926,
+        0.976
+      ],
+      "q": 6.527,
+      "resample__single": [
+        5.436,
+        0.617
+      ],
+      "w_expand__primary": [
+        6.553,
+        0.936
+      ],
+      "w_expand__secondary": [
+        6.07,
+        1.146
+      ]
+    },
+    "libero_goal_task2": {
+      "calib": [
+        5.778,
+        1.039
+      ],
+      "known": [
+        6.609,
+        0.785
+      ],
+      "q": 7.539,
+      "resample__single": [
+        5.729,
+        0.717
+      ],
+      "w_expand__primary": [
+        6.892,
+        1.367
+      ],
+      "w_expand__secondary": [
+        6.396,
+        1.18
+      ]
+    },
+    "libero_goal_task3": {
+      "calib": [
+        5.376,
+        0.588
+      ],
+      "known": [
+        5.925,
+        0.94
+      ],
+      "q": 6.152,
+      "resample__single": [
+        4.992,
+        0.631
+      ],
+      "w_expand__primary": [
+        6.223,
+        1.263
+      ],
+      "w_expand__secondary": [
+        5.742,
+        0.72
+      ]
+    },
+    "libero_goal_task4": {
+      "calib": [
+        5.395,
+        0.681
+      ],
+      "known": [
+        6.129,
+        0.954
+      ],
+      "q": 6.29,
+      "resample__single": [
+        4.767,
+        0.59
+      ],
+      "w_expand__primary": [
+        6.122,
+        0.987
+      ],
+      "w_expand__secondary": [
+        5.917,
+        0.942
+      ]
+    },
+    "libero_goal_task5": {
+      "calib": [
+        5.234,
+        0.646
+      ],
+      "known": [
+        5.566,
+        0.829
+      ],
+      "q": 6.233,
+      "resample__single": [
+        5.217,
+        0.638
+      ],
+      "w_expand__primary": [
+        5.981,
+        0.994
+      ],
+      "w_expand__secondary": [
+        5.816,
+        0.929
+      ]
+    },
+    "libero_goal_task6": {
+      "calib": [
+        5.738,
+        0.895
+      ],
+      "known": [
+        6.975,
+        1.009
+      ],
+      "q": 6.909,
+      "resample__single": [
+        5.769,
+        0.755
+      ],
+      "w_expand__primary": [
+        7.077,
+        1.033
+      ],
+      "w_expand__secondary": [
+        6.362,
+        0.953
+      ]
+    },
+    "libero_goal_task7": {
+      "calib": [
+        5.608,
+        0.777
+      ],
+      "known": [
+        5.813,
+        0.689
+      ],
+      "q": 6.532,
+      "resample__single": [
+        5.337,
+        0.663
+      ],
+      "w_expand__primary": [
+        5.838,
+        1.208
+      ],
+      "w_expand__secondary": [
+        6.13,
+        1.011
+      ]
+    },
+    "libero_goal_task8": {
+      "calib": [
+        5.463,
+        0.845
+      ],
+      "known": [
+        6.322,
+        1.06
+      ],
+      "q": 6.773,
+      "resample__single": [
+        4.942,
+        0.641
+      ],
+      "w_expand__primary": [
+        7.314,
+        1.699
+      ],
+      "w_expand__secondary": [
+        5.986,
+        1.536
+      ]
+    },
+    "libero_goal_task9": {
+      "calib": [
+        5.99,
+        0.989
+      ],
+      "known": [
+        6.207,
+        0.963
+      ],
+      "q": 7.509,
+      "resample__single": [
+        4.993,
+        0.596
+      ],
+      "w_expand__primary": [
+        6.684,
+        0.993
+      ],
+      "w_expand__secondary": [
+        5.998,
+        0.637
+      ]
+    },
+    "libero_spatial_task0": {
+      "calib": [
+        5.422,
+        0.929
+      ],
+      "known": [
+        5.657,
+        0.864
+      ],
+      "q": 6.822,
+      "borrow__primary": [
+        9.586,
+        2.812
+      ],
+      "borrow__secondary": [
+        9.989,
+        2.687
+      ],
+      "resample__single": [
+        5.482,
+        0.6
+      ],
+      "w_expand__primary": [
+        6.347,
+        1.362
+      ],
+      "w_expand__secondary": [
+        5.961,
+        0.968
+      ]
+    },
+    "libero_spatial_task1": {
+      "calib": [
+        5.456,
+        0.774
+      ],
+      "known": [
+        5.771,
+        0.954
+      ],
+      "q": 6.389,
+      "borrow__primary": [
+        8.178,
+        2.236
+      ],
+      "borrow__secondary": [
+        8.947,
+        2.373
+      ],
+      "resample__single": [
+        5.535,
+        0.489
+      ],
+      "w_expand__primary": [
+        6.001,
+        0.811
+      ],
+      "w_expand__secondary": [
+        5.215,
+        0.744
+      ]
+    },
+    "libero_10_task0": {
+      "calib": [
+        6.091,
+        1.381
+      ],
+      "known": [
+        6.546,
+        0.97
+      ],
+      "q": 8.609,
+      "resample__single": [
+        5.692,
+        0.774
+      ]
+    },
+    "libero_10_task2": {
+      "calib": [
+        5.953,
+        1.075
+      ],
+      "known": [
+        5.736,
+        0.694
+      ],
+      "q": 7.551,
+      "resample__single": [
+        5.862,
+        0.944
+      ]
+    },
+    "libero_10_task5": {
+      "calib": [
+        5.435,
+        1.017
+      ],
+      "known": [
+        6.248,
+        1.812
+      ],
+      "q": 6.934,
+      "resample__single": [
+        6.396,
+        0.599
+      ]
+    }
+  },
+  "macro_recomposed_excl_long": 0.6817,
+  "n_clusters_in_macro": 22,
+  "n_below_075": 16
+}

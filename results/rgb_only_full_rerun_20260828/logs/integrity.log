@@ -1,0 +1,4 @@
+
+===== integrity attempt=0 start=2026-08-31 20:38:06 =====
+/home/asmr/miniconda3/envs/hv2_hab/bin/python -u experiments/rgb_only_rerun/integrity_audit.py
+[INTEGRITY-DONE] checks=47 fail=0 overall=VALID

@@ -1,0 +1,43 @@
+{
+  "clusters": {
+    "libero_object_task0": {
+      "curve": {
+        "10": 0.04,
+        "20": 0.2,
+        "40": 0.48,
+        "80": 0.96
+      },
+      "max_s_hat": 0.96,
+      "criterion_a_max_ge_0.8": true,
+      "s80_vs_s10_p_one_sided": 0.0,
+      "test_method": "two_prop_z",
+      "criterion_b_s80_gt_s10": true,
+      "mcnemar_supplementary": {
+        "n_pairs": 50,
+        "improved_b": 46,
+        "worsened_c": 0
+      },
+      "status": "GO"
+    },
+    "libero_object_task5": {
+      "curve": {
+        "10": 0.74,
+        "20": 0.92,
+        "40": 0.86,
+        "80": 0.96
+      },
+      "max_s_hat": 0.96,
+      "criterion_a_max_ge_0.8": true,
+      "s80_vs_s10_p_one_sided": 0.0010328637155031517,
+      "test_method": "two_prop_z",
+      "criterion_b_s80_gt_s10": true,
+      "mcnemar_supplementary": {
+        "n_pairs": 50,
+        "improved_b": 12,
+        "worsened_c": 1
+      },
+      "status": "GO"
+    }
+  },
+  "status": "GO"
+}

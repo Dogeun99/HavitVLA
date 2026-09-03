@@ -1,0 +1,31 @@
+{
+  "seed_idx": 0,
+  "n_episodes": 50,
+  "smoke": true,
+  "no_depth": true,
+  "modality": "rgb_only",
+  "ck_root": "checkpoints/rgb_only_rerun/e5_smoke/smoke",
+  "data_root": "data/rgb_only_rerun/e5_smoke/smoke",
+  "lifecycle_events": "lifecycle_events_0.jsonl",
+  "ever_mature": [],
+  "ledger_s": {
+    "operational_s": 487.2,
+    "formation_s": 504.8,
+    "formation_episodes": 40
+  },
+  "cf_queue_size": 0,
+  "final_states": {
+    "libero_object_task0": "X",
+    "libero_goal_task2": "X",
+    "libero_spatial_task5": "I",
+    "libero_spatial_task2": "I",
+    "libero_spatial_task6": "I",
+    "libero_spatial_task3": "I",
+    "libero_spatial_task4": "I"
+  },
+  "ineligible": [
+    "libero_object_task0",
+    "libero_goal_task2"
+  ],
+  "total_wall_s": 1001.6
+}

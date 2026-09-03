@@ -1,0 +1,106 @@
+{
+ "static": {
+  "make_frame_tensor_src": "def make_frame_tensor(rgb, depth, use_depth=True):\n    \"\"\"(H,W,3) uint8 [+ (H,W) f16] → (4,H,W) 또는 (3,H,W) float32.\n\n    RGB 정규화(ImageNet)는 두 조건에서 **동일**하다. depth는 [0,1]을 유지하며 별도 채널로만\n    붙으므로, use_depth=False로 두어도 RGB 통계에 영향이 없다 — 순수 modality ablation.\n    \"\"\"\n    rgb = torch.from_numpy(np.ascontiguousarray(rgb)).float().permute(2, 0, 1) / 255.0\n    rgb = (rgb - _IMAGENET_MEAN) / _IMAGENET_STD\n    if not use_depth:\n        return rgb\n    d = torch.from_numpy(np.ascontiguousarray(depth.astype(np.float32))).unsqueeze(0)\n    return torch.cat([rgb, d], dim=0)\n",
+  "dataset_getitem_passes_use_depth": true,
+  "policy_reads_use_depth_from_ckpt": true,
+  "act_in_ch_switch": true
+ },
+ "runtime": {
+  "rgbd": {
+   "model_input_keys": [
+    "actions",
+    "agentview",
+    "pad_mask",
+    "proprio",
+    "wrist"
+   ],
+   "agentview_shape": [
+    4,
+    4,
+    128,
+    128
+   ],
+   "wrist_shape": [
+    4,
+    4,
+    128,
+    128
+   ],
+   "proprio_shape": [
+    4,
+    8
+   ],
+   "actions_shape": [
+    4,
+    8,
+    7
+   ],
+   "pad_mask_shape": [
+    4,
+    8
+   ],
+   "image_channels": 4,
+   "depth_key_in_batch": false,
+   "conv1_in_channels": 4,
+   "n_params": 95036360,
+   "forward_ok": true,
+   "loss_parts": {
+    "l1": 0.9115118980407715,
+    "kl": 6.7199506759643555
+   }
+  },
+  "rgb_only": {
+   "model_input_keys": [
+    "actions",
+    "agentview",
+    "pad_mask",
+    "proprio",
+    "wrist"
+   ],
+   "agentview_shape": [
+    4,
+    3,
+    128,
+    128
+   ],
+   "wrist_shape": [
+    4,
+    3,
+    128,
+    128
+   ],
+   "proprio_shape": [
+    4,
+    8
+   ],
+   "actions_shape": [
+    4,
+    8,
+    7
+   ],
+   "pad_mask_shape": [
+    4,
+    8
+   ],
+   "image_channels": 3,
+   "depth_key_in_batch": false,
+   "conv1_in_channels": 3,
+   "n_params": 95030088,
+   "forward_ok": true,
+   "loss_parts": {
+    "l1": 0.9293484687805176,
+    "kl": 8.02952766418457
+   }
+  }
+ },
+ "verdict": "PASS",
+ "checks": {
+  "image_channels_is_3": true,
+  "conv1_in_channels_is_3": true,
+  "no_depth_key_in_batch": true,
+  "forward_ok": true,
+  "params_smaller_than_rgbd": true,
+  "static_paths_ok": true
+ },
+ "param_delta_rgbd_minus_rgb": 6272
+}

@@ -1,0 +1,19 @@
+{
+ "run_id": "rgb_only_full_rerun_20260828",
+ "source": "PASS",
+ "environment": "PASS",
+ "dataset": "PASS",
+ "dataset_problems": [],
+ "config_diff": "PASS",
+ "config_unexpected_keys": [],
+ "rgb_only_input_audit": "PASS",
+ "rgb_only_checks": {
+  "image_channels_is_3": true,
+  "conv1_in_channels_is_3": true,
+  "no_depth_key_in_batch": true,
+  "forward_ok": true,
+  "params_smaller_than_rgbd": true,
+  "static_paths_ok": true
+ },
+ "overall": "PASS"
+}

@@ -1,0 +1,885 @@
+{
+  "label": "탐색적 (post-hoc) — 사전등록 검정과 구분해 보고할 것 (§5 2026-08-17 규칙 3)",
+  "provenance": "추가 rollout 0 — results/e5/stream_0.jsonl + results/e3/e3_curves.json",
+  "seed_idx": 0,
+  "n_ineligible": 10,
+  "share_of_tail_vla_calls": 0.7218,
+  "per_cluster": {
+    "libero_10_task0": {
+      "exposures": 144,
+      "final_bc_pool": 121,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2692,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 255.7
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 332.5
+        }
+      ],
+      "teacher_successes_after_ineligible": 41,
+      "exposures_after_ineligible": 48,
+      "bc_growth_after_ineligible": 40,
+      "e3_N_star": ">80",
+      "e3_curve": {
+        "10": 0.2,
+        "20": 0.45,
+        "40": 0.65,
+        "80": 0.75
+      },
+      "surplus_over_last_grid": 41
+    },
+    "libero_goal_task0": {
+      "exposures": 144,
+      "final_bc_pool": 137,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2105,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 202.2
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 293.5
+        }
+      ],
+      "teacher_successes_after_ineligible": 57,
+      "exposures_after_ineligible": 61,
+      "bc_growth_after_ineligible": 56,
+      "e3_N_star": 80,
+      "e3_curve": {
+        "10": 0.1,
+        "20": 0.45,
+        "40": 0.7,
+        "80": 0.85
+      },
+      "surplus_over_last_grid": 57
+    },
+    "libero_goal_task5": {
+      "exposures": 144,
+      "final_bc_pool": 143,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2268,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 193.4
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 288.5
+        }
+      ],
+      "teacher_successes_after_ineligible": 63,
+      "exposures_after_ineligible": 64,
+      "bc_growth_after_ineligible": 62,
+      "e3_N_star": 20,
+      "e3_curve": {
+        "10": 0.75,
+        "20": 0.9,
+        "40": 1.0,
+        "80": 0.95
+      },
+      "surplus_over_last_grid": 63
+    },
+    "libero_goal_task6": {
+      "exposures": 144,
+      "final_bc_pool": 138,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2400,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 198.5
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 283.6
+        }
+      ],
+      "teacher_successes_after_ineligible": 58,
+      "exposures_after_ineligible": 60,
+      "bc_growth_after_ineligible": 57,
+      "e3_N_star": 40,
+      "e3_curve": {
+        "10": 0.65,
+        "20": 0.65,
+        "40": 0.8,
+        "80": 1.0
+      },
+      "surplus_over_last_grid": 58
+    },
+    "libero_goal_task9": {
+      "exposures": 144,
+      "final_bc_pool": 143,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 1985,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 195.3
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 288.7
+        }
+      ],
+      "teacher_successes_after_ineligible": 63,
+      "exposures_after_ineligible": 64,
+      "bc_growth_after_ineligible": 62,
+      "e3_N_star": 20,
+      "e3_curve": {
+        "10": 0.65,
+        "20": 1.0,
+        "40": 1.0,
+        "80": 1.0
+      },
+      "surplus_over_last_grid": 63
+    },
+    "libero_object_task0": {
+      "exposures": 144,
+      "final_bc_pool": 140,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2417,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 201.1
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 293.7
+        }
+      ],
+      "teacher_successes_after_ineligible": 60,
+      "exposures_after_ineligible": 61,
+      "bc_growth_after_ineligible": 59,
+      "e3_N_star": 80,
+      "e3_curve": {
+        "10": 0.0,
+        "20": 0.2,
+        "40": 0.45,
+        "80": 0.95
+      },
+      "surplus_over_last_grid": 60
+    },
+    "libero_object_task1": {
+      "exposures": 144,
+      "final_bc_pool": 141,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2140,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 195.0
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 285.4
+        }
+      ],
+      "teacher_successes_after_ineligible": 61,
+      "exposures_after_ineligible": 62,
+      "bc_growth_after_ineligible": 60,
+      "e3_N_star": 10,
+      "e3_curve": {
+        "10": 0.8,
+        "20": 0.8,
+        "40": 0.8,
+        "80": 0.75
+      },
+      "surplus_over_last_grid": 61
+    },
+    "libero_object_task5": {
+      "exposures": 144,
+      "final_bc_pool": 132,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2455,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 200.8
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 285.3
+        }
+      ],
+      "teacher_successes_after_ineligible": 52,
+      "exposures_after_ineligible": 56,
+      "bc_growth_after_ineligible": 51,
+      "e3_N_star": 10,
+      "e3_curve": {
+        "10": 0.85,
+        "20": 0.95,
+        "40": 0.9,
+        "80": 1.0
+      },
+      "surplus_over_last_grid": 52
+    },
+    "libero_object_task8": {
+      "exposures": 144,
+      "final_bc_pool": 140,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2128,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 196.8
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 285.3
+        }
+      ],
+      "teacher_successes_after_ineligible": 60,
+      "exposures_after_ineligible": 61,
+      "bc_growth_after_ineligible": 59,
+      "e3_N_star": 10,
+      "e3_curve": {
+        "10": 0.8,
+        "20": 0.65,
+        "40": 0.95,
+        "80": 0.95
+      },
+      "surplus_over_last_grid": 60
+    },
+    "libero_object_task9": {
+      "exposures": 144,
+      "final_bc_pool": 139,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2275,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 197.8
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 287.3
+        }
+      ],
+      "teacher_successes_after_ineligible": 59,
+      "exposures_after_ineligible": 63,
+      "bc_growth_after_ineligible": 58,
+      "e3_N_star": 20,
+      "e3_curve": {
+        "10": 0.7,
+        "20": 0.95,
+        "40": 0.8,
+        "80": 0.9
+      },
+      "surplus_over_last_grid": 59
+    }
+  },
+  "rule1_retry_would_have_helped": {
+    "criterion": "부적격 확정 후 최종 BC 풀 > 80 (마지막 grid 지점)",
+    "n_clusters": 10,
+    "clusters": {
+      "libero_10_task0": {
+        "final_bc_pool": 121,
+        "surplus": 41,
+        "bc_growth_after_ineligible": 40
+      },
+      "libero_goal_task0": {
+        "final_bc_pool": 137,
+        "surplus": 57,
+        "bc_growth_after_ineligible": 56
+      },
+      "libero_goal_task5": {
+        "final_bc_pool": 143,
+        "surplus": 63,
+        "bc_growth_after_ineligible": 62
+      },
+      "libero_goal_task6": {
+        "final_bc_pool": 138,
+        "surplus": 58,
+        "bc_growth_after_ineligible": 57
+      },
+      "libero_goal_task9": {
+        "final_bc_pool": 143,
+        "surplus": 63,
+        "bc_growth_after_ineligible": 62
+      },
+      "libero_object_task0": {
+        "final_bc_pool": 140,
+        "surplus": 60,
+        "bc_growth_after_ineligible": 59
+      },
+      "libero_object_task1": {
+        "final_bc_pool": 141,
+        "surplus": 61,
+        "bc_growth_after_ineligible": 60
+      },
+      "libero_object_task5": {
+        "final_bc_pool": 132,
+        "surplus": 52,
+        "bc_growth_after_ineligible": 51
+      },
+      "libero_object_task8": {
+        "final_bc_pool": 140,
+        "surplus": 60,
+        "bc_growth_after_ineligible": 59
+      },
+      "libero_object_task9": {
+        "final_bc_pool": 139,
+        "surplus": 59,
+        "bc_growth_after_ineligible": 58
+      }
+    },
+    "median_surplus": 59
+  },
+  "rule2_batch_vs_stream_gap": {
+    "criterion": "E3 배치에서 N* ≤ 80 (성숙 도달)인데 스트림에서 부적격",
+    "n_clusters": 9,
+    "clusters": {
+      "libero_goal_task0": {
+        "e3_N_star": 80,
+        "e3_curve": {
+          "10": 0.1,
+          "20": 0.45,
+          "40": 0.7,
+          "80": 0.85
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 202.2
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 293.5
+          }
+        ],
+        "final_bc_pool": 137
+      },
+      "libero_goal_task5": {
+        "e3_N_star": 20,
+        "e3_curve": {
+          "10": 0.75,
+          "20": 0.9,
+          "40": 1.0,
+          "80": 0.95
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 193.4
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 288.5
+          }
+        ],
+        "final_bc_pool": 143
+      },
+      "libero_goal_task6": {
+        "e3_N_star": 40,
+        "e3_curve": {
+          "10": 0.65,
+          "20": 0.65,
+          "40": 0.8,
+          "80": 1.0
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 198.5
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 283.6
+          }
+        ],
+        "final_bc_pool": 138
+      },
+      "libero_goal_task9": {
+        "e3_N_star": 20,
+        "e3_curve": {
+          "10": 0.65,
+          "20": 1.0,
+          "40": 1.0,
+          "80": 1.0
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 195.3
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 288.7
+          }
+        ],
+        "final_bc_pool": 143
+      },
+      "libero_object_task0": {
+        "e3_N_star": 80,
+        "e3_curve": {
+          "10": 0.0,
+          "20": 0.2,
+          "40": 0.45,
+          "80": 0.95
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 201.1
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 293.7
+          }
+        ],
+        "final_bc_pool": 140
+      },
+      "libero_object_task1": {
+        "e3_N_star": 10,
+        "e3_curve": {
+          "10": 0.8,
+          "20": 0.8,
+          "40": 0.8,
+          "80": 0.75
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 195.0
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 285.4
+          }
+        ],
+        "final_bc_pool": 141
+      },
+      "libero_object_task5": {
+        "e3_N_star": 10,
+        "e3_curve": {
+          "10": 0.85,
+          "20": 0.95,
+          "40": 0.9,
+          "80": 1.0
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 200.8
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 285.3
+          }
+        ],
+        "final_bc_pool": 132
+      },
+      "libero_object_task8": {
+        "e3_N_star": 10,
+        "e3_curve": {
+          "10": 0.8,
+          "20": 0.65,
+          "40": 0.95,
+          "80": 0.95
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 196.8
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 285.3
+          }
+        ],
+        "final_bc_pool": 140
+      },
+      "libero_object_task9": {
+        "e3_N_star": 20,
+        "e3_curve": {
+          "10": 0.7,
+          "20": 0.95,
+          "40": 0.8,
+          "80": 0.9
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 197.8
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 287.3
+          }
+        ],
+        "final_bc_pool": 139
+      }
+    },
+    "e3_right_censored": {
+      "libero_10_task0": ">80"
+    },
+    "cause_diagnosis": {
+      "kind": "사후 진단 (규칙 2의 원인 규명) — 사전 고정 규칙 아님",
+      "maturity_criterion_gap": {
+        "e3_definition": "점추정 ŝ_k(n) ≥ 0.8",
+        "e5_definition": "Pr(s_k ≥ 0.8 | D_k) ≥ 0.9",
+        "e5_required_probe_successes_round1": "19/20",
+        "e5_implied_success_rate_round1": 0.95,
+        "note": "동일한 τ=0.8을 쓰지만 E5는 사후확률 기준이라 표본 20에서 실질 요구 성공률이 0.95로 올라간다 — E3 성숙(≥0.80)과 E5 성숙은 같은 이름의 다른 문턱이다."
+      },
+      "round2_carryover_trap": {
+        "c_reinit": 0.25,
+        "f1_threshold_for_unwinnable": 9,
+        "meaning": "라운드1 실패가 9회 이상이면 c=0.25 이월로 남은 φ 때문에 라운드2에서 20/20 만점을 받아도 Pr < 0.9 — 라운드2 시작 시점에 X가 이미 확정돼 있다",
+        "n_unwinnable": 5,
+        "clusters": [
+          "libero_10_task0",
+          "libero_goal_task6",
+          "libero_object_task0",
+          "libero_object_task5",
+          "libero_object_task9"
+        ],
+        "scored_full_marks_in_round2_but_failed": [
+          "libero_object_task5"
+        ]
+      },
+      "per_cluster_probe_reconstruction": {
+        "libero_10_task0": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 4,
+              "probe_failures": 16,
+              "probe_rate": 0.2,
+              "p_ge_tau_after": 0.0,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 14,
+              "probe_failures": 6,
+              "probe_rate": 0.7,
+              "p_ge_tau_after": 0.0079,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.75,
+          "best_probe_rate": 0.7,
+          "round2_was_unwinnable": true
+        },
+        "libero_goal_task0": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 14,
+              "probe_failures": 6,
+              "probe_rate": 0.7,
+              "p_ge_tau_after": 0.1085,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 18,
+              "probe_failures": 2,
+              "probe_rate": 0.9,
+              "p_ge_tau_after": 0.7098,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.85,
+          "best_probe_rate": 0.9,
+          "round2_was_unwinnable": false
+        },
+        "libero_goal_task5": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 18,
+              "probe_failures": 2,
+              "probe_rate": 0.9,
+              "p_ge_tau_after": 0.8213,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 17,
+              "probe_failures": 3,
+              "probe_rate": 0.85,
+              "p_ge_tau_after": 0.7098,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.95,
+          "best_probe_rate": 0.9,
+          "round2_was_unwinnable": false
+        },
+        "libero_goal_task6": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 11,
+              "probe_failures": 9,
+              "probe_rate": 0.55,
+              "p_ge_tau_after": 0.0041,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 18,
+              "probe_failures": 2,
+              "probe_rate": 0.9,
+              "p_ge_tau_after": 0.568,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 1.0,
+          "best_probe_rate": 0.9,
+          "round2_was_unwinnable": true
+        },
+        "libero_goal_task9": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 15,
+              "probe_failures": 5,
+              "probe_rate": 0.75,
+              "p_ge_tau_after": 0.2307,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 17,
+              "probe_failures": 3,
+              "probe_rate": 0.85,
+              "p_ge_tau_after": 0.568,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 1.0,
+          "best_probe_rate": 0.85,
+          "round2_was_unwinnable": false
+        },
+        "libero_object_task0": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 7,
+              "probe_failures": 13,
+              "probe_rate": 0.35,
+              "p_ge_tau_after": 0.0,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 14,
+              "probe_failures": 6,
+              "probe_rate": 0.7,
+              "p_ge_tau_after": 0.018,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.95,
+          "best_probe_rate": 0.7,
+          "round2_was_unwinnable": true
+        },
+        "libero_object_task1": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 13,
+              "probe_failures": 7,
+              "probe_rate": 0.65,
+              "p_ge_tau_after": 0.0431,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 18,
+              "probe_failures": 2,
+              "probe_rate": 0.9,
+              "p_ge_tau_after": 0.6642,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.75,
+          "best_probe_rate": 0.9,
+          "round2_was_unwinnable": false
+        },
+        "libero_object_task5": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 11,
+              "probe_failures": 9,
+              "probe_rate": 0.55,
+              "p_ge_tau_after": 0.0041,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 20,
+              "probe_failures": 0,
+              "probe_rate": 1.0,
+              "p_ge_tau_after": 0.8913,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 1.0,
+          "best_probe_rate": 1.0,
+          "round2_was_unwinnable": true
+        },
+        "libero_object_task8": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 15,
+              "probe_failures": 5,
+              "probe_rate": 0.75,
+              "p_ge_tau_after": 0.2307,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 19,
+              "probe_failures": 1,
+              "probe_rate": 0.95,
+              "p_ge_tau_after": 0.8913,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.95,
+          "best_probe_rate": 0.95,
+          "round2_was_unwinnable": false
+        },
+        "libero_object_task9": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 11,
+              "probe_failures": 9,
+              "probe_rate": 0.55,
+              "p_ge_tau_after": 0.0041,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 17,
+              "probe_failures": 3,
+              "probe_rate": 0.85,
+              "p_ge_tau_after": 0.3764,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.9,
+          "best_probe_rate": 0.85,
+          "round2_was_unwinnable": true
+        }
+      }
+    },
+    "n_star_distribution": {
+      "10": 3,
+      "20": 3,
+      "40": 1,
+      "80": 2
+    }
+  }
+}

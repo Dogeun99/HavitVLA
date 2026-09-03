@@ -1,0 +1,6 @@
+[submodule "src/third_party/LIBERO"]
+	path = src/third_party/LIBERO
+	url = https://github.com/Lifelong-Robot-Learning/LIBERO.git
+[submodule "src/third_party/openvla-oft"]
+	path = src/third_party/openvla-oft
+	url = https://github.com/moojink/openvla-oft.git

@@ -1,0 +1,236 @@
+{
+  "input_curves_status": "COMPLETE",
+  "status": "FINAL",
+  "estimators": "preregistration §4f: rank-primary (censored=top ties), interval-secondary (cap=160); perm B=10000 seed 0",
+  "decomposition_L": {
+    "n": 22,
+    "between_share": 0.0246,
+    "within_share": 0.9754,
+    "kruskal_H": 0.5176,
+    "kruskal_p": 0.772,
+    "groups": {
+      "L1_2": {
+        "n": 10,
+        "mean_rank": 10.7,
+        "N_star_values": [
+          80,
+          10,
+          10,
+          10,
+          20,
+          10,
+          40,
+          10,
+          10,
+          20
+        ],
+        "n_censored": 0
+      },
+      "L3": {
+        "n": 10,
+        "mean_rank": 12.5,
+        "N_star_values": [
+          80,
+          10,
+          10,
+          20,
+          20,
+          20,
+          40,
+          10,
+          10,
+          20
+        ],
+        "n_censored": 0
+      },
+      "L4a": {
+        "n": 2,
+        "mean_rank": 10.5,
+        "N_star_values": [
+          10,
+          20
+        ],
+        "n_censored": 0
+      }
+    }
+  },
+  "regression_formation22": {
+    "tag": "formation cells (L1_2+L3+L4a)",
+    "n": 22,
+    "rank_ols": {
+      "intercept": {
+        "beta": 10.221,
+        "perm_p": 0.0528
+      },
+      "free_joints": {
+        "beta": -3.6861,
+        "perm_p": 0.0756
+      },
+      "S_V_cluster": {
+        "beta": 0.8134,
+        "perm_p": 0.5659
+      },
+      "median_len": {
+        "beta": 3.721,
+        "perm_p": 0.0155
+      },
+      "suite:libero_object": {
+        "beta": 2.25,
+        "perm_p": 0.8306
+      },
+      "suite:libero_spatial": {
+        "beta": 2.8184,
+        "perm_p": 0.5614
+      }
+    },
+    "spearman_vs_rank": {
+      "free_joints": {
+        "rho": -0.1473,
+        "p": 0.513
+      },
+      "S_V_cluster": {
+        "rho": 0.0613,
+        "p": 0.7863
+      },
+      "median_len": {
+        "rho": 0.3621,
+        "p": 0.0977
+      }
+    },
+    "interval_sensitivity_log_ols": {
+      "lower": {
+        "intercept": 1.2509,
+        "free_joints": -0.6894,
+        "S_V_cluster": 0.1882,
+        "median_len": 0.9215,
+        "suite:libero_object": 0.0775,
+        "suite:libero_spatial": 0.596
+      },
+      "upper": {
+        "intercept": 2.4475,
+        "free_joints": -0.5955,
+        "S_V_cluster": 0.0024,
+        "median_len": 0.3221,
+        "suite:libero_object": 0.7967,
+        "suite:libero_spatial": 0.3139
+      },
+      "mid": {
+        "intercept": 1.8492,
+        "free_joints": -0.6424,
+        "S_V_cluster": 0.0953,
+        "median_len": 0.6218,
+        "suite:libero_object": 0.4371,
+        "suite:libero_spatial": 0.455
+      }
+    }
+  },
+  "regression_all_standard": {
+    "tag": "all standard incl. libero_10 (suite dummy)",
+    "n": 25,
+    "rank_ols": {
+      "intercept": {
+        "beta": 11.3355,
+        "perm_p": 0.5843
+      },
+      "free_joints": {
+        "beta": 0.5188,
+        "perm_p": 0.8745
+      },
+      "S_V_cluster": {
+        "beta": 0.4707,
+        "perm_p": 0.7978
+      },
+      "median_len": {
+        "beta": 4.6488,
+        "perm_p": 0.1049
+      },
+      "suite:libero_goal": {
+        "beta": 4.463,
+        "perm_p": 0.6132
+      },
+      "suite:libero_object": {
+        "beta": -0.9966,
+        "perm_p": 0.9195
+      },
+      "suite:libero_spatial": {
+        "beta": 3.4738,
+        "perm_p": 0.7464
+      }
+    },
+    "spearman_vs_rank": {
+      "free_joints": {
+        "rho": -0.0895,
+        "p": 0.6705
+      },
+      "S_V_cluster": {
+        "rho": 0.0037,
+        "p": 0.9859
+      },
+      "median_len": {
+        "rho": 0.4958,
+        "p": 0.0117
+      }
+    },
+    "interval_sensitivity_log_ols": {
+      "lower": {
+        "intercept": 0.9819,
+        "free_joints": 0.155,
+        "S_V_cluster": 0.1252,
+        "median_len": 1.1502,
+        "suite:libero_goal": 1.3071,
+        "suite:libero_object": -0.081,
+        "suite:libero_spatial": 1.1799
+      },
+      "upper": {
+        "intercept": 3.4304,
+        "free_joints": 0.3218,
+        "S_V_cluster": -0.041,
+        "median_len": 0.3421,
+        "suite:libero_goal": -0.0907,
+        "suite:libero_object": -0.9747,
+        "suite:libero_spatial": -0.453
+      },
+      "mid": {
+        "intercept": 2.2061,
+        "free_joints": 0.2384,
+        "S_V_cluster": 0.0421,
+        "median_len": 0.7461,
+        "suite:libero_goal": 0.6082,
+        "suite:libero_object": -0.5279,
+        "suite:libero_spatial": 0.3635
+      }
+    }
+  },
+  "collinearity_appendix": {
+    "note": "방어용 부록 (해석 변경 없음) — corr: 27 공변량 테이블, VIF: 형성22 설계행렬",
+    "n_corr_rows": 27,
+    "pairwise": {
+      "free_joints~S_V_cluster": {
+        "pearson": -0.284,
+        "p_pearson": 0.1511,
+        "spearman": -0.3691,
+        "p_spearman": 0.0581
+      },
+      "free_joints~median_len": {
+        "pearson": 0.2596,
+        "p_pearson": 0.191,
+        "spearman": 0.3455,
+        "p_spearman": 0.0775
+      },
+      "S_V_cluster~median_len": {
+        "pearson": -0.416,
+        "p_pearson": 0.0309,
+        "spearman": -0.205,
+        "p_spearman": 0.3049
+      }
+    },
+    "vif_formation_design": {
+      "free_joints": 1000000000.0,
+      "S_V_cluster": 1.18,
+      "median_len": 1.65
+    },
+    "identifiability_flags": [
+      "free_joints: VIF>10 — 설계행렬 내 (준)완전 공선, 해당 계수는 이 표본에서 식별 불가"
+    ]
+  }
+}

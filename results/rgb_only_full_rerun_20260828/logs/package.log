@@ -1,0 +1,6 @@
+
+===== package attempt=0 start=2026-08-31 20:38:25 =====
+/home/asmr/miniconda3/envs/hv2_hab/bin/python -u experiments/rgb_only_rerun/make_package.py
+[PACKAGE-BUILT] HabitVLA_RGB_only_full_rerun_20260828.tar.gz · 2.9 MB · 190 파일 · 체크포인트 253개(매니페스트)
+[PACKAGE-VERIFY-PASS] checks=52 fail=0
+[PACKAGE-DONE]

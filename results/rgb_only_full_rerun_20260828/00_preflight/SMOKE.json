@@ -1,0 +1,61 @@
+{
+ "cluster": "libero_goal_task1",
+ "steps": 200,
+ "n_eval": 3,
+ "checks": {
+  "training_runs": true,
+  "checkpoint_saved": true,
+  "ckpt_use_depth_false": true,
+  "ckpt_in_ch_3": true,
+  "ckpt_steps_as_specified": true,
+  "policy_use_depth_false": true,
+  "policy_conv1_is_3ch": true,
+  "inference_runs": true,
+  "success_evaluation_works": true,
+  "logging_per_episode": true,
+  "no_infra_error": true
+ },
+ "train_returncode": 0,
+ "train_tail": "cluster=libero_goal_task1 success episodes=118\n=== train n=10 -> /home/asmr/workspace/habitvla2/checkpoints/rgb_only_rerun/smoke/libero_goal_task1/act_n10.pt ===\n  step 200/200 l1=0.4178 kl=0.297 (5s)\n[TRAIN-PASS] cluster=libero_goal_task1 grid=[10] depth=False\n",
+ "checkpoint_meta": {
+  "use_depth": false,
+  "in_ch": 3,
+  "steps": 200,
+  "n_episodes": 10,
+  "n_params": 95030088,
+  "final_l1": 0.41783614963293075
+ },
+ "runtime_policy": {
+  "use_depth": false,
+  "conv1_in_channels": 3,
+  "n_backbones": 2
+ },
+ "eval_returncode": 0,
+ "eval_tail": "e/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!\n[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!\n=== eval n=10 ===\n  n=10: s_hat=1.0 (3/3, infra=0)\n[EVAL-PASS] cluster=libero_goal_task1 json=/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/00_preflight/smoke_eval/libero_goal_task1_curve.json\n",
+ "eval_result": {
+  "n_eval": 3,
+  "n_success": 3,
+  "s_hat": 1.0,
+  "n_infra_error": 0,
+  "per_episode": [
+   {
+    "uid": "acda933fe1623124",
+    "outcome": "success",
+    "steps": 69
+   },
+   {
+    "uid": "420762fe0b0a4a6c",
+    "outcome": "success",
+    "steps": 77
+   },
+   {
+    "uid": "dfe3682f728b26c1",
+    "outcome": "success",
+    "steps": 75
+   }
+  ]
+ },
+ "wall_s": 20.0,
+ "verdict": "PASS",
+ "note": "기술적 정상성만 판정한다. s_hat 값은 200스텝 축소 학습의 산물이며 설정 변경 근거로 쓰지 않는다 (§5)."
+}

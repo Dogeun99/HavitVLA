@@ -1,0 +1,16 @@
+{
+ "job": "integrity",
+ "attempt": 0,
+ "cmd": [
+  "/home/asmr/miniconda3/envs/hv2_hab/bin/python",
+  "-u",
+  "experiments/rgb_only_rerun/integrity_audit.py"
+ ],
+ "start": "2026-08-31 20:38:06",
+ "end": "2026-08-31 20:38:25",
+ "elapsed_s": 19.5,
+ "exit_code": 0,
+ "log": "results/rgb_only_full_rerun_20260828/logs/integrity.log",
+ "pass_marker": "[INTEGRITY-DONE]",
+ "ok": true
+}

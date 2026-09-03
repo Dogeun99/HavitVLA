@@ -1,0 +1,16 @@
+{
+ "job": "paired_summary",
+ "attempt": 0,
+ "cmd": [
+  "/home/asmr/miniconda3/envs/hv2_hab/bin/python",
+  "-u",
+  "experiments/rgb_only_rerun/analyze_replay.py"
+ ],
+ "start": "2026-08-31 20:14:42",
+ "end": "2026-08-31 20:14:43",
+ "elapsed_s": 1.3,
+ "exit_code": 0,
+ "log": "results/rgb_only_full_rerun_20260828/logs/paired_summary.log",
+ "pass_marker": "[PAIRED-DONE]",
+ "ok": true
+}

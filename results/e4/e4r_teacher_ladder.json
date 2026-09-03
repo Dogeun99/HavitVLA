@@ -1,0 +1,1649 @@
+{
+  "note": "teacher w-사다리 통제군 (§5). E4-R과 동일 스펙 uid·필터·실행기.",
+  "w_grid": [
+    0.01,
+    0.02,
+    0.04,
+    0.06,
+    0.08
+  ],
+  "clusters": {
+    "libero_object_task0": {
+      "usable_w_max": 0.04,
+      "by_w": {
+        "0.01": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 0.9333,
+          "habit_success_rate": 0.8667,
+          "gap_teacher_minus_habit": 0.0666,
+          "episodes": [
+            {
+              "uid": "31bd0f3e8561f43e",
+              "valid": true,
+              "success": true,
+              "steps": 129
+            },
+            {
+              "uid": "ffb35d096a9edbbf",
+              "valid": true,
+              "success": true,
+              "steps": 137
+            },
+            {
+              "uid": "3d6d86ffdc2fc94a",
+              "valid": true,
+              "success": true,
+              "steps": 134
+            },
+            {
+              "uid": "3eceb126b814c8c4",
+              "valid": true,
+              "success": true,
+              "steps": 137
+            },
+            {
+              "uid": "a277ff8837f253e7",
+              "valid": true,
+              "success": true,
+              "steps": 140
+            },
+            {
+              "uid": "c9a523f76906a5ff",
+              "valid": true,
+              "success": true,
+              "steps": 129
+            },
+            {
+              "uid": "2a9c4ab536b5b92f",
+              "valid": true,
+              "success": true,
+              "steps": 133
+            },
+            {
+              "uid": "ad070e8ba351fabf",
+              "valid": true,
+              "success": true,
+              "steps": 138
+            },
+            {
+              "uid": "fa77fc3d8faf78ff",
+              "valid": true,
+              "success": true,
+              "steps": 138
+            },
+            {
+              "uid": "dd20834eb689ebde",
+              "valid": true,
+              "success": true,
+              "steps": 126
+            },
+            {
+              "uid": "23bc674853f9f8e9",
+              "valid": true,
+              "success": true,
+              "steps": 143
+            },
+            {
+              "uid": "90d2cb1aa94fde9a",
+              "valid": true,
+              "success": true,
+              "steps": 147
+            },
+            {
+              "uid": "ed361858f5120b59",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "efd0aeb4c55ca7ee",
+              "valid": true,
+              "success": true,
+              "steps": 127
+            },
+            {
+              "uid": "fed36ec3a44b4485",
+              "valid": true,
+              "success": true,
+              "steps": 145
+            }
+          ]
+        },
+        "0.02": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 0.9333,
+          "habit_success_rate": 0.6667,
+          "gap_teacher_minus_habit": 0.2666,
+          "episodes": [
+            {
+              "uid": "f22d26d0afe2b57d",
+              "valid": true,
+              "success": true,
+              "steps": 139
+            },
+            {
+              "uid": "16ee9720113b4283",
+              "valid": true,
+              "success": true,
+              "steps": 144
+            },
+            {
+              "uid": "3eef90d48e52b990",
+              "valid": true,
+              "success": true,
+              "steps": 118
+            },
+            {
+              "uid": "c0087a2ffcf36974",
+              "valid": true,
+              "success": true,
+              "steps": 241
+            },
+            {
+              "uid": "d19bba46b6b2a095",
+              "valid": true,
+              "success": true,
+              "steps": 280
+            },
+            {
+              "uid": "9513e6c54b76cf73",
+              "valid": true,
+              "success": true,
+              "steps": 127
+            },
+            {
+              "uid": "472263b7df547496",
+              "valid": true,
+              "success": true,
+              "steps": 167
+            },
+            {
+              "uid": "e98e164123c29d3b",
+              "valid": true,
+              "success": true,
+              "steps": 133
+            },
+            {
+              "uid": "e615a748b43e67c8",
+              "valid": true,
+              "success": true,
+              "steps": 139
+            },
+            {
+              "uid": "0b397e29680398de",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "5839bd9c095eb810",
+              "valid": true,
+              "success": true,
+              "steps": 129
+            },
+            {
+              "uid": "6bf9299b8c2c4418",
+              "valid": true,
+              "success": true,
+              "steps": 130
+            },
+            {
+              "uid": "ee5c69f8287cd333",
+              "valid": true,
+              "success": true,
+              "steps": 137
+            },
+            {
+              "uid": "9ad50873ee2ce28d",
+              "valid": true,
+              "success": true,
+              "steps": 156
+            },
+            {
+              "uid": "8163b36663c24d54",
+              "valid": true,
+              "success": true,
+              "steps": 138
+            }
+          ]
+        },
+        "0.04": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 0.8,
+          "habit_success_rate": 0.3333,
+          "gap_teacher_minus_habit": 0.4667,
+          "episodes": [
+            {
+              "uid": "ee637ecda1754b87",
+              "valid": true,
+              "success": true,
+              "steps": 210
+            },
+            {
+              "uid": "3cd75d9665ed31fc",
+              "valid": true,
+              "success": true,
+              "steps": 160
+            },
+            {
+              "uid": "59829dae4508a0b7",
+              "valid": true,
+              "success": true,
+              "steps": 134
+            },
+            {
+              "uid": "50a0ac02eea68ca2",
+              "valid": true,
+              "success": true,
+              "steps": 235
+            },
+            {
+              "uid": "5ffe39cc185a3816",
+              "valid": true,
+              "success": true,
+              "steps": 166
+            },
+            {
+              "uid": "63bbc2b04da677f5",
+              "valid": true,
+              "success": true,
+              "steps": 144
+            },
+            {
+              "uid": "b4ce90b9cb882843",
+              "valid": true,
+              "success": true,
+              "steps": 182
+            },
+            {
+              "uid": "8578316528359118",
+              "valid": true,
+              "success": true,
+              "steps": 177
+            },
+            {
+              "uid": "6ea2c5be460d6fdd",
+              "valid": true,
+              "success": true,
+              "steps": 200
+            },
+            {
+              "uid": "0a74b732d9d4203b",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "b081ee64fab49fd9",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "9f70a5bbb5dec7b5",
+              "valid": true,
+              "success": true,
+              "steps": 132
+            },
+            {
+              "uid": "d0aa39e80f029067",
+              "valid": true,
+              "success": true,
+              "steps": 223
+            },
+            {
+              "uid": "fb56720fcff50e4f",
+              "valid": true,
+              "success": true,
+              "steps": 135
+            },
+            {
+              "uid": "ac9a23d3e78bf276",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            }
+          ]
+        },
+        "0.06": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 0.4,
+          "habit_success_rate": 0.2667,
+          "gap_teacher_minus_habit": 0.1333,
+          "episodes": [
+            {
+              "uid": "88c5750dee322060",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "62335caec7477b71",
+              "valid": true,
+              "success": true,
+              "steps": 133
+            },
+            {
+              "uid": "ad0d394da95f367c",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "eaea27ba6f76c722",
+              "valid": true,
+              "success": true,
+              "steps": 129
+            },
+            {
+              "uid": "b01e10a889a7e722",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "c16c06ef3a2b371e",
+              "valid": true,
+              "success": true,
+              "steps": 201
+            },
+            {
+              "uid": "a9a9a7a74d1d056a",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "db6aea4d42ce03f0",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "655aed239769b154",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "9c73847fc30efb9f",
+              "valid": true,
+              "success": true,
+              "steps": 157
+            },
+            {
+              "uid": "98e6db6f4dbad22d",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "a8eef72bdbf087ba",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "e54c36c07fcbebde",
+              "valid": true,
+              "success": true,
+              "steps": 209
+            },
+            {
+              "uid": "b649b02d495d7912",
+              "valid": true,
+              "success": true,
+              "steps": 209
+            },
+            {
+              "uid": "099ef3e06330a1c4",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            }
+          ]
+        },
+        "0.08": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 0.2667,
+          "habit_success_rate": 0.2,
+          "gap_teacher_minus_habit": 0.0667,
+          "episodes": [
+            {
+              "uid": "02668d0066e85277",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "87de6e1def7262d6",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "ad6902d9cdcca780",
+              "valid": true,
+              "success": true,
+              "steps": 250
+            },
+            {
+              "uid": "b80dc310c49f1a07",
+              "valid": true,
+              "success": true,
+              "steps": 197
+            },
+            {
+              "uid": "d9f47ce14e1bde42",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "1eefc878234659cc",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "42869b64745814f3",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "5b30ffc41a8b954b",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "6d2ff13a1dd06542",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "e537ac0b77904e2d",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "44cd8b0207af9b57",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "4502c039f8527b1d",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "056d0af2f34d1935",
+              "valid": true,
+              "success": true,
+              "steps": 242
+            },
+            {
+              "uid": "9a7e0e9823aa417c",
+              "valid": true,
+              "success": true,
+              "steps": 256
+            },
+            {
+              "uid": "eea583ef067a46a4",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            }
+          ]
+        }
+      }
+    },
+    "libero_object_task5": {
+      "usable_w_max": 0.04,
+      "by_w": {
+        "0.01": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 1.0,
+          "habit_success_rate": 0.9333,
+          "gap_teacher_minus_habit": 0.0667,
+          "episodes": [
+            {
+              "uid": "881a7007c1a8e0c3",
+              "valid": true,
+              "success": true,
+              "steps": 126
+            },
+            {
+              "uid": "d29efe2d2132fdb4",
+              "valid": true,
+              "success": true,
+              "steps": 128
+            },
+            {
+              "uid": "f6036c9961be752f",
+              "valid": true,
+              "success": true,
+              "steps": 114
+            },
+            {
+              "uid": "2e6f2a0836c3e126",
+              "valid": true,
+              "success": true,
+              "steps": 130
+            },
+            {
+              "uid": "c5340c2c1c26292d",
+              "valid": true,
+              "success": true,
+              "steps": 115
+            },
+            {
+              "uid": "60a6758c0ef1d587",
+              "valid": true,
+              "success": true,
+              "steps": 135
+            },
+            {
+              "uid": "9d39c2e55e4b0536",
+              "valid": true,
+              "success": true,
+              "steps": 120
+            },
+            {
+              "uid": "6be256548a1003e8",
+              "valid": true,
+              "success": true,
+              "steps": 153
+            },
+            {
+              "uid": "3da68bc3ca94fcc9",
+              "valid": true,
+              "success": true,
+              "steps": 137
+            },
+            {
+              "uid": "f884c302f4b5cf94",
+              "valid": true,
+              "success": true,
+              "steps": 129
+            },
+            {
+              "uid": "556cc38731e9172c",
+              "valid": true,
+              "success": true,
+              "steps": 122
+            },
+            {
+              "uid": "dacb9678efd3293b",
+              "valid": true,
+              "success": true,
+              "steps": 127
+            },
+            {
+              "uid": "2420d3fbb9fc2065",
+              "valid": true,
+              "success": true,
+              "steps": 133
+            },
+            {
+              "uid": "d743f301f04da1db",
+              "valid": true,
+              "success": true,
+              "steps": 120
+            },
+            {
+              "uid": "0a7d75c563508df3",
+              "valid": true,
+              "success": true,
+              "steps": 124
+            }
+          ]
+        },
+        "0.02": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 0.9333,
+          "habit_success_rate": 0.8667,
+          "gap_teacher_minus_habit": 0.0666,
+          "episodes": [
+            {
+              "uid": "5162d00f7c2b0a23",
+              "valid": true,
+              "success": true,
+              "steps": 119
+            },
+            {
+              "uid": "28aa953d17c841b1",
+              "valid": true,
+              "success": true,
+              "steps": 130
+            },
+            {
+              "uid": "f43ff470687eeeea",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "157e2b64f5945c2b",
+              "valid": true,
+              "success": true,
+              "steps": 226
+            },
+            {
+              "uid": "66508f8f806a9dfa",
+              "valid": true,
+              "success": true,
+              "steps": 117
+            },
+            {
+              "uid": "a371f0e14d5d96e4",
+              "valid": true,
+              "success": true,
+              "steps": 163
+            },
+            {
+              "uid": "1db835df9a990bc8",
+              "valid": true,
+              "success": true,
+              "steps": 123
+            },
+            {
+              "uid": "21cf046974259f52",
+              "valid": true,
+              "success": true,
+              "steps": 129
+            },
+            {
+              "uid": "df146cbc91cf4eaa",
+              "valid": true,
+              "success": true,
+              "steps": 117
+            },
+            {
+              "uid": "ead89e618f8e51ca",
+              "valid": true,
+              "success": true,
+              "steps": 129
+            },
+            {
+              "uid": "d284148a516511d1",
+              "valid": true,
+              "success": true,
+              "steps": 123
+            },
+            {
+              "uid": "2038d1c89df06b19",
+              "valid": true,
+              "success": true,
+              "steps": 137
+            },
+            {
+              "uid": "76e2baa911fafcd3",
+              "valid": true,
+              "success": true,
+              "steps": 178
+            },
+            {
+              "uid": "482202b550e63060",
+              "valid": true,
+              "success": true,
+              "steps": 130
+            },
+            {
+              "uid": "8a4ed7d5f7b0bd40",
+              "valid": true,
+              "success": true,
+              "steps": 122
+            }
+          ]
+        },
+        "0.04": {
+          "n_valid": 14,
+          "n_reject_physical": 1,
+          "n_infra": 0,
+          "teacher_success_rate": 0.6429,
+          "habit_success_rate": 0.5714,
+          "gap_teacher_minus_habit": 0.0715,
+          "episodes": [
+            {
+              "uid": "45128ac208456f57",
+              "valid": true,
+              "success": true,
+              "steps": 119
+            },
+            {
+              "uid": "8a8510055f00af42",
+              "valid": true,
+              "success": true,
+              "steps": 137
+            },
+            {
+              "uid": "83786261f270656c",
+              "valid": true,
+              "success": true,
+              "steps": 128
+            },
+            {
+              "uid": "0920e680d2cfe87e",
+              "valid": true,
+              "success": true,
+              "steps": 185
+            },
+            {
+              "uid": "0edb14e82f708426",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "726bca37758ba1d1",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "e9a131716e964a65",
+              "valid": true,
+              "success": true,
+              "steps": 130
+            },
+            {
+              "uid": "45ff8af7858e96ef",
+              "valid": true,
+              "success": true,
+              "steps": 132
+            },
+            {
+              "uid": "ea318d768a9e08b0",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "5a4f472f43d7a527",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "35200a568c45d0d4",
+              "valid": false,
+              "why": "lateral"
+            },
+            {
+              "uid": "e31fd45e572fae7a",
+              "valid": true,
+              "success": true,
+              "steps": 151
+            },
+            {
+              "uid": "affb74ddeac30b9f",
+              "valid": true,
+              "success": true,
+              "steps": 112
+            },
+            {
+              "uid": "ec6110d8674eb18e",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "cafa4d974370fa56",
+              "valid": true,
+              "success": true,
+              "steps": 159
+            }
+          ]
+        },
+        "0.06": {
+          "n_valid": 13,
+          "n_reject_physical": 2,
+          "n_infra": 0,
+          "teacher_success_rate": 0.3846,
+          "habit_success_rate": 0.2308,
+          "gap_teacher_minus_habit": 0.1538,
+          "episodes": [
+            {
+              "uid": "1d5dc796e202faca",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "7496e3261288647e",
+              "valid": true,
+              "success": true,
+              "steps": 189
+            },
+            {
+              "uid": "ea62639e1ce1cf66",
+              "valid": true,
+              "success": true,
+              "steps": 162
+            },
+            {
+              "uid": "3c7311d7b2b872df",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "0e8b3623b9590bd2",
+              "valid": true,
+              "success": true,
+              "steps": 121
+            },
+            {
+              "uid": "11f17a953646e10e",
+              "valid": false,
+              "why": "lateral"
+            },
+            {
+              "uid": "9ba83e418b2fff1b",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "a563f68f3f7efbab",
+              "valid": false,
+              "why": "lateral"
+            },
+            {
+              "uid": "af7c31308e3731f4",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "8f093015652fc2c1",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "5c92fd5b2bb44234",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "9f08d2f4c22e87fb",
+              "valid": true,
+              "success": true,
+              "steps": 250
+            },
+            {
+              "uid": "86330f686713d453",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "5ba475cb4cc6767c",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "f857e1aadec925b4",
+              "valid": true,
+              "success": true,
+              "steps": 123
+            }
+          ]
+        },
+        "0.08": {
+          "n_valid": 11,
+          "n_reject_physical": 4,
+          "n_infra": 0,
+          "teacher_success_rate": 0.2727,
+          "habit_success_rate": 0.1818,
+          "gap_teacher_minus_habit": 0.0909,
+          "episodes": [
+            {
+              "uid": "40d7a970a3e26e56",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "98b5314d41788d11",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "b430629aa5c26d70",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "d21f892c053398ad",
+              "valid": false,
+              "why": "lateral"
+            },
+            {
+              "uid": "e39a04d939ac81ef",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "2e9672fb7075d5cb",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "563d5523c2c97423",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "7c8b2e83bb06968e",
+              "valid": true,
+              "success": true,
+              "steps": 167
+            },
+            {
+              "uid": "453287f2dd2c0aaf",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            },
+            {
+              "uid": "3df58c3199544418",
+              "valid": false,
+              "why": "lateral"
+            },
+            {
+              "uid": "83bae3f5e8458e67",
+              "valid": false,
+              "why": "lateral"
+            },
+            {
+              "uid": "491e85503c1fe09f",
+              "valid": true,
+              "success": true,
+              "steps": 161
+            },
+            {
+              "uid": "3030f58720ce691e",
+              "valid": true,
+              "success": true,
+              "steps": 223
+            },
+            {
+              "uid": "5d97ce8e1aa34106",
+              "valid": false,
+              "why": "lateral"
+            },
+            {
+              "uid": "8f4bd182104689ea",
+              "valid": true,
+              "success": false,
+              "steps": 280
+            }
+          ]
+        }
+      }
+    },
+    "libero_goal_task2": {
+      "usable_w_max": 0.04,
+      "by_w": {
+        "0.01": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 1.0,
+          "habit_success_rate": 1.0,
+          "gap_teacher_minus_habit": 0.0,
+          "episodes": [
+            {
+              "uid": "0e53cba1b496bc0c",
+              "valid": true,
+              "success": true,
+              "steps": 90
+            },
+            {
+              "uid": "da3242c6d11b631a",
+              "valid": true,
+              "success": true,
+              "steps": 93
+            },
+            {
+              "uid": "730e1d932f82c1c5",
+              "valid": true,
+              "success": true,
+              "steps": 101
+            },
+            {
+              "uid": "ae517799026928db",
+              "valid": true,
+              "success": true,
+              "steps": 88
+            },
+            {
+              "uid": "49adf87291866583",
+              "valid": true,
+              "success": true,
+              "steps": 87
+            },
+            {
+              "uid": "190a425a655f3298",
+              "valid": true,
+              "success": true,
+              "steps": 92
+            },
+            {
+              "uid": "e71f7126bb5c6753",
+              "valid": true,
+              "success": true,
+              "steps": 90
+            },
+            {
+              "uid": "76c50b00dc6682cf",
+              "valid": true,
+              "success": true,
+              "steps": 87
+            },
+            {
+              "uid": "d24917ca60539e23",
+              "valid": true,
+              "success": true,
+              "steps": 90
+            },
+            {
+              "uid": "9db8add4f3cfdd73",
+              "valid": true,
+              "success": true,
+              "steps": 99
+            },
+            {
+              "uid": "80d0e8e75bc8ff2a",
+              "valid": true,
+              "success": true,
+              "steps": 93
+            },
+            {
+              "uid": "f339354fac698ae0",
+              "valid": true,
+              "success": true,
+              "steps": 92
+            },
+            {
+              "uid": "a65d111ad5f7e77f",
+              "valid": true,
+              "success": true,
+              "steps": 87
+            },
+            {
+              "uid": "0f14f60acd186b08",
+              "valid": true,
+              "success": true,
+              "steps": 90
+            },
+            {
+              "uid": "4d7717c75a01f5c2",
+              "valid": true,
+              "success": true,
+              "steps": 93
+            }
+          ]
+        },
+        "0.02": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 0.9333,
+          "habit_success_rate": 0.9333,
+          "gap_teacher_minus_habit": 0.0,
+          "episodes": [
+            {
+              "uid": "5bdadd7f4aabe7bb",
+              "valid": true,
+              "success": true,
+              "steps": 85
+            },
+            {
+              "uid": "b642ba3653ca1226",
+              "valid": true,
+              "success": true,
+              "steps": 95
+            },
+            {
+              "uid": "eab20722eca9c931",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "f926389d3fc81d26",
+              "valid": true,
+              "success": true,
+              "steps": 93
+            },
+            {
+              "uid": "d191aa9b7bce36be",
+              "valid": true,
+              "success": true,
+              "steps": 86
+            },
+            {
+              "uid": "71b0ce3609f0e896",
+              "valid": true,
+              "success": true,
+              "steps": 84
+            },
+            {
+              "uid": "24fb3c3c39875e0c",
+              "valid": true,
+              "success": true,
+              "steps": 91
+            },
+            {
+              "uid": "5e9f322f4018a626",
+              "valid": true,
+              "success": true,
+              "steps": 87
+            },
+            {
+              "uid": "f28840e01c68bb9d",
+              "valid": true,
+              "success": true,
+              "steps": 83
+            },
+            {
+              "uid": "3257a479e9f96f32",
+              "valid": true,
+              "success": true,
+              "steps": 92
+            },
+            {
+              "uid": "22af460b52e7eb4e",
+              "valid": true,
+              "success": true,
+              "steps": 89
+            },
+            {
+              "uid": "da34d3142a8f05b1",
+              "valid": true,
+              "success": true,
+              "steps": 90
+            },
+            {
+              "uid": "4beb7ec4cbc2020f",
+              "valid": true,
+              "success": true,
+              "steps": 93
+            },
+            {
+              "uid": "938bc5f2b5c48697",
+              "valid": true,
+              "success": true,
+              "steps": 93
+            },
+            {
+              "uid": "180768bd02035763",
+              "valid": true,
+              "success": true,
+              "steps": 86
+            }
+          ]
+        },
+        "0.04": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 0.8,
+          "habit_success_rate": 0.7333,
+          "gap_teacher_minus_habit": 0.0667,
+          "episodes": [
+            {
+              "uid": "bf292dde0f6fcc22",
+              "valid": true,
+              "success": true,
+              "steps": 84
+            },
+            {
+              "uid": "42925e41e94b41c3",
+              "valid": true,
+              "success": true,
+              "steps": 85
+            },
+            {
+              "uid": "4e8c17e00e73bb93",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "2ce54e3cbedd8ec9",
+              "valid": true,
+              "success": true,
+              "steps": 94
+            },
+            {
+              "uid": "8ae237d1dc8d7ff5",
+              "valid": true,
+              "success": true,
+              "steps": 86
+            },
+            {
+              "uid": "9c389bdcfc171807",
+              "valid": true,
+              "success": true,
+              "steps": 86
+            },
+            {
+              "uid": "152c6965a188e58e",
+              "valid": true,
+              "success": true,
+              "steps": 94
+            },
+            {
+              "uid": "33b7df6b2ee4a840",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "288339ddca31f854",
+              "valid": true,
+              "success": true,
+              "steps": 89
+            },
+            {
+              "uid": "0fc9a972667c7451",
+              "valid": true,
+              "success": true,
+              "steps": 93
+            },
+            {
+              "uid": "700f8eedbd1c2c43",
+              "valid": true,
+              "success": true,
+              "steps": 81
+            },
+            {
+              "uid": "696955ce9fa20516",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "b59cda065d9bc14d",
+              "valid": true,
+              "success": true,
+              "steps": 98
+            },
+            {
+              "uid": "b4d0104405ff8a81",
+              "valid": true,
+              "success": true,
+              "steps": 94
+            },
+            {
+              "uid": "f73f89ad0011a5b6",
+              "valid": true,
+              "success": true,
+              "steps": 83
+            }
+          ]
+        },
+        "0.06": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 0.6667,
+          "habit_success_rate": 0.6667,
+          "gap_teacher_minus_habit": 0.0,
+          "episodes": [
+            {
+              "uid": "2248abcd0015bdd3",
+              "valid": true,
+              "success": true,
+              "steps": 89
+            },
+            {
+              "uid": "c5c973610a1b099f",
+              "valid": true,
+              "success": true,
+              "steps": 88
+            },
+            {
+              "uid": "21bcb42830403342",
+              "valid": true,
+              "success": true,
+              "steps": 93
+            },
+            {
+              "uid": "5bd6085909d624da",
+              "valid": true,
+              "success": true,
+              "steps": 90
+            },
+            {
+              "uid": "ca1aed852e2c7ce5",
+              "valid": true,
+              "success": true,
+              "steps": 78
+            },
+            {
+              "uid": "9c0601ed05acdad2",
+              "valid": true,
+              "success": true,
+              "steps": 78
+            },
+            {
+              "uid": "44b4f3dc4c2ae1a3",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "412ed54160dfdf45",
+              "valid": true,
+              "success": true,
+              "steps": 84
+            },
+            {
+              "uid": "f09b26b786d84a3a",
+              "valid": true,
+              "success": true,
+              "steps": 89
+            },
+            {
+              "uid": "dd3f3d0d525386b1",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "bbbf5df77bf62e68",
+              "valid": true,
+              "success": true,
+              "steps": 82
+            },
+            {
+              "uid": "7ac8ecd8aaf911b7",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "67dd9ab5a9a6e05c",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "c14fc37f86930f1b",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "03bc239fe2deb9d0",
+              "valid": true,
+              "success": true,
+              "steps": 93
+            }
+          ]
+        },
+        "0.08": {
+          "n_valid": 15,
+          "n_reject_physical": 0,
+          "n_infra": 0,
+          "teacher_success_rate": 0.4667,
+          "habit_success_rate": 0.4667,
+          "gap_teacher_minus_habit": 0.0,
+          "episodes": [
+            {
+              "uid": "b46756247a32bdba",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "2bdf483553f4a33f",
+              "valid": true,
+              "success": true,
+              "steps": 98
+            },
+            {
+              "uid": "5ba0fad95f1eaea8",
+              "valid": true,
+              "success": true,
+              "steps": 93
+            },
+            {
+              "uid": "84aa1230a72b4d9c",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "b4b22a30ac2369e2",
+              "valid": true,
+              "success": true,
+              "steps": 79
+            },
+            {
+              "uid": "01ddc93435ad7be4",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "239ecaf288460de4",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "50d91cd9d013c207",
+              "valid": true,
+              "success": true,
+              "steps": 94
+            },
+            {
+              "uid": "a5da980dc2675e28",
+              "valid": true,
+              "success": true,
+              "steps": 101
+            },
+            {
+              "uid": "70050ce33719fac6",
+              "valid": true,
+              "success": true,
+              "steps": 91
+            },
+            {
+              "uid": "cdbbec3cfad59722",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "f62a1990d2013a96",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "cb1c249d5b90f786",
+              "valid": true,
+              "success": true,
+              "steps": 88
+            },
+            {
+              "uid": "a15274a069e1b4e5",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            },
+            {
+              "uid": "2c00d5a43a4a7ae7",
+              "valid": true,
+              "success": false,
+              "steps": 300
+            }
+          ]
+        }
+      }
+    }
+  },
+  "summary": {
+    "teacher_by_w": {
+      "0.01": 0.9778,
+      "0.02": 0.9333,
+      "0.04": 0.7476,
+      "0.06": 0.4838,
+      "0.08": 0.3354
+    },
+    "habit_by_w": {
+      "0.01": 0.9333,
+      "0.02": 0.8222,
+      "0.04": 0.546,
+      "0.06": 0.3881,
+      "0.08": 0.2828
+    },
+    "gap_by_w": {
+      "0.01": 0.0444,
+      "0.02": 0.1111,
+      "0.04": 0.2016,
+      "0.06": 0.0957,
+      "0.08": 0.0525
+    }
+  },
+  "reading": {
+    "rule1_gap_curve": {
+      "teacher_by_w": {
+        "0.01": 0.9778,
+        "0.02": 0.9333,
+        "0.04": 0.7476,
+        "0.06": 0.4838,
+        "0.08": 0.3354
+      },
+      "habit_by_w": {
+        "0.01": 0.9333,
+        "0.02": 0.8222,
+        "0.04": 0.546,
+        "0.06": 0.3881,
+        "0.08": 0.2828
+      },
+      "gap_by_w": {
+        "0.01": 0.0444,
+        "0.02": 0.1111,
+        "0.04": 0.2016,
+        "0.06": 0.0957,
+        "0.08": 0.0525
+      },
+      "peak_w": "0.04"
+    },
+    "rule2_trend": {
+      "spearman_w_vs_gap": 0.1,
+      "p": 0.8729,
+      "gap_range": [
+        0.0444,
+        0.2016
+      ],
+      "verdict": "**비단조 — 격차는 w=0.04에서 정점(+0.202) 후 축소(0.06 +0.096, 0.08 +0.053)**. w 증가에 따라 벌어지지 않으므로 '게이트 이득 실재(현행 H3 유지)' 조건은 미충족. 판독 2 후자 갈래 = **라우팅 이득 소멸 구간 존재** → H3 재작성 + 신규 발견 등재 대상"
+    },
+    "rule3_teacher_robustness": {
+      "teacher_w008": 0.3354,
+      "drop_from_w001": -0.6424,
+      "verdict": "teacher도 w=0.08에서 0.335로 붕괴(−0.642) → '파인튜닝 기하 취약성' 가설 **철회 조건 미충족**(가설 유지). base17은 별개의 접지 함정으로 좁게 서술"
+    },
+    "routing_gain": {
+      "method": "**조건부** Σ_{게이트 기각}(teacher_succ − habit_succ)/n_total (uid 매칭). 구 산식 '주변 격차 × 기각률'은 무작위 기각자 등가여서 폐기 (연구원 정정 2026-08-16)",
+      "by_w": {
+        "0.01": {
+          "conditional_gain_per_ep": 0.0444,
+          "mean_gain_among_rejected": 0.1429,
+          "n_total": 45,
+          "n_rejected": 14,
+          "vla_routing_rate": 0.3111,
+          "mean_query_latency_ms": 31.51,
+          "latency_vs_all_habit_x": 4.3,
+          "success_pct_per_10pct_vla": 1.429
+        },
+        "0.02": {
+          "conditional_gain_per_ep": 0.1111,
+          "mean_gain_among_rejected": 0.3125,
+          "n_total": 45,
+          "n_rejected": 16,
+          "vla_routing_rate": 0.3556,
+          "mean_query_latency_ms": 34.96,
+          "latency_vs_all_habit_x": 4.78,
+          "success_pct_per_10pct_vla": 3.125
+        },
+        "0.04": {
+          "conditional_gain_per_ep": 0.1591,
+          "mean_gain_among_rejected": 0.3182,
+          "n_total": 44,
+          "n_rejected": 22,
+          "vla_routing_rate": 0.5,
+          "mean_query_latency_ms": 46.19,
+          "latency_vs_all_habit_x": 6.31,
+          "success_pct_per_10pct_vla": 3.182
+        },
+        "0.06": {
+          "conditional_gain_per_ep": 0.1163,
+          "mean_gain_among_rejected": 0.2,
+          "n_total": 43,
+          "n_rejected": 25,
+          "vla_routing_rate": 0.5814,
+          "mean_query_latency_ms": 52.52,
+          "latency_vs_all_habit_x": 7.18,
+          "success_pct_per_10pct_vla": 2.0
+        },
+        "0.08": {
+          "conditional_gain_per_ep": 0.0488,
+          "mean_gain_among_rejected": 0.0667,
+          "n_total": 41,
+          "n_rejected": 30,
+          "vla_routing_rate": 0.7317,
+          "mean_query_latency_ms": 64.21,
+          "latency_vs_all_habit_x": 8.77,
+          "success_pct_per_10pct_vla": 0.667
+        }
+      },
+      "verdict": "기각분 평균 이득이 **전 폭 양수**(+0.067~+0.318) = **게이트는 무작위보다 유익**. 조건부 이득은 w=0.04 정점(+0.159) 후 양극단에서 축소(+0.044/+0.049) — **구간 국소성 결론 불변**. 비용 축 병기: w=0.01에서 +0.044 성공률의 대가는 에피소드의 31%가 85.07ms 경로(평균 질의 지연 31.51ms = 전량 습관 대비 4.3×)"
+    },
+    "cluster_heterogeneity": {
+      "goal_task2_gap_all_w": [
+        0.0,
+        0.0,
+        0.0667,
+        0.0,
+        0.0
+      ],
+      "note": "goal_task2는 전 폭에서 격차 ≈0 (w=0.08에서도 양쪽 0.467) — 이 셀에서는 라우팅 이득이 존재하지 않는다"
+    }
+  }
+}

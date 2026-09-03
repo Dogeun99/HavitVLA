@@ -1,0 +1,105 @@
+{
+  "note": "C-T2 v2 래퍼(set_init_state+settle만 — reset 생략)의 negative result 2건. 원인 = OSC 컨트롤러 상태 이월로 로봇 홈 0.48 rad 이탈 (t2_diag4). v3(에피소드 경계 프로토콜)로 교정 — §4e·§5 이력, log.md 2026-08-15.",
+  "wrapper_version": "v2_state_reset_no_env_reset",
+  "task5_smoke": {
+    "n": 10,
+    "n_success": 0,
+    "per_episode": [
+      {
+        "uid": "9a63cd5eb6a7c9d3",
+        "outcome": "fail",
+        "stage": 2,
+        "stage_steps": {
+          "1": 124,
+          "2": null
+        }
+      },
+      {
+        "uid": "1328c2d43157873a",
+        "outcome": "fail",
+        "stage": 2,
+        "stage_steps": {
+          "1": 107,
+          "2": null
+        }
+      },
+      {
+        "uid": "3ee05bf653bdbe3c",
+        "outcome": "fail",
+        "stage": 2,
+        "stage_steps": {
+          "1": 126,
+          "2": null
+        }
+      },
+      {
+        "uid": "494bbe2ca4007b82",
+        "outcome": "fail",
+        "stage": 2,
+        "stage_steps": {
+          "1": 114,
+          "2": null
+        }
+      },
+      {
+        "uid": "eb9cb0ef5b3d0624",
+        "outcome": "fail",
+        "stage": 2,
+        "stage_steps": {
+          "1": 128,
+          "2": null
+        }
+      },
+      {
+        "uid": "c4e6a036eccfc8fa",
+        "outcome": "fail",
+        "stage": 1,
+        "stage_steps": {
+          "1": null,
+          "2": null
+        }
+      },
+      {
+        "uid": "34a4ee939167658b",
+        "outcome": "fail",
+        "stage": 2,
+        "stage_steps": {
+          "1": 131,
+          "2": null
+        }
+      },
+      {
+        "uid": "2bc6754ff183d059",
+        "outcome": "fail",
+        "stage": 2,
+        "stage_steps": {
+          "1": 133,
+          "2": null
+        }
+      },
+      {
+        "uid": "0bcf4fb897955ef2",
+        "outcome": "fail",
+        "stage": 2,
+        "stage_steps": {
+          "1": 123,
+          "2": null
+        }
+      },
+      {
+        "uid": "6b58a9d414f1e905",
+        "outcome": "fail",
+        "stage": 2,
+        "stage_steps": {
+          "1": 134,
+          "2": null
+        }
+      }
+    ]
+  },
+  "task0_collection_v2_discarded": {
+    "n": 120,
+    "n_success": 112,
+    "note": "v2 전환으로 수집 — teacher가 이탈 포즈에 강건해 112/120 성공했으나, 런타임(v3)과 전이 과정 불일치로 폐기·재수집. 원본은 data/e3/*.v2bak 보존."
+  }
+}

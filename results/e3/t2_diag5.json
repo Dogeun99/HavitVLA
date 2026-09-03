@@ -1,0 +1,231 @@
+{
+  "n_targets": 20,
+  "n_reproduced_fail": 2,
+  "band_identity": {
+    "identical": true,
+    "samples": [
+      {
+        "base": 3,
+        "noise": 500003,
+        "max_abs_diff": 0.0
+      },
+      {
+        "base": 25,
+        "noise": 500008,
+        "max_abs_diff": 0.0
+      },
+      {
+        "base": 30,
+        "noise": 123,
+        "max_abs_diff": 0.0
+      }
+    ]
+  },
+  "failure_mode_counts": {
+    "no_object_in_basket": 2
+  },
+  "world": "B",
+  "verdict": "B: fresh 성공 존재 — 비동등 신호, 교체 중단·연구원 회부",
+  "per_episode": [
+    {
+      "uid": "494bbe2ca4007b82",
+      "reloc_base": 20,
+      "reloc_noise": 500003,
+      "seed": 10003,
+      "fresh_success": true,
+      "steps": 127,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "0bcf4fb897955ef2",
+      "reloc_base": 25,
+      "reloc_noise": 500008,
+      "seed": 10008,
+      "fresh_success": true,
+      "steps": 245,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "5c89528623e45d15",
+      "reloc_base": 31,
+      "reloc_noise": 500014,
+      "seed": 10014,
+      "fresh_success": true,
+      "steps": 123,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "2f710663fc33bd7a",
+      "reloc_base": 32,
+      "reloc_noise": 500015,
+      "seed": 10015,
+      "fresh_success": true,
+      "steps": 122,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "a3a9b9ac358b8077",
+      "reloc_base": 0,
+      "reloc_noise": 500023,
+      "seed": 10023,
+      "fresh_success": true,
+      "steps": 111,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "4130cd46fdb2c1c5",
+      "reloc_base": 6,
+      "reloc_noise": 500029,
+      "seed": 10029,
+      "fresh_success": true,
+      "steps": 156,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "6aad2114fae78672",
+      "reloc_base": 13,
+      "reloc_noise": 500036,
+      "seed": 10036,
+      "fresh_success": false,
+      "steps": 280,
+      "failure_mode": "no_object_in_basket",
+      "objects_in_basket": []
+    },
+    {
+      "uid": "7f7afdeef83ee76a",
+      "reloc_base": 23,
+      "reloc_noise": 500046,
+      "seed": 10046,
+      "fresh_success": true,
+      "steps": 220,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "4c32f401610e3c29",
+      "reloc_base": 25,
+      "reloc_noise": 500048,
+      "seed": 10048,
+      "fresh_success": true,
+      "steps": 193,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "8764b6d1f7340dfa",
+      "reloc_base": 32,
+      "reloc_noise": 500055,
+      "seed": 10055,
+      "fresh_success": false,
+      "steps": 280,
+      "failure_mode": "no_object_in_basket",
+      "objects_in_basket": []
+    },
+    {
+      "uid": "2866a3d802a15c3f",
+      "reloc_base": 33,
+      "reloc_noise": 500056,
+      "seed": 10056,
+      "fresh_success": true,
+      "steps": 129,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "479652ed610fde82",
+      "reloc_base": 35,
+      "reloc_noise": 500058,
+      "seed": 10058,
+      "fresh_success": true,
+      "steps": 125,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "431af3aeb08aef69",
+      "reloc_base": 37,
+      "reloc_noise": 500060,
+      "seed": 10060,
+      "fresh_success": true,
+      "steps": 128,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "72eabeaf38ac9764",
+      "reloc_base": 3,
+      "reloc_noise": 500066,
+      "seed": 10066,
+      "fresh_success": true,
+      "steps": 128,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "6c629fcee58daa72",
+      "reloc_base": 13,
+      "reloc_noise": 500076,
+      "seed": 10076,
+      "fresh_success": true,
+      "steps": 133,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "ac3c45d882d6df2b",
+      "reloc_base": 29,
+      "reloc_noise": 500092,
+      "seed": 10092,
+      "fresh_success": true,
+      "steps": 133,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "1a9a1bb99a1ac303",
+      "reloc_base": 35,
+      "reloc_noise": 500098,
+      "seed": 10098,
+      "fresh_success": true,
+      "steps": 131,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "edfb2b397492de64",
+      "reloc_base": 0,
+      "reloc_noise": 500103,
+      "seed": 10103,
+      "fresh_success": true,
+      "steps": 110,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "4ffc41ab963e8911",
+      "reloc_base": 14,
+      "reloc_noise": 500117,
+      "seed": 10117,
+      "fresh_success": true,
+      "steps": 129,
+      "failure_mode": null,
+      "objects_in_basket": null
+    },
+    {
+      "uid": "bc1e2496204bd6f9",
+      "reloc_base": 16,
+      "reloc_noise": 500119,
+      "seed": 10119,
+      "fresh_success": true,
+      "steps": 129,
+      "failure_mode": null,
+      "objects_in_basket": null
+    }
+  ]
+}

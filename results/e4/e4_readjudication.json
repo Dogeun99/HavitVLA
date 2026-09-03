@@ -1,0 +1,617 @@
+{
+  "threshold": 0.75,
+  "composition": "primary = w_expand(전 스위트, long w=0.02) ∪ borrow(spatial); resample = in-distribution negative control",
+  "clusters": {
+    "libero_object_task0": {
+      "auc_primary": 0.7053,
+      "false_reject_at_q": 0.55,
+      "q": 7.108,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.27
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.7053
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.4725
+        }
+      }
+    },
+    "libero_object_task1": {
+      "auc_primary": 0.805,
+      "false_reject_at_q": 0.45,
+      "q": 6.263,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.1625
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.805
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.61
+        }
+      }
+    },
+    "libero_object_task2": {
+      "auc_primary": 0.98,
+      "false_reject_at_q": 0.1,
+      "q": 7.259,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.285
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.98
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.8875
+        }
+      }
+    },
+    "libero_object_task3": {
+      "auc_primary": 0.7025,
+      "false_reject_at_q": 0.45,
+      "q": 6.365,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.125
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.7025
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.65
+        }
+      }
+    },
+    "libero_object_task4": {
+      "auc_primary": 0.7658,
+      "false_reject_at_q": 0.35,
+      "q": 6.716,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.3075
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.7658
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.76
+        }
+      }
+    },
+    "libero_object_task5": {
+      "auc_primary": 0.6842,
+      "false_reject_at_q": 0.15,
+      "q": 7.189,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.2
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.6842
+        },
+        "w_expand__secondary": {
+          "n": 18,
+          "auc": 0.6333
+        }
+      }
+    },
+    "libero_object_task6": {
+      "auc_primary": 0.7882,
+      "false_reject_at_q": 0.25,
+      "q": 7.774,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.12
+        },
+        "w_expand__primary": {
+          "n": 17,
+          "auc": 0.7882
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.67
+        }
+      }
+    },
+    "libero_object_task7": {
+      "auc_primary": 0.7875,
+      "false_reject_at_q": 0.2,
+      "q": 7.091,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.1775
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.7875
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.6525
+        }
+      }
+    },
+    "libero_object_task8": {
+      "auc_primary": 0.745,
+      "false_reject_at_q": 0.2,
+      "q": 6.925,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.1725
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.745
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.6425
+        }
+      }
+    },
+    "libero_object_task9": {
+      "auc_primary": 0.7475,
+      "false_reject_at_q": 0.35,
+      "q": 6.165,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.24
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.7475
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.7525
+        }
+      }
+    },
+    "libero_goal_task0": {
+      "auc_primary": 0.61,
+      "false_reject_at_q": 0.45,
+      "q": 6.155,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.295
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.61
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.4447
+        }
+      }
+    },
+    "libero_goal_task1": {
+      "auc_primary": 0.675,
+      "false_reject_at_q": 0.3,
+      "q": 6.527,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.365
+        },
+        "w_expand__primary": {
+          "n": 18,
+          "auc": 0.675
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.5316
+        }
+      }
+    },
+    "libero_goal_task2": {
+      "auc_primary": 0.59,
+      "false_reject_at_q": 0.15,
+      "q": 7.539,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.23
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.59
+        },
+        "w_expand__secondary": {
+          "n": 17,
+          "auc": 0.4118
+        }
+      }
+    },
+    "libero_goal_task3": {
+      "auc_primary": 0.5575,
+      "false_reject_at_q": 0.3,
+      "q": 6.152,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.1725
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.5575
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.4526
+        }
+      }
+    },
+    "libero_goal_task4": {
+      "auc_primary": 0.4861,
+      "false_reject_at_q": 0.5,
+      "q": 6.29,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.1325
+        },
+        "w_expand__primary": {
+          "n": 18,
+          "auc": 0.4861
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.4053
+        }
+      }
+    },
+    "libero_goal_task5": {
+      "auc_primary": 0.6447,
+      "false_reject_at_q": 0.15,
+      "q": 6.233,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.375
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.6447
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.5763
+        }
+      }
+    },
+    "libero_goal_task6": {
+      "auc_primary": 0.5278,
+      "false_reject_at_q": 0.45,
+      "q": 6.909,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.18
+        },
+        "w_expand__primary": {
+          "n": 18,
+          "auc": 0.5278
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.3125
+        }
+      }
+    },
+    "libero_goal_task7": {
+      "auc_primary": 0.4395,
+      "false_reject_at_q": 0.2,
+      "q": 6.532,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.3025
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.4395
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.5711
+        }
+      }
+    },
+    "libero_goal_task8": {
+      "auc_primary": 0.63,
+      "false_reject_at_q": 0.4,
+      "q": 6.773,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.15
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.63
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.4079
+        }
+      }
+    },
+    "libero_goal_task9": {
+      "auc_primary": 0.6447,
+      "false_reject_at_q": 0.1,
+      "q": 7.509,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.15
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.6447
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.4526
+        }
+      }
+    },
+    "libero_spatial_task0": {
+      "auc_primary": 0.7579,
+      "false_reject_at_q": 0.1,
+      "q": 6.822,
+      "paths": {
+        "borrow__primary": {
+          "n": 20,
+          "auc": 0.8975
+        },
+        "borrow__secondary": {
+          "n": 20,
+          "auc": 0.9625
+        },
+        "resample__single": {
+          "n": 18,
+          "auc": 0.4361
+        },
+        "w_expand__primary": {
+          "n": 18,
+          "auc": 0.6028
+        },
+        "w_expand__secondary": {
+          "n": 17,
+          "auc": 0.6059
+        }
+      }
+    },
+    "libero_spatial_task1": {
+      "auc_primary": 0.7224,
+      "false_reject_at_q": 0.2,
+      "q": 6.389,
+      "paths": {
+        "borrow__primary": {
+          "n": 20,
+          "auc": 0.845
+        },
+        "borrow__secondary": {
+          "n": 19,
+          "auc": 0.9342
+        },
+        "resample__single": {
+          "n": 20,
+          "auc": 0.4425
+        },
+        "w_expand__primary": {
+          "n": 18,
+          "auc": 0.5861
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.3605
+        }
+      }
+    },
+    "libero_10_task0": {
+      "auc_primary": 0.4536,
+      "false_reject_at_q": 0.0,
+      "q": 8.609,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.2425
+        },
+        "w_expand__primary": {
+          "n": 14,
+          "auc": 0.4536
+        },
+        "w_expand__secondary": {
+          "n": 18,
+          "auc": 0.35
+        }
+      }
+    },
+    "libero_10_task2": {
+      "auc_primary": 0.4375,
+      "false_reject_at_q": 0.0,
+      "q": 7.551,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.52
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.4375
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.5825
+        }
+      }
+    },
+    "libero_10_task5": {
+      "auc_primary": 0.5525,
+      "false_reject_at_q": 0.25,
+      "q": 6.934,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.6975
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.5525
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.28
+        }
+      }
+    }
+  },
+  "per_path_macro": {
+    "borrow__primary": 0.8712,
+    "borrow__secondary": 0.9484,
+    "resample__single": 0.27,
+    "w_expand__primary": 0.646,
+    "w_expand__secondary": 0.539
+  },
+  "per_suite_macro": {
+    "libero_10": 0.4812,
+    "libero_goal": 0.5805,
+    "libero_object": 0.7711,
+    "libero_spatial": 0.7401
+  },
+  "negative_control": {
+    "libero_object_task0": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_object_task1": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_object_task2": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_object_task3": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_object_task4": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_object_task5": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_object_task6": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_object_task7": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_object_task8": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_object_task9": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_goal_task0": {
+      "n": 20,
+      "accept_rate_at_q": 0.9
+    },
+    "libero_goal_task1": {
+      "n": 20,
+      "accept_rate_at_q": 0.95
+    },
+    "libero_goal_task2": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_goal_task3": {
+      "n": 20,
+      "accept_rate_at_q": 0.95
+    },
+    "libero_goal_task4": {
+      "n": 20,
+      "accept_rate_at_q": 0.95
+    },
+    "libero_goal_task5": {
+      "n": 20,
+      "accept_rate_at_q": 0.9
+    },
+    "libero_goal_task6": {
+      "n": 20,
+      "accept_rate_at_q": 0.95
+    },
+    "libero_goal_task7": {
+      "n": 20,
+      "accept_rate_at_q": 0.9
+    },
+    "libero_goal_task8": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_goal_task9": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_spatial_task0": {
+      "n": 18,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_spatial_task1": {
+      "n": 20,
+      "accept_rate_at_q": 0.95
+    },
+    "libero_10_task0": {
+      "n": 20,
+      "accept_rate_at_q": 1.0
+    },
+    "libero_10_task2": {
+      "n": 20,
+      "accept_rate_at_q": 0.95
+    },
+    "libero_10_task5": {
+      "n": 20,
+      "accept_rate_at_q": 0.8
+    }
+  },
+  "macro_auc": 0.6576,
+  "n_below_threshold": 19,
+  "mean_false_reject": 0.264,
+  "mean_negative_control_accept": 0.968,
+  "verdict": "REDUCE (§3 축소 경로 — E5 성숙도 단독, 1회 약정에 따라 확정)"
+}

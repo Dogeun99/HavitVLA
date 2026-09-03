@@ -1,0 +1,139 @@
+{
+  "note": "v11 패치 검증 근거. 원고 환경에서 재산출 불가한 값을 실험 원장에서 산출.",
+  "source": "results/e5/stream_{0,1,2}.jsonl · reading_*.json · summary_*.json · e1_latency.json",
+  "P3_routing_by_pool": {
+    "scope": "full stream, episode-weighted",
+    "standard_pooled": {
+      "vla": 6420,
+      "n": 10800,
+      "rate": 0.594444
+    },
+    "standard_per_seed_mean": {
+      "values": [
+        0.598611,
+        0.609167,
+        0.575556
+      ],
+      "mean": 0.594444,
+      "sd": 0.017189
+    },
+    "cold_start_per_seed_mean": {
+      "values": [
+        0.7725,
+        0.855,
+        0.7775
+      ],
+      "mean": 0.801667,
+      "sd": 0.046256
+    },
+    "verdict": "standard = 0.594444 → 4자리 0.5944 (원고 0.5945는 올림 오기) · cold-start 0.8017 (원고 일치)"
+  },
+  "P12_P14_formation_cost": {
+    "events": {
+      "n20": 99,
+      "n80": 53,
+      "total": 152
+    },
+    "event_wall_s": {
+      "20": 289.0,
+      "80": 696.8
+    },
+    "train_rate_steps_per_s": 44.0,
+    "train_steps": {
+      "20": 10000,
+      "80": 28000
+    },
+    "train_s_estimated": {
+      "20": 227.3,
+      "80": 636.3
+    },
+    "probe_prep_s": {
+      "20": 61.7,
+      "80": 60.5
+    },
+    "weighted_event_s": 431.2,
+    "weighted_train_s": 369.9,
+    "train_fraction": 0.8579,
+    "vla_call_equivalents": {
+      "train_only": 4348,
+      "full_event": 5068
+    },
+    "manuscript_anchor": {
+      "value_s": 181.8,
+      "calls": 2137.0,
+      "source": "checkpoints/libero_object_task0/train_summary.json (E2 C-L0, warm-start from n=20)",
+      "issue": "E2 배치 8,000스텝 warm-start n=40 — E5(B-2 scratch, 10,000/28,000 스텝) 조건이 아님"
+    },
+    "per_seed_event_s": {
+      "values": [
+        433.882353,
+        427.29,
+        432.262745
+      ],
+      "mean": 431.1,
+      "sd": 3.4
+    }
+  },
+  "P13_late_X_share": {
+    "per_seed": {
+      "values": [
+        0.727735,
+        0.764317,
+        0.711957
+      ],
+      "mean": 0.7347,
+      "sd": 0.0269
+    },
+    "pooled": {
+      "x": 895,
+      "vla": 1215,
+      "rate": 0.736626
+    },
+    "verdict": "원고 73.47% = seed별 비율의 비가중 평균 73.4670% (일치) · pooled는 73.6626%"
+  },
+  "check1_maturity_counts": {
+    "ever_matured": {
+      "values": [
+        22.0,
+        18.0,
+        21.0
+      ],
+      "mean": 20.3333,
+      "sd": 2.0817
+    },
+    "final_M": {
+      "values": [
+        19.0,
+        16.0,
+        20.0
+      ],
+      "mean": 18.3333,
+      "sd": 2.0817
+    },
+    "verdict": "20.3±2.1 = ever-matured · 18.3±2.1 = final-M"
+  },
+  "check2_tau_scope": {
+    "verdict": "per-cluster",
+    "evidence": "ClusterState마다 ACIRiskController 보유; observe_fire가 해당 클러스터 maturity.tau만 갱신. 실측: 최종 τ가 클러스터별로 상이, 첫 발화 실패 후 타 클러스터 τ 변화 0건",
+    "final_tau_distribution": {
+      "0.8": 30,
+      "0.816": 2,
+      "0.84": 1
+    }
+  },
+  "check5_h2_definitions": {
+    "between_share_formula": "SS_between / SS_total on censored ranks (순위 기반 η²)",
+    "censoring": ">80 → CENSOR_CAP=160 치환 후 rankdata (공동 최상위)",
+    "censored_clusters": [
+      "libero_10_task0"
+    ],
+    "formation_cells_n": 22,
+    "verdict": "절단 1개는 long 스위트 → Fig. 2(b) 22셀 밖"
+  },
+  "test_names": {
+    "p_0.0968": "one-sided Fisher exact test (fisher_exact alternative='less')",
+    "p_0.0049": "one-sided exact binomial",
+    "H4a": "one-sided two-proportion z-test",
+    "H4b": "paired bootstrap B=10,000, margin −0.03"
+  }
+}

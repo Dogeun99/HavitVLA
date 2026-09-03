@@ -1,0 +1,721 @@
+{
+  "seed_idx": 0,
+  "n_episodes": 4000,
+  "prereg_rules": {
+    "noninferiority": "paired bootstrap 95% CI, margin −3%p (§1)",
+    "call_rate": "첫 1,000 ep vs 끝 1,000 ep, 단측 (§1)",
+    "risk": "Pr(fail|fire) ≤ ε = 0.2 (§3.5, ACI 추적)",
+    "ledgers": "운영/형성/평가 3장부 (§4h)"
+  },
+  "overview": {
+    "n_valid": 4000,
+    "n_infra_error": 0,
+    "n_fire": 1337,
+    "n_vla": 2663,
+    "r_V_overall": 0.6657,
+    "system_success_rate": 0.9625,
+    "fire_success_rate": 0.9678,
+    "vla_success_rate": 0.9598,
+    "decision_reason": {
+      "fire": 1337,
+      "habit_ineligible": 600,
+      "immature": 2030,
+      "unknown_cluster": 33
+    }
+  },
+  "H4a_call_rate_reduction": {
+    "p_first": 0.896,
+    "p_last": 0.496,
+    "diff": 0.4,
+    "z": 19.445,
+    "p_value": 1.6125069666346812e-84,
+    "log10_p": -83.79,
+    "p_report": "1.61e-84",
+    "alpha": 0.05,
+    "verdict": "PASS"
+  },
+  "r_V_trajectory_bin200": [
+    {
+      "ep_start": 0,
+      "r_V": 1.0,
+      "success": 0.99
+    },
+    {
+      "ep_start": 200,
+      "r_V": 1.0,
+      "success": 0.97
+    },
+    {
+      "ep_start": 400,
+      "r_V": 0.895,
+      "success": 0.95
+    },
+    {
+      "ep_start": 600,
+      "r_V": 0.825,
+      "success": 0.97
+    },
+    {
+      "ep_start": 800,
+      "r_V": 0.76,
+      "success": 0.97
+    },
+    {
+      "ep_start": 1000,
+      "r_V": 0.72,
+      "success": 0.97
+    },
+    {
+      "ep_start": 1200,
+      "r_V": 0.735,
+      "success": 0.95
+    },
+    {
+      "ep_start": 1400,
+      "r_V": 0.715,
+      "success": 0.965
+    },
+    {
+      "ep_start": 1600,
+      "r_V": 0.725,
+      "success": 0.965
+    },
+    {
+      "ep_start": 1800,
+      "r_V": 0.77,
+      "success": 0.965
+    },
+    {
+      "ep_start": 2000,
+      "r_V": 0.705,
+      "success": 0.96
+    },
+    {
+      "ep_start": 2200,
+      "r_V": 0.55,
+      "success": 0.945
+    },
+    {
+      "ep_start": 2400,
+      "r_V": 0.57,
+      "success": 0.97
+    },
+    {
+      "ep_start": 2600,
+      "r_V": 0.44,
+      "success": 0.975
+    },
+    {
+      "ep_start": 2800,
+      "r_V": 0.425,
+      "success": 0.945
+    },
+    {
+      "ep_start": 3000,
+      "r_V": 0.515,
+      "success": 0.96
+    },
+    {
+      "ep_start": 3200,
+      "r_V": 0.48,
+      "success": 0.98
+    },
+    {
+      "ep_start": 3400,
+      "r_V": 0.455,
+      "success": 0.945
+    },
+    {
+      "ep_start": 3600,
+      "r_V": 0.555,
+      "success": 0.96
+    },
+    {
+      "ep_start": 3800,
+      "r_V": 0.475,
+      "success": 0.945
+    }
+  ],
+  "lifecycle": {
+    "libero_10_task0": {
+      "final_state": "X",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 121,
+      "final_tau": 0.8
+    },
+    "libero_10_task2": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 805,
+      "exposures_to_maturity": 22,
+      "n_fire": 123,
+      "fire_success": 0.9675,
+      "final_bc_pool": 20,
+      "final_tau": 0.8
+    },
+    "libero_10_task5": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 2222,
+      "exposures_to_maturity": 81,
+      "n_fire": 64,
+      "fire_success": 0.9844,
+      "final_bc_pool": 80,
+      "final_tau": 0.804
+    },
+    "libero_goal_task0": {
+      "final_state": "X",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 137,
+      "final_tau": 0.8
+    },
+    "libero_goal_task1": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 697,
+      "exposures_to_maturity": 21,
+      "n_fire": 124,
+      "fire_success": 0.9919,
+      "final_bc_pool": 20,
+      "final_tau": 0.8
+    },
+    "libero_goal_task2": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 522,
+      "exposures_to_maturity": 21,
+      "n_fire": 124,
+      "fire_success": 1.0,
+      "final_bc_pool": 20,
+      "final_tau": 0.8
+    },
+    "libero_goal_task3": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 2253,
+      "exposures_to_maturity": 91,
+      "n_fire": 54,
+      "fire_success": 0.9259,
+      "final_bc_pool": 80,
+      "final_tau": 0.8
+    },
+    "libero_goal_task4": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 492,
+      "exposures_to_maturity": 21,
+      "n_fire": 64,
+      "fire_success": 0.9219,
+      "final_bc_pool": 80,
+      "final_tau": 0.8
+    },
+    "libero_goal_task5": {
+      "final_state": "X",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 143,
+      "final_tau": 0.8
+    },
+    "libero_goal_task6": {
+      "final_state": "X",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 138,
+      "final_tau": 0.8
+    },
+    "libero_goal_task7": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 404,
+      "exposures_to_maturity": 21,
+      "n_fire": 124,
+      "fire_success": 1.0,
+      "final_bc_pool": 20,
+      "final_tau": 0.8
+    },
+    "libero_goal_task8": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 526,
+      "exposures_to_maturity": 21,
+      "n_fire": 124,
+      "fire_success": 0.9597,
+      "final_bc_pool": 20,
+      "final_tau": 0.8
+    },
+    "libero_goal_task9": {
+      "final_state": "X",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 143,
+      "final_tau": 0.8
+    },
+    "libero_object_task0": {
+      "final_state": "X",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 140,
+      "final_tau": 0.8
+    },
+    "libero_object_task1": {
+      "final_state": "X",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 141,
+      "final_tau": 0.8
+    },
+    "libero_object_task2": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 677,
+      "exposures_to_maturity": 21,
+      "n_fire": 124,
+      "fire_success": 0.9677,
+      "final_bc_pool": 20,
+      "final_tau": 0.8
+    },
+    "libero_object_task3": {
+      "final_state": "I",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 2153,
+      "exposures_to_maturity": 83,
+      "n_fire": 5,
+      "fire_success": 0.8,
+      "final_bc_pool": 133,
+      "final_tau": 0.816
+    },
+    "libero_object_task4": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 2045,
+      "exposures_to_maturity": 81,
+      "n_fire": 64,
+      "fire_success": 0.9844,
+      "final_bc_pool": 80,
+      "final_tau": 0.8
+    },
+    "libero_object_task5": {
+      "final_state": "X",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 132,
+      "final_tau": 0.8
+    },
+    "libero_object_task6": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 2515,
+      "exposures_to_maturity": 84,
+      "n_fire": 61,
+      "fire_success": 0.9836,
+      "final_bc_pool": 80,
+      "final_tau": 0.8
+    },
+    "libero_object_task7": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 2178,
+      "exposures_to_maturity": 82,
+      "n_fire": 63,
+      "fire_success": 1.0,
+      "final_bc_pool": 80,
+      "final_tau": 0.8
+    },
+    "libero_object_task8": {
+      "final_state": "X",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 140,
+      "final_tau": 0.8
+    },
+    "libero_object_task9": {
+      "final_state": "X",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 139,
+      "final_tau": 0.8
+    },
+    "libero_spatial_task0": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 509,
+      "exposures_to_maturity": 22,
+      "n_fire": 123,
+      "fire_success": 0.8943,
+      "final_bc_pool": 20,
+      "final_tau": 0.828
+    },
+    "libero_spatial_task1": {
+      "final_state": "M",
+      "exposures": 144,
+      "is_novel_pool": false,
+      "stream_eps_to_maturity": 2520,
+      "exposures_to_maturity": 81,
+      "n_fire": 64,
+      "fire_success": 0.9844,
+      "final_bc_pool": 80,
+      "final_tau": 0.8
+    },
+    "libero_spatial_task2": {
+      "final_state": "I",
+      "exposures": 50,
+      "is_novel_pool": true,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 49,
+      "final_tau": 0.8
+    },
+    "libero_spatial_task3": {
+      "final_state": "I",
+      "exposures": 50,
+      "is_novel_pool": true,
+      "stream_eps_to_maturity": 1770,
+      "exposures_to_maturity": 21,
+      "n_fire": 5,
+      "fire_success": 0.8,
+      "final_bc_pool": 43,
+      "final_tau": 0.816
+    },
+    "libero_spatial_task4": {
+      "final_state": "I",
+      "exposures": 50,
+      "is_novel_pool": true,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 49,
+      "final_tau": 0.8
+    },
+    "libero_spatial_task5": {
+      "final_state": "I",
+      "exposures": 50,
+      "is_novel_pool": true,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 42,
+      "final_tau": 0.8
+    },
+    "libero_spatial_task6": {
+      "final_state": "I",
+      "exposures": 50,
+      "is_novel_pool": true,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 50,
+      "final_tau": 0.8
+    },
+    "libero_spatial_task7": {
+      "final_state": "M",
+      "exposures": 50,
+      "is_novel_pool": true,
+      "stream_eps_to_maturity": 1750,
+      "exposures_to_maturity": 24,
+      "n_fire": 27,
+      "fire_success": 0.963,
+      "final_bc_pool": 20,
+      "final_tau": 0.8
+    },
+    "libero_spatial_task8": {
+      "final_state": "I",
+      "exposures": 50,
+      "is_novel_pool": true,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 47,
+      "final_tau": 0.8
+    },
+    "libero_spatial_task9": {
+      "final_state": "I",
+      "exposures": 50,
+      "is_novel_pool": true,
+      "stream_eps_to_maturity": null,
+      "exposures_to_maturity": null,
+      "n_fire": 0,
+      "fire_success": 0.0,
+      "final_bc_pool": 49,
+      "final_tau": 0.8
+    }
+  },
+  "maturity_dual_report": {
+    "n_reached_maturity": 17,
+    "n_clusters": 33,
+    "stream_eps_to_maturity_median": 1750,
+    "exposures_to_maturity_median": 22,
+    "exposures_to_maturity_range": [
+      21,
+      91
+    ],
+    "note": "이원 보고 ② — 클러스터 수준 N*(k)는 E3 배치 곡선(별도)"
+  },
+  "formation_ledger": {
+    "n_retrain": 51,
+    "by_grid_n": {
+      "20": {
+        "attempts": 33,
+        "passed": 10,
+        "pass_rate": 0.303
+      },
+      "80": {
+        "attempts": 18,
+        "passed": 8,
+        "pass_rate": 0.4444
+      }
+    },
+    "by_probe_round": {
+      "1": {
+        "attempts": 33,
+        "passed": 10
+      },
+      "2": {
+        "attempts": 18,
+        "passed": 8
+      }
+    },
+    "n_passed": 18,
+    "pass_rate": 0.3529,
+    "formation_wall_s": 11776.8,
+    "formation_episodes": 1020,
+    "act_train_anchor_s": 181.8,
+    "vla_call_equivalents_per_retrain": 2137.0,
+    "note": "지연 주장에 불산입 — 별도 보고 (§4h 3장부)"
+  },
+  "risk_control": {
+    "pr_fail_given_fire": 0.0322,
+    "epsilon": 0.2,
+    "within_bound": true,
+    "ci95_wilson": [
+      0.024,
+      0.043
+    ],
+    "tau_final_max": 0.832,
+    "tau_raised_episodes": 313,
+    "clusters_with_tau_raised": [
+      "libero_10_task2",
+      "libero_10_task5",
+      "libero_goal_task1",
+      "libero_goal_task3",
+      "libero_goal_task4",
+      "libero_goal_task8",
+      "libero_object_task2",
+      "libero_object_task3",
+      "libero_object_task4",
+      "libero_object_task6",
+      "libero_spatial_task0",
+      "libero_spatial_task1",
+      "libero_spatial_task3",
+      "libero_spatial_task7"
+    ]
+  },
+  "novel_injection": {
+    "n_novel": 400,
+    "rate": 0.1,
+    "novel_r_V": 0.92,
+    "regular_r_V": 0.6375,
+    "novel_success": 0.9475,
+    "regular_success": 0.9642,
+    "novel_clusters_matured": [
+      "libero_spatial_task7"
+    ]
+  },
+  "shadow_jurisdiction_counterfactual": {
+    "prereg_prediction": {
+      "conditional_gain_per_ep": 0.0444,
+      "vla_routing_increase_pp": 31.0,
+      "latency_ratio": 4.3,
+      "latency_on_ms": 31.51,
+      "latency_off_ms": 7.32,
+      "source": "configs/preregistration.md §5 2026-08-16 (E5 판정 7)"
+    },
+    "unit_basis": {
+      "scale": "질의(chunk)당 ms, 대상 = 발화 후보",
+      "off_formula": "anchor2(ACT) + anchor3(gate) = conservative_floor",
+      "on_formula": "x·anchor1(OFT) + (1−x)·off, x = 발화 중 관할 기각 비율",
+      "off_reconstruction_error_ms": 0.0,
+      "verified": true
+    },
+    "coverage": {
+      "n_with_score": 3600,
+      "n_without_score": 400,
+      "reason_without": "관할 참조 분포(μ_k, Σ_k) 미적합 클러스터 — 원리상 산출 불가"
+    },
+    "observed": {
+      "fire_shadow_reject_n": 76,
+      "fire_shadow_reject_rate": 0.0568,
+      "r_V_off": 0.6657,
+      "r_V_on": 0.6847,
+      "vla_routing_increase_pp": 1.9,
+      "query_latency_off_ms": 7.32,
+      "query_latency_on_ms": 11.74,
+      "latency_ratio": 1.604
+    },
+    "prediction_vs_observed": {
+      "routing_increase_pp": {
+        "predicted": 31.0,
+        "observed": 1.9
+      },
+      "latency_ratio": {
+        "predicted": 4.3,
+        "observed": 1.604
+      }
+    },
+    "note": "추가 rollout 0 — shadow_jur 로그만으로 산출 (§5 등재)",
+    "divergence_diagnosis": {
+      "e4r_reject_rate_at_w001_original_q": 0.2,
+      "observed_stream_reject_rate": 0.0568,
+      "hypothesis": "예측치는 E4-R 원 보정 q의 기각률에서 유도, E5 그림자는 재보정 q (§5 2026-08-16: known held-out 50:50 분할, FR 0.264→0.06) 사용 — 보정 절차 불일치가 예측·실측 격차의 후보 원인",
+      "recalibrated_fr_reference": {
+        "mean_fr": 0.06,
+        "mean_fr_before": 0.264
+      }
+    }
+  },
+  "r_V_tail_decomposition": {
+    "kind": "post-hoc decomposition — 판정 근거 아님(H4a는 사전등록 단측 검정)",
+    "window": "last 1000 ep",
+    "r_V_observed": 0.496,
+    "vla_calls_by_lifecycle_state": {
+      "I": 138,
+      "X": 358
+    },
+    "share_of_window": {
+      "I": 0.138,
+      "X": 0.358
+    },
+    "state_meaning": {
+      "X": "습관 부적격(R_max 소진) — 형성 실패로 확정, 재도전 없음",
+      "I": "기지-미성숙 — BC 풀 축적 중이거나 재학습 기회 소진",
+      "U": "미지 — 클러스터 신설 직후"
+    },
+    "ceiling_if_all_eligible_matured": 0.5165,
+    "note": "후반 r_V 정체가 습관 성능 저하 때문인지, 잔여 VLA가 X·I 클러스터에 고정된 결과인지 구분하기 위한 분해"
+  },
+  "demotions": {
+    "n_demotions": 3,
+    "events": [
+      {
+        "cluster": "libero_goal_task4",
+        "t": 716,
+        "fires_before_demotion": 6,
+        "fire_fails_before": 1,
+        "sigma": 24.0,
+        "phi": 2.0,
+        "p_ge_tau": 0.8971,
+        "tau": 0.816,
+        "regained_M": true
+      },
+      {
+        "cluster": "libero_object_task3",
+        "t": 2373,
+        "fires_before_demotion": 5,
+        "fire_fails_before": 1,
+        "sigma": 27.25,
+        "phi": 2.75,
+        "p_ge_tau": 0.8768,
+        "tau": 0.816,
+        "regained_M": false
+      },
+      {
+        "cluster": "libero_spatial_task3",
+        "t": 1905,
+        "fires_before_demotion": 5,
+        "fire_fails_before": 1,
+        "sigma": 23.0,
+        "phi": 2.0,
+        "p_ge_tau": 0.8817,
+        "tau": 0.816,
+        "regained_M": false
+      }
+    ],
+    "n_regained": 1,
+    "median_fires_before_demotion": 5,
+    "note": "성숙 직후 σ가 작을 때 단일 실패 + ACI τ 상향이 강등을 촉발하는지 — 재초기화 계수 c=0.25가 σ를 압축하므로 성숙 초기가 구조적으로 취약하다는 가설의 시험"
+  },
+  "H4b_noninferiority": {
+    "n_paired_episodes": 2968,
+    "system_rate": 0.9602,
+    "full_vla_rate": 0.9629,
+    "diff": -0.0027,
+    "ci95": [
+      -0.0047,
+      -0.0007
+    ],
+    "margin": -0.03,
+    "B": 10000,
+    "seed": 0,
+    "noninferior": true,
+    "n_cf_missing": 1032,
+    "cf_complete": false,
+    "verdict": "PARTIAL — CF 미완, 판정 보류(발화 표본 누락으로 편향)"
+  },
+  "ledgers": {
+    "operational_s": 34466.9,
+    "formation_s": 11776.8,
+    "evaluation_s": "counterfactual 배치 (측정 아티팩트 — 비용 미보고)",
+    "total_wall_s": 50515.6
+  }
+}

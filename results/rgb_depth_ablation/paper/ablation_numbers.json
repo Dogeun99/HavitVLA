@@ -1,0 +1,133 @@
+{
+ "generated_from": "results/rgb_depth_ablation/ablation_summary.json",
+ "stage": "Stage 1 screening (지시서 2026-08-28). formal equivalence/non-inferiority 주장 아님.",
+ "screening_case": "B",
+ "macros": [
+  {
+   "macro": "AblaClusters",
+   "value": 6,
+   "formatted": "6",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: clusters[]"
+  },
+  {
+   "macro": "AblaEpisodes",
+   "value": 1200,
+   "formatted": "1,200",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: paired.n_episodes"
+  },
+  {
+   "macro": "AblaHeldout",
+   "value": 50,
+   "formatted": "50",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: n_heldout"
+  },
+  {
+   "macro": "AblaParamDelta",
+   "value": 6272,
+   "formatted": "6,272",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: param_delta"
+  },
+  {
+   "macro": "AblaParamPct",
+   "value": 0.0066,
+   "formatted": "0.0066",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: param_delta / params.rgbd"
+  },
+  {
+   "macro": "AblaPairedDelta",
+   "value": -0.015,
+   "formatted": "-0.0150",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: paired.mean_delta_success"
+  },
+  {
+   "macro": "AblaPairedLo",
+   "value": -0.0392,
+   "formatted": "-0.0392",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: paired.ci95_bootstrap[0]"
+  },
+  {
+   "macro": "AblaPairedHi",
+   "value": 0.0092,
+   "formatted": "+0.0092",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: paired.ci95_bootstrap[1]"
+  },
+  {
+   "macro": "AblaMcNemarP",
+   "value": 0.2495,
+   "formatted": "0.2495",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: paired.mcnemar_exact_p (exact McNemar, two-sided)"
+  },
+  {
+   "macro": "AblaDiscRGB",
+   "value": 100,
+   "formatted": "100",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: paired.discordant_rgb_only_success"
+  },
+  {
+   "macro": "AblaDiscRGBD",
+   "value": 118,
+   "formatted": "118",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: paired.discordant_rgbd_only_success"
+  },
+  {
+   "macro": "AblaDropEighty",
+   "value": 3.67,
+   "formatted": "3.67",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: mean_drop_pp_at_n80 (percentage points)"
+  },
+  {
+   "macro": "AblaDropEightyExLong",
+   "value": 1.6,
+   "formatted": "1.60",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: mean over rows[n=80].delta_success excluding libero_10_task0, sign-flipped to a drop"
+  },
+  {
+   "macro": "AblaNstarSame",
+   "value": 4,
+   "formatted": "4",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: per_cluster_nstar: rgbd == rgb"
+  },
+  {
+   "macro": "AblaNstarMoved",
+   "value": 2,
+   "formatted": "2",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: n_clusters_nstar_moved"
+  },
+  {
+   "macro": "AblaLongDelta",
+   "value": -0.14,
+   "formatted": "-0.14",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: rows[libero_10_task0, n=80]"
+  },
+  {
+   "macro": "AblaSpatialDelta",
+   "value": 0.02,
+   "formatted": "+0.02",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: rows[libero_spatial_task1, n=80]"
+  },
+  {
+   "macro": "AblaDeltaN10",
+   "value": -12.0,
+   "formatted": "-12.00",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: mean over rows[n=10].delta_success, percentage points"
+  },
+  {
+   "macro": "AblaDeltaN20",
+   "value": 0.0,
+   "formatted": "+0.00",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: mean over rows[n=20].delta_success, percentage points"
+  },
+  {
+   "macro": "AblaDeltaN40",
+   "value": 9.67,
+   "formatted": "+9.67",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: mean over rows[n=40].delta_success, percentage points"
+  },
+  {
+   "macro": "AblaDeltaN80",
+   "value": -3.67,
+   "formatted": "-3.67",
+   "source": "results/rgb_depth_ablation/ablation_summary.json :: mean over rows[n=80].delta_success, percentage points"
+  }
+ ]
+}

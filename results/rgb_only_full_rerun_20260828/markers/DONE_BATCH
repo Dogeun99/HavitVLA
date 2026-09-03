@@ -1,0 +1,32 @@
+{
+ "n_clusters": 27,
+ "clusters": [
+  "libero_object_task0",
+  "libero_object_task1",
+  "libero_object_task2",
+  "libero_object_task3",
+  "libero_object_task4",
+  "libero_object_task5",
+  "libero_object_task6",
+  "libero_object_task7",
+  "libero_object_task8",
+  "libero_object_task9",
+  "libero_goal_task0",
+  "libero_goal_task1",
+  "libero_goal_task2",
+  "libero_goal_task3",
+  "libero_goal_task4",
+  "libero_goal_task5",
+  "libero_goal_task6",
+  "libero_goal_task7",
+  "libero_goal_task8",
+  "libero_goal_task9",
+  "libero_spatial_task0",
+  "libero_spatial_task1",
+  "libero_10_task0",
+  "libero_10_task2",
+  "libero_10_task5",
+  "chained_libero_object_task0",
+  "chained_libero_object_task5"
+ ]
+}

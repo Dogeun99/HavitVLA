@@ -1,0 +1,627 @@
+{
+  "label": "탐색적 (post-hoc) — 사전등록 검정과 구분해 보고할 것 (§5 2026-08-17 규칙 3)",
+  "provenance": "추가 rollout 0 — results/e5/stream_2.jsonl + results/e3/e3_curves.json",
+  "seed_idx": 2,
+  "n_ineligible": 7,
+  "share_of_tail_vla_calls": 0.712,
+  "per_cluster": {
+    "libero_10_task0": {
+      "exposures": 144,
+      "final_bc_pool": 126,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2521,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 335.0
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 733.4
+        }
+      ],
+      "teacher_successes_after_ineligible": 46,
+      "exposures_after_ineligible": 51,
+      "bc_growth_after_ineligible": 45,
+      "e3_N_star": ">80",
+      "e3_curve": {
+        "10": 0.2,
+        "20": 0.45,
+        "40": 0.65,
+        "80": 0.75
+      },
+      "surplus_over_last_grid": 46
+    },
+    "libero_goal_task3": {
+      "exposures": 144,
+      "final_bc_pool": 130,
+      "bc_pool_at_ineligible": 80,
+      "t_ineligible": 2292,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 290.8
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 700.8
+        }
+      ],
+      "teacher_successes_after_ineligible": 50,
+      "exposures_after_ineligible": 57,
+      "bc_growth_after_ineligible": 50,
+      "e3_N_star": 20,
+      "e3_curve": {
+        "10": 0.7,
+        "20": 0.85,
+        "40": 0.75,
+        "80": 0.8
+      },
+      "surplus_over_last_grid": 50
+    },
+    "libero_goal_task6": {
+      "exposures": 144,
+      "final_bc_pool": 142,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 1989,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 290.7
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 691.4
+        }
+      ],
+      "teacher_successes_after_ineligible": 62,
+      "exposures_after_ineligible": 62,
+      "bc_growth_after_ineligible": 61,
+      "e3_N_star": 40,
+      "e3_curve": {
+        "10": 0.65,
+        "20": 0.65,
+        "40": 0.8,
+        "80": 1.0
+      },
+      "surplus_over_last_grid": 62
+    },
+    "libero_goal_task9": {
+      "exposures": 144,
+      "final_bc_pool": 141,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2455,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 286.5
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 694.1
+        }
+      ],
+      "teacher_successes_after_ineligible": 61,
+      "exposures_after_ineligible": 63,
+      "bc_growth_after_ineligible": 60,
+      "e3_N_star": 20,
+      "e3_curve": {
+        "10": 0.65,
+        "20": 1.0,
+        "40": 1.0,
+        "80": 1.0
+      },
+      "surplus_over_last_grid": 61
+    },
+    "libero_object_task1": {
+      "exposures": 144,
+      "final_bc_pool": 140,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 1899,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 287.8
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 695.2
+        }
+      ],
+      "teacher_successes_after_ineligible": 60,
+      "exposures_after_ineligible": 63,
+      "bc_growth_after_ineligible": 59,
+      "e3_N_star": 10,
+      "e3_curve": {
+        "10": 0.8,
+        "20": 0.8,
+        "40": 0.8,
+        "80": 0.75
+      },
+      "surplus_over_last_grid": 60
+    },
+    "libero_object_task7": {
+      "exposures": 144,
+      "final_bc_pool": 140,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2269,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 289.4
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 695.9
+        }
+      ],
+      "teacher_successes_after_ineligible": 60,
+      "exposures_after_ineligible": 64,
+      "bc_growth_after_ineligible": 59,
+      "e3_N_star": 10,
+      "e3_curve": {
+        "10": 0.85,
+        "20": 0.85,
+        "40": 0.95,
+        "80": 1.0
+      },
+      "surplus_over_last_grid": 60
+    },
+    "libero_spatial_task0": {
+      "exposures": 144,
+      "final_bc_pool": 142,
+      "bc_pool_at_ineligible": 81,
+      "t_ineligible": 2341,
+      "probe_rounds": [
+        {
+          "round": 1,
+          "n": 20,
+          "passed": false,
+          "formation_wall_s": 289.5
+        },
+        {
+          "round": 2,
+          "n": 80,
+          "passed": false,
+          "formation_wall_s": 695.3
+        }
+      ],
+      "teacher_successes_after_ineligible": 62,
+      "exposures_after_ineligible": 63,
+      "bc_growth_after_ineligible": 61,
+      "e3_N_star": 10,
+      "e3_curve": {
+        "10": 1.0,
+        "20": 0.9,
+        "40": 1.0,
+        "80": 0.95
+      },
+      "surplus_over_last_grid": 62
+    }
+  },
+  "rule1_retry_would_have_helped": {
+    "criterion": "부적격 확정 후 최종 BC 풀 > 80 (마지막 grid 지점)",
+    "n_clusters": 7,
+    "clusters": {
+      "libero_10_task0": {
+        "final_bc_pool": 126,
+        "surplus": 46,
+        "bc_growth_after_ineligible": 45
+      },
+      "libero_goal_task3": {
+        "final_bc_pool": 130,
+        "surplus": 50,
+        "bc_growth_after_ineligible": 50
+      },
+      "libero_goal_task6": {
+        "final_bc_pool": 142,
+        "surplus": 62,
+        "bc_growth_after_ineligible": 61
+      },
+      "libero_goal_task9": {
+        "final_bc_pool": 141,
+        "surplus": 61,
+        "bc_growth_after_ineligible": 60
+      },
+      "libero_object_task1": {
+        "final_bc_pool": 140,
+        "surplus": 60,
+        "bc_growth_after_ineligible": 59
+      },
+      "libero_object_task7": {
+        "final_bc_pool": 140,
+        "surplus": 60,
+        "bc_growth_after_ineligible": 59
+      },
+      "libero_spatial_task0": {
+        "final_bc_pool": 142,
+        "surplus": 62,
+        "bc_growth_after_ineligible": 61
+      }
+    },
+    "median_surplus": 60
+  },
+  "rule2_batch_vs_stream_gap": {
+    "criterion": "E3 배치에서 N* ≤ 80 (성숙 도달)인데 스트림에서 부적격",
+    "n_clusters": 6,
+    "clusters": {
+      "libero_goal_task3": {
+        "e3_N_star": 20,
+        "e3_curve": {
+          "10": 0.7,
+          "20": 0.85,
+          "40": 0.75,
+          "80": 0.8
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 290.8
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 700.8
+          }
+        ],
+        "final_bc_pool": 130
+      },
+      "libero_goal_task6": {
+        "e3_N_star": 40,
+        "e3_curve": {
+          "10": 0.65,
+          "20": 0.65,
+          "40": 0.8,
+          "80": 1.0
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 290.7
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 691.4
+          }
+        ],
+        "final_bc_pool": 142
+      },
+      "libero_goal_task9": {
+        "e3_N_star": 20,
+        "e3_curve": {
+          "10": 0.65,
+          "20": 1.0,
+          "40": 1.0,
+          "80": 1.0
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 286.5
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 694.1
+          }
+        ],
+        "final_bc_pool": 141
+      },
+      "libero_object_task1": {
+        "e3_N_star": 10,
+        "e3_curve": {
+          "10": 0.8,
+          "20": 0.8,
+          "40": 0.8,
+          "80": 0.75
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 287.8
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 695.2
+          }
+        ],
+        "final_bc_pool": 140
+      },
+      "libero_object_task7": {
+        "e3_N_star": 10,
+        "e3_curve": {
+          "10": 0.85,
+          "20": 0.85,
+          "40": 0.95,
+          "80": 1.0
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 289.4
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 695.9
+          }
+        ],
+        "final_bc_pool": 140
+      },
+      "libero_spatial_task0": {
+        "e3_N_star": 10,
+        "e3_curve": {
+          "10": 1.0,
+          "20": 0.9,
+          "40": 1.0,
+          "80": 0.95
+        },
+        "stream_probe": [
+          {
+            "round": 1,
+            "n": 20,
+            "passed": false,
+            "formation_wall_s": 289.5
+          },
+          {
+            "round": 2,
+            "n": 80,
+            "passed": false,
+            "formation_wall_s": 695.3
+          }
+        ],
+        "final_bc_pool": 142
+      }
+    },
+    "e3_right_censored": {
+      "libero_10_task0": ">80"
+    },
+    "cause_diagnosis": {
+      "kind": "사후 진단 (규칙 2의 원인 규명) — 사전 고정 규칙 아님",
+      "maturity_criterion_gap": {
+        "e3_definition": "점추정 ŝ_k(n) ≥ 0.8",
+        "e5_definition": "Pr(s_k ≥ 0.8 | D_k) ≥ 0.9",
+        "e5_required_probe_successes_round1": "19/20",
+        "e5_implied_success_rate_round1": 0.95,
+        "note": "동일한 τ=0.8을 쓰지만 E5는 사후확률 기준이라 표본 20에서 실질 요구 성공률이 0.95로 올라간다 — E3 성숙(≥0.80)과 E5 성숙은 같은 이름의 다른 문턱이다."
+      },
+      "round2_carryover_trap": {
+        "c_reinit": 0.25,
+        "f1_threshold_for_unwinnable": 9,
+        "meaning": "라운드1 실패가 9회 이상이면 c=0.25 이월로 남은 φ 때문에 라운드2에서 20/20 만점을 받아도 Pr < 0.9 — 라운드2 시작 시점에 X가 이미 확정돼 있다",
+        "n_unwinnable": 3,
+        "clusters": [
+          "libero_10_task0",
+          "libero_goal_task6",
+          "libero_object_task7"
+        ],
+        "scored_full_marks_in_round2_but_failed": [
+          "libero_object_task7"
+        ]
+      },
+      "per_cluster_probe_reconstruction": {
+        "libero_10_task0": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 7,
+              "probe_failures": 13,
+              "probe_rate": 0.35,
+              "p_ge_tau_after": 0.0,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 17,
+              "probe_failures": 3,
+              "probe_rate": 0.85,
+              "p_ge_tau_after": 0.2174,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.75,
+          "best_probe_rate": 0.85,
+          "round2_was_unwinnable": true
+        },
+        "libero_goal_task3": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 18,
+              "probe_failures": 2,
+              "probe_rate": 0.9,
+              "p_ge_tau_after": 0.8213,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 18,
+              "probe_failures": 2,
+              "probe_rate": 0.9,
+              "p_ge_tau_after": 0.8625,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.8,
+          "best_probe_rate": 0.9,
+          "round2_was_unwinnable": false
+        },
+        "libero_goal_task6": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 11,
+              "probe_failures": 9,
+              "probe_rate": 0.55,
+              "p_ge_tau_after": 0.0041,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 18,
+              "probe_failures": 2,
+              "probe_rate": 0.9,
+              "p_ge_tau_after": 0.568,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 1.0,
+          "best_probe_rate": 0.9,
+          "round2_was_unwinnable": true
+        },
+        "libero_goal_task9": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 16,
+              "probe_failures": 4,
+              "probe_rate": 0.8,
+              "p_ge_tau_after": 0.414,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 18,
+              "probe_failures": 2,
+              "probe_rate": 0.9,
+              "p_ge_tau_after": 0.7932,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 1.0,
+          "best_probe_rate": 0.9,
+          "round2_was_unwinnable": false
+        },
+        "libero_object_task1": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 13,
+              "probe_failures": 7,
+              "probe_rate": 0.65,
+              "p_ge_tau_after": 0.0431,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 19,
+              "probe_failures": 1,
+              "probe_rate": 0.95,
+              "p_ge_tau_after": 0.8298,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.75,
+          "best_probe_rate": 0.95,
+          "round2_was_unwinnable": false
+        },
+        "libero_object_task7": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 9,
+              "probe_failures": 11,
+              "probe_rate": 0.45,
+              "p_ge_tau_after": 0.0002,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 20,
+              "probe_failures": 0,
+              "probe_rate": 1.0,
+              "p_ge_tau_after": 0.8298,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 1.0,
+          "best_probe_rate": 1.0,
+          "round2_was_unwinnable": true
+        },
+        "libero_spatial_task0": {
+          "rounds": [
+            {
+              "round": 1,
+              "n": 20,
+              "probe_successes": 17,
+              "probe_failures": 3,
+              "probe_rate": 0.85,
+              "p_ge_tau_after": 0.6296,
+              "passed": false
+            },
+            {
+              "round": 2,
+              "n": 80,
+              "probe_successes": 18,
+              "probe_failures": 2,
+              "probe_rate": 0.9,
+              "p_ge_tau_after": 0.8298,
+              "passed": false
+            }
+          ],
+          "e3_heldout_at_80": 0.95,
+          "best_probe_rate": 0.9,
+          "round2_was_unwinnable": false
+        }
+      }
+    },
+    "n_star_distribution": {
+      "10": 3,
+      "20": 2,
+      "40": 1
+    }
+  }
+}

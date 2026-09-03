@@ -1,0 +1,108 @@
+{
+  "note": "C-T2 v1 래퍼(물체만 재배치, 로봇 포즈 유지)의 teacher 스모크 negative result. 전원 stage 1 성공 후 stage 2 동결 — 진단·판정은 t2_diag.json + log.md 2026-08-15. 옵션 A(전체 상태 재설정) 채택으로 래퍼 개정 (§4e·§5 이력).",
+  "wrapper_version": "v1_objects_only_relocation",
+  "n": 10,
+  "n_success": 0,
+  "per_episode": [
+    {
+      "uid": "36658450883ce4c4",
+      "outcome": "fail",
+      "stage": 2,
+      "stage_steps": {
+        "1": 137,
+        "2": null
+      },
+      "steps": 560
+    },
+    {
+      "uid": "0fa6b8801d21275c",
+      "outcome": "fail",
+      "stage": 2,
+      "stage_steps": {
+        "1": 139,
+        "2": null
+      },
+      "steps": 560
+    },
+    {
+      "uid": "a6dea2df84bbf69a",
+      "outcome": "fail",
+      "stage": 2,
+      "stage_steps": {
+        "1": 166,
+        "2": null
+      },
+      "steps": 560
+    },
+    {
+      "uid": "83cf989b801de978",
+      "outcome": "fail",
+      "stage": 2,
+      "stage_steps": {
+        "1": 125,
+        "2": null
+      },
+      "steps": 560
+    },
+    {
+      "uid": "5b37639ac3f998a3",
+      "outcome": "fail",
+      "stage": 2,
+      "stage_steps": {
+        "1": 138,
+        "2": null
+      },
+      "steps": 560
+    },
+    {
+      "uid": "67f9dcaa9fca8de2",
+      "outcome": "fail",
+      "stage": 2,
+      "stage_steps": {
+        "1": 224,
+        "2": null
+      },
+      "steps": 560
+    },
+    {
+      "uid": "224116cafd93ee2d",
+      "outcome": "fail",
+      "stage": 2,
+      "stage_steps": {
+        "1": 138,
+        "2": null
+      },
+      "steps": 560
+    },
+    {
+      "uid": "a440ab957edfac2c",
+      "outcome": "fail",
+      "stage": 2,
+      "stage_steps": {
+        "1": 136,
+        "2": null
+      },
+      "steps": 560
+    },
+    {
+      "uid": "d62aadb15e6fd3b9",
+      "outcome": "fail",
+      "stage": 2,
+      "stage_steps": {
+        "1": 145,
+        "2": null
+      },
+      "steps": 560
+    },
+    {
+      "uid": "95d08304cb5a7111",
+      "outcome": "fail",
+      "stage": 2,
+      "stage_steps": {
+        "1": 141,
+        "2": null
+      },
+      "steps": 560
+    }
+  ]
+}

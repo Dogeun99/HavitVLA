@@ -1,0 +1,322 @@
+{
+  "paths": {
+    "libero_object_task0__w_expand__primary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_object_task0__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task1__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task1__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task2__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task2__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task3__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task3__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task4__w_expand__primary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_object_task4__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task5__w_expand__primary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_object_task5__w_expand__secondary": {
+      "n_valid": 18,
+      "n_reject": 2
+    },
+    "libero_object_task6__w_expand__primary": {
+      "n_valid": 17,
+      "n_reject": 3
+    },
+    "libero_object_task6__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task7__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task7__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task8__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task8__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task9__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task9__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task0__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task0__w_expand__secondary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_goal_task1__w_expand__primary": {
+      "n_valid": 18,
+      "n_reject": 2
+    },
+    "libero_goal_task1__w_expand__secondary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_goal_task2__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task2__w_expand__secondary": {
+      "n_valid": 17,
+      "n_reject": 3
+    },
+    "libero_goal_task3__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task3__w_expand__secondary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_goal_task4__w_expand__primary": {
+      "n_valid": 18,
+      "n_reject": 2
+    },
+    "libero_goal_task4__w_expand__secondary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_goal_task5__w_expand__primary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_goal_task5__w_expand__secondary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_goal_task6__w_expand__primary": {
+      "n_valid": 18,
+      "n_reject": 2
+    },
+    "libero_goal_task6__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task7__w_expand__primary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_goal_task7__w_expand__secondary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_goal_task8__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task8__w_expand__secondary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_goal_task9__w_expand__primary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_goal_task9__w_expand__secondary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_spatial_task0__w_expand__primary": {
+      "n_valid": 18,
+      "n_reject": 2
+    },
+    "libero_spatial_task0__w_expand__secondary": {
+      "n_valid": 17,
+      "n_reject": 3
+    },
+    "libero_spatial_task1__w_expand__primary": {
+      "n_valid": 18,
+      "n_reject": 2
+    },
+    "libero_spatial_task1__w_expand__secondary": {
+      "n_valid": 19,
+      "n_reject": 1
+    },
+    "libero_10_task0__w_expand__primary": {
+      "n_valid": 14,
+      "n_reject": 6
+    },
+    "libero_10_task0__w_expand__secondary": {
+      "n_valid": 18,
+      "n_reject": 2
+    },
+    "libero_10_task2__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_10_task2__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_10_task5__w_expand__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_10_task5__w_expand__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task0__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task1__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task2__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task3__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task4__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task5__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task6__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task7__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task8__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_object_task9__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task0__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task1__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task2__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task3__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task4__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task5__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task6__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task7__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task8__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_goal_task9__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_spatial_task0__resample__single": {
+      "n_valid": 18,
+      "n_reject": 2
+    },
+    "libero_spatial_task1__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_10_task0__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_10_task2__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_10_task5__resample__single": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_spatial_task0__borrow__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_spatial_task0__borrow__secondary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_spatial_task1__borrow__primary": {
+      "n_valid": 20,
+      "n_reject": 0
+    },
+    "libero_spatial_task1__borrow__secondary": {
+      "n_valid": 19,
+      "n_reject": 1
+    }
+  },
+  "rejections": {},
+  "note": "주=base40-49 / 부차=base0-39(j+500); (iii)는 base 무관. 유효성 = E0-6 낙하·수평이탈."
+}

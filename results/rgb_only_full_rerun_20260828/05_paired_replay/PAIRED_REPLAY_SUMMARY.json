@@ -1,0 +1,180 @@
+{
+ "run_id": "rgb_only_full_rerun_20260828",
+ "modality": "rgb_only",
+ "seeds_completed": [
+  0,
+  1,
+  2
+ ],
+ "per_seed": {
+  "0": {
+   "seed": 0,
+   "n_paired_episodes": 1538,
+   "n_infra_error": 0,
+   "system_success_rate": 0.961,
+   "full_vla_success_rate": 0.9785,
+   "habit_success_rate": 0.961,
+   "paired_difference": -0.0176,
+   "bootstrap": {
+    "B": 10000,
+    "seed": 0,
+    "ci95": [
+     -0.0286,
+     -0.0072
+    ],
+    "mean": -0.0176,
+    "sd": 0.0054,
+    "file": "bootstrap_seed0.npy"
+   },
+   "noninferiority": {
+    "margin": -0.03,
+    "ci_lower": -0.0286,
+    "passes_margin": true,
+    "rule": "사전 지정 −3%p — CI 하한이 margin을 상회하면 비열등"
+   },
+   "discordant_system_only": 21,
+   "discordant_vla_only": 48,
+   "mcnemar_exact_p": 0.00155,
+   "full_stream_noninferiority": {
+    "construction": "발화분 = CF 재현 teacher 결과 / 비발화분 = VLA 실측. 논문 H4b와 동일 구성.",
+    "n_paired_episodes": 4000,
+    "n_cf_missing": 0,
+    "cf_complete": true,
+    "system_rate": 0.9573,
+    "full_vla_rate": 0.964,
+    "diff": -0.0067,
+    "ci95": [
+     -0.0107,
+     -0.0027
+    ],
+    "margin": -0.03,
+    "noninferior": true,
+    "bootstrap_file": "bootstrap_fullstream_seed0.npy",
+    "verdict": "PASS"
+   }
+  },
+  "1": {
+   "seed": 1,
+   "n_paired_episodes": 1664,
+   "n_infra_error": 0,
+   "system_success_rate": 0.9651,
+   "full_vla_success_rate": 0.9772,
+   "habit_success_rate": 0.9651,
+   "paired_difference": -0.012,
+   "bootstrap": {
+    "B": 10000,
+    "seed": 0,
+    "ci95": [
+     -0.0234,
+     -0.0012
+    ],
+    "mean": -0.0121,
+    "sd": 0.0056,
+    "file": "bootstrap_seed1.npy"
+   },
+   "noninferiority": {
+    "margin": -0.03,
+    "ci_lower": -0.0234,
+    "passes_margin": true,
+    "rule": "사전 지정 −3%p — CI 하한이 margin을 상회하면 비열등"
+   },
+   "discordant_system_only": 34,
+   "discordant_vla_only": 54,
+   "mcnemar_exact_p": 0.042211,
+   "full_stream_noninferiority": {
+    "construction": "발화분 = CF 재현 teacher 결과 / 비발화분 = VLA 실측. 논문 H4b와 동일 구성.",
+    "n_paired_episodes": 4000,
+    "n_cf_missing": 0,
+    "cf_complete": true,
+    "system_rate": 0.9525,
+    "full_vla_rate": 0.9575,
+    "diff": -0.005,
+    "ci95": [
+     -0.0095,
+     -0.0005
+    ],
+    "margin": -0.03,
+    "noninferior": true,
+    "bootstrap_file": "bootstrap_fullstream_seed1.npy",
+    "verdict": "PASS"
+   }
+  },
+  "2": {
+   "seed": 2,
+   "n_paired_episodes": 1661,
+   "n_infra_error": 0,
+   "system_success_rate": 0.9609,
+   "full_vla_success_rate": 0.9795,
+   "habit_success_rate": 0.9609,
+   "paired_difference": -0.0187,
+   "bootstrap": {
+    "B": 10000,
+    "seed": 0,
+    "ci95": [
+     -0.0301,
+     -0.0078
+    ],
+    "mean": -0.0186,
+    "sd": 0.0057,
+    "file": "bootstrap_seed2.npy"
+   },
+   "noninferiority": {
+    "margin": -0.03,
+    "ci_lower": -0.0301,
+    "passes_margin": false,
+    "rule": "사전 지정 −3%p — CI 하한이 margin을 상회하면 비열등"
+   },
+   "discordant_system_only": 30,
+   "discordant_vla_only": 61,
+   "mcnemar_exact_p": 0.001517,
+   "full_stream_noninferiority": {
+    "construction": "발화분 = CF 재현 teacher 결과 / 비발화분 = VLA 실측. 논문 H4b와 동일 구성.",
+    "n_paired_episodes": 4000,
+    "n_cf_missing": 0,
+    "cf_complete": true,
+    "system_rate": 0.9595,
+    "full_vla_rate": 0.9673,
+    "diff": -0.0077,
+    "ci95": [
+     -0.0125,
+     -0.0032
+    ],
+    "margin": -0.03,
+    "noninferior": true,
+    "bootstrap_file": "bootstrap_fullstream_seed2.npy",
+    "verdict": "PASS"
+   }
+  }
+ },
+ "margin": -0.03,
+ "bootstrap_B": 10000,
+ "pooled": {
+  "n_paired_episodes": 4863,
+  "system_success_rate": 0.9624,
+  "full_vla_success_rate": 0.9784,
+  "paired_difference": -0.016,
+  "ci95": [
+   -0.0224,
+   -0.0097
+  ],
+  "passes_margin": true,
+  "bootstrap_file": "bootstrap_pooled.npy"
+ },
+ "full_stream_seed_mean": {
+  "diff_mean": -0.0065,
+  "diff_sd": 0.0014,
+  "system_rate_mean": 0.9564,
+  "full_vla_rate_mean": 0.9629,
+  "all_noninferior": true,
+  "verdicts": [
+   "PASS",
+   "PASS",
+   "PASS"
+  ]
+ },
+ "seed_mean": {
+  "paired_difference_mean": -0.0161,
+  "paired_difference_sd": 0.0036,
+  "n_seeds": 3
+ }
+}

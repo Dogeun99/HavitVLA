@@ -1,0 +1,50 @@
+diff --git a/prismatic/vla/datasets/rlds/oxe/configs.py b/prismatic/vla/datasets/rlds/oxe/configs.py
+index 3222e02..6aad128 100644
+--- a/prismatic/vla/datasets/rlds/oxe/configs.py
++++ b/prismatic/vla/datasets/rlds/oxe/configs.py
+@@ -642,6 +642,16 @@ OXE_DATASET_CONFIGS = {
+         "action_encoding": ActionEncoding.EEF_POS,
+     },
+     ### LIBERO datasets (modified versions)
++    # --- HabitVLA (paper 1, Phase D): robosuite Lift, OSC closed-loop expert demos.
++    # Single third-person camera (our Lift env has no wrist view), 8-D state in the
++    # LIBERO layout so the shipped libero_dataset_transform applies unchanged.
++    "habitvla_lift": {
++        "image_obs_keys": {"primary": "image", "secondary": None, "wrist": None},
++        "depth_obs_keys": {"primary": None, "secondary": None, "wrist": None},
++        "state_obs_keys": ["EEF_state", "gripper_state"],
++        "state_encoding": StateEncoding.POS_EULER,
++        "action_encoding": ActionEncoding.EEF_POS,
++    },
+     "libero_spatial_no_noops": {
+         "image_obs_keys": {"primary": "image", "secondary": None, "wrist": "wrist_image"},
+         "depth_obs_keys": {"primary": None, "secondary": None, "wrist": None},
+diff --git a/prismatic/vla/datasets/rlds/oxe/transforms.py b/prismatic/vla/datasets/rlds/oxe/transforms.py
+index bf848e9..eff680c 100644
+--- a/prismatic/vla/datasets/rlds/oxe/transforms.py
++++ b/prismatic/vla/datasets/rlds/oxe/transforms.py
+@@ -920,6 +920,7 @@ OXE_STANDARDIZATION_TRANSFORMS = {
+     ### DROID Finetuning datasets
+     "droid_wipe": droid_finetuning_transform,
+     ### LIBERO datasets (modified versions)
++    "habitvla_lift": libero_dataset_transform,  # same state/action layout by construction
+     "libero_spatial_no_noops": libero_dataset_transform,
+     "libero_object_no_noops": libero_dataset_transform,
+     "libero_goal_no_noops": libero_dataset_transform,
+diff --git a/pyproject.toml b/pyproject.toml
+index 6f027fe..63b91e8 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -44,9 +44,9 @@ dependencies = [
+     "sentencepiece==0.1.99",
+     "timm==0.9.10",
+     "tokenizers==0.19.1",
+-    "torch==2.2.0",
+-    "torchvision==0.17.0",
+-    "torchaudio==2.2.0",
++    "torch==2.7.0+cu128",  # HabitVLA: sm_120 (RTX 5090); upstream 2.2.0 has no Blackwell build
++    "torchvision==0.22.0+cu128",  # HabitVLA: matches torch 2.7.0
++    "torchaudio==2.7.0+cu128",  # HabitVLA: matches torch 2.7.0
+     "transformers @ git+https://github.com/moojink/transformers-openvla-oft.git",  # IMPORTANT: Use this fork for bidirectional attn (for parallel decoding)
+     "wandb",
+     "tensorflow==2.15.0",

@@ -1,0 +1,488 @@
+{
+ "run_id": "rgb_only_full_rerun_20260828",
+ "modality": "rgb_only",
+ "n_checks": 47,
+ "n_fail": 0,
+ "overall": "VALID",
+ "note": "FAIL이 하나라도 있으면 overall=INVALID이며 해당 결과를 VALID로 표시하지 않는다 (§14). 검사는 드라이버 카운터가 아니라 산출물에서 재구성한다.",
+ "checks": [
+  {
+   "check": "seed_band_overlap_seed0",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "band_sizes": {
+     "collect": 120,
+     "heldout": 50,
+     "novel": 40,
+     "probe": 40,
+     "chained": 170,
+     "e5_stream": 15
+    },
+    "overlaps": 0
+   }
+  },
+  {
+   "check": "seed_band_overlap_seed1",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "band_sizes": {
+     "collect": 120,
+     "heldout": 50,
+     "novel": 40,
+     "probe": 40,
+     "chained": 170,
+     "e5_stream": 15
+    },
+    "overlaps": 0
+   }
+  },
+  {
+   "check": "seed_band_overlap_seed2",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "band_sizes": {
+     "collect": 120,
+     "heldout": 50,
+     "novel": 40,
+     "probe": 40,
+     "chained": 170,
+     "e5_stream": 15
+    },
+    "overlaps": 0
+   }
+  },
+  {
+   "check": "train_eval_overlap",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_clusters_checked": 27,
+    "overlapping_uids": 0
+   }
+  },
+  {
+   "check": "duplicate_episode_id_seed0",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_rows": 4000,
+    "n_unique": 4000
+   }
+  },
+  {
+   "check": "missing_episode_id_seed0",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_rows": 4000,
+    "n_missing_indices": 0,
+    "first_missing": []
+   }
+  },
+  {
+   "check": "probe_stream_overlap_seed0",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_probe_specs": 1320,
+    "overlap": 0
+   }
+  },
+  {
+   "check": "probe_in_stream_metric_seed0",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "unexpected_decision_reasons": 0,
+    "reasons": [
+     "fire",
+     "habit_ineligible",
+     "immature",
+     "unknown_cluster"
+    ]
+   }
+  },
+  {
+   "check": "habit_fire_while_non_mature_seed0",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_bad": 0,
+    "episodes": []
+   }
+  },
+  {
+   "check": "teacher_into_maturity_ledger_seed0",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_violations": 0,
+    "examples": []
+   }
+  },
+  {
+   "check": "invalid_lifecycle_transition_seed0",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_illegal": 0,
+    "examples": [],
+    "rule": "X는 흡수 상태 · U로의 복귀 불가"
+   }
+  },
+  {
+   "check": "event_vs_ledger_demotion_seed0",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "episode_ledger": 5,
+    "event_log": 5
+   }
+  },
+  {
+   "check": "event_vs_ledger_rematuration_seed0",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "episode_ledger": 1,
+    "event_log": 1
+   }
+  },
+  {
+   "check": "event_vs_ledger_transition_X_seed0",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "episode_ledger": 10,
+    "event_log": 10
+   }
+  },
+  {
+   "check": "routing_partition_seed0",
+   "status": "PASS",
+   "expected": "합 = 총 행수",
+   "detail": {
+    "fire": 1538,
+    "vla": 2462,
+    "total_rows": 4000
+   }
+  },
+  {
+   "check": "final_state_consistency_seed0",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "n_mismatch": 0,
+    "examples": {}
+   }
+  },
+  {
+   "check": "paired_replay_queue_match_seed0",
+   "status": "PASS",
+   "expected": "집합 동일",
+   "detail": {
+    "queue": 1538,
+    "fired_in_stream": 1538,
+    "queue_minus_fired": 0,
+    "fired_minus_queue": 0
+   }
+  },
+  {
+   "check": "paired_replay_episode_mismatch_seed0",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_replayed": 1538,
+    "not_in_queue": 0,
+    "duplicates": 0
+   }
+  },
+  {
+   "check": "duplicate_episode_id_seed1",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_rows": 4000,
+    "n_unique": 4000
+   }
+  },
+  {
+   "check": "missing_episode_id_seed1",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_rows": 4000,
+    "n_missing_indices": 0,
+    "first_missing": []
+   }
+  },
+  {
+   "check": "probe_stream_overlap_seed1",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_probe_specs": 1320,
+    "overlap": 0
+   }
+  },
+  {
+   "check": "probe_in_stream_metric_seed1",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "unexpected_decision_reasons": 0,
+    "reasons": [
+     "fire",
+     "habit_ineligible",
+     "immature",
+     "unknown_cluster"
+    ]
+   }
+  },
+  {
+   "check": "habit_fire_while_non_mature_seed1",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_bad": 0,
+    "episodes": []
+   }
+  },
+  {
+   "check": "teacher_into_maturity_ledger_seed1",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_violations": 0,
+    "examples": []
+   }
+  },
+  {
+   "check": "invalid_lifecycle_transition_seed1",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_illegal": 0,
+    "examples": [],
+    "rule": "X는 흡수 상태 · U로의 복귀 불가"
+   }
+  },
+  {
+   "check": "event_vs_ledger_demotion_seed1",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "episode_ledger": 2,
+    "event_log": 2
+   }
+  },
+  {
+   "check": "event_vs_ledger_rematuration_seed1",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "episode_ledger": 1,
+    "event_log": 1
+   }
+  },
+  {
+   "check": "event_vs_ledger_transition_X_seed1",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "episode_ledger": 9,
+    "event_log": 9
+   }
+  },
+  {
+   "check": "routing_partition_seed1",
+   "status": "PASS",
+   "expected": "합 = 총 행수",
+   "detail": {
+    "fire": 1664,
+    "vla": 2336,
+    "total_rows": 4000
+   }
+  },
+  {
+   "check": "final_state_consistency_seed1",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "n_mismatch": 0,
+    "examples": {}
+   }
+  },
+  {
+   "check": "paired_replay_queue_match_seed1",
+   "status": "PASS",
+   "expected": "집합 동일",
+   "detail": {
+    "queue": 1664,
+    "fired_in_stream": 1664,
+    "queue_minus_fired": 0,
+    "fired_minus_queue": 0
+   }
+  },
+  {
+   "check": "paired_replay_episode_mismatch_seed1",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_replayed": 1664,
+    "not_in_queue": 0,
+    "duplicates": 0
+   }
+  },
+  {
+   "check": "duplicate_episode_id_seed2",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_rows": 4000,
+    "n_unique": 4000
+   }
+  },
+  {
+   "check": "missing_episode_id_seed2",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_rows": 4000,
+    "n_missing_indices": 0,
+    "first_missing": []
+   }
+  },
+  {
+   "check": "probe_stream_overlap_seed2",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_probe_specs": 1320,
+    "overlap": 0
+   }
+  },
+  {
+   "check": "probe_in_stream_metric_seed2",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "unexpected_decision_reasons": 0,
+    "reasons": [
+     "fire",
+     "habit_ineligible",
+     "immature",
+     "unknown_cluster"
+    ]
+   }
+  },
+  {
+   "check": "habit_fire_while_non_mature_seed2",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_bad": 0,
+    "episodes": []
+   }
+  },
+  {
+   "check": "teacher_into_maturity_ledger_seed2",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_violations": 0,
+    "examples": []
+   }
+  },
+  {
+   "check": "invalid_lifecycle_transition_seed2",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_illegal": 0,
+    "examples": [],
+    "rule": "X는 흡수 상태 · U로의 복귀 불가"
+   }
+  },
+  {
+   "check": "event_vs_ledger_demotion_seed2",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "episode_ledger": 2,
+    "event_log": 2
+   }
+  },
+  {
+   "check": "event_vs_ledger_rematuration_seed2",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "episode_ledger": 1,
+    "event_log": 1
+   }
+  },
+  {
+   "check": "event_vs_ledger_transition_X_seed2",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "episode_ledger": 10,
+    "event_log": 10
+   }
+  },
+  {
+   "check": "routing_partition_seed2",
+   "status": "PASS",
+   "expected": "합 = 총 행수",
+   "detail": {
+    "fire": 1661,
+    "vla": 2339,
+    "total_rows": 4000
+   }
+  },
+  {
+   "check": "final_state_consistency_seed2",
+   "status": "PASS",
+   "expected": "일치",
+   "detail": {
+    "n_mismatch": 0,
+    "examples": {}
+   }
+  },
+  {
+   "check": "paired_replay_queue_match_seed2",
+   "status": "PASS",
+   "expected": "집합 동일",
+   "detail": {
+    "queue": 1661,
+    "fired_in_stream": 1661,
+    "queue_minus_fired": 0,
+    "fired_minus_queue": 0
+   }
+  },
+  {
+   "check": "paired_replay_episode_mismatch_seed2",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_replayed": 1661,
+    "not_in_queue": 0,
+    "duplicates": 0
+   }
+  },
+  {
+   "check": "depth_used_by_rgb_only_habit",
+   "status": "PASS",
+   "expected": "0",
+   "detail": {
+    "n_checkpoints": 253,
+    "n_violations": 0,
+    "examples": []
+   }
+  }
+ ]
+}

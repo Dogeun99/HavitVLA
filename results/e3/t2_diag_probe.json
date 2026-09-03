@@ -1,0 +1,31 @@
+{
+  "task": 0,
+  "spec_uid": "36658450883ce4c4",
+  "probe_fix_option2": [
+    {
+      "uid": "36658450883ce4c4",
+      "success": true,
+      "stage_steps": {
+        "1": 137,
+        "2": 330
+      }
+    },
+    {
+      "uid": "0fa6b8801d21275c",
+      "success": true,
+      "stage_steps": {
+        "1": 139,
+        "2": 320
+      }
+    },
+    {
+      "uid": "a6dea2df84bbf69a",
+      "success": true,
+      "stage_steps": {
+        "1": 166,
+        "2": 322
+      }
+    }
+  ],
+  "probe_fix_success": 3
+}

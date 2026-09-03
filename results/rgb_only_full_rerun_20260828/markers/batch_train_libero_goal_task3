@@ -1,0 +1,28 @@
+{
+ "job": "batch_train_libero_goal_task3",
+ "attempt": 0,
+ "cmd": [
+  "/home/asmr/miniconda3/envs/hv2_hab/bin/python",
+  "-u",
+  "habits/train.py",
+  "--h5",
+  "/home/asmr/workspace/habitvla2/data/e3/libero_goal_task3.hdf5",
+  "--cluster",
+  "libero_goal_task3",
+  "--n-grid",
+  "10",
+  "20",
+  "40",
+  "80",
+  "--out",
+  "/home/asmr/workspace/habitvla2/checkpoints/rgb_only_rerun/batch",
+  "--no-depth"
+ ],
+ "start": "2026-08-29 02:13:03",
+ "end": "2026-08-29 02:23:35",
+ "elapsed_s": 631.7,
+ "exit_code": 0,
+ "log": "results/rgb_only_full_rerun_20260828/logs/batch_train_libero_goal_task3.log",
+ "pass_marker": "[TRAIN-PASS]",
+ "ok": true
+}

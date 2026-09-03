@@ -1,0 +1,26 @@
+{
+  "i_vs_iii": {
+    "robot_max_dq": 0.4845,
+    "objects_max_dxyz": {
+      "tomato_sauce_1_joint0": 0.0,
+      "basket_1_joint0": 0.0,
+      "milk_1_joint0": 0.0,
+      "butter_1_joint0": 0.0,
+      "orange_juice_1_joint0": 0.0,
+      "chocolate_pudding_1_joint0": 0.0,
+      "bbq_sauce_1_joint0": 0.0
+    }
+  },
+  "ii_vs_i": {
+    "robot_max_dq": 0.0693,
+    "objects_max_dxyz": {
+      "tomato_sauce_1_joint0": 0.0,
+      "basket_1_joint0": 0.0,
+      "milk_1_joint0": 0.0,
+      "butter_1_joint0": 0.0,
+      "orange_juice_1_joint0": 0.0,
+      "chocolate_pudding_1_joint0": 0.0,
+      "bbq_sauce_1_joint0": 0.0
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "task": 0,
+  "spec_uid": "36658450883ce4c4",
+  "stage2_entry_step": 144,
+  "predicate_after_relocate": false,
+  "exp1_success": false,
+  "exp1_total_steps": 560,
+  "exp1_stage_steps": {
+    "1": 137,
+    "2": null
+  },
+  "exp1_stage2_trace": [
+    {
+      "t": 144,
+      "ee": [
+        -0.035,
+        0.252,
+        0.181
+      ],
+      "act_absmean": 0.0739,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 152,
+      "ee": [
+        -0.025,
+        0.253,
+        0.206
+      ],
+      "act_absmean": 0.0691,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 160,
+      "ee": [
+        -0.019,
+        0.258,
+        0.22
+      ],
+      "act_absmean": 0.0367,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 168,
+      "ee": [
+        -0.013,
+        0.26,
+        0.212
+      ],
+      "act_absmean": 0.0361,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 176,
+      "ee": [
+        -0.011,
+        0.262,
+        0.198
+      ],
+      "act_absmean": 0.0475,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 184,
+      "ee": [
+        -0.01,
+        0.263,
+        0.192
+      ],
+      "act_absmean": 0.0337,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 520,
+      "ee": [
+        -0.046,
+        0.26,
+        0.165
+      ],
+      "act_absmean": 0.0129,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 528,
+      "ee": [
+        -0.047,
+        0.26,
+        0.165
+      ],
+      "act_absmean": 0.012,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 536,
+      "ee": [
+        -0.047,
+        0.26,
+        0.165
+      ],
+      "act_absmean": 0.0118,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 544,
+      "ee": [
+        -0.047,
+        0.259,
+        0.164
+      ],
+      "act_absmean": 0.0123,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 552,
+      "ee": [
+        -0.047,
+        0.259,
+        0.163
+      ],
+      "act_absmean": 0.0119,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 560,
+      "ee": [
+        -0.048,
+        0.259,
+        0.162
+      ],
+      "act_absmean": 0.0115,
+      "gripper_cmd": -1.0
+    }
+  ],
+  "exp2_control_success": true,
+  "exp2_control_steps": 153,
+  "verdict": "B: 로봇 포즈 OOD (상태는 홈 포즈에서 해결 가능)"
+}

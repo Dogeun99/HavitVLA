@@ -1,0 +1,252 @@
+{
+  "note": "H2-L′ 회귀 공변량 (preregistration §4f). free_joints=census, S_V_cluster=수집 summary, median_len=성공 에피소드 steps 중앙값.",
+  "clusters": {
+    "libero_object_task0": {
+      "suite": "libero_object",
+      "task_id": 0,
+      "free_joints": 7,
+      "S_V_cluster": 0.975,
+      "n_success": 117,
+      "median_len_success": 140,
+      "data_dir": "e2"
+    },
+    "libero_object_task1": {
+      "suite": "libero_object",
+      "task_id": 1,
+      "free_joints": 7,
+      "S_V_cluster": 0.9833,
+      "n_success": 118,
+      "median_len_success": 128.0,
+      "data_dir": "e3"
+    },
+    "libero_object_task2": {
+      "suite": "libero_object",
+      "task_id": 2,
+      "free_joints": 7,
+      "S_V_cluster": 0.975,
+      "n_success": 117,
+      "median_len_success": 117,
+      "data_dir": "e3"
+    },
+    "libero_object_task3": {
+      "suite": "libero_object",
+      "task_id": 3,
+      "free_joints": 7,
+      "S_V_cluster": 0.9667,
+      "n_success": 116,
+      "median_len_success": 128.0,
+      "data_dir": "e3"
+    },
+    "libero_object_task4": {
+      "suite": "libero_object",
+      "task_id": 4,
+      "free_joints": 7,
+      "S_V_cluster": 0.9917,
+      "n_success": 119,
+      "median_len_success": 139,
+      "data_dir": "e3"
+    },
+    "libero_object_task5": {
+      "suite": "libero_object",
+      "task_id": 5,
+      "free_joints": 7,
+      "S_V_cluster": 0.9333,
+      "n_success": 112,
+      "median_len_success": 128.0,
+      "data_dir": "e2"
+    },
+    "libero_object_task6": {
+      "suite": "libero_object",
+      "task_id": 6,
+      "free_joints": 7,
+      "S_V_cluster": 1.0,
+      "n_success": 120,
+      "median_len_success": 147.0,
+      "data_dir": "e3"
+    },
+    "libero_object_task7": {
+      "suite": "libero_object",
+      "task_id": 7,
+      "free_joints": 7,
+      "S_V_cluster": 0.9667,
+      "n_success": 116,
+      "median_len_success": 130.0,
+      "data_dir": "e3"
+    },
+    "libero_object_task8": {
+      "suite": "libero_object",
+      "task_id": 8,
+      "free_joints": 7,
+      "S_V_cluster": 0.975,
+      "n_success": 117,
+      "median_len_success": 147,
+      "data_dir": "e3"
+    },
+    "libero_object_task9": {
+      "suite": "libero_object",
+      "task_id": 9,
+      "free_joints": 7,
+      "S_V_cluster": 0.9833,
+      "n_success": 118,
+      "median_len_success": 122.0,
+      "data_dir": "e3"
+    },
+    "libero_goal_task0": {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "free_joints": 4,
+      "S_V_cluster": 0.9167,
+      "n_success": 110,
+      "median_len_success": 128.0,
+      "data_dir": "e3"
+    },
+    "libero_goal_task1": {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "free_joints": 4,
+      "S_V_cluster": 0.9833,
+      "n_success": 118,
+      "median_len_success": 87.0,
+      "data_dir": "e3"
+    },
+    "libero_goal_task2": {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "free_joints": 4,
+      "S_V_cluster": 0.9917,
+      "n_success": 119,
+      "median_len_success": 89,
+      "data_dir": "e3"
+    },
+    "libero_goal_task3": {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "free_joints": 4,
+      "S_V_cluster": 0.9333,
+      "n_success": 112,
+      "median_len_success": 179.0,
+      "data_dir": "e3"
+    },
+    "libero_goal_task4": {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "free_joints": 4,
+      "S_V_cluster": 0.9583,
+      "n_success": 115,
+      "median_len_success": 86,
+      "data_dir": "e3"
+    },
+    "libero_goal_task5": {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "free_joints": 4,
+      "S_V_cluster": 0.975,
+      "n_success": 117,
+      "median_len_success": 121,
+      "data_dir": "e3"
+    },
+    "libero_goal_task6": {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "free_joints": 4,
+      "S_V_cluster": 0.9917,
+      "n_success": 119,
+      "median_len_success": 95,
+      "data_dir": "e3"
+    },
+    "libero_goal_task7": {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "free_joints": 4,
+      "S_V_cluster": 1.0,
+      "n_success": 120,
+      "median_len_success": 73.0,
+      "data_dir": "e3"
+    },
+    "libero_goal_task8": {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "free_joints": 4,
+      "S_V_cluster": 0.9833,
+      "n_success": 118,
+      "median_len_success": 76.0,
+      "data_dir": "e3"
+    },
+    "libero_goal_task9": {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "free_joints": 4,
+      "S_V_cluster": 0.9917,
+      "n_success": 119,
+      "median_len_success": 134,
+      "data_dir": "e3"
+    },
+    "libero_spatial_task0": {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "free_joints": 5,
+      "S_V_cluster": 0.95,
+      "n_success": 114,
+      "median_len_success": 77.0,
+      "data_dir": "e3"
+    },
+    "libero_spatial_task1": {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "free_joints": 5,
+      "S_V_cluster": 0.9833,
+      "n_success": 118,
+      "median_len_success": 107.0,
+      "data_dir": "e3"
+    },
+    "libero_10_task0": {
+      "suite": "libero_10",
+      "task_id": 0,
+      "free_joints": 8,
+      "S_V_cluster": 0.9083,
+      "n_success": 109,
+      "median_len_success": 269,
+      "data_dir": "e3"
+    },
+    "libero_10_task2": {
+      "suite": "libero_10",
+      "task_id": 2,
+      "free_joints": 2,
+      "S_V_cluster": 0.9917,
+      "n_success": 119,
+      "median_len_success": 240,
+      "data_dir": "e3"
+    },
+    "libero_10_task5": {
+      "suite": "libero_10",
+      "task_id": 5,
+      "free_joints": 2,
+      "S_V_cluster": 0.9917,
+      "n_success": 119,
+      "median_len_success": 169,
+      "data_dir": "e3"
+    },
+    "chained_libero_object_task0": {
+      "suite": "libero_object",
+      "task_id": 0,
+      "chained": true,
+      "free_joints": 7,
+      "S_V_cluster": 0.975,
+      "n_success": 117,
+      "median_len_success": 279,
+      "data_dir": "e3"
+    },
+    "chained_libero_object_task5": {
+      "suite": "libero_object",
+      "task_id": 5,
+      "chained": true,
+      "free_joints": 7,
+      "S_V_cluster": 0.9,
+      "n_success": 108,
+      "median_len_success": 257.0,
+      "data_dir": "e3"
+    }
+  },
+  "pending": [],
+  "status": "COMPLETE(27)"
+}

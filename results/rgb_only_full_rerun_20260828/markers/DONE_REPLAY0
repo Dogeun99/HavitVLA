@@ -1,0 +1,22 @@
+{
+ "job": "replay_seed0",
+ "attempt": 0,
+ "cmd": [
+  "/home/asmr/miniconda3/envs/hv2_oft/bin/python",
+  "-u",
+  "experiments/e5_counterfactual.py",
+  "--seed-idx",
+  "0",
+  "--queue-root",
+  "/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0",
+  "--out-root",
+  "/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay"
+ ],
+ "start": "2026-08-29 21:56:12",
+ "end": "2026-08-30 02:45:31",
+ "elapsed_s": 17359.4,
+ "exit_code": 0,
+ "log": "results/rgb_only_full_rerun_20260828/logs/replay_seed0.log",
+ "pass_marker": "[E5CF-DONE]",
+ "ok": true
+}

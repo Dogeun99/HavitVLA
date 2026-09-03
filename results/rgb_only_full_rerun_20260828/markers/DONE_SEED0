@@ -1,0 +1,27 @@
+{
+ "job": "online_seed0",
+ "attempt": 0,
+ "cmd": [
+  "/home/asmr/miniconda3/envs/hv2_oft/bin/python",
+  "-u",
+  "experiments/e5_driver.py",
+  "--seed-idx",
+  "0",
+  "--n",
+  "4000",
+  "--no-depth",
+  "--out-root",
+  "/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0",
+  "--ck-root",
+  "checkpoints/rgb_only_rerun/online",
+  "--data-root",
+  "data/rgb_only_rerun/online"
+ ],
+ "start": "2026-08-29 05:50:08",
+ "end": "2026-08-29 21:56:12",
+ "elapsed_s": 57964.4,
+ "exit_code": 0,
+ "log": "results/rgb_only_full_rerun_20260828/logs/online_seed0.log",
+ "pass_marker": "[E5-DONE]",
+ "ok": true
+}

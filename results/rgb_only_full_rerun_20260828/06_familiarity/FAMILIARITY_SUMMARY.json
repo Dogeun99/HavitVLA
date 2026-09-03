@@ -1,0 +1,103 @@
+{
+ "run_id": "rgb_only_full_rerun_20260828",
+ "modality": "rgb_only",
+ "habit_ckpt_root": "checkpoints/rgb_only_rerun/batch",
+ "n_episodes": 423,
+ "competence_summary": {
+  "w_star_by_cluster": {
+   "libero_object_task0": 0.02,
+   "libero_object_task5": 0.04,
+   "libero_goal_task0": 0.08,
+   "libero_goal_task2": 0.06,
+   "libero_spatial_task0": 0.04,
+   "libero_10_task0": 0.01
+  },
+  "n_exceeding_usable_w_max": 2,
+  "success_by_w": {
+   "0.01": 0.8778,
+   "0.02": 0.7762,
+   "0.04": 0.5957,
+   "0.06": 0.52,
+   "0.08": 0.3224
+  },
+  "gate_reject_by_w": {
+   "0.01": 0.2,
+   "0.02": 0.2111,
+   "0.04": 0.3914,
+   "0.06": 0.4582,
+   "0.08": 0.6309
+  },
+  "physical_reject_by_w": {
+   "0.01": 0.0,
+   "0.02": 0.0111,
+   "0.04": 0.0556,
+   "0.06": 0.0667,
+   "0.08": 0.1667
+  }
+ },
+ "note": "그림 없음. 아래 값은 재구성용 숫자다.",
+ "score_vs_habit_success": {
+  "auc_mahalanobis_predicts_failure": 0.6904,
+  "n_success": 268,
+  "n_fail": 155,
+  "mean_score_success": 6.5187,
+  "mean_score_fail": 7.856,
+  "definition": "AUC = P(score(fail) > score(success)) — 높을수록 친숙도 점수가 습관 실패를 잘 가려낸다.",
+  "auc_knn_k5_predicts_failure": 0.6005,
+  "auc_knn_k10_predicts_failure": 0.6116
+ },
+ "by_width": {
+  "0.01": {
+   "n": 90,
+   "habit_success_rate": 0.8778,
+   "familiarity_reject_rate": 0.2,
+   "mean_mahalanobis": 6.2967
+  },
+  "0.02": {
+   "n": 89,
+   "habit_success_rate": 0.7753,
+   "familiarity_reject_rate": 0.2135,
+   "mean_mahalanobis": 6.1971
+  },
+  "0.04": {
+   "n": 85,
+   "habit_success_rate": 0.6,
+   "familiarity_reject_rate": 0.4,
+   "mean_mahalanobis": 7.0036
+  },
+  "0.06": {
+   "n": 84,
+   "habit_success_rate": 0.5238,
+   "familiarity_reject_rate": 0.4643,
+   "mean_mahalanobis": 7.5527
+  },
+  "0.08": {
+   "n": 75,
+   "habit_success_rate": 0.3333,
+   "familiarity_reject_rate": 0.64,
+   "mean_mahalanobis": 8.2229
+  }
+ },
+ "reused_artifacts": {
+  "jurisdiction_auc": {
+   "source": "results/e4/e4_pilot_auc.json",
+   "sha256": "c80ddc5a50e3429d353fd07e229b08f8a5f916c4280b9f2b0499a476a336bd1b",
+   "reused_unchanged": true
+  },
+  "knn_scorer": {
+   "source": "results/e4/e4_knn_scorer.json",
+   "sha256": "d4af4d25776201e4c3dbaca4236c80894b5627414d53f248fdddd30d7d0ec963",
+   "reused_unchanged": true
+  },
+  "hidden_scorer": {
+   "source": "results/e4/e4_hidden_scorer.json",
+   "sha256": "046f08d32efcf8524a3fa6282c6a2eb90befc0cfaf18205847ff33711b5ef90b",
+   "reused_unchanged": true
+  },
+  "scorer_table": {
+   "source": "results/e4/e4_scorer_table.json",
+   "sha256": "fb67b677e2d4cdc13d5ff0195f60310db8a3b7727bf2b242527463cc028718a6",
+   "reused_unchanged": true
+  }
+ }
+}

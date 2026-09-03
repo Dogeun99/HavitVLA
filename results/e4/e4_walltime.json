@@ -1,0 +1,9 @@
+{
+  "e4_known_dump": {
+    "n_units": 500,
+    "elapsed_est_s": 598.5,
+    "unit_realize_render_s": 1.197,
+    "method": "npz mtime span(24 클러스터)/480 — ctime 버그 교정판",
+    "note": "held-out realize+게이트규격 캡처 단가 (2026-08-16 실측, heartbeat 캘리브레이션)"
+  }
+}

@@ -1,0 +1,509 @@
+{
+ "package": "HabitVLA_RGB_only_full_rerun_20260828",
+ "n_checks": 52,
+ "n_fail": 0,
+ "verdict": "PASS",
+ "principle": "패키지만 읽어 원장에서 재계산 → 요약과 대조. 레포 코드 import 없음.",
+ "checks": [
+  {
+   "check": "batch.N_star_reconstructed",
+   "status": "PASS",
+   "detail": {
+    "n_clusters": 27,
+    "mismatch": {}
+   }
+  },
+  {
+   "check": "batch.success_curve_reconstructed",
+   "status": "PASS",
+   "detail": {
+    "n_points": 108,
+    "mismatch": {}
+   }
+  },
+  {
+   "check": "online.routing_full_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.6155,
+    "summary": 0.6155
+   }
+  },
+  {
+   "check": "online.routing_first_1000_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.861,
+    "summary": 0.861
+   }
+  },
+  {
+   "check": "online.routing_last_1000_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.458,
+    "summary": 0.458
+   }
+  },
+  {
+   "check": "online.system_success_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.9573,
+    "summary": 0.9573
+   }
+  },
+  {
+   "check": "online.firing_risk_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.039,
+    "summary": 0.039,
+    "n_fire": 1538
+   }
+  },
+  {
+   "check": "online.windows200_seed0",
+   "status": "PASS",
+   "detail": {
+    "n_windows": 20,
+    "first3_recomputed": [
+     1.0,
+     1.0,
+     0.855
+    ],
+    "first3_summary": [
+     1.0,
+     1.0,
+     0.855
+    ]
+   }
+  },
+  {
+   "check": "online.final_MIXU_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": {
+     "M": 17,
+     "I": 6,
+     "X": 10,
+     "U": 0
+    },
+    "summary": {
+     "M": 17,
+     "I": 6,
+     "X": 10,
+     "U": 0
+    }
+   }
+  },
+  {
+   "check": "online.demotion_count_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 5,
+    "summary": 5
+   }
+  },
+  {
+   "check": "online.rematuration_count_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 1,
+    "summary": 1
+   }
+  },
+  {
+   "check": "online.routing_full_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.584,
+    "summary": 0.584
+   }
+  },
+  {
+   "check": "online.routing_first_1000_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.819,
+    "summary": 0.819
+   }
+  },
+  {
+   "check": "online.routing_last_1000_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.442,
+    "summary": 0.442
+   }
+  },
+  {
+   "check": "online.system_success_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.9525,
+    "summary": 0.9525
+   }
+  },
+  {
+   "check": "online.firing_risk_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.0349,
+    "summary": 0.0349,
+    "n_fire": 1664
+   }
+  },
+  {
+   "check": "online.windows200_seed1",
+   "status": "PASS",
+   "detail": {
+    "n_windows": 20,
+    "first3_recomputed": [
+     1.0,
+     1.0,
+     0.8
+    ],
+    "first3_summary": [
+     1.0,
+     1.0,
+     0.8
+    ]
+   }
+  },
+  {
+   "check": "online.final_MIXU_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": {
+     "M": 18,
+     "I": 6,
+     "X": 9,
+     "U": 0
+    },
+    "summary": {
+     "M": 18,
+     "I": 6,
+     "X": 9,
+     "U": 0
+    }
+   }
+  },
+  {
+   "check": "online.demotion_count_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 2,
+    "summary": 2
+   }
+  },
+  {
+   "check": "online.rematuration_count_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 1,
+    "summary": 1
+   }
+  },
+  {
+   "check": "online.routing_full_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.5847,
+    "summary": 0.5847
+   }
+  },
+  {
+   "check": "online.routing_first_1000_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.878,
+    "summary": 0.878
+   }
+  },
+  {
+   "check": "online.routing_last_1000_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.397,
+    "summary": 0.397
+   }
+  },
+  {
+   "check": "online.system_success_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.9595,
+    "summary": 0.9595
+   }
+  },
+  {
+   "check": "online.firing_risk_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 0.0391,
+    "summary": 0.0391,
+    "n_fire": 1661
+   }
+  },
+  {
+   "check": "online.windows200_seed2",
+   "status": "PASS",
+   "detail": {
+    "n_windows": 20,
+    "first3_recomputed": [
+     1.0,
+     1.0,
+     0.92
+    ],
+    "first3_summary": [
+     1.0,
+     1.0,
+     0.92
+    ]
+   }
+  },
+  {
+   "check": "online.final_MIXU_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": {
+     "M": 19,
+     "I": 4,
+     "X": 10,
+     "U": 0
+    },
+    "summary": {
+     "M": 19,
+     "I": 4,
+     "X": 10,
+     "U": 0
+    }
+   }
+  },
+  {
+   "check": "online.demotion_count_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 2,
+    "summary": 2
+   }
+  },
+  {
+   "check": "online.rematuration_count_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 1,
+    "summary": 1
+   }
+  },
+  {
+   "check": "events_vs_ledger_demotion_seed0",
+   "status": "PASS",
+   "detail": {
+    "ledger": 5,
+    "events": 5
+   }
+  },
+  {
+   "check": "events_vs_ledger_rematuration_seed0",
+   "status": "PASS",
+   "detail": {
+    "ledger": 1,
+    "events": 1
+   }
+  },
+  {
+   "check": "events_vs_ledger_transition_X_seed0",
+   "status": "PASS",
+   "detail": {
+    "ledger": 10,
+    "events": 10
+   }
+  },
+  {
+   "check": "events_vs_ledger_demotion_seed1",
+   "status": "PASS",
+   "detail": {
+    "ledger": 2,
+    "events": 2
+   }
+  },
+  {
+   "check": "events_vs_ledger_rematuration_seed1",
+   "status": "PASS",
+   "detail": {
+    "ledger": 1,
+    "events": 1
+   }
+  },
+  {
+   "check": "events_vs_ledger_transition_X_seed1",
+   "status": "PASS",
+   "detail": {
+    "ledger": 9,
+    "events": 9
+   }
+  },
+  {
+   "check": "events_vs_ledger_demotion_seed2",
+   "status": "PASS",
+   "detail": {
+    "ledger": 2,
+    "events": 2
+   }
+  },
+  {
+   "check": "events_vs_ledger_rematuration_seed2",
+   "status": "PASS",
+   "detail": {
+    "ledger": 1,
+    "events": 1
+   }
+  },
+  {
+   "check": "events_vs_ledger_transition_X_seed2",
+   "status": "PASS",
+   "detail": {
+    "ledger": 10,
+    "events": 10
+   }
+  },
+  {
+   "check": "paired.fire_count_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 1538,
+    "summary": 1538
+   }
+  },
+  {
+   "check": "paired.difference_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": -0.0176,
+    "summary": -0.0176
+   }
+  },
+  {
+   "check": "paired.bootstrap_ci_seed0",
+   "status": "PASS",
+   "detail": {
+    "recomputed": [
+     -0.0286,
+     -0.0072
+    ],
+    "summary": [
+     -0.0286,
+     -0.0072
+    ],
+    "n_draws": 10000
+   }
+  },
+  {
+   "check": "paired.fire_count_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 1664,
+    "summary": 1664
+   }
+  },
+  {
+   "check": "paired.difference_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": -0.012,
+    "summary": -0.012
+   }
+  },
+  {
+   "check": "paired.bootstrap_ci_seed1",
+   "status": "PASS",
+   "detail": {
+    "recomputed": [
+     -0.0234,
+     -0.0012
+    ],
+    "summary": [
+     -0.0234,
+     -0.0012
+    ],
+    "n_draws": 10000
+   }
+  },
+  {
+   "check": "paired.fire_count_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 1661,
+    "summary": 1661
+   }
+  },
+  {
+   "check": "paired.difference_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": -0.0187,
+    "summary": -0.0187
+   }
+  },
+  {
+   "check": "paired.bootstrap_ci_seed2",
+   "status": "PASS",
+   "detail": {
+    "recomputed": [
+     -0.0301,
+     -0.0078
+    ],
+    "summary": [
+     -0.0301,
+     -0.0078
+    ],
+    "n_draws": 10000
+   }
+  },
+  {
+   "check": "compute.median_act_forward_rgb_only",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 3.35,
+    "summary": 3.35,
+    "n_samples": 100
+   }
+  },
+  {
+   "check": "compute.median_act_forward_rgbd",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 3.353,
+    "summary": 3.353,
+    "n_samples": 100
+   }
+  },
+  {
+   "check": "compute.median_gate_path",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 4.179,
+    "summary": 4.179,
+    "n_samples": 100
+   }
+  },
+  {
+   "check": "compute.median_teacher_oft_chunk_forward",
+   "status": "PASS",
+   "detail": {
+    "recomputed": 85.466,
+    "summary": 85.466,
+    "n_samples": 100
+   }
+  },
+  {
+   "check": "package.required_files",
+   "status": "PASS",
+   "detail": {
+    "missing": []
+   }
+  }
+ ]
+}

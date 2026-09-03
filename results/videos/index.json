@@ -1,0 +1,639 @@
+{
+  "anchors_source": "results/e1/e1_latency.json",
+  "teacher_ms_per_query": 85.07,
+  "habit_ms_per_query": 7.32,
+  "basis": "per-chunk; habit = gate(anchor3) + ACT(anchor2) — conservative floor",
+  "rollout_failures": [],
+  "videos": [
+    {
+      "cluster": "libero_object_task0",
+      "kind": "V1",
+      "uid": "518552b0bebe3004",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.361,
+      "habit_inference_s": 0.161,
+      "ratio": 8.5,
+      "bytes": 1988140
+    },
+    {
+      "cluster": "libero_object_task0",
+      "kind": "V2",
+      "uid": "a92bac8ea4c9ef07",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.256,
+      "bytes": 1757557
+    },
+    {
+      "cluster": "libero_object_task0",
+      "kind": "V3",
+      "uid": "a52fc08ebd469692",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.977,
+      "bytes": 1704785
+    },
+    {
+      "cluster": "libero_object_task1",
+      "kind": "V1",
+      "uid": "ebf25cbe55e2d64f",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.276,
+      "habit_inference_s": 0.168,
+      "ratio": 7.6,
+      "bytes": 2154160
+    },
+    {
+      "cluster": "libero_object_task1",
+      "kind": "V2",
+      "uid": "81e0fa194aede0ff",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.256,
+      "bytes": 1556654
+    },
+    {
+      "cluster": "libero_object_task1",
+      "kind": "V3",
+      "uid": "8007947c27d35c42",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.977,
+      "bytes": 1673152
+    },
+    {
+      "cluster": "libero_object_task2",
+      "kind": "V1",
+      "uid": "f40806ee341919a3",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.276,
+      "habit_inference_s": 0.11,
+      "ratio": 11.6,
+      "bytes": 1594833
+    },
+    {
+      "cluster": "libero_object_task2",
+      "kind": "V2",
+      "uid": "5172609054e808cd",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.256,
+      "bytes": 1906005
+    },
+    {
+      "cluster": "libero_object_task2",
+      "kind": "V3",
+      "uid": "3eb941f24a0018a3",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.977,
+      "bytes": 1613716
+    },
+    {
+      "cluster": "libero_object_task3",
+      "kind": "V1",
+      "uid": "0b962f5b999c4cf0",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.361,
+      "habit_inference_s": 0.117,
+      "ratio": 11.6,
+      "bytes": 1647202
+    },
+    {
+      "cluster": "libero_object_task3",
+      "kind": "V3",
+      "uid": "1fb5e12fa2d04d48",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.977,
+      "bytes": 1854273
+    },
+    {
+      "cluster": "libero_object_task4",
+      "kind": "V1",
+      "uid": "b5a4d49fe94da632",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.446,
+      "habit_inference_s": 0.124,
+      "ratio": 11.6,
+      "bytes": 1678515
+    },
+    {
+      "cluster": "libero_object_task4",
+      "kind": "V3",
+      "uid": "656c4f6693881d9b",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.977,
+      "bytes": 1640155
+    },
+    {
+      "cluster": "libero_object_task5",
+      "kind": "V1",
+      "uid": "797a3b5db1b64e55",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.361,
+      "habit_inference_s": 0.11,
+      "ratio": 12.4,
+      "bytes": 1672505
+    },
+    {
+      "cluster": "libero_object_task5",
+      "kind": "V2",
+      "uid": "bd65d43cb3707fef",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.256,
+      "bytes": 1871582
+    },
+    {
+      "cluster": "libero_object_task5",
+      "kind": "V3",
+      "uid": "b2023c9e59f894fc",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.977,
+      "bytes": 1879274
+    },
+    {
+      "cluster": "libero_object_task6",
+      "kind": "V1",
+      "uid": "562557aafde57013",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.616,
+      "habit_inference_s": 0.139,
+      "ratio": 11.6,
+      "bytes": 1830401
+    },
+    {
+      "cluster": "libero_object_task6",
+      "kind": "V2",
+      "uid": "e49e38332c769026",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.256,
+      "bytes": 1829758
+    },
+    {
+      "cluster": "libero_object_task7",
+      "kind": "V1",
+      "uid": "ce2cc85ea2a277b4",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.446,
+      "habit_inference_s": 0.11,
+      "ratio": 13.2,
+      "bytes": 1616806
+    },
+    {
+      "cluster": "libero_object_task7",
+      "kind": "V3",
+      "uid": "17f7dfecc1849ccf",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.977,
+      "bytes": 1710790
+    },
+    {
+      "cluster": "libero_object_task8",
+      "kind": "V1",
+      "uid": "5f217b5f2d887d0c",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.531,
+      "habit_inference_s": 0.139,
+      "ratio": 11.0,
+      "bytes": 1882159
+    },
+    {
+      "cluster": "libero_object_task8",
+      "kind": "V2",
+      "uid": "9843545f4368241c",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.256,
+      "bytes": 1783069
+    },
+    {
+      "cluster": "libero_object_task8",
+      "kind": "V3",
+      "uid": "c8937fe2035b4d36",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.977,
+      "bytes": 1850143
+    },
+    {
+      "cluster": "libero_object_task9",
+      "kind": "V1",
+      "uid": "235189872b1b5640",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.276,
+      "habit_inference_s": 0.11,
+      "ratio": 11.6,
+      "bytes": 1635228
+    },
+    {
+      "cluster": "libero_object_task9",
+      "kind": "V2",
+      "uid": "8861e9ec481efc71",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.256,
+      "bytes": 2162335
+    },
+    {
+      "cluster": "libero_object_task9",
+      "kind": "V3",
+      "uid": "e516ee3313ad8f78",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.977,
+      "bytes": 2240966
+    },
+    {
+      "cluster": "libero_goal_task0",
+      "kind": "V1",
+      "uid": "f1b9bd6439acbb4a",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.446,
+      "habit_inference_s": 0.124,
+      "ratio": 11.6,
+      "bytes": 1858048
+    },
+    {
+      "cluster": "libero_goal_task0",
+      "kind": "V2",
+      "uid": "7bc80264b66c323e",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.278,
+      "bytes": 1721492
+    },
+    {
+      "cluster": "libero_goal_task0",
+      "kind": "V3",
+      "uid": "811b1a2e4535b452",
+      "assertion": "failure-reproduced",
+      "inference_s": 3.233,
+      "bytes": 1668953
+    },
+    {
+      "cluster": "libero_goal_task1",
+      "kind": "V1",
+      "uid": "acda933fe1623124",
+      "assertion": "both-success",
+      "teacher_inference_s": 0.936,
+      "habit_inference_s": 0.081,
+      "ratio": 11.6,
+      "bytes": 1197767
+    },
+    {
+      "cluster": "libero_goal_task1",
+      "kind": "V3",
+      "uid": "5ffacd35f7e38e34",
+      "assertion": "failure-reproduced",
+      "inference_s": 3.233,
+      "bytes": 1718924
+    },
+    {
+      "cluster": "libero_goal_task2",
+      "kind": "V1",
+      "uid": "e9f1b64ba923416c",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.106,
+      "habit_inference_s": 0.088,
+      "ratio": 12.6,
+      "bytes": 1217407
+    },
+    {
+      "cluster": "libero_goal_task2",
+      "kind": "V3",
+      "uid": "7e0786b188ba2019",
+      "assertion": "failure-reproduced",
+      "inference_s": 3.233,
+      "bytes": 1713393
+    },
+    {
+      "cluster": "libero_goal_task3",
+      "kind": "V1",
+      "uid": "3404cfc6c2a44562",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.872,
+      "habit_inference_s": 0.161,
+      "ratio": 11.6,
+      "bytes": 2091200
+    },
+    {
+      "cluster": "libero_goal_task3",
+      "kind": "V2",
+      "uid": "6d8a394e1829cdcd",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.278,
+      "bytes": 1731704
+    },
+    {
+      "cluster": "libero_goal_task3",
+      "kind": "V3",
+      "uid": "6bd5892eabba629f",
+      "assertion": "failure-reproduced",
+      "inference_s": 3.233,
+      "bytes": 1912429
+    },
+    {
+      "cluster": "libero_goal_task4",
+      "kind": "V1",
+      "uid": "364625c60fafd448",
+      "assertion": "both-success",
+      "teacher_inference_s": 0.936,
+      "habit_inference_s": 0.081,
+      "ratio": 11.6,
+      "bytes": 1188965
+    },
+    {
+      "cluster": "libero_goal_task4",
+      "kind": "V2",
+      "uid": "5db2ef770d9cd8c5",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.278,
+      "bytes": 1560060
+    },
+    {
+      "cluster": "libero_goal_task4",
+      "kind": "V3",
+      "uid": "8f12b8802fc22f6b",
+      "assertion": "failure-reproduced",
+      "inference_s": 3.233,
+      "bytes": 1847988
+    },
+    {
+      "cluster": "libero_goal_task5",
+      "kind": "V1",
+      "uid": "2424c470f2824d8c",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.361,
+      "habit_inference_s": 0.11,
+      "ratio": 12.4,
+      "bytes": 1921969
+    },
+    {
+      "cluster": "libero_goal_task5",
+      "kind": "V2",
+      "uid": "4a5fa2105c937fe3",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.278,
+      "bytes": 2161302
+    },
+    {
+      "cluster": "libero_goal_task5",
+      "kind": "V3",
+      "uid": "5b11ada7c5c0345b",
+      "assertion": "failure-reproduced",
+      "inference_s": 3.233,
+      "bytes": 1687629
+    },
+    {
+      "cluster": "libero_goal_task6",
+      "kind": "V1",
+      "uid": "ebc96d9d72f043fc",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.361,
+      "habit_inference_s": 0.088,
+      "ratio": 15.5,
+      "bytes": 1608191
+    },
+    {
+      "cluster": "libero_goal_task6",
+      "kind": "V3",
+      "uid": "4ecdcc1afdcaabad",
+      "assertion": "failure-reproduced",
+      "inference_s": 3.233,
+      "bytes": 2025883
+    },
+    {
+      "cluster": "libero_goal_task7",
+      "kind": "V1",
+      "uid": "e69254688708eb14",
+      "assertion": "both-success",
+      "teacher_inference_s": 0.766,
+      "habit_inference_s": 0.066,
+      "ratio": 11.6,
+      "bytes": 827514
+    },
+    {
+      "cluster": "libero_goal_task8",
+      "kind": "V1",
+      "uid": "8753fd64acd46a18",
+      "assertion": "both-success",
+      "teacher_inference_s": 0.766,
+      "habit_inference_s": 0.073,
+      "ratio": 10.5,
+      "bytes": 1097365
+    },
+    {
+      "cluster": "libero_goal_task8",
+      "kind": "V2",
+      "uid": "7e21580dfdef50c2",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.278,
+      "bytes": 2221060
+    },
+    {
+      "cluster": "libero_goal_task8",
+      "kind": "V3",
+      "uid": "aa4e82f4a3940f08",
+      "assertion": "failure-reproduced",
+      "inference_s": 3.233,
+      "bytes": 2159168
+    },
+    {
+      "cluster": "libero_goal_task9",
+      "kind": "V1",
+      "uid": "5ea0668dfa7f16d3",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.361,
+      "habit_inference_s": 0.117,
+      "ratio": 11.6,
+      "bytes": 1547392
+    },
+    {
+      "cluster": "libero_goal_task9",
+      "kind": "V3",
+      "uid": "cd7bc49a913d8390",
+      "assertion": "failure-reproduced",
+      "inference_s": 3.233,
+      "bytes": 1452694
+    },
+    {
+      "cluster": "libero_spatial_task0",
+      "kind": "V1",
+      "uid": "0eb56ef8abb83386",
+      "assertion": "both-success",
+      "teacher_inference_s": 0.851,
+      "habit_inference_s": 0.073,
+      "ratio": 11.6,
+      "bytes": 1142333
+    },
+    {
+      "cluster": "libero_spatial_task0",
+      "kind": "V2",
+      "uid": "d2b67889affe913a",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.205,
+      "bytes": 1579416
+    },
+    {
+      "cluster": "libero_spatial_task0",
+      "kind": "V3",
+      "uid": "2e00c23b24598645",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.382,
+      "bytes": 1603400
+    },
+    {
+      "cluster": "libero_spatial_task1",
+      "kind": "V1",
+      "uid": "9fc3330fff37c874",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.106,
+      "habit_inference_s": 0.095,
+      "ratio": 11.6,
+      "bytes": 1342679
+    },
+    {
+      "cluster": "libero_spatial_task1",
+      "kind": "V2",
+      "uid": "7c022a9641489284",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.205,
+      "bytes": 1564914
+    },
+    {
+      "cluster": "libero_spatial_task1",
+      "kind": "V3",
+      "uid": "ac10f5762bc59551",
+      "assertion": "failure-reproduced",
+      "inference_s": 2.382,
+      "bytes": 1534261
+    },
+    {
+      "cluster": "libero_10_task0",
+      "kind": "V1",
+      "uid": "ef6f786db1189f09",
+      "assertion": "both-success",
+      "teacher_inference_s": 2.892,
+      "habit_inference_s": 0.242,
+      "ratio": 12.0,
+      "bytes": 3396305
+    },
+    {
+      "cluster": "libero_10_task0",
+      "kind": "V2",
+      "uid": "8abe98ab359c345b",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.476,
+      "bytes": 3436363
+    },
+    {
+      "cluster": "libero_10_task0",
+      "kind": "V3",
+      "uid": "dc5202c017198407",
+      "assertion": "failure-reproduced",
+      "inference_s": 5.53,
+      "bytes": 3644276
+    },
+    {
+      "cluster": "libero_10_task2",
+      "kind": "V1",
+      "uid": "fa77b4799c58d088",
+      "assertion": "both-success",
+      "teacher_inference_s": 2.807,
+      "habit_inference_s": 0.234,
+      "ratio": 12.0,
+      "bytes": 3834993
+    },
+    {
+      "cluster": "libero_10_task2",
+      "kind": "V2",
+      "uid": "edcc46e80d601ea9",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.476,
+      "bytes": 4533105
+    },
+    {
+      "cluster": "libero_10_task2",
+      "kind": "V3",
+      "uid": "0b2492b2631175eb",
+      "assertion": "failure-reproduced",
+      "inference_s": 5.53,
+      "bytes": 4148119
+    },
+    {
+      "cluster": "libero_10_task5",
+      "kind": "V1",
+      "uid": "66f047a1ccaae401",
+      "assertion": "both-success",
+      "teacher_inference_s": 1.701,
+      "habit_inference_s": 0.176,
+      "ratio": 9.7,
+      "bytes": 2088881
+    },
+    {
+      "cluster": "libero_10_task5",
+      "kind": "V2",
+      "uid": "b8118032fe615a1c",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.476,
+      "bytes": 2440700
+    },
+    {
+      "cluster": "libero_10_task5",
+      "kind": "V3",
+      "uid": "ca8acd87becf71b5",
+      "assertion": "failure-reproduced",
+      "inference_s": 5.53,
+      "bytes": 2551929
+    },
+    {
+      "cluster": "chained_libero_object_task0",
+      "kind": "V1",
+      "uid": "98cfbacdad2f6746",
+      "assertion": "both-success",
+      "teacher_inference_s": 3.063,
+      "habit_inference_s": 0.249,
+      "ratio": 12.3,
+      "bytes": 3381007
+    },
+    {
+      "cluster": "chained_libero_object_task0",
+      "kind": "V2",
+      "uid": "61524e989d8eb275",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.52,
+      "bytes": 3602019
+    },
+    {
+      "cluster": "chained_libero_object_task0",
+      "kind": "V3",
+      "uid": "6d492ff0a3d1d33a",
+      "assertion": "failure-reproduced",
+      "inference_s": 5.955,
+      "bytes": 3273959
+    },
+    {
+      "cluster": "chained_libero_object_task5",
+      "kind": "V1",
+      "uid": "7f88382a062ecaeb",
+      "assertion": "both-success",
+      "teacher_inference_s": 2.807,
+      "habit_inference_s": 0.234,
+      "ratio": 12.0,
+      "bytes": 3320413
+    },
+    {
+      "cluster": "chained_libero_object_task5",
+      "kind": "V2",
+      "uid": "29c610471e7d972f",
+      "assertion": "failure-reproduced",
+      "inference_s": 0.52,
+      "bytes": 4239401
+    },
+    {
+      "cluster": "chained_libero_object_task5",
+      "kind": "V3",
+      "uid": "9a63cd5eb6a7c9d3",
+      "assertion": "failure-reproduced",
+      "inference_s": 6.04,
+      "bytes": 3461970
+    },
+    {
+      "cluster": "libero_object_task0",
+      "kind": "V4",
+      "uid": "518552b0bebe3004",
+      "assertion": "reconstruction",
+      "bytes": 1936697
+    }
+  ],
+  "deferred": {}
+}

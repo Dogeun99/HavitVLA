@@ -1,0 +1,410 @@
+{
+  "stage": "Stage 1 screening (지시서 2026-08-28). formal equivalence/non-inferiority 주장 아님.",
+  "clusters": [
+    "libero_object_task1",
+    "libero_object_task0",
+    "libero_goal_task1",
+    "libero_goal_task0",
+    "libero_spatial_task1",
+    "libero_10_task0"
+  ],
+  "n_grid": [
+    10,
+    20,
+    40,
+    80
+  ],
+  "n_heldout": 50,
+  "paired": {
+    "n_episodes": 1200,
+    "mean_delta_success": -0.015,
+    "ci95_bootstrap": [
+      -0.0392,
+      0.0092
+    ],
+    "discordant_rgb_only_success": 100,
+    "discordant_rgbd_only_success": 118,
+    "mcnemar_exact_p": 0.2495
+  },
+  "per_cluster_nstar": {
+    "libero_object_task1": {
+      "rgbd": 10,
+      "rgb": 20
+    },
+    "libero_object_task0": {
+      "rgbd": 80,
+      "rgb": 40
+    },
+    "libero_goal_task1": {
+      "rgbd": 10,
+      "rgb": 10
+    },
+    "libero_goal_task0": {
+      "rgbd": 80,
+      "rgb": 80
+    },
+    "libero_spatial_task1": {
+      "rgbd": 20,
+      "rgb": 20
+    },
+    "libero_10_task0": {
+      "rgbd": ">80",
+      "rgb": ">80"
+    }
+  },
+  "nstar_shift": {
+    "libero_object_task1": 1,
+    "libero_object_task0": -1,
+    "libero_goal_task1": 0,
+    "libero_goal_task0": 0,
+    "libero_spatial_task1": 0,
+    "libero_10_task0": "both censored"
+  },
+  "s80": {
+    "libero_object_task1": {
+      "rgbd": 0.88,
+      "rgb": 0.96
+    },
+    "libero_object_task0": {
+      "rgbd": 0.96,
+      "rgb": 0.9
+    },
+    "libero_goal_task1": {
+      "rgbd": 0.98,
+      "rgb": 0.96
+    },
+    "libero_goal_task0": {
+      "rgbd": 0.92,
+      "rgb": 0.82
+    },
+    "libero_spatial_task1": {
+      "rgbd": 0.96,
+      "rgb": 0.98
+    },
+    "libero_10_task0": {
+      "rgbd": 0.74,
+      "rgb": 0.6
+    }
+  },
+  "mean_drop_pp_at_n80": 3.67,
+  "n_clusters_nstar_moved": 2,
+  "failure_types": {
+    "libero_object_task1": {
+      "episode_step_cap": 280,
+      "rgbd": {
+        "timeout_like": 31,
+        "other_failure": 0
+      },
+      "rgb": {
+        "timeout_like": 32,
+        "other_failure": 0
+      }
+    },
+    "libero_object_task0": {
+      "episode_step_cap": 280,
+      "rgbd": {
+        "timeout_like": 116,
+        "other_failure": 0
+      },
+      "rgb": {
+        "timeout_like": 92,
+        "other_failure": 0
+      }
+    },
+    "libero_goal_task1": {
+      "episode_step_cap": 300,
+      "rgbd": {
+        "timeout_like": 10,
+        "other_failure": 0
+      },
+      "rgb": {
+        "timeout_like": 17,
+        "other_failure": 0
+      }
+    },
+    "libero_goal_task0": {
+      "episode_step_cap": 300,
+      "rgbd": {
+        "timeout_like": 84,
+        "other_failure": 0
+      },
+      "rgb": {
+        "timeout_like": 106,
+        "other_failure": 0
+      }
+    },
+    "libero_spatial_task1": {
+      "episode_step_cap": 220,
+      "rgbd": {
+        "timeout_like": 20,
+        "other_failure": 0
+      },
+      "rgb": {
+        "timeout_like": 28,
+        "other_failure": 0
+      }
+    },
+    "libero_10_task0": {
+      "episode_step_cap": 520,
+      "rgbd": {
+        "timeout_like": 105,
+        "other_failure": 0
+      },
+      "rgb": {
+        "timeout_like": 109,
+        "other_failure": 0
+      }
+    }
+  },
+  "failure_type_caveat": "로그에서 자동 분류 가능한 것은 timeout 계열뿐이다(steps가 상한 도달). grasp/localization/placement/trajectory 구분은 영상 판독이 필요하며 본 스크리닝 범위 밖 — 미분류로 보고한다.",
+  "params": {
+    "rgbd": 95036360,
+    "rgb": 95030088
+  },
+  "param_delta": 6272,
+  "screening_case": "B",
+  "verdict": "Depth contributes to habit formation, but the contribution is task-dependent.",
+  "threshold_note": "3pp / 8pp는 Stage-1 엔지니어링 스크리닝 기준이며 논문의 통계적 non-inferiority margin(−3pp)과 무관하다.",
+  "rows": [
+    {
+      "cluster": "libero_object_task1",
+      "suite": "object",
+      "difficulty_group": "easy",
+      "n": 10,
+      "n_paired": 50,
+      "success_rgbd": 0.82,
+      "success_rgb": 0.58,
+      "delta_success": -0.24
+    },
+    {
+      "cluster": "libero_object_task1",
+      "suite": "object",
+      "difficulty_group": "easy",
+      "n": 20,
+      "n_paired": 50,
+      "success_rgbd": 0.86,
+      "success_rgb": 0.88,
+      "delta_success": 0.02
+    },
+    {
+      "cluster": "libero_object_task1",
+      "suite": "object",
+      "difficulty_group": "easy",
+      "n": 40,
+      "n_paired": 50,
+      "success_rgbd": 0.82,
+      "success_rgb": 0.94,
+      "delta_success": 0.12
+    },
+    {
+      "cluster": "libero_object_task1",
+      "suite": "object",
+      "difficulty_group": "easy",
+      "n": 80,
+      "n_paired": 50,
+      "success_rgbd": 0.88,
+      "success_rgb": 0.96,
+      "delta_success": 0.08
+    },
+    {
+      "cluster": "libero_object_task0",
+      "suite": "object",
+      "difficulty_group": "difficult",
+      "n": 10,
+      "n_paired": 50,
+      "success_rgbd": 0.04,
+      "success_rgb": 0.12,
+      "delta_success": 0.08
+    },
+    {
+      "cluster": "libero_object_task0",
+      "suite": "object",
+      "difficulty_group": "difficult",
+      "n": 20,
+      "n_paired": 50,
+      "success_rgbd": 0.2,
+      "success_rgb": 0.3,
+      "delta_success": 0.1
+    },
+    {
+      "cluster": "libero_object_task0",
+      "suite": "object",
+      "difficulty_group": "difficult",
+      "n": 40,
+      "n_paired": 50,
+      "success_rgbd": 0.48,
+      "success_rgb": 0.84,
+      "delta_success": 0.36
+    },
+    {
+      "cluster": "libero_object_task0",
+      "suite": "object",
+      "difficulty_group": "difficult",
+      "n": 80,
+      "n_paired": 50,
+      "success_rgbd": 0.96,
+      "success_rgb": 0.9,
+      "delta_success": -0.06
+    },
+    {
+      "cluster": "libero_goal_task1",
+      "suite": "goal",
+      "difficulty_group": "easy",
+      "n": 10,
+      "n_paired": 50,
+      "success_rgbd": 0.9,
+      "success_rgb": 0.82,
+      "delta_success": -0.08
+    },
+    {
+      "cluster": "libero_goal_task1",
+      "suite": "goal",
+      "difficulty_group": "easy",
+      "n": 20,
+      "n_paired": 50,
+      "success_rgbd": 0.94,
+      "success_rgb": 0.92,
+      "delta_success": -0.02
+    },
+    {
+      "cluster": "libero_goal_task1",
+      "suite": "goal",
+      "difficulty_group": "easy",
+      "n": 40,
+      "n_paired": 50,
+      "success_rgbd": 0.98,
+      "success_rgb": 0.96,
+      "delta_success": -0.02
+    },
+    {
+      "cluster": "libero_goal_task1",
+      "suite": "goal",
+      "difficulty_group": "easy",
+      "n": 80,
+      "n_paired": 50,
+      "success_rgbd": 0.98,
+      "success_rgb": 0.96,
+      "delta_success": -0.02
+    },
+    {
+      "cluster": "libero_goal_task0",
+      "suite": "goal",
+      "difficulty_group": "difficult",
+      "n": 10,
+      "n_paired": 50,
+      "success_rgbd": 0.18,
+      "success_rgb": 0.0,
+      "delta_success": -0.18
+    },
+    {
+      "cluster": "libero_goal_task0",
+      "suite": "goal",
+      "difficulty_group": "difficult",
+      "n": 20,
+      "n_paired": 50,
+      "success_rgbd": 0.44,
+      "success_rgb": 0.32,
+      "delta_success": -0.12
+    },
+    {
+      "cluster": "libero_goal_task0",
+      "suite": "goal",
+      "difficulty_group": "difficult",
+      "n": 40,
+      "n_paired": 50,
+      "success_rgbd": 0.78,
+      "success_rgb": 0.74,
+      "delta_success": -0.04
+    },
+    {
+      "cluster": "libero_goal_task0",
+      "suite": "goal",
+      "difficulty_group": "difficult",
+      "n": 80,
+      "n_paired": 50,
+      "success_rgbd": 0.92,
+      "success_rgb": 0.82,
+      "delta_success": -0.1
+    },
+    {
+      "cluster": "libero_spatial_task1",
+      "suite": "spatial",
+      "difficulty_group": "medium",
+      "n": 10,
+      "n_paired": 50,
+      "success_rgbd": 0.78,
+      "success_rgb": 0.56,
+      "delta_success": -0.22
+    },
+    {
+      "cluster": "libero_spatial_task1",
+      "suite": "spatial",
+      "difficulty_group": "medium",
+      "n": 20,
+      "n_paired": 50,
+      "success_rgbd": 0.92,
+      "success_rgb": 0.92,
+      "delta_success": 0.0
+    },
+    {
+      "cluster": "libero_spatial_task1",
+      "suite": "spatial",
+      "difficulty_group": "medium",
+      "n": 40,
+      "n_paired": 50,
+      "success_rgbd": 0.94,
+      "success_rgb": 0.98,
+      "delta_success": 0.04
+    },
+    {
+      "cluster": "libero_spatial_task1",
+      "suite": "spatial",
+      "difficulty_group": "medium",
+      "n": 80,
+      "n_paired": 50,
+      "success_rgbd": 0.96,
+      "success_rgb": 0.98,
+      "delta_success": 0.02
+    },
+    {
+      "cluster": "libero_10_task0",
+      "suite": "long",
+      "difficulty_group": "censored",
+      "n": 10,
+      "n_paired": 50,
+      "success_rgbd": 0.1,
+      "success_rgb": 0.02,
+      "delta_success": -0.08
+    },
+    {
+      "cluster": "libero_10_task0",
+      "suite": "long",
+      "difficulty_group": "censored",
+      "n": 20,
+      "n_paired": 50,
+      "success_rgbd": 0.4,
+      "success_rgb": 0.42,
+      "delta_success": 0.02
+    },
+    {
+      "cluster": "libero_10_task0",
+      "suite": "long",
+      "difficulty_group": "censored",
+      "n": 40,
+      "n_paired": 50,
+      "success_rgbd": 0.66,
+      "success_rgb": 0.78,
+      "delta_success": 0.12
+    },
+    {
+      "cluster": "libero_10_task0",
+      "suite": "long",
+      "difficulty_group": "censored",
+      "n": 80,
+      "n_paired": 50,
+      "success_rgbd": 0.74,
+      "success_rgb": 0.6,
+      "delta_success": -0.14
+    }
+  ]
+}

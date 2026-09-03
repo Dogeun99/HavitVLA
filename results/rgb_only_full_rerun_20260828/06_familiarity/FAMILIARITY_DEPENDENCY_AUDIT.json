@@ -1,0 +1,91 @@
+{
+ "run_id": "rgb_only_full_rerun_20260828",
+ "principle": "값이 RGB-only habit 성공에 의존하는가로 재계산 여부를 가른다.",
+ "metrics": [
+  {
+   "metric_name": "competence_map.habit_success_rate_by_w",
+   "depends_on_habit_modality": true,
+   "recomputed": true,
+   "source": "experiments/e4r_competence_map.py --ckpt-root checkpoints/rgb_only_rerun/batch",
+   "why": "RGB-only habit(n=80) rollout 결과가 직접 들어간다."
+  },
+  {
+   "metric_name": "competence_map.w_star",
+   "depends_on_habit_modality": true,
+   "recomputed": true,
+   "source": "동일 (재계산 산출물에서 판독 규칙 그대로 적용)",
+   "why": "습관 성공률이 0.8 아래로 내려가는 첫 폭 — 습관 성능의 함수."
+  },
+  {
+   "metric_name": "competence_map.gate_score / gate_reject_rate",
+   "depends_on_habit_modality": false,
+   "recomputed": true,
+   "source": "동일 실행의 부산물 (DINOv2 + 공용 PCA + Mahalanobis)",
+   "why": "초기 프레임 표현만의 함수라 modality 무관이지만, 같은 실행에서 무료로 나오므로 재사용 대신 재계산해 에피소드 단위 정합을 유지한다."
+  },
+  {
+   "metric_name": "competence_map.physical_reject_rate",
+   "depends_on_habit_modality": false,
+   "recomputed": true,
+   "source": "동일 실행의 부산물 (E0-6 settled 유효성 검사)",
+   "why": "환경·섭동만의 함수."
+  },
+  {
+   "metric_name": "jurisdiction_AUC (known vs novel)",
+   "depends_on_habit_modality": false,
+   "recomputed": false,
+   "source": "results/e4/e4_pilot_auc.json",
+   "why": "DINOv2 특징과 에피소드 조건만으로 결정된다. habit이 관여하지 않는다."
+  },
+  {
+   "metric_name": "kNN scorer (k=5,10) AUC·FR·quantile",
+   "depends_on_habit_modality": false,
+   "recomputed": false,
+   "source": "results/e4/e4_knn_scorer.json",
+   "why": "동일 특징·동일 conformal 절차. habit 무관."
+  },
+  {
+   "metric_name": "teacher hidden L32 scorer",
+   "depends_on_habit_modality": false,
+   "recomputed": false,
+   "source": "results/e4/e4_hidden_scorer.json",
+   "why": "teacher(OpenVLA-OFT)는 §1 ABSOLUTE FREEZE 대상이며 habit 경로가 관여하지 않는다."
+  },
+  {
+   "metric_name": "scorer comparison table",
+   "depends_on_habit_modality": false,
+   "recomputed": false,
+   "source": "results/e4/e4_scorer_table.json",
+   "why": "위 세 scorer의 집계."
+  },
+  {
+   "metric_name": "shared PCA (32) basis",
+   "depends_on_habit_modality": false,
+   "recomputed": false,
+   "source": "results/e4/shared_pca_e4.joblib",
+   "why": "수집 풀 fit — teacher 궤적에서만 산출. §1 동결."
+  }
+ ],
+ "reused_artifacts": {
+  "jurisdiction_auc": {
+   "source": "results/e4/e4_pilot_auc.json",
+   "sha256": "c80ddc5a50e3429d353fd07e229b08f8a5f916c4280b9f2b0499a476a336bd1b",
+   "reused_unchanged": true
+  },
+  "knn_scorer": {
+   "source": "results/e4/e4_knn_scorer.json",
+   "sha256": "d4af4d25776201e4c3dbaca4236c80894b5627414d53f248fdddd30d7d0ec963",
+   "reused_unchanged": true
+  },
+  "hidden_scorer": {
+   "source": "results/e4/e4_hidden_scorer.json",
+   "sha256": "046f08d32efcf8524a3fa6282c6a2eb90befc0cfaf18205847ff33711b5ef90b",
+   "reused_unchanged": true
+  },
+  "scorer_table": {
+   "source": "results/e4/e4_scorer_table.json",
+   "sha256": "fb67b677e2d4cdc13d5ff0195f60310db8a3b7727bf2b242527463cc028718a6",
+   "reused_unchanged": true
+  }
+ }
+}

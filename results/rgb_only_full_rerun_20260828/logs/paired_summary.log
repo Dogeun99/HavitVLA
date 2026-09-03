@@ -1,0 +1,7 @@
+
+===== paired_summary attempt=0 start=2026-08-31 20:14:42 =====
+/home/asmr/miniconda3/envs/hv2_hab/bin/python -u experiments/rgb_only_rerun/analyze_replay.py
+  seed 0: n=1538 sys=0.961 vla=0.9785 Δ=-0.0176 CI[-0.0286,-0.0072] margin_pass=True | fullstream Δ=-0.0067 CI[-0.0107, -0.0027] PASS
+  seed 1: n=1664 sys=0.9651 vla=0.9772 Δ=-0.0120 CI[-0.0234,-0.0012] margin_pass=True | fullstream Δ=-0.0050 CI[-0.0095, -0.0005] PASS
+  seed 2: n=1661 sys=0.9609 vla=0.9795 Δ=-0.0187 CI[-0.0301,-0.0078] margin_pass=False | fullstream Δ=-0.0077 CI[-0.0125, -0.0032] PASS
+[PAIRED-DONE] seeds=[0, 1, 2] episodes=4863

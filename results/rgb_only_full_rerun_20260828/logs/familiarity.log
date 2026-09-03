@@ -1,0 +1,521 @@
+
+===== familiarity attempt=0 start=2026-08-31 20:14:43 =====
+/home/asmr/miniconda3/envs/hv2_hab/bin/python -u experiments/rgb_only_rerun/analyze_familiarity.py
+[FAMILIARITY] 역량 지도 재계산 (RGB-only n=80 체크포인트)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 8818.29it/s]
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/asmr/miniconda3/envs/hv2_hab/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[E4R] libero_object_task0 w=0.01 1/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.01 2/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.01 3/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.01 4/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.01 5/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.01 6/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.01 7/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.01 8/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.01 9/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.01 10/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.01 11/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.01 12/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.01 13/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.01 14/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.01 15/15 succ=True gate_rej=True
+[E4R-W] libero_object_task0 w=0.01: 습관 성공률=1.0 게이트 기각률=0.6 물리탈락=0/15
+[E4R] libero_object_task0 w=0.02 1/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.02 2/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.02 3/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.02 4/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.02 5/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.02 6/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.02 7/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.02 8/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.02 9/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.02 10/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.02 11/15 succ=False gate_rej=False
+[E4R] libero_object_task0 w=0.02 12/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.02 13/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.02 14/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.02 15/15 succ=False gate_rej=True
+[E4R-W] libero_object_task0 w=0.02: 습관 성공률=0.5333 게이트 기각률=0.6667 물리탈락=0/15
+[E4R] libero_object_task0 w=0.04 1/15 succ=False gate_rej=False
+[E4R] libero_object_task0 w=0.04 2/15 succ=False gate_rej=False
+[E4R] libero_object_task0 w=0.04 3/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.04 4/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.04 5/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.04 6/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.04 7/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.04 8/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.04 9/15 succ=False gate_rej=False
+[E4R] libero_object_task0 w=0.04 10/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.04 11/15 succ=False gate_rej=False
+[E4R] libero_object_task0 w=0.04 12/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.04 13/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.04 14/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.04 15/15 succ=False gate_rej=True
+[E4R-W] libero_object_task0 w=0.04: 습관 성공률=0.2 게이트 기각률=0.6667 물리탈락=0/15
+[E4R] libero_object_task0 w=0.06 1/15 succ=False gate_rej=False
+[E4R] libero_object_task0 w=0.06 2/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.06 3/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.06 4/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.06 5/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.06 6/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.06 7/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.06 8/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.06 9/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.06 10/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.06 11/15 succ=True gate_rej=False
+[E4R] libero_object_task0 w=0.06 12/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.06 13/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.06 14/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.06 15/15 succ=True gate_rej=False
+[E4R-W] libero_object_task0 w=0.06: 습관 성공률=0.2667 게이트 기각률=0.8 물리탈락=0/15
+[E4R] libero_object_task0 w=0.08 1/15 succ=False gate_rej=False
+[E4R] libero_object_task0 w=0.08 2/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.08 3/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.08 4/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.08 5/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.08 6/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.08 7/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.08 8/15 succ=False gate_rej=False
+[E4R] libero_object_task0 w=0.08 9/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.08 10/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.08 11/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.08 12/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.08 13/15 succ=False gate_rej=True
+[E4R] libero_object_task0 w=0.08 14/15 succ=True gate_rej=True
+[E4R] libero_object_task0 w=0.08 15/15 succ=False gate_rej=True
+[E4R-W] libero_object_task0 w=0.08: 습관 성공률=0.1333 게이트 기각률=0.8667 물리탈락=0/15
+[E4R-CL] libero_object_task0: w*=0.02 (usable_w_max=0.04)
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[E4R] libero_object_task5 w=0.01 1/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.01 2/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.01 3/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.01 4/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.01 5/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.01 6/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.01 7/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.01 8/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.01 9/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.01 10/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.01 11/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.01 12/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.01 13/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.01 14/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.01 15/15 succ=False gate_rej=False
+[E4R-W] libero_object_task5 w=0.01: 습관 성공률=0.8667 게이트 기각률=0.2667 물리탈락=0/15
+[E4R] libero_object_task5 w=0.02 1/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.02 2/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.02 3/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.02 4/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.02 5/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.02 6/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.02 7/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.02 8/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.02 9/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.02 10/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.02 11/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.02 12/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.02 13/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.02 14/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.02 15/15 succ=True gate_rej=False
+[E4R-W] libero_object_task5 w=0.02: 습관 성공률=0.9333 게이트 기각률=0.3333 물리탈락=0/15
+[E4R] libero_object_task5 w=0.04 1/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.04 2/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.04 3/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.04 4/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.04 5/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.04 6/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.04 7/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.04 8/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.04 9/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.04 10/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.04 11/15 invalid(lateral)
+[E4R] libero_object_task5 w=0.04 12/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.04 13/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.04 14/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.04 15/15 succ=False gate_rej=False
+[E4R-W] libero_object_task5 w=0.04: 습관 성공률=0.4286 게이트 기각률=0.5 물리탈락=1/15
+[E4R] libero_object_task5 w=0.06 1/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.06 2/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.06 3/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.06 4/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.06 5/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.06 6/15 invalid(lateral)
+[E4R] libero_object_task5 w=0.06 7/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.06 8/15 invalid(lateral)
+[E4R] libero_object_task5 w=0.06 9/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.06 10/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.06 11/15 succ=True gate_rej=False
+[E4R] libero_object_task5 w=0.06 12/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.06 13/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.06 14/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.06 15/15 succ=True gate_rej=False
+[E4R-W] libero_object_task5 w=0.06: 습관 성공률=0.3077 게이트 기각률=0.5385 물리탈락=2/15
+[E4R] libero_object_task5 w=0.08 1/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.08 2/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.08 3/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.08 4/15 invalid(lateral)
+[E4R] libero_object_task5 w=0.08 5/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.08 6/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.08 7/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.08 8/15 succ=False gate_rej=True
+[E4R] libero_object_task5 w=0.08 9/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.08 10/15 invalid(lateral)
+[E4R] libero_object_task5 w=0.08 11/15 invalid(lateral)
+[E4R] libero_object_task5 w=0.08 12/15 succ=True gate_rej=True
+[E4R] libero_object_task5 w=0.08 13/15 succ=False gate_rej=False
+[E4R] libero_object_task5 w=0.08 14/15 invalid(lateral)
+[E4R] libero_object_task5 w=0.08 15/15 succ=False gate_rej=True
+[E4R-W] libero_object_task5 w=0.08: 습관 성공률=0.1818 게이트 기각률=0.9091 물리탈락=4/15
+[E4R-CL] libero_object_task5: w*=0.04 (usable_w_max=0.04)
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[E4R] libero_goal_task0 w=0.01 1/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 2/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 3/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 4/15 succ=False gate_rej=False
+[E4R] libero_goal_task0 w=0.01 5/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 6/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 7/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 8/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 9/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 10/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.01 11/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 12/15 succ=False gate_rej=True
+[E4R] libero_goal_task0 w=0.01 13/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 14/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.01 15/15 succ=True gate_rej=False
+[E4R-W] libero_goal_task0 w=0.01: 습관 성공률=0.8667 게이트 기각률=0.1333 물리탈락=0/15
+[E4R] libero_goal_task0 w=0.02 1/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.02 2/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.02 3/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.02 4/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.02 5/15 succ=False gate_rej=False
+[E4R] libero_goal_task0 w=0.02 6/15 succ=False gate_rej=False
+[E4R] libero_goal_task0 w=0.02 7/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.02 8/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.02 9/15 succ=False gate_rej=False
+[E4R] libero_goal_task0 w=0.02 10/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.02 11/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.02 12/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.02 13/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.02 14/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.02 15/15 succ=True gate_rej=False
+[E4R-W] libero_goal_task0 w=0.02: 습관 성공률=0.8 게이트 기각률=0.2 물리탈락=0/15
+[E4R] libero_goal_task0 w=0.04 1/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.04 2/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.04 3/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.04 4/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.04 5/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.04 6/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.04 7/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.04 8/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.04 9/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.04 10/15 succ=False gate_rej=True
+[E4R] libero_goal_task0 w=0.04 11/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.04 12/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.04 13/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.04 14/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.04 15/15 succ=False gate_rej=True
+[E4R-W] libero_goal_task0 w=0.04: 습관 성공률=0.8667 게이트 기각률=0.4667 물리탈락=0/15
+[E4R] libero_goal_task0 w=0.06 1/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.06 2/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.06 3/15 succ=False gate_rej=False
+[E4R] libero_goal_task0 w=0.06 4/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.06 5/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.06 6/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.06 7/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.06 8/15 succ=False gate_rej=True
+[E4R] libero_goal_task0 w=0.06 9/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.06 10/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.06 11/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.06 12/15 invalid(lateral)
+[E4R] libero_goal_task0 w=0.06 13/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.06 14/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.06 15/15 succ=True gate_rej=False
+[E4R-W] libero_goal_task0 w=0.06: 습관 성공률=0.8571 게이트 기각률=0.5 물리탈락=1/15
+[E4R] libero_goal_task0 w=0.08 1/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.08 2/15 succ=False gate_rej=True
+[E4R] libero_goal_task0 w=0.08 3/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.08 4/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.08 5/15 invalid(lateral)
+[E4R] libero_goal_task0 w=0.08 6/15 succ=False gate_rej=True
+[E4R] libero_goal_task0 w=0.08 7/15 succ=True gate_rej=False
+[E4R] libero_goal_task0 w=0.08 8/15 succ=False gate_rej=False
+[E4R] libero_goal_task0 w=0.08 9/15 succ=False gate_rej=True
+[E4R] libero_goal_task0 w=0.08 10/15 succ=False gate_rej=True
+[E4R] libero_goal_task0 w=0.08 11/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.08 12/15 succ=True gate_rej=True
+[E4R] libero_goal_task0 w=0.08 13/15 succ=False gate_rej=False
+[E4R] libero_goal_task0 w=0.08 14/15 succ=False gate_rej=True
+[E4R] libero_goal_task0 w=0.08 15/15 succ=True gate_rej=True
+[E4R-W] libero_goal_task0 w=0.08: 습관 성공률=0.5 게이트 기각률=0.7143 물리탈락=1/15
+[E4R-CL] libero_goal_task0: w*=0.08 (usable_w_max=0.04)
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[E4R] libero_goal_task2 w=0.01 1/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 2/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 3/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 4/15 succ=True gate_rej=True
+[E4R] libero_goal_task2 w=0.01 5/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 6/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 7/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 8/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 9/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 10/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 11/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 12/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 13/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 14/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.01 15/15 succ=True gate_rej=False
+[E4R-W] libero_goal_task2 w=0.01: 습관 성공률=1.0 게이트 기각률=0.0667 물리탈락=0/15
+[E4R] libero_goal_task2 w=0.02 1/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 2/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 3/15 succ=False gate_rej=False
+[E4R] libero_goal_task2 w=0.02 4/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 5/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 6/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 7/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 8/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 9/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 10/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 11/15 succ=True gate_rej=True
+[E4R] libero_goal_task2 w=0.02 12/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 13/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 14/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.02 15/15 succ=True gate_rej=False
+[E4R-W] libero_goal_task2 w=0.02: 습관 성공률=0.9333 게이트 기각률=0.0667 물리탈락=0/15
+[E4R] libero_goal_task2 w=0.04 1/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.04 2/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.04 3/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.04 4/15 succ=True gate_rej=True
+[E4R] libero_goal_task2 w=0.04 5/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.04 6/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.04 7/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.04 8/15 succ=False gate_rej=False
+[E4R] libero_goal_task2 w=0.04 9/15 succ=True gate_rej=True
+[E4R] libero_goal_task2 w=0.04 10/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.04 11/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.04 12/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.04 13/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.04 14/15 succ=True gate_rej=True
+[E4R] libero_goal_task2 w=0.04 15/15 succ=True gate_rej=False
+[E4R-W] libero_goal_task2 w=0.04: 습관 성공률=0.8 게이트 기각률=0.3333 물리탈락=0/15
+[E4R] libero_goal_task2 w=0.06 1/15 succ=True gate_rej=True
+[E4R] libero_goal_task2 w=0.06 2/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.06 3/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.06 4/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.06 5/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.06 6/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.06 7/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.06 8/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.06 9/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.06 10/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.06 11/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.06 12/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.06 13/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.06 14/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.06 15/15 succ=True gate_rej=False
+[E4R-W] libero_goal_task2 w=0.06: 습관 성공률=0.6667 게이트 기각률=0.4 물리탈락=0/15
+[E4R] libero_goal_task2 w=0.08 1/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.08 2/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.08 3/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.08 4/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.08 5/15 succ=True gate_rej=True
+[E4R] libero_goal_task2 w=0.08 6/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.08 7/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.08 8/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.08 9/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.08 10/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.08 11/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.08 12/15 succ=False gate_rej=False
+[E4R] libero_goal_task2 w=0.08 13/15 succ=True gate_rej=False
+[E4R] libero_goal_task2 w=0.08 14/15 succ=False gate_rej=True
+[E4R] libero_goal_task2 w=0.08 15/15 succ=False gate_rej=True
+[E4R-W] libero_goal_task2 w=0.08: 습관 성공률=0.5333 게이트 기각률=0.4667 물리탈락=0/15
+[E4R-CL] libero_goal_task2: w*=0.06 (usable_w_max=0.04)
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[E4R] libero_spatial_task0 w=0.01 1/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 2/15 succ=True gate_rej=True
+[E4R] libero_spatial_task0 w=0.01 3/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 4/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 5/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 6/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 7/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 8/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 9/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 10/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 11/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 12/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 13/15 succ=True gate_rej=True
+[E4R] libero_spatial_task0 w=0.01 14/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.01 15/15 succ=True gate_rej=False
+[E4R-W] libero_spatial_task0 w=0.01: 습관 성공률=1.0 게이트 기각률=0.1333 물리탈락=0/15
+[E4R] libero_spatial_task0 w=0.02 1/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 2/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 3/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 4/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 5/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 6/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 7/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 8/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 9/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 10/15 invalid(lateral)
+[E4R] libero_spatial_task0 w=0.02 11/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 12/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 13/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 14/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.02 15/15 succ=False gate_rej=False
+[E4R-W] libero_spatial_task0 w=0.02: 습관 성공률=0.8571 게이트 기각률=0.0 물리탈락=1/15
+[E4R] libero_spatial_task0 w=0.04 1/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 2/15 succ=True gate_rej=True
+[E4R] libero_spatial_task0 w=0.04 3/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 4/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 5/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 6/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 7/15 succ=True gate_rej=True
+[E4R] libero_spatial_task0 w=0.04 8/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 9/15 succ=False gate_rej=True
+[E4R] libero_spatial_task0 w=0.04 10/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 11/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 12/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 13/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 14/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.04 15/15 succ=True gate_rej=False
+[E4R-W] libero_spatial_task0 w=0.04: 습관 성공률=0.7333 게이트 기각률=0.2 물리탈락=0/15
+[E4R] libero_spatial_task0 w=0.06 1/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.06 2/15 invalid(lateral)
+[E4R] libero_spatial_task0 w=0.06 3/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.06 4/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.06 5/15 succ=False gate_rej=True
+[E4R] libero_spatial_task0 w=0.06 6/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.06 7/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.06 8/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.06 9/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.06 10/15 succ=True gate_rej=True
+[E4R] libero_spatial_task0 w=0.06 11/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.06 12/15 succ=False gate_rej=True
+[E4R] libero_spatial_task0 w=0.06 13/15 succ=True gate_rej=True
+[E4R] libero_spatial_task0 w=0.06 14/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.06 15/15 succ=True gate_rej=True
+[E4R-W] libero_spatial_task0 w=0.06: 습관 성공률=0.7143 게이트 기각률=0.3571 물리탈락=1/15
+[E4R] libero_spatial_task0 w=0.08 1/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.08 2/15 invalid(lateral)
+[E4R] libero_spatial_task0 w=0.08 3/15 succ=True gate_rej=True
+[E4R] libero_spatial_task0 w=0.08 4/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.08 5/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.08 6/15 invalid(lateral)
+[E4R] libero_spatial_task0 w=0.08 7/15 succ=True gate_rej=False
+[E4R] libero_spatial_task0 w=0.08 8/15 invalid(lateral)
+[E4R] libero_spatial_task0 w=0.08 9/15 succ=True gate_rej=True
+[E4R] libero_spatial_task0 w=0.08 10/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.08 11/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.08 12/15 invalid(z_drop)
+[E4R] libero_spatial_task0 w=0.08 13/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.08 14/15 succ=False gate_rej=False
+[E4R] libero_spatial_task0 w=0.08 15/15 succ=True gate_rej=True
+[E4R-W] libero_spatial_task0 w=0.08: 습관 성공률=0.3636 게이트 기각률=0.2727 물리탈락=4/15
+[E4R-CL] libero_spatial_task0: w*=0.04 (usable_w_max=0.04)
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[Warning]: datasets path /home/asmr/workspace/habitvla2/third_party/LIBERO/libero/datasets does not exist!
+[E4R] libero_10_task0 w=0.01 1/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.01 2/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.01 3/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.01 4/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.01 5/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.01 6/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.01 7/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.01 8/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.01 9/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.01 10/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.01 11/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.01 12/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.01 13/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.01 14/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.01 15/15 succ=False gate_rej=False
+[E4R-W] libero_10_task0 w=0.01: 습관 성공률=0.5333 게이트 기각률=0.0 물리탈락=0/15
+[E4R] libero_10_task0 w=0.02 1/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.02 2/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.02 3/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.02 4/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.02 5/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.02 6/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.02 7/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.02 8/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.02 9/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.02 10/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.02 11/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.02 12/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.02 13/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.02 14/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.02 15/15 succ=False gate_rej=False
+[E4R-W] libero_10_task0 w=0.02: 습관 성공률=0.6 게이트 기각률=0.0 물리탈락=0/15
+[E4R] libero_10_task0 w=0.04 1/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.04 2/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.04 3/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.04 4/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.04 5/15 succ=True gate_rej=True
+[E4R] libero_10_task0 w=0.04 6/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.04 7/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.04 8/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.04 9/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.04 10/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.04 11/15 succ=False gate_rej=True
+[E4R] libero_10_task0 w=0.04 12/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.04 13/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.04 14/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.04 15/15 succ=True gate_rej=False
+[E4R-W] libero_10_task0 w=0.04: 습관 성공률=0.5455 게이트 기각률=0.1818 물리탈락=4/15
+[E4R] libero_10_task0 w=0.06 1/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.06 2/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.06 3/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.06 4/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.06 5/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.06 6/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.06 7/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.06 8/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.06 9/15 succ=True gate_rej=True
+[E4R] libero_10_task0 w=0.06 10/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.06 11/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.06 12/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.06 13/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.06 14/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.06 15/15 succ=False gate_rej=True
+[E4R-W] libero_10_task0 w=0.06: 습관 성공률=0.3077 게이트 기각률=0.1538 물리탈락=2/15
+[E4R] libero_10_task0 w=0.08 1/15 succ=False gate_rej=True
+[E4R] libero_10_task0 w=0.08 2/15 succ=False gate_rej=True
+[E4R] libero_10_task0 w=0.08 3/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.08 4/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.08 5/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.08 6/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.08 7/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.08 8/15 succ=True gate_rej=False
+[E4R] libero_10_task0 w=0.08 9/15 succ=False gate_rej=True
+[E4R] libero_10_task0 w=0.08 10/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.08 11/15 succ=False gate_rej=False
+[E4R] libero_10_task0 w=0.08 12/15 succ=False gate_rej=True
+[E4R] libero_10_task0 w=0.08 13/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.08 14/15 invalid(lateral)
+[E4R] libero_10_task0 w=0.08 15/15 succ=False gate_rej=True
+[E4R-W] libero_10_task0 w=0.08: 습관 성공률=0.2222 게이트 기각률=0.5556 물리탈락=6/15
+[E4R-CL] libero_10_task0: w*=0.01 (usable_w_max=0.02)
+[E4R-MAP-PASS] 성공률/w={'0.01': 0.8778, '0.02': 0.7762, '0.04': 0.5957, '0.06': 0.52, '0.08': 0.3224} | 게이트기각/w={'0.01': 0.2, '0.02': 0.2111, '0.04': 0.3914, '0.06': 0.4582, '0.08': 0.6309} | w*={'libero_object_task0': 0.02, 'libero_object_task5': 0.04, 'libero_goal_task0': 0.08, 'libero_goal_task2': 0.06, 'libero_spatial_task0': 0.04, 'libero_10_task0': 0.01} | usable 초과 2/6
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 8548.93it/s]
+[FAMILIARITY-DONE] episodes=423 recomputed=4 reused=4 w_star={'libero_object_task0': 0.02, 'libero_object_task5': 0.04, 'libero_goal_task0': 0.08, 'libero_goal_task2': 0.06, 'libero_spatial_task0': 0.04, 'libero_10_task0': 0.01}

@@ -1,0 +1,7 @@
+
+===== online_summary attempt=0 start=2026-08-31 20:14:41 =====
+/home/asmr/miniconda3/envs/hv2_hab/bin/python -u experiments/rgb_only_rerun/analyze_online.py
+  seed 0: n=4000 r_V=0.6155 (first1000=0.861 → last1000=0.458) success=0.9573 risk=0.039 M/I/X/U=[17, 6, 10, 0]
+  seed 1: n=4000 r_V=0.584 (first1000=0.819 → last1000=0.442) success=0.9525 risk=0.0349 M/I/X/U=[18, 6, 9, 0]
+  seed 2: n=4000 r_V=0.5847 (first1000=0.878 → last1000=0.397) success=0.9595 risk=0.0391 M/I/X/U=[19, 4, 10, 0]
+[ONLINE-SUMMARY-DONE] seeds=[0, 1, 2] events=345 cluster_rows=99

@@ -1,0 +1,225 @@
+{
+  "kind": "배치·스트림 형성 간극 진단 (추가 rollout 0)",
+  "prereg": "§5 2026-08-17 (seed 0 갱신 판독 2)",
+  "targets": [
+    "libero_goal_task5",
+    "libero_goal_task0"
+  ],
+  "c_training_path": {
+    "criterion": "재학습 HP·스텝 수·정규화 통계가 배치 학습 경로와 동일한가",
+    "per_cluster": {
+      "libero_goal_task5": {
+        "e3_stats_frozen_across_grid": {
+          "action_mean": 0.0,
+          "action_std": 0.0,
+          "proprio_mean": 0.0,
+          "proprio_std": 0.0
+        },
+        "e5_stats_shift_n20_to_n80": {
+          "action_mean": 0.008962,
+          "action_std": 0.020189,
+          "proprio_mean": 0.003541,
+          "proprio_std": 0.048667
+        },
+        "e3_steps_by_n": {
+          "10": 4000,
+          "20": 6000,
+          "40": 8000,
+          "80": 10000
+        },
+        "e5_steps_by_n": {
+          "20": 6000,
+          "80": 10000
+        },
+        "e3_cumulative_steps_to_n80": 28000,
+        "e5_cumulative_steps_to_n80": 16000,
+        "e3_final_l1_n80": 0.057033588513731956,
+        "e5_final_l1_n80": 0.07182649565860628
+      },
+      "libero_goal_task0": {
+        "e3_stats_frozen_across_grid": {
+          "action_mean": 0.0,
+          "action_std": 0.0,
+          "proprio_mean": 0.0,
+          "proprio_std": 0.0
+        },
+        "e5_stats_shift_n20_to_n80": {
+          "action_mean": 0.018094,
+          "action_std": 0.011375,
+          "proprio_mean": 0.010481,
+          "proprio_std": 0.012757
+        },
+        "e3_steps_by_n": {
+          "10": 4000,
+          "20": 6000,
+          "40": 8000,
+          "80": 10000
+        },
+        "e5_steps_by_n": {
+          "20": 6000,
+          "80": 10000
+        },
+        "e3_cumulative_steps_to_n80": 28000,
+        "e5_cumulative_steps_to_n80": 16000,
+        "e3_final_l1_n80": 0.04582593657076359,
+        "e5_final_l1_n80": 0.05321182185783982
+      }
+    },
+    "e3_normalization_frozen": true,
+    "e5_normalization_shifts": true,
+    "clusters_with_shift": [
+      "libero_goal_task5",
+      "libero_goal_task0"
+    ],
+    "verdict": "불일치 — 구현 결함 확정 (연구원 회부)",
+    "mechanism": "habits/train.py는 정규화 통계를 `compute_stats(episodes[:max(n_grid)])`로 산출한다. E3는 `--n-grid 10 20 40 80`으로 호출되어 max=80 풀에서 1회 산출 후 전 단계 동결되지만, E5 lazy 재학습은 `--n-grid {n}` 단일값이라 n=20 재학습은 20개 풀, n=80 재학습은 80개 풀에서 각각 산출된다 — warm-start가 정규화 공간을 가로지른다(§5 조항과 충돌).",
+    "step_budget_note": "lazy {20,80}은 등재 설계지만 그 귀결로 n=80 도달까지의 누적 학습 스텝이 배치 대비 축소된다(아래 수치).",
+    "retained": "유지 — 결함 확정의 근거"
+  },
+  "a_bc_pool_distribution": {
+    "criterion": "스트림 BC 풀 80 vs E3 수집 80의 base_idx·w 산포·중복도",
+    "per_cluster": {
+      "libero_goal_task5": {
+        "stream": {
+          "n": 80,
+          "unique_base": 34,
+          "max_multiplicity": 4,
+          "missing_bases": 6,
+          "variance": 1.052,
+          "w_values": [
+            0.01
+          ]
+        },
+        "e3_batch": {
+          "n": 80,
+          "unique_base": 40,
+          "max_multiplicity": 2,
+          "missing_bases": 0,
+          "variance": 0.0,
+          "w_values": [
+            0.01
+          ]
+        },
+        "teacher_success_in_stream": "143/144"
+      },
+      "libero_goal_task0": {
+        "stream": {
+          "n": 80,
+          "unique_base": 35,
+          "max_multiplicity": 6,
+          "missing_bases": 5,
+          "variance": 1.69,
+          "w_values": [
+            0.01
+          ]
+        },
+        "e3_batch": {
+          "n": 80,
+          "unique_base": 40,
+          "max_multiplicity": 2,
+          "missing_bases": 0,
+          "variance": 0.0,
+          "w_values": [
+            0.01
+          ]
+        },
+        "teacher_success_in_stream": "137/144"
+      }
+    },
+    "distribution_differs": true,
+    "verdict": "차이 있음 — 스트림 BC 풀은 초기상태 다양성이 낮고 중복이 크다",
+    "mechanism": "스트림 스펙은 base_idx = (스트림 전역 인덱스) % 40인데 클러스터 노출이 셔플로 흩어져 클러스터별로는 불균등해진다. E3 수집은 클러스터별 연속 인덱스라 40개 base가 균등 순환한다.",
+    "withdrawn": "★ 철회 (연구원 판정 2026-08-17, 재실행 지시 '삭제된 지시') — 파일은 감사 추적용 보존, 판독 근거로 인용 금지"
+  },
+  "b_eval_band": {
+    "criterion": "스트림 probe 20 vs E3 held-out 20의 대역·난이도",
+    "per_cluster": {
+      "libero_goal_task5": {
+        "probe_bases": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "heldout_bases": [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "probe_base_overlap_with_bc_pool": 0.85,
+        "heldout_base_overlap_with_bc_pool": 0.0
+      },
+      "libero_goal_task0": {
+        "probe_bases": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "heldout_bases": [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "probe_base_overlap_with_bc_pool": 0.75,
+        "heldout_base_overlap_with_bc_pool": 0.0
+      }
+    },
+    "verdict": "차이 있음 — 단 **스트림 probe가 더 쉬운 방향**이다",
+    "direction": "probe는 수집 대역(0–39)을 재사용해 BC 풀과 base가 크게 겹치는 반면, E3 held-out은 전용 대역(40–49)으로 학습에 노출된 적이 없다. 따라서 (b)는 간극을 설명하지 못하며, 오히려 간극을 더 크게 만든다 — 더 쉬운 평가에서 더 낮은 성적이 나왔다.",
+    "withdrawn": "★ 철회 (연구원 판정 2026-08-17, 재실행 지시 '삭제된 지시') — 파일은 감사 추적용 보존, 판독 근거로 인용 금지"
+  },
+  "applied_rule": {
+    "c_mismatch": true,
+    "a_differs": true,
+    "b_differs_but_favors_stream": true,
+    "conclusion": "(c) 불일치 → **구현 결함 확정, 연구원 회부**. 단 정규화 이동은 성숙에 **성공한** 클러스터에도 동일하게 존재하므로 부적격의 유일한 원인으로 단정할 수 없다. (a) 다양성 축소가 함께 작용하고, 누적 학습 스텝도 배치 대비 축소된다. (b)는 반대 방향이라 간극을 키운다.",
+    "post_ruling": "(a)(b) 철회, (c)만 유효. seed 0 재실행 판정 확정."
+  }
+}

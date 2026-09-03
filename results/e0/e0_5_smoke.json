@@ -1,0 +1,99 @@
+{
+  "published": {
+    "libero_spatial": 0.976,
+    "libero_object": 0.984,
+    "libero_goal": 0.979,
+    "libero_10": 0.945
+  },
+  "expected_n": [
+    10,
+    20
+  ],
+  "suites": {
+    "libero_spatial": {
+      "episodes": 10,
+      "successes": 10,
+      "rate": 1.0,
+      "published": 0.976,
+      "diff_pp": 2.4,
+      "status": "PASS",
+      "incomplete": null,
+      "per_episode": [
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True"
+      ]
+    },
+    "libero_object": {
+      "episodes": 10,
+      "successes": 10,
+      "rate": 1.0,
+      "published": 0.984,
+      "diff_pp": 1.6,
+      "status": "PASS",
+      "incomplete": null,
+      "per_episode": [
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True"
+      ]
+    },
+    "libero_goal": {
+      "episodes": 10,
+      "successes": 10,
+      "rate": 1.0,
+      "published": 0.979,
+      "diff_pp": 2.1,
+      "status": "PASS",
+      "incomplete": null,
+      "per_episode": [
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True"
+      ]
+    },
+    "libero_10": {
+      "episodes": 10,
+      "successes": 10,
+      "rate": 1.0,
+      "published": 0.945,
+      "diff_pp": 5.5,
+      "status": "PASS",
+      "incomplete": null,
+      "per_episode": [
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True",
+        "True"
+      ]
+    }
+  },
+  "status": "PASS"
+}

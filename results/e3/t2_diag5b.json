@@ -1,0 +1,206 @@
+{
+  "hypothesis": "stale chunk tail (전환 후 잔여 행동 실행이 stage-2 시작 교란)",
+  "n_targets": 18,
+  "n_success_with_chunk_break": 18,
+  "confirmed": true,
+  "per_episode": [
+    {
+      "uid": "494bbe2ca4007b82",
+      "reloc_base": 20,
+      "chunkbreak_success": true,
+      "steps": 241,
+      "stale_discarded": 6,
+      "stage_steps": {
+        "1": 114,
+        "2": 251
+      }
+    },
+    {
+      "uid": "0bcf4fb897955ef2",
+      "reloc_base": 25,
+      "chunkbreak_success": true,
+      "steps": 368,
+      "stale_discarded": 5,
+      "stage_steps": {
+        "1": 123,
+        "2": 378
+      }
+    },
+    {
+      "uid": "5c89528623e45d15",
+      "reloc_base": 31,
+      "chunkbreak_success": true,
+      "steps": 333,
+      "stale_discarded": 6,
+      "stage_steps": {
+        "1": 210,
+        "2": 343
+      }
+    },
+    {
+      "uid": "2f710663fc33bd7a",
+      "reloc_base": 32,
+      "chunkbreak_success": true,
+      "steps": 235,
+      "stale_discarded": 7,
+      "stage_steps": {
+        "1": 113,
+        "2": 245
+      }
+    },
+    {
+      "uid": "a3a9b9ac358b8077",
+      "reloc_base": 0,
+      "chunkbreak_success": true,
+      "steps": 240,
+      "stale_discarded": 7,
+      "stage_steps": {
+        "1": 129,
+        "2": 250
+      }
+    },
+    {
+      "uid": "4130cd46fdb2c1c5",
+      "reloc_base": 6,
+      "chunkbreak_success": true,
+      "steps": 271,
+      "stale_discarded": 5,
+      "stage_steps": {
+        "1": 115,
+        "2": 281
+      }
+    },
+    {
+      "uid": "7f7afdeef83ee76a",
+      "reloc_base": 23,
+      "chunkbreak_success": true,
+      "steps": 342,
+      "stale_discarded": 6,
+      "stage_steps": {
+        "1": 122,
+        "2": 352
+      }
+    },
+    {
+      "uid": "4c32f401610e3c29",
+      "reloc_base": 25,
+      "chunkbreak_success": true,
+      "steps": 319,
+      "stale_discarded": 2,
+      "stage_steps": {
+        "1": 126,
+        "2": 329
+      }
+    },
+    {
+      "uid": "2866a3d802a15c3f",
+      "reloc_base": 33,
+      "chunkbreak_success": true,
+      "steps": 263,
+      "stale_discarded": 2,
+      "stage_steps": {
+        "1": 134,
+        "2": 273
+      }
+    },
+    {
+      "uid": "479652ed610fde82",
+      "reloc_base": 35,
+      "chunkbreak_success": true,
+      "steps": 235,
+      "stale_discarded": 2,
+      "stage_steps": {
+        "1": 110,
+        "2": 245
+      }
+    },
+    {
+      "uid": "431af3aeb08aef69",
+      "reloc_base": 37,
+      "chunkbreak_success": true,
+      "steps": 254,
+      "stale_discarded": 2,
+      "stage_steps": {
+        "1": 126,
+        "2": 264
+      }
+    },
+    {
+      "uid": "72eabeaf38ac9764",
+      "reloc_base": 3,
+      "chunkbreak_success": true,
+      "steps": 257,
+      "stale_discarded": 7,
+      "stage_steps": {
+        "1": 129,
+        "2": 267
+      }
+    },
+    {
+      "uid": "6c629fcee58daa72",
+      "reloc_base": 13,
+      "chunkbreak_success": true,
+      "steps": 262,
+      "stale_discarded": 7,
+      "stage_steps": {
+        "1": 129,
+        "2": 272
+      }
+    },
+    {
+      "uid": "ac3c45d882d6df2b",
+      "reloc_base": 29,
+      "chunkbreak_success": true,
+      "steps": 262,
+      "stale_discarded": 7,
+      "stage_steps": {
+        "1": 129,
+        "2": 272
+      }
+    },
+    {
+      "uid": "1a9a1bb99a1ac303",
+      "reloc_base": 35,
+      "chunkbreak_success": true,
+      "steps": 253,
+      "stale_discarded": 6,
+      "stage_steps": {
+        "1": 122,
+        "2": 263
+      }
+    },
+    {
+      "uid": "edfb2b397492de64",
+      "reloc_base": 0,
+      "chunkbreak_success": true,
+      "steps": 234,
+      "stale_discarded": 4,
+      "stage_steps": {
+        "1": 124,
+        "2": 244
+      }
+    },
+    {
+      "uid": "4ffc41ab963e8911",
+      "reloc_base": 14,
+      "chunkbreak_success": true,
+      "steps": 258,
+      "stale_discarded": 7,
+      "stage_steps": {
+        "1": 129,
+        "2": 268
+      }
+    },
+    {
+      "uid": "bc1e2496204bd6f9",
+      "reloc_base": 16,
+      "chunkbreak_success": true,
+      "steps": 258,
+      "stale_discarded": 7,
+      "stage_steps": {
+        "1": 129,
+        "2": 268
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+ "run_id": "rgb_only_full_rerun_20260828",
+ "updated": "2026-08-31 20:44:14",
+ "stages": {
+  "preflight": "PASS",
+  "smoke": "PASS",
+  "batch": "PASS",
+  "online_seed0": "PASS",
+  "replay_seed0": "PASS",
+  "online_seed1": "PASS",
+  "replay_seed1": "PASS",
+  "online_seed2": "PASS",
+  "replay_seed2": "PASS",
+  "batch_statistics": "PASS",
+  "online_summary": "PASS",
+  "familiarity": "PASS",
+  "latency": "PASS",
+  "integrity": "PASS",
+  "old_vs_new": "PASS",
+  "package": "PASS"
+ },
+ "progress": {
+  "batch": "27/27",
+  "online_seed0": "4000/4000",
+  "replay_seed0": "1538/1538",
+  "online_seed1": "4000/4000",
+  "replay_seed1": "1664/1664",
+  "online_seed2": "4000/4000",
+  "replay_seed2": "1661/1661"
+ },
+ "errors": [],
+ "retries": [],
+ "elapsed_total_h": 69.59,
+ "n_jobs": 68,
+ "last_jobs": [
+  {
+   "job": "paired_summary",
+   "ok": true,
+   "min": 0.0,
+   "end": "2026-08-31 20:14:43"
+  },
+  {
+   "job": "familiarity",
+   "ok": true,
+   "min": 22.8,
+   "end": "2026-08-31 20:37:32"
+  },
+  {
+   "job": "latency",
+   "ok": true,
+   "min": 0.6,
+   "end": "2026-08-31 20:38:06"
+  },
+  {
+   "job": "old_vs_new",
+   "ok": true,
+   "min": 0.0,
+   "end": "2026-08-31 20:38:06"
+  },
+  {
+   "job": "integrity",
+   "ok": true,
+   "min": 0.3,
+   "end": "2026-08-31 20:38:25"
+  },
+  {
+   "job": "package",
+   "ok": true,
+   "min": 0.9,
+   "end": "2026-08-31 20:39:21"
+  }
+ ],
+ "online_episodes_done": "12000/12000",
+ "measured_seed_h": 15.9,
+ "eta_remaining_h": 0.0,
+ "eta_finish": "2026-08-31 20:44",
+ "eta_basis": [
+  "미착수 seed 15.9h · replay 4.5h · 분석 0.25h/stage"
+ ]
+}

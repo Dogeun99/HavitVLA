@@ -1,0 +1,137 @@
+{
+  "task": 5,
+  "spec_uid": "9a63cd5eb6a7c9d3",
+  "stage2_entry_step": 128,
+  "predicate_after_relocate": false,
+  "exp1_success": false,
+  "exp1_total_steps": 560,
+  "exp1_stage_steps": {
+    "1": 124,
+    "2": null
+  },
+  "exp1_stage2_trace": [
+    {
+      "t": 128,
+      "ee": [
+        -0.152,
+        -0.108,
+        0.273
+      ],
+      "act_absmean": 0.052,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 136,
+      "ee": [
+        -0.139,
+        -0.17,
+        0.266
+      ],
+      "act_absmean": 0.1549,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 144,
+      "ee": [
+        -0.118,
+        -0.216,
+        0.241
+      ],
+      "act_absmean": 0.1481,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 152,
+      "ee": [
+        -0.099,
+        -0.229,
+        0.19
+      ],
+      "act_absmean": 0.1329,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 160,
+      "ee": [
+        -0.108,
+        -0.24,
+        0.127
+      ],
+      "act_absmean": 0.1512,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 168,
+      "ee": [
+        -0.114,
+        -0.247,
+        0.1
+      ],
+      "act_absmean": 0.1547,
+      "gripper_cmd": 1.0
+    },
+    {
+      "t": 520,
+      "ee": [
+        0.003,
+        0.248,
+        0.211
+      ],
+      "act_absmean": 0.0169,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 528,
+      "ee": [
+        0.003,
+        0.248,
+        0.212
+      ],
+      "act_absmean": 0.017,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 536,
+      "ee": [
+        0.003,
+        0.248,
+        0.212
+      ],
+      "act_absmean": 0.0167,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 544,
+      "ee": [
+        0.003,
+        0.248,
+        0.212
+      ],
+      "act_absmean": 0.0165,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 552,
+      "ee": [
+        0.003,
+        0.248,
+        0.212
+      ],
+      "act_absmean": 0.0165,
+      "gripper_cmd": -1.0
+    },
+    {
+      "t": 560,
+      "ee": [
+        0.003,
+        0.248,
+        0.212
+      ],
+      "act_absmean": 0.0164,
+      "gripper_cmd": -1.0
+    }
+  ],
+  "exp2_control_success": false,
+  "exp2_control_steps": 280,
+  "verdict": "A: 재배치 상태 자체 결함"
+}

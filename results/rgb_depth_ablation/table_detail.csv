@@ -1,0 +1,25 @@
+cluster,suite,difficulty_group,n,n_paired,success_rgbd,success_rgb,delta_success,Nstar_rgbd,Nstar_rgb,delta_Nstar,rgbd_params,rgb_params
+libero_object_task1,object,easy,10,50,0.82,0.58,-0.24,10,20,1,95036360,95030088
+libero_object_task1,object,easy,20,50,0.86,0.88,0.02,10,20,1,95036360,95030088
+libero_object_task1,object,easy,40,50,0.82,0.94,0.12,10,20,1,95036360,95030088
+libero_object_task1,object,easy,80,50,0.88,0.96,0.08,10,20,1,95036360,95030088
+libero_object_task0,object,difficult,10,50,0.04,0.12,0.08,80,40,-1,95036360,95030088
+libero_object_task0,object,difficult,20,50,0.2,0.3,0.1,80,40,-1,95036360,95030088
+libero_object_task0,object,difficult,40,50,0.48,0.84,0.36,80,40,-1,95036360,95030088
+libero_object_task0,object,difficult,80,50,0.96,0.9,-0.06,80,40,-1,95036360,95030088
+libero_goal_task1,goal,easy,10,50,0.9,0.82,-0.08,10,10,0,95036360,95030088
+libero_goal_task1,goal,easy,20,50,0.94,0.92,-0.02,10,10,0,95036360,95030088
+libero_goal_task1,goal,easy,40,50,0.98,0.96,-0.02,10,10,0,95036360,95030088
+libero_goal_task1,goal,easy,80,50,0.98,0.96,-0.02,10,10,0,95036360,95030088
+libero_goal_task0,goal,difficult,10,50,0.18,0.0,-0.18,80,80,0,95036360,95030088
+libero_goal_task0,goal,difficult,20,50,0.44,0.32,-0.12,80,80,0,95036360,95030088
+libero_goal_task0,goal,difficult,40,50,0.78,0.74,-0.04,80,80,0,95036360,95030088
+libero_goal_task0,goal,difficult,80,50,0.92,0.82,-0.1,80,80,0,95036360,95030088
+libero_spatial_task1,spatial,medium,10,50,0.78,0.56,-0.22,20,20,0,95036360,95030088
+libero_spatial_task1,spatial,medium,20,50,0.92,0.92,0.0,20,20,0,95036360,95030088
+libero_spatial_task1,spatial,medium,40,50,0.94,0.98,0.04,20,20,0,95036360,95030088
+libero_spatial_task1,spatial,medium,80,50,0.96,0.98,0.02,20,20,0,95036360,95030088
+libero_10_task0,long,censored,10,50,0.1,0.02,-0.08,>80,>80,both censored,95036360,95030088
+libero_10_task0,long,censored,20,50,0.4,0.42,0.02,>80,>80,both censored,95036360,95030088
+libero_10_task0,long,censored,40,50,0.66,0.78,0.12,>80,>80,both censored,95036360,95030088
+libero_10_task0,long,censored,80,50,0.74,0.6,-0.14,>80,>80,both censored,95036360,95030088

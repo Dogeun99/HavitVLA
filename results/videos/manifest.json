@@ -1,0 +1,1860 @@
+{
+  "clusters": {
+    "libero_object_task0": {
+      "suite": "libero_object",
+      "task": 0,
+      "language": "pick up the alphabet soup and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "518552b0bebe3004",
+          "suite": "libero_object",
+          "task_id": 0,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "1078e6d02f8129a2",
+          "suite": "libero_object",
+          "task_id": 0,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "6c53e1666083b4a4",
+          "suite": "libero_object",
+          "task_id": 0,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "f966c77580694e8b",
+          "suite": "libero_object",
+          "task_id": 0,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        },
+        {
+          "uid": "36c7d8c42bf160d4",
+          "suite": "libero_object",
+          "task_id": 0,
+          "seed": 20005,
+          "base_idx": 45,
+          "w": 0.01,
+          "noise_seed": 1000005
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "a92bac8ea4c9ef07",
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 20002,
+        "base_idx": 42,
+        "w": 0.01,
+        "noise_seed": 1000002
+      },
+      "v3_fail_spec": {
+        "uid": "a52fc08ebd469692",
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 10015,
+        "base_idx": 15,
+        "w": 0.01,
+        "noise_seed": 15
+      }
+    },
+    "libero_object_task1": {
+      "suite": "libero_object",
+      "task": 1,
+      "language": "pick up the cream cheese and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "ebf25cbe55e2d64f",
+          "suite": "libero_object",
+          "task_id": 1,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "91687bf0b8ed7e71",
+          "suite": "libero_object",
+          "task_id": 1,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        },
+        {
+          "uid": "0fc5a56b2b29f628",
+          "suite": "libero_object",
+          "task_id": 1,
+          "seed": 20005,
+          "base_idx": 45,
+          "w": 0.01,
+          "noise_seed": 1000005
+        },
+        {
+          "uid": "4445b14db70539e6",
+          "suite": "libero_object",
+          "task_id": 1,
+          "seed": 20006,
+          "base_idx": 46,
+          "w": 0.01,
+          "noise_seed": 1000006
+        },
+        {
+          "uid": "a81c568a13bbd83c",
+          "suite": "libero_object",
+          "task_id": 1,
+          "seed": 20007,
+          "base_idx": 47,
+          "w": 0.01,
+          "noise_seed": 1000007
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "81e0fa194aede0ff",
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 20001,
+        "base_idx": 41,
+        "w": 0.01,
+        "noise_seed": 1000001
+      },
+      "v3_fail_spec": {
+        "uid": "8007947c27d35c42",
+        "suite": "libero_object",
+        "task_id": 1,
+        "seed": 10061,
+        "base_idx": 21,
+        "w": 0.01,
+        "noise_seed": 61
+      }
+    },
+    "libero_object_task2": {
+      "suite": "libero_object",
+      "task": 2,
+      "language": "pick up the salad dressing and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "f40806ee341919a3",
+          "suite": "libero_object",
+          "task_id": 2,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "44f6786a297e3282",
+          "suite": "libero_object",
+          "task_id": 2,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "34eab281bf85f942",
+          "suite": "libero_object",
+          "task_id": 2,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "3702c2e5ee42ea33",
+          "suite": "libero_object",
+          "task_id": 2,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "8a3e9febd2104f9e",
+          "suite": "libero_object",
+          "task_id": 2,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "5172609054e808cd",
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 20014,
+        "base_idx": 44,
+        "w": 0.01,
+        "noise_seed": 1000014
+      },
+      "v3_fail_spec": {
+        "uid": "3eb941f24a0018a3",
+        "suite": "libero_object",
+        "task_id": 2,
+        "seed": 10015,
+        "base_idx": 15,
+        "w": 0.01,
+        "noise_seed": 15
+      }
+    },
+    "libero_object_task3": {
+      "suite": "libero_object",
+      "task": 3,
+      "language": "pick up the bbq sauce and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "0b962f5b999c4cf0",
+          "suite": "libero_object",
+          "task_id": 3,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "5d6be7e7f3cc262c",
+          "suite": "libero_object",
+          "task_id": 3,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "63c222ea4d62b4f1",
+          "suite": "libero_object",
+          "task_id": 3,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "0427329c0c8cbee3",
+          "suite": "libero_object",
+          "task_id": 3,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "b9b23e91f2d0a800",
+          "suite": "libero_object",
+          "task_id": 3,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": null,
+      "v3_fail_spec": {
+        "uid": "1fb5e12fa2d04d48",
+        "suite": "libero_object",
+        "task_id": 3,
+        "seed": 10037,
+        "base_idx": 37,
+        "w": 0.01,
+        "noise_seed": 37
+      }
+    },
+    "libero_object_task4": {
+      "suite": "libero_object",
+      "task": 4,
+      "language": "pick up the ketchup and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "b5a4d49fe94da632",
+          "suite": "libero_object",
+          "task_id": 4,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "80d22f549762aa97",
+          "suite": "libero_object",
+          "task_id": 4,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "81f0f2c396ab38b4",
+          "suite": "libero_object",
+          "task_id": 4,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "eb751d2c41bdd7e8",
+          "suite": "libero_object",
+          "task_id": 4,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "bcda919b73cd601f",
+          "suite": "libero_object",
+          "task_id": 4,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": null,
+      "v3_fail_spec": {
+        "uid": "656c4f6693881d9b",
+        "suite": "libero_object",
+        "task_id": 4,
+        "seed": 10094,
+        "base_idx": 14,
+        "w": 0.01,
+        "noise_seed": 94
+      }
+    },
+    "libero_object_task5": {
+      "suite": "libero_object",
+      "task": 5,
+      "language": "pick up the tomato sauce and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "797a3b5db1b64e55",
+          "suite": "libero_object",
+          "task_id": 5,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "05e9d7a099daac1b",
+          "suite": "libero_object",
+          "task_id": 5,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "245c03ddfa5d4c42",
+          "suite": "libero_object",
+          "task_id": 5,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "465ecfc9249e755c",
+          "suite": "libero_object",
+          "task_id": 5,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "d86e98eff8ea9570",
+          "suite": "libero_object",
+          "task_id": 5,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "bd65d43cb3707fef",
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 20025,
+        "base_idx": 45,
+        "w": 0.01,
+        "noise_seed": 1000025
+      },
+      "v3_fail_spec": {
+        "uid": "b2023c9e59f894fc",
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 10017,
+        "base_idx": 17,
+        "w": 0.01,
+        "noise_seed": 17
+      },
+      "v3_memo": "MEMO: deterministic blindspot (E1/E2/diag triple-confirmed; bases {17,28})"
+    },
+    "libero_object_task6": {
+      "suite": "libero_object",
+      "task": 6,
+      "language": "pick up the butter and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "562557aafde57013",
+          "suite": "libero_object",
+          "task_id": 6,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "ce3dade8a0564420",
+          "suite": "libero_object",
+          "task_id": 6,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "f68086b62424f12c",
+          "suite": "libero_object",
+          "task_id": 6,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "b442269554f6feba",
+          "suite": "libero_object",
+          "task_id": 6,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "d9c28d96c1f2363b",
+          "suite": "libero_object",
+          "task_id": 6,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "e49e38332c769026",
+        "suite": "libero_object",
+        "task_id": 6,
+        "seed": 20015,
+        "base_idx": 45,
+        "w": 0.01,
+        "noise_seed": 1000015
+      },
+      "v3_fail_spec": null
+    },
+    "libero_object_task7": {
+      "suite": "libero_object",
+      "task": 7,
+      "language": "pick up the milk and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "ce2cc85ea2a277b4",
+          "suite": "libero_object",
+          "task_id": 7,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "1fdf3bae8f98ae32",
+          "suite": "libero_object",
+          "task_id": 7,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "8475e393048cf789",
+          "suite": "libero_object",
+          "task_id": 7,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "f5a3dc29655aa6be",
+          "suite": "libero_object",
+          "task_id": 7,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "201057fb0dfd43dd",
+          "suite": "libero_object",
+          "task_id": 7,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": null,
+      "v3_fail_spec": {
+        "uid": "17f7dfecc1849ccf",
+        "suite": "libero_object",
+        "task_id": 7,
+        "seed": 10032,
+        "base_idx": 32,
+        "w": 0.01,
+        "noise_seed": 32
+      }
+    },
+    "libero_object_task8": {
+      "suite": "libero_object",
+      "task": 8,
+      "language": "pick up the chocolate pudding and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "5f217b5f2d887d0c",
+          "suite": "libero_object",
+          "task_id": 8,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "66cc2d6013a87609",
+          "suite": "libero_object",
+          "task_id": 8,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "67586ccf70a4c4eb",
+          "suite": "libero_object",
+          "task_id": 8,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "972f748dc2d2296d",
+          "suite": "libero_object",
+          "task_id": 8,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        },
+        {
+          "uid": "fa726e306a70a636",
+          "suite": "libero_object",
+          "task_id": 8,
+          "seed": 20005,
+          "base_idx": 45,
+          "w": 0.01,
+          "noise_seed": 1000005
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "9843545f4368241c",
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 20003,
+        "base_idx": 43,
+        "w": 0.01,
+        "noise_seed": 1000003
+      },
+      "v3_fail_spec": {
+        "uid": "c8937fe2035b4d36",
+        "suite": "libero_object",
+        "task_id": 8,
+        "seed": 10005,
+        "base_idx": 5,
+        "w": 0.01,
+        "noise_seed": 5
+      }
+    },
+    "libero_object_task9": {
+      "suite": "libero_object",
+      "task": 9,
+      "language": "pick up the orange juice and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "235189872b1b5640",
+          "suite": "libero_object",
+          "task_id": 9,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "087d37652ee1dba4",
+          "suite": "libero_object",
+          "task_id": 9,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "f67916dba2b7e4cb",
+          "suite": "libero_object",
+          "task_id": 9,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "0d0bf0f36840cb1f",
+          "suite": "libero_object",
+          "task_id": 9,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "dc4db6e234166f65",
+          "suite": "libero_object",
+          "task_id": 9,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "8861e9ec481efc71",
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 20007,
+        "base_idx": 47,
+        "w": 0.01,
+        "noise_seed": 1000007
+      },
+      "v3_fail_spec": {
+        "uid": "e516ee3313ad8f78",
+        "suite": "libero_object",
+        "task_id": 9,
+        "seed": 10040,
+        "base_idx": 0,
+        "w": 0.01,
+        "noise_seed": 40
+      }
+    },
+    "libero_goal_task0": {
+      "suite": "libero_goal",
+      "task": 0,
+      "language": "open the middle drawer of the cabinet",
+      "v1_candidates": [
+        {
+          "uid": "f1b9bd6439acbb4a",
+          "suite": "libero_goal",
+          "task_id": 0,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "6059383d5010e870",
+          "suite": "libero_goal",
+          "task_id": 0,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "7ad84fa94e53420c",
+          "suite": "libero_goal",
+          "task_id": 0,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "4a3f26c6c12c76ce",
+          "suite": "libero_goal",
+          "task_id": 0,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "d50ecc1b2b17744f",
+          "suite": "libero_goal",
+          "task_id": 0,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "7bc80264b66c323e",
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 20009,
+        "base_idx": 49,
+        "w": 0.01,
+        "noise_seed": 1000009
+      },
+      "v3_fail_spec": {
+        "uid": "811b1a2e4535b452",
+        "suite": "libero_goal",
+        "task_id": 0,
+        "seed": 10004,
+        "base_idx": 4,
+        "w": 0.01,
+        "noise_seed": 4
+      }
+    },
+    "libero_goal_task1": {
+      "suite": "libero_goal",
+      "task": 1,
+      "language": "put the bowl on the stove",
+      "v1_candidates": [
+        {
+          "uid": "acda933fe1623124",
+          "suite": "libero_goal",
+          "task_id": 1,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "420762fe0b0a4a6c",
+          "suite": "libero_goal",
+          "task_id": 1,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "dfe3682f728b26c1",
+          "suite": "libero_goal",
+          "task_id": 1,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "80171cb1e1a86221",
+          "suite": "libero_goal",
+          "task_id": 1,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "e4c35124960aee3c",
+          "suite": "libero_goal",
+          "task_id": 1,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": null,
+      "v3_fail_spec": {
+        "uid": "5ffacd35f7e38e34",
+        "suite": "libero_goal",
+        "task_id": 1,
+        "seed": 10002,
+        "base_idx": 2,
+        "w": 0.01,
+        "noise_seed": 2
+      }
+    },
+    "libero_goal_task2": {
+      "suite": "libero_goal",
+      "task": 2,
+      "language": "put the wine bottle on top of the cabinet",
+      "v1_candidates": [
+        {
+          "uid": "e9f1b64ba923416c",
+          "suite": "libero_goal",
+          "task_id": 2,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "6f821aea5d087505",
+          "suite": "libero_goal",
+          "task_id": 2,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "26301770fab00a4d",
+          "suite": "libero_goal",
+          "task_id": 2,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "e9b57a5a9202cd14",
+          "suite": "libero_goal",
+          "task_id": 2,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "867a9eff7e23999a",
+          "suite": "libero_goal",
+          "task_id": 2,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": null,
+      "v3_fail_spec": {
+        "uid": "7e0786b188ba2019",
+        "suite": "libero_goal",
+        "task_id": 2,
+        "seed": 10063,
+        "base_idx": 23,
+        "w": 0.01,
+        "noise_seed": 63
+      }
+    },
+    "libero_goal_task3": {
+      "suite": "libero_goal",
+      "task": 3,
+      "language": "open the top drawer and put the bowl inside",
+      "v1_candidates": [
+        {
+          "uid": "3404cfc6c2a44562",
+          "suite": "libero_goal",
+          "task_id": 3,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "f79829a2853c3dd6",
+          "suite": "libero_goal",
+          "task_id": 3,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "badcf8a850940a2b",
+          "suite": "libero_goal",
+          "task_id": 3,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "04243b6c0dab830f",
+          "suite": "libero_goal",
+          "task_id": 3,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        },
+        {
+          "uid": "c5cacd826fb3c251",
+          "suite": "libero_goal",
+          "task_id": 3,
+          "seed": 20005,
+          "base_idx": 45,
+          "w": 0.01,
+          "noise_seed": 1000005
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "6d8a394e1829cdcd",
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 20000,
+        "base_idx": 40,
+        "w": 0.01,
+        "noise_seed": 1000000
+      },
+      "v3_fail_spec": {
+        "uid": "6bd5892eabba629f",
+        "suite": "libero_goal",
+        "task_id": 3,
+        "seed": 10010,
+        "base_idx": 10,
+        "w": 0.01,
+        "noise_seed": 10
+      }
+    },
+    "libero_goal_task4": {
+      "suite": "libero_goal",
+      "task": 4,
+      "language": "put the bowl on top of the cabinet",
+      "v1_candidates": [
+        {
+          "uid": "364625c60fafd448",
+          "suite": "libero_goal",
+          "task_id": 4,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "3cfe33bb11b40c89",
+          "suite": "libero_goal",
+          "task_id": 4,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "f9e788188eac11ed",
+          "suite": "libero_goal",
+          "task_id": 4,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "5afc27599e51ad71",
+          "suite": "libero_goal",
+          "task_id": 4,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "0b9f2959b9736995",
+          "suite": "libero_goal",
+          "task_id": 4,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "5db2ef770d9cd8c5",
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 20008,
+        "base_idx": 48,
+        "w": 0.01,
+        "noise_seed": 1000008
+      },
+      "v3_fail_spec": {
+        "uid": "8f12b8802fc22f6b",
+        "suite": "libero_goal",
+        "task_id": 4,
+        "seed": 10012,
+        "base_idx": 12,
+        "w": 0.01,
+        "noise_seed": 12
+      }
+    },
+    "libero_goal_task5": {
+      "suite": "libero_goal",
+      "task": 5,
+      "language": "push the plate to the front of the stove",
+      "v1_candidates": [
+        {
+          "uid": "2424c470f2824d8c",
+          "suite": "libero_goal",
+          "task_id": 5,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "59f9e2a74327d35b",
+          "suite": "libero_goal",
+          "task_id": 5,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "5b71088f5bd23ee6",
+          "suite": "libero_goal",
+          "task_id": 5,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "0d9eef34ece41ad4",
+          "suite": "libero_goal",
+          "task_id": 5,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "b6a3d7b3672e6a1b",
+          "suite": "libero_goal",
+          "task_id": 5,
+          "seed": 20005,
+          "base_idx": 45,
+          "w": 0.01,
+          "noise_seed": 1000005
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "4a5fa2105c937fe3",
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 20004,
+        "base_idx": 44,
+        "w": 0.01,
+        "noise_seed": 1000004
+      },
+      "v3_fail_spec": {
+        "uid": "5b11ada7c5c0345b",
+        "suite": "libero_goal",
+        "task_id": 5,
+        "seed": 10013,
+        "base_idx": 13,
+        "w": 0.01,
+        "noise_seed": 13
+      }
+    },
+    "libero_goal_task6": {
+      "suite": "libero_goal",
+      "task": 6,
+      "language": "put the cream cheese in the bowl",
+      "v1_candidates": [
+        {
+          "uid": "ebc96d9d72f043fc",
+          "suite": "libero_goal",
+          "task_id": 6,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "bda568777f2d1b28",
+          "suite": "libero_goal",
+          "task_id": 6,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "d8f00cdd49d69dcf",
+          "suite": "libero_goal",
+          "task_id": 6,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "4c848915334785c1",
+          "suite": "libero_goal",
+          "task_id": 6,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "afa3c4c589ab6588",
+          "suite": "libero_goal",
+          "task_id": 6,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": null,
+      "v3_fail_spec": {
+        "uid": "4ecdcc1afdcaabad",
+        "suite": "libero_goal",
+        "task_id": 6,
+        "seed": 10017,
+        "base_idx": 17,
+        "w": 0.01,
+        "noise_seed": 17
+      }
+    },
+    "libero_goal_task7": {
+      "suite": "libero_goal",
+      "task": 7,
+      "language": "turn on the stove",
+      "v1_candidates": [
+        {
+          "uid": "e69254688708eb14",
+          "suite": "libero_goal",
+          "task_id": 7,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "22dd7e6f5217e8bd",
+          "suite": "libero_goal",
+          "task_id": 7,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "f262c24a70e11785",
+          "suite": "libero_goal",
+          "task_id": 7,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "22e756711eecc67c",
+          "suite": "libero_goal",
+          "task_id": 7,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "a18f1806e9830da1",
+          "suite": "libero_goal",
+          "task_id": 7,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": null,
+      "v3_fail_spec": null
+    },
+    "libero_goal_task8": {
+      "suite": "libero_goal",
+      "task": 8,
+      "language": "put the bowl on the plate",
+      "v1_candidates": [
+        {
+          "uid": "8753fd64acd46a18",
+          "suite": "libero_goal",
+          "task_id": 8,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "7ea19f89d4d47350",
+          "suite": "libero_goal",
+          "task_id": 8,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "6886ef9a83ff36bd",
+          "suite": "libero_goal",
+          "task_id": 8,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "87bed57e36faf998",
+          "suite": "libero_goal",
+          "task_id": 8,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        },
+        {
+          "uid": "6d2cbecb80ba9d35",
+          "suite": "libero_goal",
+          "task_id": 8,
+          "seed": 20005,
+          "base_idx": 45,
+          "w": 0.01,
+          "noise_seed": 1000005
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "7e21580dfdef50c2",
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 20001,
+        "base_idx": 41,
+        "w": 0.01,
+        "noise_seed": 1000001
+      },
+      "v3_fail_spec": {
+        "uid": "aa4e82f4a3940f08",
+        "suite": "libero_goal",
+        "task_id": 8,
+        "seed": 10014,
+        "base_idx": 14,
+        "w": 0.01,
+        "noise_seed": 14
+      }
+    },
+    "libero_goal_task9": {
+      "suite": "libero_goal",
+      "task": 9,
+      "language": "put the wine bottle on the rack",
+      "v1_candidates": [
+        {
+          "uid": "5ea0668dfa7f16d3",
+          "suite": "libero_goal",
+          "task_id": 9,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "18e6d5c578ae7338",
+          "suite": "libero_goal",
+          "task_id": 9,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "5d4fd110e92c2880",
+          "suite": "libero_goal",
+          "task_id": 9,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "bfe0c29462f7f96e",
+          "suite": "libero_goal",
+          "task_id": 9,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "6d71381ef9607e43",
+          "suite": "libero_goal",
+          "task_id": 9,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": null,
+      "v3_fail_spec": {
+        "uid": "cd7bc49a913d8390",
+        "suite": "libero_goal",
+        "task_id": 9,
+        "seed": 10008,
+        "base_idx": 8,
+        "w": 0.01,
+        "noise_seed": 8
+      }
+    },
+    "libero_spatial_task0": {
+      "suite": "libero_spatial",
+      "task": 0,
+      "language": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+      "v1_candidates": [
+        {
+          "uid": "0eb56ef8abb83386",
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "1eeb4a1151a777f0",
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "881b7a75e3583137",
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "5d357ba308dc421a",
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "94c51d05933ccbe3",
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "d2b67889affe913a",
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 20019,
+        "base_idx": 49,
+        "w": 0.01,
+        "noise_seed": 1000019
+      },
+      "v3_fail_spec": {
+        "uid": "2e00c23b24598645",
+        "suite": "libero_spatial",
+        "task_id": 0,
+        "seed": 10014,
+        "base_idx": 14,
+        "w": 0.01,
+        "noise_seed": 14
+      }
+    },
+    "libero_spatial_task1": {
+      "suite": "libero_spatial",
+      "task": 1,
+      "language": "pick up the black bowl next to the ramekin and place it on the plate",
+      "v1_candidates": [
+        {
+          "uid": "9fc3330fff37c874",
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "791fad1c38ddec35",
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "c41f263c871b1c2b",
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "c88116657f3f78c1",
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        },
+        {
+          "uid": "c5be1634168f0aad",
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "seed": 20005,
+          "base_idx": 45,
+          "w": 0.01,
+          "noise_seed": 1000005
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "7c022a9641489284",
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 20002,
+        "base_idx": 42,
+        "w": 0.01,
+        "noise_seed": 1000002
+      },
+      "v3_fail_spec": {
+        "uid": "ac10f5762bc59551",
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "seed": 10076,
+        "base_idx": 36,
+        "w": 0.01,
+        "noise_seed": 76
+      }
+    },
+    "libero_10_task0": {
+      "suite": "libero_10",
+      "task": 0,
+      "language": "put both the alphabet soup and the tomato sauce in the basket",
+      "v1_candidates": [
+        {
+          "uid": "be24253b2eb9a133",
+          "suite": "libero_10",
+          "task_id": 0,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "ef6f786db1189f09",
+          "suite": "libero_10",
+          "task_id": 0,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "7982e193584a2352",
+          "suite": "libero_10",
+          "task_id": 0,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        },
+        {
+          "uid": "686b4e8fb6a6b027",
+          "suite": "libero_10",
+          "task_id": 0,
+          "seed": 20006,
+          "base_idx": 46,
+          "w": 0.01,
+          "noise_seed": 1000006
+        },
+        {
+          "uid": "1067061e16c09f2b",
+          "suite": "libero_10",
+          "task_id": 0,
+          "seed": 20007,
+          "base_idx": 47,
+          "w": 0.01,
+          "noise_seed": 1000007
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "8abe98ab359c345b",
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 20000,
+        "base_idx": 40,
+        "w": 0.01,
+        "noise_seed": 1000000
+      },
+      "v3_fail_spec": {
+        "uid": "dc5202c017198407",
+        "suite": "libero_10",
+        "task_id": 0,
+        "seed": 10008,
+        "base_idx": 8,
+        "w": 0.01,
+        "noise_seed": 8
+      }
+    },
+    "libero_10_task2": {
+      "suite": "libero_10",
+      "task": 2,
+      "language": "turn on the stove and put the moka pot on it",
+      "v1_candidates": [
+        {
+          "uid": "fa77b4799c58d088",
+          "suite": "libero_10",
+          "task_id": 2,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "2ee83ab14d71b3ba",
+          "suite": "libero_10",
+          "task_id": 2,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "07f7d0a3b2f56a37",
+          "suite": "libero_10",
+          "task_id": 2,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "c5ea22372c49ee1d",
+          "suite": "libero_10",
+          "task_id": 2,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "28aa6de195987aa4",
+          "suite": "libero_10",
+          "task_id": 2,
+          "seed": 20005,
+          "base_idx": 45,
+          "w": 0.01,
+          "noise_seed": 1000005
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "edcc46e80d601ea9",
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 20004,
+        "base_idx": 44,
+        "w": 0.01,
+        "noise_seed": 1000004
+      },
+      "v3_fail_spec": {
+        "uid": "0b2492b2631175eb",
+        "suite": "libero_10",
+        "task_id": 2,
+        "seed": 10091,
+        "base_idx": 11,
+        "w": 0.01,
+        "noise_seed": 91
+      }
+    },
+    "libero_10_task5": {
+      "suite": "libero_10",
+      "task": 5,
+      "language": "pick up the book and place it in the back compartment of the caddy",
+      "v1_candidates": [
+        {
+          "uid": "66f047a1ccaae401",
+          "suite": "libero_10",
+          "task_id": 5,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000
+        },
+        {
+          "uid": "2fb9b05a52cbb2db",
+          "suite": "libero_10",
+          "task_id": 5,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001
+        },
+        {
+          "uid": "63d23ad25e3e3c19",
+          "suite": "libero_10",
+          "task_id": 5,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002
+        },
+        {
+          "uid": "1c0a7b4d81ae25a5",
+          "suite": "libero_10",
+          "task_id": 5,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003
+        },
+        {
+          "uid": "9758a1786045f856",
+          "suite": "libero_10",
+          "task_id": 5,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "b8118032fe615a1c",
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 20005,
+        "base_idx": 45,
+        "w": 0.01,
+        "noise_seed": 1000005
+      },
+      "v3_fail_spec": {
+        "uid": "ca8acd87becf71b5",
+        "suite": "libero_10",
+        "task_id": 5,
+        "seed": 10112,
+        "base_idx": 32,
+        "w": 0.01,
+        "noise_seed": 112
+      }
+    },
+    "chained_libero_object_task0": {
+      "suite": "libero_object",
+      "task": 0,
+      "chained": true,
+      "language": "pick up the alphabet soup and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "98cfbacdad2f6746",
+          "suite": "libero_object",
+          "task_id": 0,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001,
+          "relocate_base_idx": 44,
+          "relocate_noise_seed": 1500001,
+          "chained": true
+        },
+        {
+          "uid": "0a55f53026cd6b22",
+          "suite": "libero_object",
+          "task_id": 0,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002,
+          "relocate_base_idx": 45,
+          "relocate_noise_seed": 1500002,
+          "chained": true
+        },
+        {
+          "uid": "f69e35591bf80a31",
+          "suite": "libero_object",
+          "task_id": 0,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003,
+          "relocate_base_idx": 46,
+          "relocate_noise_seed": 1500003,
+          "chained": true
+        },
+        {
+          "uid": "7ebef0892c349019",
+          "suite": "libero_object",
+          "task_id": 0,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004,
+          "relocate_base_idx": 47,
+          "relocate_noise_seed": 1500004,
+          "chained": true
+        },
+        {
+          "uid": "8a66200e6842e6f9",
+          "suite": "libero_object",
+          "task_id": 0,
+          "seed": 20005,
+          "base_idx": 45,
+          "w": 0.01,
+          "noise_seed": 1000005,
+          "relocate_base_idx": 48,
+          "relocate_noise_seed": 1500005,
+          "chained": true
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "61524e989d8eb275",
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 20000,
+        "base_idx": 40,
+        "w": 0.01,
+        "noise_seed": 1000000,
+        "relocate_base_idx": 43,
+        "relocate_noise_seed": 1500000,
+        "chained": true
+      },
+      "v3_fail_spec": {
+        "uid": "6d492ff0a3d1d33a",
+        "suite": "libero_object",
+        "task_id": 0,
+        "seed": 10015,
+        "base_idx": 15,
+        "w": 0.01,
+        "noise_seed": 15,
+        "relocate_base_idx": 32,
+        "relocate_noise_seed": 500015,
+        "chained": true
+      }
+    },
+    "chained_libero_object_task5": {
+      "suite": "libero_object",
+      "task": 5,
+      "chained": true,
+      "language": "pick up the tomato sauce and place it in the basket",
+      "v1_candidates": [
+        {
+          "uid": "7f88382a062ecaeb",
+          "suite": "libero_object",
+          "task_id": 5,
+          "seed": 20000,
+          "base_idx": 40,
+          "w": 0.01,
+          "noise_seed": 1000000,
+          "relocate_base_idx": 43,
+          "relocate_noise_seed": 1500000,
+          "chained": true
+        },
+        {
+          "uid": "6a35836a1a055f2e",
+          "suite": "libero_object",
+          "task_id": 5,
+          "seed": 20001,
+          "base_idx": 41,
+          "w": 0.01,
+          "noise_seed": 1000001,
+          "relocate_base_idx": 44,
+          "relocate_noise_seed": 1500001,
+          "chained": true
+        },
+        {
+          "uid": "535200faaf1a89d9",
+          "suite": "libero_object",
+          "task_id": 5,
+          "seed": 20002,
+          "base_idx": 42,
+          "w": 0.01,
+          "noise_seed": 1000002,
+          "relocate_base_idx": 45,
+          "relocate_noise_seed": 1500002,
+          "chained": true
+        },
+        {
+          "uid": "8011ef8526a672fd",
+          "suite": "libero_object",
+          "task_id": 5,
+          "seed": 20003,
+          "base_idx": 43,
+          "w": 0.01,
+          "noise_seed": 1000003,
+          "relocate_base_idx": 46,
+          "relocate_noise_seed": 1500003,
+          "chained": true
+        },
+        {
+          "uid": "0f0558b3c7d4246b",
+          "suite": "libero_object",
+          "task_id": 5,
+          "seed": 20004,
+          "base_idx": 44,
+          "w": 0.01,
+          "noise_seed": 1000004,
+          "relocate_base_idx": 47,
+          "relocate_noise_seed": 1500004,
+          "chained": true
+        }
+      ],
+      "v2_fail_spec": {
+        "uid": "29c610471e7d972f",
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 20006,
+        "base_idx": 46,
+        "w": 0.01,
+        "noise_seed": 1000006,
+        "relocate_base_idx": 49,
+        "relocate_noise_seed": 1500006,
+        "chained": true
+      },
+      "v3_fail_spec": {
+        "uid": "9a63cd5eb6a7c9d3",
+        "suite": "libero_object",
+        "task_id": 5,
+        "seed": 10000,
+        "base_idx": 0,
+        "w": 0.01,
+        "noise_seed": 0,
+        "relocate_base_idx": 17,
+        "relocate_noise_seed": 500000,
+        "chained": true
+      }
+    }
+  },
+  "deferred": {}
+}

@@ -1,0 +1,33 @@
+{
+ "job": "batch_eval_libero_goal_task6",
+ "attempt": 0,
+ "cmd": [
+  "/home/asmr/miniconda3/envs/hv2_hab/bin/python",
+  "-u",
+  "habits/evaluate.py",
+  "--cluster",
+  "libero_goal_task6",
+  "--suite",
+  "libero_goal",
+  "--task",
+  "6",
+  "--ckpt-dir",
+  "/home/asmr/workspace/habitvla2/checkpoints/rgb_only_rerun/batch/libero_goal_task6",
+  "--n-grid",
+  "10",
+  "20",
+  "40",
+  "80",
+  "--n-heldout",
+  "20",
+  "--out",
+  "/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/01_batch_formation/curves"
+ ],
+ "start": "2026-08-29 03:04:10",
+ "end": "2026-08-29 03:07:09",
+ "elapsed_s": 179.1,
+ "exit_code": 0,
+ "log": "results/rgb_only_full_rerun_20260828/logs/batch_eval_libero_goal_task6.log",
+ "pass_marker": "[EVAL-PASS]",
+ "ok": true
+}

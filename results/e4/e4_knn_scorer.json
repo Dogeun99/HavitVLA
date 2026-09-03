@@ -1,0 +1,331 @@
+{
+  "note": "6행 kNN 관할 — 동일 특징·동일 conformal(결정적 반반 + 유한표본 분위수), known 50:50 재보정 FR 병기 (행5 절차)",
+  "rows": {
+    "6_knn_jurisdiction_k5": {
+      "cost_ms": 4.0,
+      "macro_auc": 0.6259,
+      "mean_fr": 0.224,
+      "mean_recal_fr": 0.072,
+      "suite_auc": {
+        "libero_10": 0.4543,
+        "libero_goal": 0.5975,
+        "libero_object": 0.6857,
+        "libero_spatial": 0.727
+      }
+    },
+    "6_knn_jurisdiction_k10": {
+      "cost_ms": 4.0,
+      "macro_auc": 0.6239,
+      "mean_fr": 0.192,
+      "mean_recal_fr": 0.076,
+      "suite_auc": {
+        "libero_10": 0.4758,
+        "libero_goal": 0.59,
+        "libero_object": 0.6816,
+        "libero_spatial": 0.727
+      }
+    }
+  },
+  "per_cluster": {
+    "libero_object_task0": {
+      "k5": {
+        "auc": 0.6342,
+        "fr": 0.35,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.6474,
+        "fr": 0.25,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_object_task1": {
+      "k5": {
+        "auc": 0.77,
+        "fr": 0.4,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.765,
+        "fr": 0.4,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_object_task2": {
+      "k5": {
+        "auc": 0.8175,
+        "fr": 0.0,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.8175,
+        "fr": 0.0,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_object_task3": {
+      "k5": {
+        "auc": 0.69,
+        "fr": 0.35,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.6825,
+        "fr": 0.4,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_object_task4": {
+      "k5": {
+        "auc": 0.7368,
+        "fr": 0.25,
+        "recal_fr": 0.3
+      },
+      "k10": {
+        "auc": 0.7132,
+        "fr": 0.2,
+        "recal_fr": 0.2
+      }
+    },
+    "libero_object_task5": {
+      "k5": {
+        "auc": 0.5895,
+        "fr": 0.15,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.5789,
+        "fr": 0.05,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_object_task6": {
+      "k5": {
+        "auc": 0.7235,
+        "fr": 0.2,
+        "recal_fr": 0.3
+      },
+      "k10": {
+        "auc": 0.7265,
+        "fr": 0.2,
+        "recal_fr": 0.3
+      }
+    },
+    "libero_object_task7": {
+      "k5": {
+        "auc": 0.72,
+        "fr": 0.2,
+        "recal_fr": 0.1
+      },
+      "k10": {
+        "auc": 0.705,
+        "fr": 0.15,
+        "recal_fr": 0.2
+      }
+    },
+    "libero_object_task8": {
+      "k5": {
+        "auc": 0.57,
+        "fr": 0.1,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.5625,
+        "fr": 0.1,
+        "recal_fr": 0.1
+      }
+    },
+    "libero_object_task9": {
+      "k5": {
+        "auc": 0.605,
+        "fr": 0.4,
+        "recal_fr": 0.2
+      },
+      "k10": {
+        "auc": 0.6175,
+        "fr": 0.35,
+        "recal_fr": 0.2
+      }
+    },
+    "libero_goal_task0": {
+      "k5": {
+        "auc": 0.5725,
+        "fr": 0.55,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.585,
+        "fr": 0.45,
+        "recal_fr": 0.1
+      }
+    },
+    "libero_goal_task1": {
+      "k5": {
+        "auc": 0.6778,
+        "fr": 0.2,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.7139,
+        "fr": 0.05,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_goal_task2": {
+      "k5": {
+        "auc": 0.6125,
+        "fr": 0.0,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.575,
+        "fr": 0.05,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_goal_task3": {
+      "k5": {
+        "auc": 0.5525,
+        "fr": 0.35,
+        "recal_fr": 0.2
+      },
+      "k10": {
+        "auc": 0.5775,
+        "fr": 0.35,
+        "recal_fr": 0.1
+      }
+    },
+    "libero_goal_task4": {
+      "k5": {
+        "auc": 0.5556,
+        "fr": 0.3,
+        "recal_fr": 0.2
+      },
+      "k10": {
+        "auc": 0.5417,
+        "fr": 0.15,
+        "recal_fr": 0.2
+      }
+    },
+    "libero_goal_task5": {
+      "k5": {
+        "auc": 0.6579,
+        "fr": 0.2,
+        "recal_fr": 0.1
+      },
+      "k10": {
+        "auc": 0.65,
+        "fr": 0.15,
+        "recal_fr": 0.1
+      }
+    },
+    "libero_goal_task6": {
+      "k5": {
+        "auc": 0.5722,
+        "fr": 0.2,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.525,
+        "fr": 0.3,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_goal_task7": {
+      "k5": {
+        "auc": 0.4816,
+        "fr": 0.25,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.4711,
+        "fr": 0.05,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_goal_task8": {
+      "k5": {
+        "auc": 0.6425,
+        "fr": 0.4,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.65,
+        "fr": 0.4,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_goal_task9": {
+      "k5": {
+        "auc": 0.65,
+        "fr": 0.1,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.6105,
+        "fr": 0.1,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_spatial_task0": {
+      "k5": {
+        "auc": 0.7526,
+        "fr": 0.05,
+        "recal_fr": 0.2
+      },
+      "k10": {
+        "auc": 0.7658,
+        "fr": 0.05,
+        "recal_fr": 0.2
+      }
+    },
+    "libero_spatial_task1": {
+      "k5": {
+        "auc": 0.7013,
+        "fr": 0.25,
+        "recal_fr": 0.1
+      },
+      "k10": {
+        "auc": 0.6882,
+        "fr": 0.25,
+        "recal_fr": 0.2
+      }
+    },
+    "libero_10_task0": {
+      "k5": {
+        "auc": 0.4179,
+        "fr": 0.15,
+        "recal_fr": 0.1
+      },
+      "k10": {
+        "auc": 0.45,
+        "fr": 0.15,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_10_task2": {
+      "k5": {
+        "auc": 0.4125,
+        "fr": 0.0,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.4525,
+        "fr": 0.0,
+        "recal_fr": 0.0
+      }
+    },
+    "libero_10_task5": {
+      "k5": {
+        "auc": 0.5325,
+        "fr": 0.2,
+        "recal_fr": 0.0
+      },
+      "k10": {
+        "auc": 0.525,
+        "fr": 0.2,
+        "recal_fr": 0.0
+      }
+    }
+  }
+}

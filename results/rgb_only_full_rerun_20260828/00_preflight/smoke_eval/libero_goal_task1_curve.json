@@ -1,0 +1,33 @@
+{
+  "cluster": "libero_goal_task1",
+  "n_heldout": 3,
+  "heldout_start": 0,
+  "curve": [
+    {
+      "ckpt": "act_n10.pt",
+      "n_eval": 3,
+      "n_success": 3,
+      "n_infra_error": 0,
+      "s_hat": 1.0,
+      "per_episode": [
+        {
+          "uid": "acda933fe1623124",
+          "outcome": "success",
+          "steps": 69
+        },
+        {
+          "uid": "420762fe0b0a4a6c",
+          "outcome": "success",
+          "steps": 77
+        },
+        {
+          "uid": "dfe3682f728b26c1",
+          "outcome": "success",
+          "steps": 75
+        }
+      ],
+      "n": 10
+    }
+  ],
+  "wall_seconds": 6.6
+}

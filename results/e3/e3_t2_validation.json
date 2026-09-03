@@ -1,0 +1,17 @@
+{
+  "mechanics": {
+    "relocation": {
+      "max_xy_deviation_m": 0.0009,
+      "xy_ok": true,
+      "z_ok": true,
+      "robot_reset_to_home": true,
+      "max_robot_qpos_dev": 0.029
+    },
+    "determinism": {
+      "hash1": "ec75e4b5e1514d76",
+      "hash2": "ec75e4b5e1514d76",
+      "match": true
+    },
+    "status": "PASS"
+  }
+}

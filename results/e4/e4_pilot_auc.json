@@ -1,0 +1,482 @@
+{
+  "threshold": 0.75,
+  "decision_basis": "macro mean AUC (primary novel, base 40-49 정합)",
+  "clusters": {
+    "libero_object_task0": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.27
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.7053
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.4725
+        }
+      },
+      "auc_primary": 0.4821,
+      "auc_secondary_base0_39": 0.4725
+    },
+    "libero_object_task1": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.1625
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.805
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.61
+        }
+      },
+      "auc_primary": 0.4838,
+      "auc_secondary_base0_39": 0.61
+    },
+    "libero_object_task2": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.285
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.98
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.8875
+        }
+      },
+      "auc_primary": 0.6325,
+      "auc_secondary_base0_39": 0.8875
+    },
+    "libero_object_task3": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.125
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.7025
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.65
+        }
+      },
+      "auc_primary": 0.4138,
+      "auc_secondary_base0_39": 0.65
+    },
+    "libero_object_task4": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.3075
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.7658
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.76
+        }
+      },
+      "auc_primary": 0.5308,
+      "auc_secondary_base0_39": 0.76
+    },
+    "libero_object_task5": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.2
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.6842
+        },
+        "w_expand__secondary": {
+          "n": 18,
+          "auc": 0.6333
+        }
+      },
+      "auc_primary": 0.4359,
+      "auc_secondary_base0_39": 0.6333
+    },
+    "libero_object_task6": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.12
+        },
+        "w_expand__primary": {
+          "n": 17,
+          "auc": 0.7882
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.67
+        }
+      },
+      "auc_primary": 0.427,
+      "auc_secondary_base0_39": 0.67
+    },
+    "libero_object_task7": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.1775
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.7875
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.6525
+        }
+      },
+      "auc_primary": 0.4825,
+      "auc_secondary_base0_39": 0.6525
+    },
+    "libero_object_task8": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.1725
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.745
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.6425
+        }
+      },
+      "auc_primary": 0.4587,
+      "auc_secondary_base0_39": 0.6425
+    },
+    "libero_object_task9": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.24
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.7475
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.7525
+        }
+      },
+      "auc_primary": 0.4938,
+      "auc_secondary_base0_39": 0.7525
+    },
+    "libero_goal_task0": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.295
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.61
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.4447
+        }
+      },
+      "auc_primary": 0.4525,
+      "auc_secondary_base0_39": 0.4447
+    },
+    "libero_goal_task1": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.365
+        },
+        "w_expand__primary": {
+          "n": 18,
+          "auc": 0.675
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.5316
+        }
+      },
+      "auc_primary": 0.5118,
+      "auc_secondary_base0_39": 0.5316
+    },
+    "libero_goal_task2": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.23
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.59
+        },
+        "w_expand__secondary": {
+          "n": 17,
+          "auc": 0.4118
+        }
+      },
+      "auc_primary": 0.41,
+      "auc_secondary_base0_39": 0.4118
+    },
+    "libero_goal_task3": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.1725
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.5575
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.4526
+        }
+      },
+      "auc_primary": 0.365,
+      "auc_secondary_base0_39": 0.4526
+    },
+    "libero_goal_task4": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.1325
+        },
+        "w_expand__primary": {
+          "n": 18,
+          "auc": 0.4861
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.4053
+        }
+      },
+      "auc_primary": 0.3,
+      "auc_secondary_base0_39": 0.4053
+    },
+    "libero_goal_task5": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.375
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.6447
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.5763
+        }
+      },
+      "auc_primary": 0.5064,
+      "auc_secondary_base0_39": 0.5763
+    },
+    "libero_goal_task6": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.18
+        },
+        "w_expand__primary": {
+          "n": 18,
+          "auc": 0.5278
+        },
+        "w_expand__secondary": {
+          "n": 20,
+          "auc": 0.3125
+        }
+      },
+      "auc_primary": 0.3447,
+      "auc_secondary_base0_39": 0.3125
+    },
+    "libero_goal_task7": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.3025
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.4395
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.5711
+        }
+      },
+      "auc_primary": 0.3692,
+      "auc_secondary_base0_39": 0.5711
+    },
+    "libero_goal_task8": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.15
+        },
+        "w_expand__primary": {
+          "n": 20,
+          "auc": 0.63
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.4079
+        }
+      },
+      "auc_primary": 0.39,
+      "auc_secondary_base0_39": 0.4079
+    },
+    "libero_goal_task9": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.15
+        },
+        "w_expand__primary": {
+          "n": 19,
+          "auc": 0.6447
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.4526
+        }
+      },
+      "auc_primary": 0.391,
+      "auc_secondary_base0_39": 0.4526
+    },
+    "libero_spatial_task0": {
+      "n_known": 20,
+      "paths": {
+        "borrow__primary": {
+          "n": 20,
+          "auc": 0.8975
+        },
+        "borrow__secondary": {
+          "n": 20,
+          "auc": 0.9625
+        },
+        "resample__single": {
+          "n": 18,
+          "auc": 0.4361
+        },
+        "w_expand__primary": {
+          "n": 18,
+          "auc": 0.6028
+        },
+        "w_expand__secondary": {
+          "n": 17,
+          "auc": 0.6059
+        }
+      },
+      "auc_primary": 0.6545,
+      "auc_secondary_base0_39": 0.7986
+    },
+    "libero_spatial_task1": {
+      "n_known": 20,
+      "paths": {
+        "borrow__primary": {
+          "n": 20,
+          "auc": 0.845
+        },
+        "borrow__secondary": {
+          "n": 19,
+          "auc": 0.9342
+        },
+        "resample__single": {
+          "n": 20,
+          "auc": 0.4425
+        },
+        "w_expand__primary": {
+          "n": 18,
+          "auc": 0.5861
+        },
+        "w_expand__secondary": {
+          "n": 19,
+          "auc": 0.3605
+        }
+      },
+      "auc_primary": 0.6259,
+      "auc_secondary_base0_39": 0.6474
+    },
+    "libero_10_task0": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.2425
+        }
+      },
+      "auc_primary": 0.2425
+    },
+    "libero_10_task2": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.52
+        }
+      },
+      "auc_primary": 0.52
+    },
+    "libero_10_task5": {
+      "n_known": 20,
+      "paths": {
+        "resample__single": {
+          "n": 20,
+          "auc": 0.6975
+        }
+      },
+      "auc_primary": 0.6975
+    }
+  },
+  "paths_macro": {
+    "resample__single": 0.27,
+    "w_expand__primary": 0.6684,
+    "w_expand__secondary": 0.5574,
+    "borrow__primary": 0.8712,
+    "borrow__secondary": 0.9484
+  },
+  "macro_auc_primary": 0.4649,
+  "macro_auc_secondary": 0.5792,
+  "micro_auc_primary_caveat_scale": 0.4708,
+  "n_clusters_below_threshold": 25,
+  "verdict": "REDUCE(E5 성숙도 단독 — §3 축소 경로)"
+}

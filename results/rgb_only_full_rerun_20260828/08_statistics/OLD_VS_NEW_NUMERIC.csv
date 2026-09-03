@@ -1,0 +1,160 @@
+metric,seed_or_cluster,old_rgbd,new_rgb,absolute_change,relative_change,source_old,source_new,note
+batch.N_star,chained_libero_object_task0,80,10,-70,-0.875,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,chained_libero_object_task5,20,80,60,3.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_10_task0,>80,>80,,,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_10_task2,20,10,-10,-0.5,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_10_task5,40,40,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_goal_task0,80,40,-40,-0.5,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_goal_task1,10,10,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_goal_task2,10,10,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_goal_task3,20,10,-10,-0.5,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_goal_task4,20,10,-10,-0.5,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_goal_task5,20,10,-10,-0.5,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_goal_task6,40,20,-20,-0.5,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_goal_task7,10,10,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_goal_task8,10,10,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_goal_task9,20,20,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_object_task0,80,80,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_object_task1,10,10,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_object_task2,10,10,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_object_task3,10,20,10,1.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_object_task4,20,20,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_object_task5,10,10,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_object_task6,40,40,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_object_task7,10,40,30,3.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_object_task8,10,10,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_object_task9,20,10,-10,-0.5,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_spatial_task0,10,10,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.N_star,libero_spatial_task1,20,20,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,>80은 우측절단 (수치 비교 시 cap=160)
+batch.median_N_star,all_standard,20.0,10.0,-10.0,-0.5,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.formable_count,all_standard,24,24,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.median_N_star,formation_cells,15.0,10.0,-5.0,-0.333333,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.formable_count,formation_cells,22,22,0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,chained_libero_object_task0,0.34,0.42,0.08,0.235294,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,chained_libero_object_task0,0.8,0.98,0.18,0.225,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,chained_libero_object_task5,0.98,0.74,-0.24,-0.244898,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,chained_libero_object_task5,0.98,0.86,-0.12,-0.122449,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_10_task0,0.45,0.2,-0.25,-0.555556,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_10_task0,0.75,0.5,-0.25,-0.333333,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_10_task2,0.9,0.95,0.05,0.055556,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_10_task2,0.95,1.0,0.05,0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_10_task5,0.7,0.7,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_10_task5,0.95,0.95,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_goal_task0,0.45,0.4,-0.05,-0.111111,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_goal_task0,0.85,0.8,-0.05,-0.058824,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_goal_task1,0.9,0.95,0.05,0.055556,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_goal_task1,1.0,1.0,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_goal_task2,1.0,1.0,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_goal_task2,1.0,1.0,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_goal_task3,0.85,0.9,0.05,0.058824,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_goal_task3,0.8,0.9,0.1,0.125,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_goal_task4,0.95,1.0,0.05,0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_goal_task4,0.95,1.0,0.05,0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_goal_task5,0.9,1.0,0.1,0.111111,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_goal_task5,0.95,1.0,0.05,0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_goal_task6,0.65,0.9,0.25,0.384615,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_goal_task6,1.0,0.95,-0.05,-0.05,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_goal_task7,1.0,1.0,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_goal_task7,1.0,1.0,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_goal_task8,1.0,1.0,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_goal_task8,0.9,1.0,0.1,0.111111,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_goal_task9,1.0,0.85,-0.15,-0.15,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_goal_task9,1.0,1.0,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_object_task0,0.2,0.15,-0.05,-0.25,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_object_task0,0.95,0.95,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_object_task1,0.8,0.75,-0.05,-0.0625,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_object_task1,0.75,1.0,0.25,0.333333,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_object_task2,0.95,0.95,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_object_task2,0.95,1.0,0.05,0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_object_task3,0.35,0.8,0.45,1.285714,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_object_task3,1.0,0.9,-0.1,-0.1,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_object_task4,1.0,1.0,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_object_task4,1.0,1.0,0.0,0.0,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_object_task5,0.95,1.0,0.05,0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_object_task5,1.0,0.9,-0.1,-0.1,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_object_task6,0.75,0.7,-0.05,-0.066667,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_object_task6,0.95,0.8,-0.15,-0.157895,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_object_task7,0.85,0.65,-0.2,-0.235294,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_object_task7,1.0,0.85,-0.15,-0.15,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_object_task8,0.65,0.85,0.2,0.307692,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_object_task8,0.95,1.0,0.05,0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_object_task9,0.95,0.9,-0.05,-0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_object_task9,0.9,0.95,0.05,0.055556,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_spatial_task0,0.9,0.95,0.05,0.055556,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_spatial_task0,0.95,1.0,0.05,0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n20,libero_spatial_task1,0.95,0.9,-0.05,-0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+batch.s_hat_n80,libero_spatial_task1,0.95,1.0,0.05,0.052632,results/e3/e3_curves.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/08_statistics/rgb_only_e3_curves.json,
+online.routing_first_1000,0,0.887,0.861,-0.026,-0.029312,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.routing_last_1000,0,0.393,0.458,0.065,0.165394,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.routing_reduction,0,0.494,0.403,-0.091,-0.184211,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.routing_full_stream,0,0.616,0.6155,-0.0005,-0.000812,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.system_success,0,0.9627,0.9573,-0.0054,-0.005609,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.fire_success_rate,0,0.9766,0.961,-0.0156,-0.015974,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.habit_firing_count,0,1536,1538,2,0.001302,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.firing_risk,0,0.0234,0.039,0.0156,0.666667,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.demotion_count,0,3,5,2,0.666667,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.rematuration_count,0,0,1,1,,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,old = demotions.events 중 regained_M
+online.n_retrain_events,0,51,49,-2,-0.039216,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.final_M,0,19,17,-2,-0.105263,results/e5/summary_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.final_I,0,6,6,0,0.0,results/e5/summary_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.final_X,0,8,10,2,0.25,results/e5/summary_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+online.final_U,0,0,0,0,,results/e5/summary_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+compute.operational_s,0,33579.8,33260.9,-318.9,-0.009497,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+compute.formation_s,0,22128.0,20427.4,-1700.6,-0.076853,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/02_online_seed0/ONLINE_SUMMARY_seed0.json,
+paired.system_success,0,0.9627,0.9573,-0.0054,-0.005609,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,전체 스트림 합성 (논문 H4b 구성)
+paired.full_vla_success,0,0.964,0.964,0.0,0.0,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.difference,0,-0.0012,-0.0067,-0.0055,4.583333,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.ci_lower,0,-0.005,-0.0107,-0.0057,1.14,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.ci_upper,0,0.0025,-0.0027,-0.0052,-2.08,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.n_fired,0,1536,1538,2,0.001302,results/e5/reading_0.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,new = CF 재현이 끝난 발화 에피소드 수
+online.routing_first_1000,1,0.844,0.819,-0.025,-0.029621,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.routing_last_1000,1,0.454,0.442,-0.012,-0.026432,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.routing_reduction,1,0.39,0.377,-0.013,-0.033333,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.routing_full_stream,1,0.6338,0.584,-0.0498,-0.078574,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.system_success,1,0.956,0.9525,-0.0035,-0.003661,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.fire_success_rate,1,0.9638,0.9651,0.0013,0.001349,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.habit_firing_count,1,1465,1664,199,0.135836,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.firing_risk,1,0.0362,0.0349,-0.0013,-0.035912,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.demotion_count,1,5,2,-3,-0.6,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.rematuration_count,1,3,1,-2,-0.666667,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,old = demotions.events 중 regained_M
+online.n_retrain_events,1,50,48,-2,-0.04,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.final_M,1,16,18,2,0.125,results/e5/summary_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.final_I,1,7,6,-1,-0.142857,results/e5/summary_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.final_X,1,10,9,-1,-0.1,results/e5/summary_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+online.final_U,1,0,0,0,,results/e5/summary_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+compute.operational_s,1,34495.8,33124.6,-1371.2,-0.03975,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+compute.formation_s,1,21364.5,19743.3,-1621.2,-0.075883,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/03_online_seed1/ONLINE_SUMMARY_seed1.json,
+paired.system_success,1,0.956,0.9525,-0.0035,-0.003661,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,전체 스트림 합성 (논문 H4b 구성)
+paired.full_vla_success,1,0.9573,0.9575,0.0002,0.000209,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.difference,1,-0.0013,-0.005,-0.0037,2.846154,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.ci_lower,1,-0.0058,-0.0095,-0.0037,0.637931,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.ci_upper,1,0.0033,-0.0005,-0.0038,-1.151515,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.n_fired,1,1465,1664,199,0.135836,results/e5/reading_1.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,new = CF 재현이 끝난 발화 에피소드 수
+online.routing_first_1000,2,0.891,0.878,-0.013,-0.01459,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.routing_last_1000,2,0.368,0.397,0.029,0.078804,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.routing_reduction,2,0.523,0.481,-0.042,-0.080306,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.routing_full_stream,2,0.5958,0.5847,-0.0111,-0.01863,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.system_success,2,0.9637,0.9595,-0.0042,-0.004358,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.fire_success_rate,2,0.974,0.9609,-0.0131,-0.01345,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.habit_firing_count,2,1617,1661,44,0.027211,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.firing_risk,2,0.026,0.0391,0.0131,0.503846,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.demotion_count,2,3,2,-1,-0.333333,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.rematuration_count,2,2,1,-1,-0.5,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,old = demotions.events 중 regained_M
+online.n_retrain_events,2,51,48,-3,-0.058824,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.final_M,2,20,19,-1,-0.05,results/e5/summary_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.final_I,2,6,4,-2,-0.333333,results/e5/summary_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.final_X,2,7,10,3,0.428571,results/e5/summary_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+online.final_U,2,0,0,0,,results/e5/summary_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+compute.operational_s,2,32742.7,32544.5,-198.2,-0.006053,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+compute.formation_s,2,22045.4,19739.6,-2305.8,-0.104593,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/04_online_seed2/ONLINE_SUMMARY_seed2.json,
+paired.system_success,2,0.9637,0.9595,-0.0042,-0.004358,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,전체 스트림 합성 (논문 H4b 구성)
+paired.full_vla_success,2,0.9675,0.9673,-0.0002,-0.000207,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.difference,2,-0.0038,-0.0077,-0.0039,1.026316,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.ci_lower,2,-0.0078,-0.0125,-0.0047,0.602564,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.ci_upper,2,0.0002,-0.0032,-0.0034,-17.0,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,
+paired.n_fired,2,1617,1661,44,0.027211,results/e5/reading_2.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/05_paired_replay/PAIRED_REPLAY_SUMMARY.json,new = CF 재현이 끝난 발화 에피소드 수
+compute.act_latency_ms,median,3.36,3.35,-0.01,-0.002976,results/e1/e1_latency.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/07_latency_cost/COMPUTE_SUMMARY.json,old = RGB-D ACT(4ch) / new = RGB-only ACT(3ch)
+compute.act_latency_p95_ms,p95,3.37,3.363,-0.007,-0.002077,results/e1/e1_latency.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/07_latency_cost/COMPUTE_SUMMARY.json,
+compute.teacher_latency_ms,median,85.07,85.466,0.396,0.004655,results/e1/e1_latency.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/07_latency_cost/COMPUTE_SUMMARY.json,teacher는 §1 동결 자산
+compute.gate_latency_ms,median,3.96,4.179,0.219,0.055303,results/e1/e1_latency.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/07_latency_cost/COMPUTE_SUMMARY.json,
+compute.formation_event_s,mean,,413.17,,,results/e1/e1_latency.json,/home/asmr/workspace/habitvla2/results/rgb_only_full_rerun_20260828/07_latency_cost/COMPUTE_SUMMARY.json,old 대응값 없음 — 기존 run은 이벤트 단위 학습/probe 분리 계측을 하지 않았다

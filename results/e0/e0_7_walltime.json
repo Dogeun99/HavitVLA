@@ -1,0 +1,51 @@
+{
+  "per_suite": {
+    "libero_spatial": {
+      "n": 10,
+      "mean_s": 5.8,
+      "min_s": 5.0,
+      "max_s": 6.0
+    },
+    "libero_object": {
+      "n": 10,
+      "mean_s": 5.5,
+      "min_s": 4.0,
+      "max_s": 7.0
+    },
+    "libero_goal": {
+      "n": 10,
+      "mean_s": 4.9,
+      "min_s": 4.0,
+      "max_s": 6.0
+    },
+    "libero_10": {
+      "n": 10,
+      "mean_s": 8.3,
+      "min_s": 6.0,
+      "max_s": 13.0
+    }
+  },
+  "budget": {
+    "assumption": "teacher-ep 개략치 (budget_caveats 참조; 상한 보장 아님)",
+    "E1_1000ep_h": 1.7,
+    "E2_collect_240ep_h": 0.4,
+    "E2_eval_400ep_h": 0.7,
+    "E3_collect_3360ep_h": 5.7,
+    "E3_eval_2240ep_h": 3.8,
+    "E5_6000ep_h": 10.2,
+    "total_h_estimate": 22.5
+  },
+  "model_load_seconds": {
+    "libero_spatial": 6.8,
+    "libero_object": 9.2,
+    "libero_goal": 9.8,
+    "libero_10": 10.5
+  },
+  "mean_teacher_episode_s": 6.1,
+  "budget_caveats": [
+    "success-only sample (40/40) — 실패 에피소드(max_steps 완주) 미반영: 하향 편향",
+    "구간에 save_rollout_video mp4 인코딩 포함 — 실전 rollout엔 없음: 상향 편향",
+    "초 단위 간헐 타임스탬프 — 에피소드당 ±1~2s",
+    "ACT 학습/추론 비용 미포함 — E1 앵커 ⑤ 후 갱신"
+  ]
+}

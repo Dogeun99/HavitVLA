@@ -1,0 +1,4 @@
+
+===== batch_statistics attempt=0 start=2026-08-31 20:14:40 =====
+/home/asmr/miniconda3/envs/hv2_hab/bin/python -u experiments/rgb_only_rerun/analyze_batch.py
+[BATCH-STATS-DONE] clusters=27/27 episodes=2640 formation_cells=22 between=0.0567 KW_H=1.1905 KW_p=0.5514 censored=1

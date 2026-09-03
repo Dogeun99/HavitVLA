@@ -1,0 +1,405 @@
+{
+ "seed": 0,
+ "modality": "rgb_only",
+ "n_episodes": 4000,
+ "n_valid": 4000,
+ "n_infra_error": 0,
+ "vla_routing_rate": {
+  "full_stream": 0.6155,
+  "first_1000": 0.861,
+  "last_1000": 0.458,
+  "reduction_pp": 40.3,
+  "one_sided_test_first_vs_last": {
+   "p_first": 0.861,
+   "p_last": 0.458,
+   "diff": 0.403,
+   "z": 19.016,
+   "p_value": 6.260058720363053e-81,
+   "log10_p": -80.2,
+   "p_report": "6.26e-81"
+  }
+ },
+ "system_success": {
+  "full_stream": 0.9573,
+  "first_1000": 0.969,
+  "last_1000": 0.947,
+  "fire_success_rate": 0.961,
+  "vla_success_rate": 0.9549
+ },
+ "windows_200": [
+  {
+   "ep_start": 0,
+   "n_valid": 200,
+   "r_V": 1.0,
+   "system_success": 0.99
+  },
+  {
+   "ep_start": 200,
+   "n_valid": 200,
+   "r_V": 1.0,
+   "system_success": 0.97
+  },
+  {
+   "ep_start": 400,
+   "n_valid": 200,
+   "r_V": 0.855,
+   "system_success": 0.945
+  },
+  {
+   "ep_start": 600,
+   "n_valid": 200,
+   "r_V": 0.78,
+   "system_success": 0.975
+  },
+  {
+   "ep_start": 800,
+   "n_valid": 200,
+   "r_V": 0.67,
+   "system_success": 0.965
+  },
+  {
+   "ep_start": 1000,
+   "n_valid": 200,
+   "r_V": 0.615,
+   "system_success": 0.975
+  },
+  {
+   "ep_start": 1200,
+   "n_valid": 200,
+   "r_V": 0.66,
+   "system_success": 0.95
+  },
+  {
+   "ep_start": 1400,
+   "n_valid": 200,
+   "r_V": 0.66,
+   "system_success": 0.965
+  },
+  {
+   "ep_start": 1600,
+   "n_valid": 200,
+   "r_V": 0.63,
+   "system_success": 0.965
+  },
+  {
+   "ep_start": 1800,
+   "n_valid": 200,
+   "r_V": 0.62,
+   "system_success": 0.97
+  },
+  {
+   "ep_start": 2000,
+   "n_valid": 200,
+   "r_V": 0.62,
+   "system_success": 0.95
+  },
+  {
+   "ep_start": 2200,
+   "n_valid": 200,
+   "r_V": 0.58,
+   "system_success": 0.945
+  },
+  {
+   "ep_start": 2400,
+   "n_valid": 200,
+   "r_V": 0.525,
+   "system_success": 0.94
+  },
+  {
+   "ep_start": 2600,
+   "n_valid": 200,
+   "r_V": 0.42,
+   "system_success": 0.96
+  },
+  {
+   "ep_start": 2800,
+   "n_valid": 200,
+   "r_V": 0.385,
+   "system_success": 0.945
+  },
+  {
+   "ep_start": 3000,
+   "n_valid": 200,
+   "r_V": 0.455,
+   "system_success": 0.93
+  },
+  {
+   "ep_start": 3200,
+   "n_valid": 200,
+   "r_V": 0.43,
+   "system_success": 0.97
+  },
+  {
+   "ep_start": 3400,
+   "n_valid": 200,
+   "r_V": 0.45,
+   "system_success": 0.945
+  },
+  {
+   "ep_start": 3600,
+   "n_valid": 200,
+   "r_V": 0.5,
+   "system_success": 0.955
+  },
+  {
+   "ep_start": 3800,
+   "n_valid": 200,
+   "r_V": 0.455,
+   "system_success": 0.935
+  }
+ ],
+ "final_lifecycle": {
+  "M": 17,
+  "I": 6,
+  "X": 10,
+  "U": 0
+ },
+ "final_states_by_cluster": {
+  "libero_10_task0": "X",
+  "libero_10_task2": "M",
+  "libero_10_task5": "M",
+  "libero_goal_task0": "X",
+  "libero_goal_task1": "M",
+  "libero_goal_task2": "M",
+  "libero_goal_task3": "X",
+  "libero_goal_task4": "M",
+  "libero_goal_task5": "M",
+  "libero_goal_task6": "I",
+  "libero_goal_task7": "M",
+  "libero_goal_task8": "M",
+  "libero_goal_task9": "X",
+  "libero_object_task0": "X",
+  "libero_object_task1": "X",
+  "libero_object_task2": "M",
+  "libero_object_task3": "X",
+  "libero_object_task4": "M",
+  "libero_object_task5": "M",
+  "libero_object_task6": "X",
+  "libero_object_task7": "X",
+  "libero_object_task8": "M",
+  "libero_object_task9": "X",
+  "libero_spatial_task0": "M",
+  "libero_spatial_task1": "M",
+  "libero_spatial_task2": "M",
+  "libero_spatial_task3": "I",
+  "libero_spatial_task4": "I",
+  "libero_spatial_task5": "I",
+  "libero_spatial_task6": "M",
+  "libero_spatial_task7": "M",
+  "libero_spatial_task8": "I",
+  "libero_spatial_task9": "I"
+ },
+ "final_states_source": "episode ledger (마지막 state_after)",
+ "final_states_driver_crosscheck": {
+  "driver_summary_present": true,
+  "mismatch": {}
+ },
+ "lifecycle": {
+  "n_clusters_observed": 33,
+  "ever_mature_count": 21,
+  "ever_mature_clusters": [
+   "libero_10_task2",
+   "libero_10_task5",
+   "libero_goal_task1",
+   "libero_goal_task2",
+   "libero_goal_task4",
+   "libero_goal_task5",
+   "libero_goal_task6",
+   "libero_goal_task7",
+   "libero_goal_task8",
+   "libero_object_task2",
+   "libero_object_task3",
+   "libero_object_task4",
+   "libero_object_task5",
+   "libero_object_task7",
+   "libero_object_task8",
+   "libero_spatial_task0",
+   "libero_spatial_task1",
+   "libero_spatial_task2",
+   "libero_spatial_task3",
+   "libero_spatial_task6",
+   "libero_spatial_task7"
+  ],
+  "demotion_count": 5,
+  "demotion_clusters": [
+   "libero_10_task2",
+   "libero_goal_task6",
+   "libero_object_task3",
+   "libero_object_task7",
+   "libero_spatial_task3"
+  ],
+  "rematuration_count": 1,
+  "rematuration_clusters": [
+   "libero_10_task2"
+  ],
+  "transition_X_count": 10,
+  "transition_X_clusters": [
+   "libero_10_task0",
+   "libero_goal_task0",
+   "libero_goal_task3",
+   "libero_goal_task9",
+   "libero_object_task0",
+   "libero_object_task1",
+   "libero_object_task3",
+   "libero_object_task6",
+   "libero_object_task7",
+   "libero_object_task9"
+  ],
+  "n_retrain_events": 49,
+  "retrain_by_grid_n": {
+   "20": {
+    "attempts": 33,
+    "passed": 16
+   },
+   "80": {
+    "attempts": 16,
+    "passed": 6
+   }
+  },
+  "probe_pass_by_round": {
+   "1": {
+    "attempts": 33,
+    "passed": 16,
+    "pass_rate": 0.4848
+   },
+   "2": {
+    "attempts": 16,
+    "passed": 6,
+    "pass_rate": 0.375
+   }
+  },
+  "first_maturity_exposures": {
+   "values": [
+    20,
+    20,
+    20,
+    20,
+    20,
+    21,
+    20,
+    20,
+    20,
+    22,
+    21,
+    20,
+    20,
+    23,
+    20,
+    20,
+    80,
+    81,
+    84,
+    88,
+    80
+   ],
+   "median": 20.0,
+   "mean": 35.24,
+   "min": 20,
+   "max": 88
+  },
+  "first_maturity_episode": {
+   "libero_object_task7": 384,
+   "libero_goal_task7": 402,
+   "libero_object_task3": 440,
+   "libero_object_task4": 469,
+   "libero_goal_task4": 491,
+   "libero_spatial_task0": 507,
+   "libero_goal_task2": 519,
+   "libero_goal_task1": 645,
+   "libero_object_task2": 668,
+   "libero_object_task8": 743,
+   "libero_10_task2": 775,
+   "libero_10_task5": 787,
+   "libero_spatial_task3": 1744,
+   "libero_spatial_task7": 1749,
+   "libero_spatial_task6": 1781,
+   "libero_spatial_task2": 1893,
+   "libero_goal_task5": 2214,
+   "libero_goal_task8": 2308,
+   "libero_goal_task6": 2356,
+   "libero_object_task5": 2450,
+   "libero_spatial_task1": 2508
+  }
+ },
+ "risk": {
+  "n_fire": 1538,
+  "n_fire_fail": 60,
+  "pr_fail_given_fire": 0.039,
+  "epsilon": 0.2,
+  "within_bound": true,
+  "tau_final_max": 0.844,
+  "tau_raised_episodes": 595,
+  "clusters_with_tau_raised": [
+   "libero_10_task2",
+   "libero_10_task5",
+   "libero_goal_task1",
+   "libero_goal_task2",
+   "libero_goal_task4",
+   "libero_goal_task5",
+   "libero_goal_task6",
+   "libero_goal_task8",
+   "libero_object_task3",
+   "libero_object_task4",
+   "libero_object_task7",
+   "libero_object_task8",
+   "libero_spatial_task0",
+   "libero_spatial_task1",
+   "libero_spatial_task3",
+   "libero_spatial_task7"
+  ]
+ },
+ "cold_start": {
+  "clusters": [
+   "libero_spatial_task2",
+   "libero_spatial_task3",
+   "libero_spatial_task4",
+   "libero_spatial_task5",
+   "libero_spatial_task6",
+   "libero_spatial_task7",
+   "libero_spatial_task8",
+   "libero_spatial_task9"
+  ],
+  "n_episodes": 400,
+  "routing_r_V": 0.7325,
+  "system_success": 0.94,
+  "n_matured": 4,
+  "final_state_distribution": {
+   "M": 3,
+   "I": 5,
+   "X": 0,
+   "U": 0
+  },
+  "standard_routing_r_V": 0.6025,
+  "standard_system_success": 0.9592
+ },
+ "late_traffic_last1000": {
+  "n_valid": 1000,
+  "n_vla": 458,
+  "r_V": 0.458,
+  "vla_by_state_before": {
+   "X": 348,
+   "I": 110
+  },
+  "contribution_of_window": {
+   "X": 0.348,
+   "I": 0.11
+  },
+  "share_of_vla": {
+   "X": 0.7598,
+   "I": 0.2402
+  }
+ },
+ "call_accounting": {
+  "total_VLA_calls": 46467,
+  "total_habit_calls_stream": 24214,
+  "total_probe_habit_calls": 19095,
+  "mean_VLA_calls_per_teacher_episode": 18.87,
+  "mean_habit_calls_per_fire_episode": 15.74
+ },
+ "ledger_seconds": {
+  "operational_s": 33260.9,
+  "formation_s": 20427.4,
+  "formation_episodes": 980
+ },
+ "total_wall_s": 57938.1
+}

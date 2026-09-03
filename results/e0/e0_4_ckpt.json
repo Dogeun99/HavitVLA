@@ -1,0 +1,58 @@
+{
+  "libero_spatial": {
+    "checkpoint": "moojink/openvla-7b-oft-finetuned-libero-spatial",
+    "load_seconds": 6.8,
+    "first_forward_seconds": 0.474,
+    "action_chunk_shape": [
+      8,
+      7
+    ],
+    "actions_finite": true,
+    "vram_peak_gb": 16.08,
+    "dtype": "torch.bfloat16",
+    "attn": "sdpa (flash-attn 미빌드, sm_120)",
+    "ok": true
+  },
+  "libero_object": {
+    "checkpoint": "moojink/openvla-7b-oft-finetuned-libero-object",
+    "load_seconds": 9.2,
+    "first_forward_seconds": 0.088,
+    "action_chunk_shape": [
+      8,
+      7
+    ],
+    "actions_finite": true,
+    "vram_peak_gb": 16.08,
+    "dtype": "torch.bfloat16",
+    "attn": "sdpa (flash-attn 미빌드, sm_120)",
+    "ok": true
+  },
+  "libero_goal": {
+    "checkpoint": "moojink/openvla-7b-oft-finetuned-libero-goal",
+    "load_seconds": 9.8,
+    "first_forward_seconds": 0.157,
+    "action_chunk_shape": [
+      8,
+      7
+    ],
+    "actions_finite": true,
+    "vram_peak_gb": 16.08,
+    "dtype": "torch.bfloat16",
+    "attn": "sdpa (flash-attn 미빌드, sm_120)",
+    "ok": true
+  },
+  "libero_10": {
+    "checkpoint": "moojink/openvla-7b-oft-finetuned-libero-10",
+    "load_seconds": 10.5,
+    "first_forward_seconds": 0.155,
+    "action_chunk_shape": [
+      8,
+      7
+    ],
+    "actions_finite": true,
+    "vram_peak_gb": 16.08,
+    "dtype": "torch.bfloat16",
+    "attn": "sdpa (flash-attn 미빌드, sm_120)",
+    "ok": true
+  }
+}

@@ -1,0 +1,30 @@
+# ---- 대용량 로컬 자산 (릴리스에 포함하지 않음; setup/link_local_assets.sh로 원본에 링크) ----
+src/data/
+src/checkpoints/
+src/.hf_cache
+src/.torch_cache
+src/.libero/
+src/logs/*
+!src/logs/.gitkeep
+src/results/*/*/curves_rerun_check/
+# ---- 실행 산출물 ----
+verify_runs/
+*.tar.gz
+*.pt
+*.pth
+*.hdf5
+*.h5
+*.mp4
+wandb/
+rollouts/
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+# ---- 편집기/OS ----
+.vscode/
+.idea/
+.DS_Store
+.claude/

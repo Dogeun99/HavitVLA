@@ -1,0 +1,26 @@
+% Depth ablation, per-cluster. 수치는 numbers 매크로로 주입할 것 —
+% 아래는 서식 확인용 렌더이며 본문 병합 시 \Num{} 치환 대상이다.
+\begin{table}[t]
+\caption{Habit formation with and without depth. Six clusters stratified by suite and
+difficulty; identical teacher trajectories, training schedule, seed, and held-out
+episode specifications in both conditions. $\Delta$ is RGB-only minus RGB-D.}
+\label{tab:depth_ablation}
+\centering\small
+\begin{tabular}{llcccc}
+\toprule
+& & \multicolumn{2}{c}{$N^{\star}$} & \multicolumn{2}{c}{$\hat{s}(80)$} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Cluster & Suite & RGB-D & RGB & RGB-D & RGB \\
+\midrule
+\texttt{object\_task1} & Object & 10 & 20 & 0.88 & 0.96 \\
+\texttt{object\_task0} & Object & 80 & 40 & 0.96 & 0.90 \\
+\texttt{goal\_task1} & Goal & 10 & 10 & 0.98 & 0.96 \\
+\texttt{goal\_task0} & Goal & 80 & 80 & 0.92 & 0.82 \\
+\texttt{spatial\_task1} & Spatial & 20 & 20 & 0.96 & 0.98 \\
+\texttt{long\_task0} & Long & $>$80 & $>$80 & 0.74 & 0.60 \\
+\midrule
+\multicolumn{6}{l}{\footnotesize Paired over 1,200 episodes: $\Delta = -0.0150$, 95\% CI $[-0.0392, +0.0092]$,} \\
+\multicolumn{6}{l}{\footnotesize exact McNemar $p = 0.25$ (100/118 discordant).} \\
+\bottomrule
+\end{tabular}
+\end{table}

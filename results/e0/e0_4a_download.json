@@ -1,0 +1,18 @@
+{
+  "moojink/openvla-7b-oft-finetuned-libero-spatial": {
+    "path": "/home/asmr/workspace/habitvla2/.hf_cache/hub/models--moojink--openvla-7b-oft-finetuned-libero-spatial/snapshots/6d0231af0e48c5985f1ff86908f4674b84bc049b",
+    "seconds": 125.3
+  },
+  "moojink/openvla-7b-oft-finetuned-libero-object": {
+    "path": "/home/asmr/workspace/habitvla2/.hf_cache/hub/models--moojink--openvla-7b-oft-finetuned-libero-object/snapshots/4c89574e1c538b6c102f43f0526d60a9d3650148",
+    "seconds": 124.5
+  },
+  "moojink/openvla-7b-oft-finetuned-libero-goal": {
+    "path": "/home/asmr/workspace/habitvla2/.hf_cache/hub/models--moojink--openvla-7b-oft-finetuned-libero-goal/snapshots/c2d0f9fbbd82674683b397ff923168a12f6a307b",
+    "seconds": 145.7
+  },
+  "moojink/openvla-7b-oft-finetuned-libero-10": {
+    "path": "/home/asmr/workspace/habitvla2/.hf_cache/hub/models--moojink--openvla-7b-oft-finetuned-libero-10/snapshots/95220f9a3421a7ff12d4218e73d09ade830fa9a3",
+    "seconds": 122.9
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "scope": [
+    "libero_goal_task0",
+    "libero_goal_task2",
+    "libero_goal_task4",
+    "libero_goal_task7",
+    "libero_object_task2",
+    "libero_spatial_task0"
+  ],
+  "note": "행3 히든 scorer — 6셀 범위(예산 제약, goal 중심). fit/eval 모두 128 저장 규격 경유. PCA(32) 전용 fit(6셀 수집 풀).",
+  "clusters": {
+    "libero_goal_task0": {
+      "auc": 0.7425,
+      "fr_at_q": 0.0
+    },
+    "libero_goal_task2": {
+      "auc": 0.7275,
+      "fr_at_q": 0.05
+    },
+    "libero_goal_task4": {
+      "auc": 0.68,
+      "fr_at_q": 0.05
+    },
+    "libero_goal_task7": {
+      "auc": 0.5925,
+      "fr_at_q": 0.05
+    },
+    "libero_object_task2": {
+      "auc": 0.7725,
+      "fr_at_q": 0.0
+    },
+    "libero_spatial_task0": {
+      "auc": 0.8825,
+      "fr_at_q": 0.0
+    }
+  },
+  "macro_auc_scope": 0.7329,
+  "goal_macro_auc": 0.6856,
+  "mean_fr": 0.025
+}

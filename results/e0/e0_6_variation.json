@@ -1,0 +1,249 @@
+{
+  "suites": {
+    "libero_spatial": {
+      "task": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate",
+      "state_dim": 92,
+      "n_free_joints": 5,
+      "perturbation": {
+        "w_grid": [
+          0.0,
+          0.01,
+          0.02,
+          0.04
+        ],
+        "n_per_w": 8,
+        "results": {
+          "0.0": {
+            "mean_xy_variance": 2.69630192214213e-34,
+            "valid_rate": 1.0
+          },
+          "0.01": {
+            "mean_xy_variance": 2.2886575550877375e-05,
+            "valid_rate": 1.0
+          },
+          "0.02": {
+            "mean_xy_variance": 9.884983699619254e-05,
+            "valid_rate": 1.0
+          },
+          "0.04": {
+            "mean_xy_variance": 0.0003759179643603284,
+            "valid_rate": 1.0
+          }
+        },
+        "usable_w_max": 0.04,
+        "variance_monotone": true,
+        "variance_nondegenerate": true,
+        "valid_ok": true,
+        "repro_state_hashes": [
+          "99edefeac1e97839",
+          "99edefeac1e97839"
+        ],
+        "repro_obs_hashes": [
+          "3e52de5b96448030",
+          "3e52de5b96448030"
+        ],
+        "obs_reproducible_info": true,
+        "reproducible": true
+      },
+      "resampling": {
+        "same_seed_reproducible": true,
+        "diff_seed_differs": true,
+        "seed0_vs_seed1_max_delta_m": 0.02277631532308544
+      },
+      "validity_checks": [
+        "z_drop_5cm",
+        "xy_settle_within_10cm_of_perturbed_target"
+      ],
+      "validity_not_checked": [
+        "contact_penetration",
+        "tip_over",
+        "bddl_init_predicates"
+      ],
+      "status": "PASS"
+    },
+    "libero_object": {
+      "task": "pick_up_the_alphabet_soup_and_place_it_in_the_basket",
+      "state_dim": 110,
+      "n_free_joints": 7,
+      "perturbation": {
+        "w_grid": [
+          0.0,
+          0.01,
+          0.02,
+          0.04
+        ],
+        "n_per_w": 8,
+        "results": {
+          "0.0": {
+            "mean_xy_variance": 1.4809885398245597e-34,
+            "valid_rate": 1.0
+          },
+          "0.01": {
+            "mean_xy_variance": 2.6563670384550823e-05,
+            "valid_rate": 1.0
+          },
+          "0.02": {
+            "mean_xy_variance": 0.00010625468153820366,
+            "valid_rate": 1.0
+          },
+          "0.04": {
+            "mean_xy_variance": 0.00042501872615281576,
+            "valid_rate": 1.0
+          }
+        },
+        "usable_w_max": 0.04,
+        "variance_monotone": true,
+        "variance_nondegenerate": true,
+        "valid_ok": true,
+        "repro_state_hashes": [
+          "5204bdecfdb769d0",
+          "5204bdecfdb769d0"
+        ],
+        "repro_obs_hashes": [
+          "91cabf20f9ee19ab",
+          "91cabf20f9ee19ab"
+        ],
+        "obs_reproducible_info": true,
+        "reproducible": true
+      },
+      "resampling": {
+        "same_seed_reproducible": true,
+        "diff_seed_differs": true,
+        "seed0_vs_seed1_max_delta_m": 0.013081236252012912
+      },
+      "validity_checks": [
+        "z_drop_5cm",
+        "xy_settle_within_10cm_of_perturbed_target"
+      ],
+      "validity_not_checked": [
+        "contact_penetration",
+        "tip_over",
+        "bddl_init_predicates"
+      ],
+      "status": "PASS"
+    },
+    "libero_goal": {
+      "task": "open_the_middle_drawer_of_the_cabinet",
+      "state_dim": 79,
+      "n_free_joints": 4,
+      "perturbation": {
+        "w_grid": [
+          0.0,
+          0.01,
+          0.02,
+          0.04
+        ],
+        "n_per_w": 8,
+        "results": {
+          "0.0": {
+            "mean_xy_variance": 3.912045199536573e-34,
+            "valid_rate": 1.0
+          },
+          "0.01": {
+            "mean_xy_variance": 2.2649545241433704e-05,
+            "valid_rate": 1.0
+          },
+          "0.02": {
+            "mean_xy_variance": 9.059818096573474e-05,
+            "valid_rate": 1.0
+          },
+          "0.04": {
+            "mean_xy_variance": 0.0003698867008175733,
+            "valid_rate": 1.0
+          }
+        },
+        "usable_w_max": 0.04,
+        "variance_monotone": true,
+        "variance_nondegenerate": true,
+        "valid_ok": true,
+        "repro_state_hashes": [
+          "009106aa17f207e8",
+          "009106aa17f207e8"
+        ],
+        "repro_obs_hashes": [
+          "cf255bb8bd85c734",
+          "cf255bb8bd85c734"
+        ],
+        "obs_reproducible_info": true,
+        "reproducible": true
+      },
+      "resampling": {
+        "same_seed_reproducible": true,
+        "diff_seed_differs": true,
+        "seed0_vs_seed1_max_delta_m": 0.022776315323085328
+      },
+      "validity_checks": [
+        "z_drop_5cm",
+        "xy_settle_within_10cm_of_perturbed_target"
+      ],
+      "validity_not_checked": [
+        "contact_penetration",
+        "tip_over",
+        "bddl_init_predicates"
+      ],
+      "status": "PASS"
+    },
+    "libero_10": {
+      "task": "LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket",
+      "state_dim": 123,
+      "n_free_joints": 8,
+      "perturbation": {
+        "w_grid": [
+          0.0,
+          0.01,
+          0.02,
+          0.04
+        ],
+        "n_per_w": 8,
+        "results": {
+          "0.0": {
+            "mean_xy_variance": 3.09966105368329e-34,
+            "valid_rate": 1.0
+          },
+          "0.01": {
+            "mean_xy_variance": 2.8349078210631896e-05,
+            "valid_rate": 1.0
+          },
+          "0.02": {
+            "mean_xy_variance": 0.00017298018945524298,
+            "valid_rate": 1.0
+          },
+          "0.04": {
+            "mean_xy_variance": 0.000435163428015608,
+            "valid_rate": 0.375
+          }
+        },
+        "usable_w_max": 0.02,
+        "variance_monotone": true,
+        "variance_nondegenerate": true,
+        "valid_ok": true,
+        "repro_state_hashes": [
+          "ee5ab0be93f04407",
+          "ee5ab0be93f04407"
+        ],
+        "repro_obs_hashes": [
+          "6b4375b811fd1a7e",
+          "6b4375b811fd1a7e"
+        ],
+        "obs_reproducible_info": true,
+        "reproducible": true
+      },
+      "resampling": {
+        "same_seed_reproducible": true,
+        "diff_seed_differs": true,
+        "seed0_vs_seed1_max_delta_m": 0.03796052553847555
+      },
+      "validity_checks": [
+        "z_drop_5cm",
+        "xy_settle_within_10cm_of_perturbed_target"
+      ],
+      "validity_not_checked": [
+        "contact_penetration",
+        "tip_over",
+        "bddl_init_predicates"
+      ],
+      "status": "PASS"
+    }
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,164 @@
+{
+ "run_id": "rgb_only_full_rerun_20260828",
+ "modality": "rgb_only",
+ "attn": "sdpa (flash-attn 미빌드, sm_120)",
+ "gpu": "NVIDIA GeForce RTX 5090",
+ "protocol": "warmup 10 + measure 100, cuda.synchronize 경계",
+ "act_forward_rgb_only": {
+  "median_ms": 3.35,
+  "mean_ms": 3.351,
+  "p95_ms": 3.363,
+  "p99_ms": 3.39,
+  "min_ms": 3.335,
+  "max_ms": 3.394,
+  "sd_ms": 0.009,
+  "n": 100,
+  "in_ch": 3,
+  "n_params": 95030088
+ },
+ "act_forward_rgbd": {
+  "median_ms": 3.353,
+  "mean_ms": 3.355,
+  "p95_ms": 3.364,
+  "p99_ms": 3.382,
+  "min_ms": 3.339,
+  "max_ms": 3.497,
+  "sd_ms": 0.016,
+  "n": 100,
+  "in_ch": 4,
+  "n_params": 95036360
+ },
+ "gate_path": {
+  "median_ms": 4.179,
+  "mean_ms": 4.413,
+  "p95_ms": 5.011,
+  "p99_ms": 7.888,
+  "min_ms": 4.108,
+  "max_ms": 8.131,
+  "sd_ms": 0.648,
+  "n": 100
+ },
+ "teacher_oft_chunk_forward": {
+  "median_ms": 85.466,
+  "mean_ms": 85.546,
+  "p95_ms": 86.808,
+  "p99_ms": 87.549,
+  "min_ms": 84.823,
+  "max_ms": 88.012,
+  "sd_ms": 0.619,
+  "n": 100
+ },
+ "teacher_source": {
+  "note": "teacher는 §1 동결 자산이나, 동일 환경에서 재측정해 본 run의 값을 남긴다.",
+  "checkpoint": "moojink/openvla-7b-oft-finetuned-libero-spatial",
+  "previous_run_value_ms": 85.07,
+  "previous_source_file": "results/e1/e1_latency.json"
+ },
+ "ratios": {
+  "act_rgb_only_over_teacher": 0.0392,
+  "act_rgbd_over_teacher": 0.03923,
+  "gate_over_teacher": 0.0489,
+  "denominator_ms": 85.466,
+  "note": "VLA-호출 등가 환산의 분모 = teacher per-chunk forward (8 steps)"
+ },
+ "formation_timing": {
+  "n_events": 145,
+  "training_by_n": {
+   "20": {
+    "n": 99,
+    "mean_s": 226.56,
+    "median_s": 226.6,
+    "sd_s": 0.89,
+    "min_s": 224.7,
+    "max_s": 230.6,
+    "total_s": 22429.7
+   },
+   "80": {
+    "n": 46,
+    "mean_s": 628.23,
+    "median_s": 627.9,
+    "sd_s": 2.13,
+    "min_s": 624.9,
+    "max_s": 633.2,
+    "total_s": 28898.5
+   }
+  },
+  "formation_event_total": {
+   "n": 145,
+   "mean_s": 413.17,
+   "median_s": 288.8,
+   "sd_s": 188.54,
+   "min_s": 267.3,
+   "max_s": 733.3,
+   "total_s": 59910.3
+  },
+  "training_only": {
+   "n": 145,
+   "mean_s": 353.99,
+   "median_s": 227.0,
+   "sd_s": 187.59,
+   "min_s": 224.7,
+   "max_s": 633.2,
+   "total_s": 51328.2
+  },
+  "probe_and_prep": {
+   "n": 145,
+   "mean_s": 59.19,
+   "median_s": 57.1,
+   "sd_s": 11.61,
+   "min_s": 41.3,
+   "max_s": 113.2,
+   "total_s": 8582.1
+  },
+  "note": "재학습 이벤트 = 학습 + P=20 probe + 준비. 세 성분을 분리 계측했다."
+ },
+ "operational_time_per_seed": {
+  "0": {
+   "operational_s": 33260.9,
+   "formation_s": 20427.4,
+   "formation_episodes": 980,
+   "total_wall_s": 57938.1
+  },
+  "1": {
+   "operational_s": 33124.6,
+   "formation_s": 19743.3,
+   "formation_episodes": 960,
+   "total_wall_s": 57267.6
+  },
+  "2": {
+   "operational_s": 32544.5,
+   "formation_s": 19739.6,
+   "formation_episodes": 960,
+   "total_wall_s": 56515.5
+  }
+ },
+ "operational_time_summary": {
+  "operational_h": {
+   "n": 3,
+   "mean_s": 9.16,
+   "median_s": 9.2,
+   "sd_s": 0.11,
+   "min_s": 9.04,
+   "max_s": 9.24,
+   "total_s": 27.5
+  },
+  "formation_h": {
+   "n": 3,
+   "mean_s": 5.55,
+   "median_s": 5.48,
+   "sd_s": 0.11,
+   "min_s": 5.48,
+   "max_s": 5.67,
+   "total_s": 16.6
+  }
+ },
+ "vla_call_equivalents": {
+  "denominator_s_per_call": 0.085466,
+  "per_formation_event": 4834.4,
+  "per_training_only": 4141.9,
+  "by_n": {
+   "20": 2650.9,
+   "80": 7350.6
+  }
+ }
+}

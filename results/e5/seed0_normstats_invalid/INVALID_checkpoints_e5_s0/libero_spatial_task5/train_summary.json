@@ -1,0 +1,10 @@
+{
+  "cluster": "libero_spatial_task5",
+  "results": [
+    {
+      "n": 20,
+      "final_l1": 0.10499032635241747,
+      "train_seconds": 136.5
+    }
+  ]
+}

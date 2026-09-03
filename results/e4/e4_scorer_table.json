@@ -1,0 +1,139 @@
+{
+  "note": "E4 scorer 진단 표 (정정판). AUC = known(held-out) vs novel주. FR = false-reject. 행별 범위 상이 — 동일 셀 비교는 same_cell_comparison 참조 (주 판독 근거).",
+  "rows": {
+    "1_jurisdiction_mahalanobis": {
+      "cost_ms": 4.0,
+      "macro_auc": 0.6576,
+      "mean_fr": 0.264,
+      "suite_auc": {
+        "libero_10": 0.4812,
+        "libero_goal": 0.5805,
+        "libero_object": 0.7711,
+        "libero_spatial": 0.7401
+      }
+    },
+    "2_feasibility_head": {
+      "cost_ms": 4.0,
+      "macro_auc": 0.5435,
+      "mean_fr": 0.11,
+      "suite_auc": {
+        "libero_10": 0.5576,
+        "libero_goal": 0.5398,
+        "libero_object": 0.572,
+        "libero_spatial": 0.3987
+      },
+      "note": "정정 3 (연구원 판정): '열등'이 아니라 **성공률 96% 레짐의 학습 신호 희소** (양성 ~3%, 실패 I₀ 재렌더로 복원해도 소수) — 조건부 결과. teacher 성공률이 낮거나 실패 표본이 풍부한 레짐에서는 재평가 대상."
+    },
+    "3_hidden_L32_visual_mean": {
+      "cost_ms": 85.07,
+      "macro_auc_scope6": 0.7329,
+      "goal_macro_auc": 0.6856,
+      "mean_fr": 0.025,
+      "scope": [
+        "libero_goal_task0",
+        "libero_goal_task2",
+        "libero_goal_task4",
+        "libero_goal_task7",
+        "libero_object_task2",
+        "libero_spatial_task0"
+      ],
+      "note": "6셀 범위 (예산 제약 — 25셀 macro와 직접 비교 금지)"
+    },
+    "4_oracle_band_gt": {
+      "cost_ms": 0.0,
+      "macro_auc": 1.0,
+      "mean_fr": 0.0,
+      "note": "스펙 대역 GT — 명목 상한"
+    },
+    "5_jurisdiction_recalibrated": {
+      "cost_ms": 4.0,
+      "macro_auc": 0.6576,
+      "auc_note": "AUC 불변 — 임계 무관 (명기)",
+      "mean_fr": 0.06,
+      "mean_fr_before": 0.264,
+      "procedure": "known 50:50 보정/평가 (seed 0), q' = 유한표본 분위수(n=10 → max), FR은 평가 half만"
+    },
+    "6_knn_jurisdiction_k5": {
+      "cost_ms": 4.0,
+      "macro_auc": 0.6259,
+      "mean_fr": 0.224,
+      "mean_recal_fr": 0.072,
+      "suite_auc": {
+        "libero_10": 0.4543,
+        "libero_goal": 0.5975,
+        "libero_object": 0.6857,
+        "libero_spatial": 0.727
+      }
+    },
+    "6_knn_jurisdiction_k10": {
+      "cost_ms": 4.0,
+      "macro_auc": 0.6239,
+      "mean_fr": 0.192,
+      "mean_recal_fr": 0.076,
+      "suite_auc": {
+        "libero_10": 0.4758,
+        "libero_goal": 0.59,
+        "libero_object": 0.6816,
+        "libero_spatial": 0.727
+      }
+    }
+  },
+  "same_cell_comparison": {
+    "note": "정정 1 (연구원 판정): 동일 클러스터 집합 기준 비교. 25셀 macro와 6셀 범위의 직접 비교는 범위 불일치 — 각주 처리.",
+    "scope6_cells": [
+      "libero_goal_task0",
+      "libero_goal_task2",
+      "libero_goal_task4",
+      "libero_goal_task7",
+      "libero_object_task2",
+      "libero_spatial_task0"
+    ],
+    "goal4_cells": [
+      "libero_goal_task0",
+      "libero_goal_task2",
+      "libero_goal_task4",
+      "libero_goal_task7"
+    ],
+    "scope6": {
+      "jurisdiction": 0.6439,
+      "hidden_L32": 0.7329,
+      "knn_k5": 0.6321,
+      "knn_k10": 0.626,
+      "delta_hidden_minus_jur": 0.089,
+      "delta_knn5_minus_jur": -0.0118
+    },
+    "goal4": {
+      "jurisdiction": 0.5314,
+      "hidden_L32": 0.6856,
+      "knn_k5": 0.5555,
+      "knn_k10": 0.5432,
+      "delta_hidden_minus_jur": 0.1542,
+      "delta_knn5_minus_jur": 0.0241
+    }
+  },
+  "footnote_scope_mismatch": "행1·2·5·6은 25셀 macro, 행3은 6셀 — 표의 macro 열끼리의 직접 비교는 범위 불일치. 판독은 same_cell_comparison으로 한다.",
+  "h3_branch": {
+    "verdict": "(i)+(ii) 혼합 — 단독 (ii) 폐기 (연구원 판정 2026-08-16)",
+    "statement": "기하 관할은 **표현 비용에 종속적**이며(히든 L32가 동일 셀에서 goal +0.1542 / 6셀 +0.089, 반면 집계만 바꾼 kNN은 goal +0.0241 / 6셀 -0.0118로 무효과 → 원인은 표현이지 집계가 아님), 그럼에도 21× 비용(85.07 vs 4.0ms)에도 임계 0.75 미달 → **저비용 실시간 관할은 미해결**.",
+    "evidence_basis": {
+      "same_cell_goal4": {
+        "jurisdiction": 0.5314,
+        "hidden_L32": 0.6856,
+        "knn_k5": 0.5555,
+        "knn_k10": 0.5432,
+        "delta_hidden_minus_jur": 0.1542,
+        "delta_knn5_minus_jur": 0.0241
+      },
+      "same_cell_scope6": {
+        "jurisdiction": 0.6439,
+        "hidden_L32": 0.7329,
+        "knn_k5": 0.6321,
+        "knn_k10": 0.626,
+        "delta_hidden_minus_jur": 0.089,
+        "delta_knn5_minus_jur": -0.0118
+      },
+      "cost_ratio": 21.3,
+      "categorical_shift_demonstrated": 0.8712
+    }
+  }
+}

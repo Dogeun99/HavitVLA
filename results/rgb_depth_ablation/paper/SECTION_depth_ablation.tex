@@ -1,0 +1,44 @@
+% ---- Depth ablation subsection. 삽입 위치: V-F Scope and Limitations 직전 ----
+% 모든 수치는 \Num{...} 매크로. 본문 직접 숫자 입력 금지.
+\subsection{Does Depth Explain the Habit's Performance?}
+\label{sec:depth_ablation}
+
+The habit policy receives depth, which the OpenVLA-OFT teacher does not. This raises
+the question of whether the habit's held-out success reflects habit formation or
+simply privileged sensing. We screen this directly. On \Num{AblaClusters} clusters
+stratified by suite and difficulty---selected and frozen before any result was
+produced---we retrain the habit with the depth channel removed and nothing else
+changed. Both conditions consume the same teacher trajectories, the same
+$\mathcal{B}_k$ ordering, the same optimizer, schedule, and seed, and are evaluated on
+the same \Num{AblaHeldout} held-out episode specifications, so every episode is paired.
+Removing depth narrows the first convolution from four channels to three, a difference
+of \Num{AblaParamDelta} parameters (\Num{AblaParamPct}\%).
+
+Over \Num{AblaEpisodes} paired episodes the mean difference is \Num{AblaPairedDelta}
+with a bootstrap 95\% confidence interval of $[\Num{AblaPairedLo},
+\Num{AblaPairedHi}]$, which contains zero; the exact McNemar test on
+\Num{AblaDiscRGB}/\Num{AblaDiscRGBD} discordant pairs gives $p = \Num{AblaMcNemarP}$.
+Table~\ref{tab:depth_ablation} and Fig.~\ref{fig:depth_ablation} resolve this by
+cluster. The formation threshold $N^{\star}$ is unchanged in \Num{AblaNstarSame} of
+\Num{AblaClusters} clusters, and the \Num{AblaNstarMoved} that move do so in opposite
+directions, so depth removal does not systematically delay formation. The effect
+across $n$ is not monotone: the mean difference is \Num{AblaDeltaN10}~pp at $n=10$,
+\Num{AblaDeltaN20}~pp at $n=20$, \Num{AblaDeltaN40}~pp at $n=40$, and
+\Num{AblaDeltaN80}~pp at $n=80$. Depth therefore helps where data is scarcest and
+contributes little at the ceiling on which the maturity certificate---and hence every
+claim in this paper about substituting the habit for the teacher---depends.
+
+Two qualifications are needed. First, the mean drop at $n=80$ is
+\Num{AblaDropEighty}~pp, and it is carried almost entirely by the single
+long-suite cluster ($\Delta = \Num{AblaLongDelta}$), which is right-censored under
+both conditions and never forms at all; excluding it the mean drop is
+\Num{AblaDropEightyExLong}~pp. Depth may thus matter more for long-horizon tasks than
+this screen can resolve. Second, the cluster we expected to depend most on depth,
+a Spatial cluster, shows $\Delta = \Num{AblaSpatialDelta}$ and an unchanged
+$N^{\star}$, so a geometric reading of which tasks need depth is not supported. All
+failures in both conditions reach the episode step cap rather than terminating early,
+which indicates that removing depth degrades completion rather than causing
+qualitatively different failures; separating grasp, localization, and placement
+failures would require per-episode video and is left to future work. This is a
+screening experiment on \Num{AblaClusters} of the 33 clusters, not a formal
+equivalence test.

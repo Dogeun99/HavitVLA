@@ -1,0 +1,16 @@
+{
+ "job": "batch_statistics",
+ "attempt": 0,
+ "cmd": [
+  "/home/asmr/miniconda3/envs/hv2_hab/bin/python",
+  "-u",
+  "experiments/rgb_only_rerun/analyze_batch.py"
+ ],
+ "start": "2026-08-31 20:14:40",
+ "end": "2026-08-31 20:14:41",
+ "elapsed_s": 0.7,
+ "exit_code": 0,
+ "log": "results/rgb_only_full_rerun_20260828/logs/batch_statistics.log",
+ "pass_marker": "[BATCH-STATS-DONE]",
+ "ok": true
+}

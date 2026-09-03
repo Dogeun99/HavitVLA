@@ -1,0 +1,44 @@
+{
+  "seed_idx": 1,
+  "n_paired": 1465,
+  "habit_success_rate": 0.9638,
+  "teacher_success_rate": 0.9672,
+  "discordant_habit_only": 42,
+  "discordant_teacher_only": 47,
+  "determinism_check": [
+    {
+      "uid": "f0ec7f625a9f9072",
+      "run1": true,
+      "run2": true,
+      "match": true
+    },
+    {
+      "uid": "afc6145773197871",
+      "run1": true,
+      "run2": true,
+      "match": true
+    },
+    {
+      "uid": "ed0a2b451e99712e",
+      "run1": true,
+      "run2": true,
+      "match": true
+    },
+    {
+      "uid": "e610669fc4a2fb29",
+      "run1": true,
+      "run2": true,
+      "match": true
+    },
+    {
+      "uid": "b1d239a720be9486",
+      "run1": true,
+      "run2": true,
+      "match": true
+    }
+  ],
+  "ledger": "evaluation",
+  "wall_s": 15487.4,
+  "note": "paired 기준선 — 발화 spec만. 비발화는 VLA 실측이 곧 기준선(설계서 §3)",
+  "mcnemar_exact_p": 0.6718
+}

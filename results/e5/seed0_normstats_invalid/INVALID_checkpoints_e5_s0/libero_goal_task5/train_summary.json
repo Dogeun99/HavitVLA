@@ -1,0 +1,10 @@
+{
+  "cluster": "libero_goal_task5",
+  "results": [
+    {
+      "n": 80,
+      "final_l1": 0.07182649565860628,
+      "train_seconds": 225.4
+    }
+  ]
+}

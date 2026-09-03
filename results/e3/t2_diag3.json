@@ -1,0 +1,16 @@
+{
+  "e_fresh_base18": {
+    "success": true,
+    "steps": 118
+  },
+  "f_chained_reloc18": {
+    "success": false,
+    "steps": 560,
+    "stage_steps": {
+      "1": 107,
+      "2": null
+    },
+    "reloc_base": 18,
+    "reloc_noise": 500001
+  }
+}

@@ -1,0 +1,2155 @@
+commit 5c12f9b6f853c108d8bd93b60c8328d79e99c791
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-31 20:44:12 +0900
+
+    Finish the RGB-only full rerun with all stages verified
+    
+    Every stage completed with no failed jobs, no retries, and no infrastructure errors across
+    roughly 70 hours: 27 batch clusters, three 4,000-episode online seeds, their paired replays,
+    the familiarity recomputation, and latency measurement.
+    
+    Two independent gates back the result. The integrity audit reconstructs 47 properties from the
+    outputs rather than trusting the driver's counters — band disjointness, zero train/eval and
+    probe/stream overlap, no firing while immature, no teacher outcome reaching the maturity
+    ledger, transition legality, event-log against episode-ledger reconciliation, and that every
+    RGB-only checkpoint really carries three channels. The package then passes a 52-check
+    reconstruction that imports no repository code and recomputes the headline numbers from the
+    ledger CSVs alone.
+    
+    The headline comparison is that non-inferiority holds in all three seeds at roughly a fifth of
+    the pre-specified margin, while the sign is no longer ambiguous: RGB-D confidence intervals
+    contained zero, and all three RGB-only intervals sit entirely below it. Restricted to fired
+    episodes the gap is significant in every seed. Latency is unchanged by dropping depth, which
+    matters because the amortization argument rests on it.
+    
+    Ships as a 2.9 MB data package with raw ledgers, bootstrap distributions, a checkpoint manifest
+    standing in for 55 GB of weights, a data dictionary, and the old-versus-new comparison. No
+    manuscript text, figures, or publication tables, per the split of roles.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/rgb_only_rerun/status.py | 36 ++++++++++++++++++++++++++---
+ log.md                               | 45 ++++++++++++++++++++++++++++++++++++
+ 2 files changed, 78 insertions(+), 3 deletions(-)
+
+commit 631c7c67281a5f1f664c4e9aec7f432a33935992
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-29 17:07:58 +0900
+
+    Add a watchdog and verify the analysis path before the run needs it
+    
+    Monitoring had a hole: the status file was only rewritten between stages, so a seed eleven
+    hours into a sixteen-hour run still displayed as waiting at zero episodes. A five-minute
+    refresher and an ETA fix the display; a watchdog now also runs independently of any session,
+    checking every five minutes that the orchestrator is alive, that the stream is still advancing
+    (45-minute threshold, sized for an n=80 retraining plus its probes), and that no job has
+    failed. When a seed and its replay land it runs the analysis, the integrity audit, and a
+    package rebuild, so a complete package for the finished seeds is always on disk rather than
+    only after the last stage.
+    
+    The batch stage finished 27/27, and since its analysis is independent of the online run it was
+    brought forward: 2,640 evaluation episodes, N* unchanged in 16 of 27 clusters.
+    
+    The whole downstream path was then exercised on partial seed-0 data instead of waiting to
+    discover it at hour 55. It runs clean, and package-only reconstruction passes 15/15. It also
+    turned up a real defect: final lifecycle counts were read from the driver's summary file alone,
+    so a missing or partial summary silently yielded zeros. They now come from the last state_after
+    in the episode ledger, with the driver summary kept as a cross-check that reports mismatches.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/rgb_only_rerun/analyze_online.py |  12 ++-
+ experiments/rgb_only_rerun/watchdog.py       | 122 +++++++++++++++++++++++++++
+ log.md                                       |  33 ++++++++
+ 3 files changed, 166 insertions(+), 1 deletion(-)
+
+commit c4c3942f712ce30bbba180c03eb25c456945fcc6
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-29 16:59:38 +0900
+
+    Refresh the run status on a timer instead of only between stages
+    
+    The status file was only rewritten when a stage finished, so eleven hours into a sixteen-hour
+    seed it still read "online_seed0 WAIT 0/4000" and looked like nothing was running. A watcher now
+    regenerates it every five minutes for as long as the orchestrator lives, and the file carries an
+    ETA: the in-progress seed is projected from its own observed episode rate, everything still
+    queued from measured per-stage costs, with the basis spelled out rather than left as a number to
+    trust.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/rgb_only_rerun/status.py       | 42 ++++++++++++++++++++++++++++++
+ experiments/rgb_only_rerun/status_watch.sh |  8 ++++++
+ 2 files changed, 50 insertions(+)
+
+commit 7f95041fe456cbc0ab04551cff9fbda3b7f5b9a6
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-28 23:32:46 +0900
+
+    Start the RGB-only full rerun of the whole protocol
+    
+    The habit saw RGB-D while the teacher saw RGB, so every habit-vs-teacher comparison carried a
+    modality confound. This reruns batch formation, the three online seeds, paired replay,
+    familiarity, and latency with an RGB-only habit, changing nothing else.
+    
+    Everything writes to a new results root, checkpoint tree, and stream-trajectory directory; the
+    existing RGB-D outputs are only ever read. The code changes are purely additive and their
+    defaults reproduce current behavior: the driver gains modality and path flags plus the
+    per-episode fields and state-transition log the analysis needs, and the counterfactual and
+    competence-map scripts gain path parameters. Call counts and the training/probe split of each
+    retraining event are now instrumented, which the old run never separated.
+    
+    Three gates passed before launch. Preflight found no unexpected configuration difference — the
+    only keys that differ are in_ch, use_depth, and parameter count — and confirmed at runtime that
+    the RGB-only batch carries three channels and no depth key. A driver smoke over 50 episodes
+    cleared the retraining contract under scratch training, exercised the ineligible path, and
+    produced every required ledger field with transition counts reconciling against the episode
+    log.
+    
+    Analysis, integrity, packaging, and a package-only verification pass are written and staged
+    behind markers so the run resumes wherever it stops. Measured timings put the whole sequence
+    near 72 hours; the single GPU and the fact that online wall-clock is itself reported rule out
+    overlapping stages.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                                        |   4 +
+ experiments/e4r_competence_map.py                 |  25 +-
+ experiments/e5_counterfactual.py                  |  10 +-
+ experiments/e5_driver.py                          | 136 ++++++++-
+ experiments/rgb_only_rerun/analyze_batch.py       | 255 ++++++++++++++++
+ experiments/rgb_only_rerun/analyze_familiarity.py | 214 +++++++++++++
+ experiments/rgb_only_rerun/analyze_online.py      | 350 ++++++++++++++++++++++
+ experiments/rgb_only_rerun/analyze_replay.py      | 198 ++++++++++++
+ experiments/rgb_only_rerun/integrity_audit.py     | 207 +++++++++++++
+ experiments/rgb_only_rerun/make_package.py        | 347 +++++++++++++++++++++
+ experiments/rgb_only_rerun/measure_latency.py     | 237 +++++++++++++++
+ experiments/rgb_only_rerun/old_vs_new.py          | 168 +++++++++++
+ experiments/rgb_only_rerun/preflight.py           | 287 ++++++++++++++++++
+ experiments/rgb_only_rerun/run_all.py             | 123 ++++++++
+ experiments/rgb_only_rerun/run_batch.py           |  78 +++++
+ experiments/rgb_only_rerun/runner.py              |  99 ++++++
+ experiments/rgb_only_rerun/smoke.py               | 107 +++++++
+ experiments/rgb_only_rerun/status.py              | 114 +++++++
+ experiments/rgb_only_rerun/verify_package.py      | 215 +++++++++++++
+ log.md                                            |  34 +++
+ 20 files changed, 3187 insertions(+), 21 deletions(-)
+
+commit 2ffbc37aab0fc3cc27029ae4fb03b9c544f6b821
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-28 22:41:57 +0900
+
+    Package the depth ablation data and scope the full rerun
+    
+    The researcher is moving to a full re-experiment, so this replaces the adjudication package
+    with a handoff: all 12 per-episode result files, the 19 training and evaluation logs, the
+    per-cluster training summaries, and SHA256 for the 24 RGB-only checkpoints, whose 8.6 GB of
+    weights stay on disk and can be checked against the manifest rather than shipped.
+    
+    Scoping the rerun turned up a discrepancy. The instruction says 25 clusters; the E3 batch
+    ledger actually holds 27 with no missing entries, six of which Stage 1 already covered, so 21
+    remain. Cost now comes from measured wall-clock instead of an estimate: 10.4 min to train and
+    18.6 min to evaluate both conditions per cluster, putting the remaining 21 at 10.2 hours with
+    evaluation, not training, accounting for most of it. The audit's earlier 15-hour figure is
+    replaced by this.
+    
+    The report also separates what Stage 1 settled from what it could not. The clearest open
+    question is the long-suite cluster carrying the entire threshold overshoot: it is
+    right-censored under RGB-D too, so that difference was measured on top of a formation failure
+    and does not interpret.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                                         |   2 +
+ experiments/make_ablation_data_pack.py             | 217 +++++++++++++++++++++
+ .../rgb_depth_ablation/RGB_DEPTH_ABLATION_AUDIT.md |   2 +-
+ log.md                                             |  28 +++
+ 4 files changed, 248 insertions(+), 1 deletion(-)
+
+commit 889b2aa889662230c866d14f286f224cbe4d48ab
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-28 22:37:07 +0900
+
+    Add paper-format depth ablation materials and the adjudication package
+    
+    The screening result now ships in the manuscript's own idiom: a drop-in subsection, an IEEE
+    table, and a two-panel double-column figure, all reading from ablation_summary.json. Every
+    number in the LaTeX is a \Num{Abla*} macro backed by ablation_numbers.json, which records the
+    JSON path each value came from so build_numbers.py can register sources rather than literals.
+    Two macros carry sign and unit traps, flagged in the manuscript-agent instruction.
+    
+    Also fixes two label collisions found by rendering the figures: the -0.140 bar label overran
+    into the y tick labels, and two clusters sharing N* = 20 stacked their names on top of each
+    other.
+    
+    The materials are staged, not applied. The automatic verdict is CASE B, whose prescribed
+    remedy is a 25-cluster rerun, while the evidence reads borderline and the recommendation is to
+    add the ablation as-is; the package puts both readings in front of the researcher instead of
+    resolving it here.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                                         |   2 +
+ experiments/make_ablation_pack.py                  | 163 +++++++++++++++
+ experiments/rgb_depth_ablation/analyze_ablation.py |   6 +-
+ .../rgb_depth_ablation/make_paper_materials.py     | 231 +++++++++++++++++++++
+ results/rgb_depth_ablation/fig_B_delta.png         | Bin 64148 -> 64982 bytes
+ results/rgb_depth_ablation/fig_C_nstar.png         | Bin 68094 -> 68358 bytes
+ ...TRUCTION_depth_ablation_for_manuscript_agent.md |  57 +++++
+ .../paper/SECTION_depth_ablation.tex               |  44 ++++
+ .../paper/TABLE_depth_ablation.tex                 |  26 +++
+ .../rgb_depth_ablation/paper/ablation_numbers.json | 133 ++++++++++++
+ .../paper/fig_depth_ablation.pdf                   | Bin 0 -> 21491 bytes
+ .../paper/fig_depth_ablation.png                   | Bin 0 -> 320751 bytes
+ 12 files changed, 661 insertions(+), 1 deletion(-)
+
+commit 358240fcb3390f2cbc75e4dafaa4b6cedfa5b3f7
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-28 22:29:47 +0900
+
+    Screen the depth privileged-information confound (Stage 1, 6 clusters)
+    
+    Adds an in_ch switch to the ACT backbone so the RGB-only condition removes the depth pathway
+    and nothing else: 6,272 fewer parameters (0.0066%), identical RGB normalization, optimizer,
+    schedule, seed, and evaluation specs. Existing checkpoints lack the use_depth key and default
+    to RGB-D, so prior results are untouched. Everything writes to separate ablation paths.
+    
+    Before interpreting anything, the RGB-D baseline was re-evaluated at 50 trials and matched the
+    stored E3 20-trial outcomes on all 80 shared uids, confirming determinism.
+    
+    Over 1,200 paired episodes the mean difference is -0.0150 with a bootstrap CI of [-0.0392,
+    +0.0092] and McNemar p=0.25 — no detectable effect. The per-n pattern is non-monotonic
+    (-12.00 pp at n=10, 0.00 at n=20, +9.67 at n=40, -3.67 at n=80), which fits depth helping
+    early convergence rather than the ceiling the paper's claims rest on. N* moved in only two of
+    six clusters and in opposite directions. All failures are timeout-like.
+    
+    The automatic verdict is CASE B because the n=80 mean drop is 3.67 pp against a 3 pp
+    threshold, but that margin comes almost entirely from the one long-suite cluster (-14 pp),
+    which was already right-censored under RGB-D; excluding it gives -1.60 pp. Recommendation and
+    the competing reading are both laid out for the researcher's decision.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .../ABLA_RGBD_CLUSTER_SELECTION.md                 |   46 +
+ experiments/rgb_depth_ablation/CONFIG_DIFF.md      |   52 +
+ .../rgb_depth_ablation/RGB_DEPTH_ABLATION_AUDIT.md |  121 +++
+ experiments/rgb_depth_ablation/RUN_COMMANDS.md     |   76 ++
+ experiments/rgb_depth_ablation/analyze_ablation.py |  273 +++++
+ experiments/rgb_depth_ablation/run_ablation.sh     |   55 +
+ habits/act.py                                      |   24 +-
+ habits/dataset.py                                  |   18 +-
+ habits/policy.py                                   |   17 +-
+ habits/train.py                                    |   17 +-
+ log.md                                             |   39 +
+ results/rgb_depth_ablation/ablation_summary.json   |  410 ++++++++
+ results/rgb_depth_ablation/fig_A_curves.png        |  Bin 0 -> 165298 bytes
+ results/rgb_depth_ablation/fig_B_delta.png         |  Bin 0 -> 64148 bytes
+ results/rgb_depth_ablation/fig_C_nstar.png         |  Bin 0 -> 68094 bytes
+ .../libero_10_task0_rgb_h50.json                   | 1048 ++++++++++++++++++++
+ .../libero_10_task0_rgbd_h50.json                  | 1048 ++++++++++++++++++++
+ .../libero_goal_task0_rgb_h50.json                 | 1048 ++++++++++++++++++++
+ .../libero_goal_task0_rgbd_h50.json                | 1048 ++++++++++++++++++++
+ .../libero_goal_task1_rgb_h50.json                 | 1048 ++++++++++++++++++++
+ .../libero_goal_task1_rgbd_h50.json                | 1048 ++++++++++++++++++++
+ .../libero_object_task0_rgb_h50.json               | 1048 ++++++++++++++++++++
+ .../libero_object_task0_rgbd_h50.json              | 1048 ++++++++++++++++++++
+ .../libero_object_task1_rgb_h50.json               | 1048 ++++++++++++++++++++
+ .../libero_object_task1_rgbd_h50.json              | 1048 ++++++++++++++++++++
+ .../libero_spatial_task1_rgb_h50.json              | 1048 ++++++++++++++++++++
+ .../libero_spatial_task1_rgbd_h50.json             | 1048 ++++++++++++++++++++
+ results/rgb_depth_ablation/table_cluster.md        |    8 +
+ results/rgb_depth_ablation/table_detail.csv        |   25 +
+ 29 files changed, 13732 insertions(+), 25 deletions(-)
+
+commit 96da7d1a051112941f006a2a71210d49c0932b1d
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-28 17:58:54 +0900
+
+    Handoff pack: 3-seed maturity baseline and how to run the shipped code
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/make_realrobot_pack.py | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
+
+commit 20b5be65cb2ff5639a70a49a0636e7f6821e79f3
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-28 17:58:28 +0900
+
+    Add real-robot handoff package with a porting guide
+    
+    The guide is the part that did not exist yet. It separates the system into three layers by
+    porting difficulty and names the two things that actually break on hardware:
+    
+    - Success detection. The simulator's free, exact predicate feeds three places at once (BC pool
+      admission, the maturity ledger, and the ACI risk update), so detector error contaminates
+      learning, certification, and risk control simultaneously.
+    - Paired replay. Episodes are deterministic from six elements in simulation, which is what
+      makes H4b's paired bootstrap possible. Real hardware cannot reproduce an initial state, so
+      the paper's "paired full-VLA replay under identical episode specifications" claim does not
+      transfer and the test has to be redesigned.
+    
+    It also carries forward the failures worth not repeating — stale chunk tails at stage
+    boundaries, controller state crossing episode boundaries, teacher outcomes leaking into the
+    maturity ledger, band disjointness, and why long runs need a smoke gate with runtime
+    assertions.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                         |   2 +
+ docs/REAL_ROBOT_PORTING_GUIDE.md   | 173 +++++++++++++++++++++++++++++++++++++
+ experiments/make_realrobot_pack.py | 143 ++++++++++++++++++++++++++++++
+ 3 files changed, 318 insertions(+)
+
+commit d03b4f8b4b55b5740bd083c28765f43126a4235b
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-28 13:47:42 +0900
+
+    Add v11 patch evidence generator and handoff package
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                         |   2 +
+ experiments/make_v11_evidence.py   | 146 +++++++++++++++++++++++++++++++++++++
+ results/e5/v11_patch_evidence.json | 139 +++++++++++++++++++++++++++++++++++
+ 3 files changed, 287 insertions(+)
+
+commit f9c1886cbe42d529581dbf4dcf63acd4ee851314
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-28 13:44:48 +0900
+
+    Verify v11 patch against the ledger; write instructions for the manuscript agent
+    
+    Manuscript sources are not on this workstation, so the patch cannot be applied here. Instead
+    the patch's figures were checked against the experiment ledger, which turned up three
+    corrections and one substantive finding.
+    
+    Corrections: the p=0.0968 test is a one-sided Fisher exact test (fisher_less in code), the
+    per-event formation time is 431.2 s rather than 434 (434 was seed 0's 433.9 rounded), and the
+    standard-cluster routing rate is 0.5944 — both pooled and per-seed mean compute to 0.594444,
+    so 0.5945 rounds the wrong way. The patch had marked that last value as confirmed.
+    
+    The finding concerns V-F. Its "training alone is far cheaper, about 181.8 s (~2,137 VLA-call
+    equivalents)" is the E1 anchor5 value, measured on an 8,000-step warm-started n=40 batch fit.
+    E5 retrains from scratch at batch-equivalent budgets, so the real numbers are 227 s at n=20
+    and 636 s at n=80: training is 369.9 s of the 431.2 s event, or 86%, and one event costs
+    about 5,000 VLA-call equivalents rather than 2,137. As written the sentence implies formation
+    time is mostly probes, which understates cost in the very section that declines to claim
+    total-compute break-even.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ docs/INSTRUCTION_v11_for_manuscript_agent.md | 160 +++++++++++++++++++++++++++
+ log.md                                       |  29 +++++
+ 2 files changed, 189 insertions(+)
+
+commit 2eaae74a102d4cc2c32039f3fe78d608b10248e9
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-21 22:13:30 +0900
+
+    Full verification package: mirror repo layout so the shipped code runs as-is
+    
+    Adds the complete source tree, all three seeds' raw streams and counterfactuals, checksums,
+    and a VERIFY.md with runnable commands and expected outputs.
+    
+    The first build put sources under code/, which broke the scripts: HABIT2 resolves relative to
+    the file, so e5_analyze.py looked for code/results/e5/stream_0.jsonl. Mirroring the repo
+    layout at the package root fixes it without touching any script.
+    
+    Verified by extracting to a temp dir and running the documented procedure end to end:
+    checksums pass, all three seeds' readings regenerate and match the repository originals on
+    H4a/H4b/risk/overview/formation, the synthesis reproduces 3/3 PASS with identical figures,
+    and the plots and post-mortem rebuild cleanly.
+    
+    Checkpoints (93 GB) and collection HDF5s (8.8 GB) are excluded with the reason and the
+    regeneration path documented, since every episode spec is deterministic.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/make_manuscript_pack.py | 86 ++++++++++++++++++++++++++++++++-----
+ log.md                              | 20 +++++++++
+ 2 files changed, 96 insertions(+), 10 deletions(-)
+
+commit 4d06731438bf234ffa6ce6588e5e22059222b163
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-21 03:27:42 +0900
+
+    E5 complete: all three seeds pass every registered test
+    
+    Synthesis over 12,000 episodes. Call rate falls 0.874±0.026 to 0.405±0.044 (one-sided p below
+    1e-74 in every seed); noninferiority diff is -0.0021±0.0015 against a -0.03 margin on 4,618
+    paired episodes with zero counterfactual gaps; Pr(fail|fire) is 0.0285±0.0068 against an
+    epsilon of 0.2. The spread on the reduction is 0.070, which is what rules out the curve being
+    an artifact of cluster arrival order.
+    
+    Every seed's CI contains zero, but seed 2's upper bound is +0.0002, so the "statistically
+    indistinguishable" phrasing is weak there — recorded alongside the existing footnote
+    requirement about no equivalence test.
+    
+    Also corrects the 08-20 comparison table: seed 0 had 3 demotions with none regained, not one.
+    The "1" was goal_task4 from the invalidated run, copied into the rerun row by mistake.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md              |    1 +
+ experiments/e5_seed_synthesis.py        |  125 +++
+ experiments/make_manuscript_pack.py     |   38 +-
+ log.md                                  |   32 +-
+ results/e5/cf_2.jsonl                   | 1617 +++++++++++++++++++++++++++++++
+ results/e5/cf_queue_2.jsonl             | 1617 +++++++++++++++++++++++++++++++
+ results/e5/cf_summary_2.json            |   44 +
+ results/e5/fig_e5_s2_behavior.png       |  Bin 0 -> 170826 bytes
+ results/e5/fig_e5_s2_mechanism.png      |  Bin 0 -> 238412 bytes
+ results/e5/ineligible_postmortem_2.json |  627 ++++++++++++
+ results/e5/reading_2.json               |  727 ++++++++++++++
+ results/e5/seed_synthesis.json          |  356 +++++++
+ results/e5/stream_2.jsonl               |  994 +++++++++++++++++++
+ results/e5/summary_2.json               |   56 ++
+ 14 files changed, 6230 insertions(+), 4 deletions(-)
+
+commit fecb0e0c3fe132e0978a63f44dce60654ec8e335
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-20 20:08:53 +0900
+
+    status: drop duplicate zero from grep -c fallback
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ results/e5/stream_2.jsonl | 260 ++++++++++++++++++++++++++++++++++++++++++++++
+ tools/e5_status.sh        |   2 +-
+ 2 files changed, 261 insertions(+), 1 deletion(-)
+
+commit 5b30f17532cc12355b3c4f9cd80a2951b97b499c
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-20 19:23:13 +0900
+
+    Rewrite status script: seed-aware, shows completed seeds' verdicts
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ results/e5/stream_2.jsonl | 2746 +++++++++++++++++++++++++++++++++++++++++++++
+ tools/e5_status.sh        |   98 +-
+ 2 files changed, 2792 insertions(+), 52 deletions(-)
+
+commit d046a35e0e841fc031f53928b2ccf1dd6106989c
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-20 06:06:53 +0900
+
+    seed 1 passes all three tests; fix demotion-plot color indexing
+    
+    H4a 0.844->0.454 (p=7e-75), H4b diff -0.0013 with CI [-0.0058, +0.0033] against a -0.03
+    margin on all 4,000 paired episodes, Pr(fail|fire) 0.0362. Both seeds now pass every
+    registered test in the same direction.
+    
+    The figure script indexed a three-color list by demotion event, which worked only because
+    seed 0 happened to have exactly three demotions. seed 1 had five, so it raised IndexError,
+    and pipefail carried that failure into the packaging step. Now a fixed five-color palette
+    names the first five and any beyond that draw as background gray with the count stated in
+    the title, keeping the no-cycled-hues rule.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/fig_e5_reading.py      |   15 +-
+ log.md                             |   29 +
+ results/e5/cf_1.jsonl              | 1154 ++++++++++++++++++++++++++++++++++++
+ results/e5/cf_summary_1.json       |   44 ++
+ results/e5/fig_e5_s1_mechanism.png |  Bin 0 -> 269697 bytes
+ results/e5/reading_1.json          |   21 +-
+ results/e5/stream_2.jsonl          |    0
+ 7 files changed, 1258 insertions(+), 5 deletions(-)
+
+commit 27db246aae20d54558ecbdbf785d98ece10515a6
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-20 02:33:04 +0900
+
+    Guard formation_gap against B-2 runs; it had flagged correct behavior as a defect
+    
+    The pack generator re-ran e5_formation_gap.py on every build. That diagnostic decides "stats
+    differ between retrains -> implementation defect", which was right for the invalidated run
+    (warm-start crossing normalization spaces) but is exactly backwards under B-2: scratch
+    training computes stats from each checkpoint's own pool, so differing stats are correct.
+    
+    So the regenerated formation_gap_0.json declared "구현 결함 확정" about a run that has none,
+    and that file shipped in yesterday's pack. It also overwrote the withdrawal labels applied on
+    08-19. The genuine diagnosis survives intact in the quarantine directory.
+    
+    Fixes: the script now refuses to run when the n=80 checkpoint carries the batch-equivalent
+    28,000 steps, the misjudged output is quarantined alongside the real one, and the pack carries
+    the runtime assertion log instead — under B-2 that is the stronger evidence anyway, since it
+    checks stats provenance, step budget, and the triple |B_k| count on every single retrain.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/e5_formation_gap.py                    |   26 +
+ log.md                                             |   29 +
+ results/e5/cf_1.jsonl                              |  311 ++++
+ results/e5/cf_queue_1.jsonl                        | 1465 +++++++++++++++
+ results/e5/fig_e5_s1_behavior.png                  |  Bin 0 -> 171392 bytes
+ results/e5/ineligible_postmortem_1.json            |  880 +++++++++
+ results/e5/reading_1.json                          |  730 ++++++++
+ .../MISJUDGED_formation_gap_0_rerun.json}          |    0
+ results/e5/stream_1.jsonl                          | 1895 ++++++++++++++++++++
+ results/e5/summary_1.json                          |   59 +
+ tools/e5_post_rerun_chain.sh                       |   21 +-
+ tools/e5_seed2_chain.sh                            |   50 +
+ tools/make_e5_reading_pack.sh                      |   52 +-
+ 13 files changed, 5476 insertions(+), 42 deletions(-)
+
+commit d1da31e18a51fadf44e88bd655eeb497de548a04
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-19 17:42:05 +0900
+
+    Add manuscript source package generator
+    
+    Collects every E0-E5 artifact, raw E5 streams, figures, scripts, and the full
+    preregistration/worklog into one package, with all numbers injected from results/ JSON.
+    
+    The document leads with the seven citation restrictions rather than burying them, since the
+    risk at drafting time is pulling an invalidated or exploratory number into Results. It also
+    carries three guards against misreading numbers that look supportive on their own:
+    
+    - H2's registered competitor H2-L' was adopted; the original H2-L is not supported (between-
+      level variance is 2.5%, Kruskal p=0.772). Without that stated, the N* table reads as if
+      semantic level drove formation.
+    - The T-ceiling contrast is p=0.0968, not significant at 0.05, so it may only be described
+      directionally.
+    - free_joints is perfectly collinear with the suite dummies in the 22 formation cells, so its
+      coefficient is unidentified and its sign must not be interpreted.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                          |    2 +
+ experiments/make_manuscript_pack.py |  234 ++++
+ log.md                              |   18 +
+ results/e5/stream_1.jsonl           | 2096 +++++++++++++++++++++++++++++++++++
+ 4 files changed, 2350 insertions(+)
+
+commit de6ac7b03e2d2f23828cf026349f492ada533226
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-19 09:02:27 +0900
+
+    Register H4a/H4b, fire the interpretation rule, label the invalid-run comparison
+    
+    H4a and H4b are recorded with their test statistics, plus the researcher's wording rule: the
+    CI contains zero, so "statistically indistinguishable" is available as long as a footnote says
+    no equivalence test was run.
+    
+    The interpretation rule registered on 08-17 fires: ineligibility recurred under
+    batch-equivalent conditions with all 51 count assertions passing, so the eight remaining
+    clusters are read as a property of online formation rather than an artifact.
+    
+    Ruling 3 corrects my 08-19 report. Normalization and step budget changed together between the
+    invalidated run and this one, so differences like 10 to 8 ineligible or 0.444 to 0.556 at n=80
+    cannot be attributed to either variable. The claim that fixing the defect improved formation
+    is withdrawn; the comparison stays in the worklog under a confounded-do-not-cite label.
+    
+    Seed 1 launched after verifying the B-2 constants, runtime assertions, and band disjointness.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md | 4 ++++
+ log.md                     | 7 +++++--
+ results/e5/stream_1.jsonl  | 9 +++++++++
+ 3 files changed, 18 insertions(+), 2 deletions(-)
+
+commit 72e48b1964018f3515e347c406d1f0a9cac57441
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-19 08:55:03 +0900
+
+    Rerun complete: H4a and H4b both pass; fix hardcoded figures in the pack generator
+    
+    Rerun finished at 01:46 and the counterfactual batch at 06:14. All three registered tests
+    pass: call rate 0.887 to 0.393 (z=23.0), noninferiority CI [-0.0050, +0.0025] against a -0.03
+    margin, and Pr(fail|fire) 0.0234. The CI contains zero, so the ruling's second reading rule
+    permits describing the system as equivalent rather than merely noninferior.
+    
+    Runtime assertions held for all 51 retrains, confirming the batch-equivalent budgets reached
+    training (10,000 at n=20, 28,000 at n=80) with stats recomputed per checkpoint and no
+    warm-start.
+    
+    Two generator fixes: the "scored full marks and still failed" sentence indexed an empty list
+    now that no cluster hits that case, and the closing paragraph of the post-mortem section still
+    carried cluster names and rates typed in from the invalidated run. The latter is the rule
+    against manual numbers, so it now classifies clusters by comparing probe scores to E3
+    held-out and prints what it found.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ log.md                                  |   34 +
+ results/e5/cf_0.jsonl                   | 1536 ++++++++++++
+ results/e5/cf_queue_0.jsonl             | 1536 ++++++++++++
+ results/e5/cf_summary_0.json            |   44 +
+ results/e5/fig_e5_s0_behavior.png       |  Bin 0 -> 172907 bytes
+ results/e5/fig_e5_s0_mechanism.png      |  Bin 0 -> 229245 bytes
+ results/e5/formation_gap_0.json         |  221 ++
+ results/e5/ineligible_postmortem_0.json |  711 ++++++
+ results/e5/reading_0.json               |  728 ++++++
+ results/e5/stream_0.jsonl               | 3987 +++++++++++++++++++++++++++++++
+ results/e5/summary_0.json               |   57 +
+ tools/e5_post_rerun_chain.sh            |   28 +
+ tools/make_e5_reading_pack.sh           |   19 +-
+ 13 files changed, 8896 insertions(+), 5 deletions(-)
+
+commit d350cba9a6096a4929e11b27e4db321315454ee1
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-18 09:09:20 +0900
+
+    Gate passed (20/20 assertions); start rerun
+    
+    The smoke invocation omitted --n 50, and --smoke only changes trigger/probe/step constants,
+    not the episode count — so the gate ran at full 4,000-episode scale for 7h25m before I caught
+    it. The gate verdict itself is unaffected: assertions run per retrain, and all 20 passed with
+    zero failures across 10 distinct clusters, all scratch. Evidence preserved under
+    gate_evidence_20260818 with its stream output marked not-for-citation.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ log.md                                             |   19 +
+ results/e5/gate_evidence_20260818/README.md        |   18 +
+ .../e5_smoke/libero_goal_task2/train_summary.json  |   10 +
+ .../libero_object_task0/train_summary.json         |   10 +
+ .../libero_spatial_task2/train_summary.json        |   10 +
+ .../libero_spatial_task3/train_summary.json        |   10 +
+ .../libero_spatial_task4/train_summary.json        |   10 +
+ .../libero_spatial_task5/train_summary.json        |   10 +
+ .../libero_spatial_task6/train_summary.json        |   10 +
+ .../libero_spatial_task7/train_summary.json        |   10 +
+ .../libero_spatial_task8/train_summary.json        |   10 +
+ .../libero_spatial_task9/train_summary.json        |   10 +
+ .../e5/gate_evidence_20260818/gate_assertions.txt  |   20 +
+ .../e5/gate_evidence_20260818/smoke/stream_0.jsonl | 3161 +++++++++
+ results/e5/gate_evidence_20260818/smoke_rerun.log  | 7300 ++++++++++++++++++++
+ results/e5/smoke/stream_0.jsonl                    |    7 -
+ results/e5/stream_0.jsonl                          |   13 +
+ 17 files changed, 10631 insertions(+), 7 deletions(-)
+
+commit 03f043eee80f8616c432c2dd11d0e89e6311f24f
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-18 01:39:57 +0900
+
+    Fix chain: clear prior smoke artifacts and allow restart after quarantine
+    
+    The smoke gate aborted in 2s with zero assertion failures — the driver's overwrite guard
+    refused to start because results/e5/smoke/ from an earlier run was still in place. That is a
+    gap in the chain script, not a defect in the gate. Prior smoke outputs are archived under the
+    quarantine directory, the chain now clears them before invoking the gate, and the CF wait is
+    skipped when quarantine has already happened so a restart cannot hang.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ log.md                                             |   16 +
+ results/e5/cf_0.jsonl                              |  484 -------
+ .../e5/seed0_normstats_invalid/INVALID_cf_0.jsonl  | 1337 ++++++++++++++++++++
+ .../INVALID_cf_queue_0.jsonl}                      |    0
+ .../INVALID_cf_summary_0.json                      |   44 +
+ .../libero_10_task0/train_summary.json             |   10 +
+ .../libero_10_task2/train_summary.json             |   10 +
+ .../libero_10_task5/train_summary.json             |   10 +
+ .../libero_goal_task0/train_summary.json           |   10 +
+ .../libero_goal_task1/train_summary.json           |   10 +
+ .../libero_goal_task2/train_summary.json           |   10 +
+ .../libero_goal_task3/train_summary.json           |   10 +
+ .../libero_goal_task4/train_summary.json           |   10 +
+ .../libero_goal_task5/train_summary.json           |   10 +
+ .../libero_goal_task6/train_summary.json           |   10 +
+ .../libero_goal_task7/train_summary.json           |   10 +
+ .../libero_goal_task8/train_summary.json           |   10 +
+ .../libero_goal_task9/train_summary.json           |   10 +
+ .../libero_object_task0/train_summary.json         |   10 +
+ .../libero_object_task1/train_summary.json         |   10 +
+ .../libero_object_task2/train_summary.json         |   10 +
+ .../libero_object_task3/train_summary.json         |   10 +
+ .../libero_object_task4/train_summary.json         |   10 +
+ .../libero_object_task5/train_summary.json         |   10 +
+ .../libero_object_task6/train_summary.json         |   10 +
+ .../libero_object_task7/train_summary.json         |   10 +
+ .../libero_object_task8/train_summary.json         |   10 +
+ .../libero_object_task9/train_summary.json         |   10 +
+ .../libero_spatial_task0/train_summary.json        |   10 +
+ .../libero_spatial_task1/train_summary.json        |   10 +
+ .../libero_spatial_task2/train_summary.json        |   10 +
+ .../libero_spatial_task3/train_summary.json        |   10 +
+ .../libero_spatial_task4/train_summary.json        |   10 +
+ .../libero_spatial_task5/train_summary.json        |   10 +
+ .../libero_spatial_task6/train_summary.json        |   10 +
+ .../libero_spatial_task7/train_summary.json        |   10 +
+ .../libero_spatial_task8/train_summary.json        |   10 +
+ .../libero_spatial_task9/train_summary.json        |   10 +
+ .../INVALID_fig_e5_s0_behavior.png}                |  Bin
+ .../INVALID_fig_e5_s0_mechanism.png}               |  Bin
+ .../INVALID_formation_gap_0.json}                  |    0
+ .../INVALID_ineligible_postmortem_0.json}          |    0
+ .../e5_smoke/libero_goal_task2/train_summary.json  |   10 +
+ .../libero_object_task0/train_summary.json         |   10 +
+ .../INVALID_prior_smoke}/smoke/cf_queue_0.jsonl    |    0
+ .../INVALID_prior_smoke/smoke/stream_0.jsonl       |   50 +
+ .../INVALID_prior_smoke}/smoke/summary_0.json      |    0
+ .../INVALID_reading_0.json}                        |    0
+ .../INVALID_stream_0.jsonl}                        |    0
+ .../INVALID_summary_0.json}                        |    0
+ results/e5/seed0_normstats_invalid/README.md       |   10 +
+ results/e5/smoke/stream_0.jsonl                    |   57 +-
+ tools/e5_rerun_chain.sh                            |   22 +-
+ 53 files changed, 1830 insertions(+), 540 deletions(-)
+
+commit 5ab2aecfeaec3dc320f86dd12ac6e4c39f4df5d8
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 22:58:21 +0900
+
+    Night pipeline: status script rewritten for the four-stage chain
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ log.md                | 22 +++++++++++++++++
+ results/e5/cf_0.jsonl | 19 +++++++++++++++
+ tools/e5_status.sh    | 66 ++++++++++++++++++++++++++++++++++++---------------
+ 3 files changed, 88 insertions(+), 19 deletions(-)
+
+commit 64e5189a5a3c545a891a6c851d9bef1b1ac6255b
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 22:54:19 +0900
+
+    Implement B-2: scratch retraining at batch-equivalent step budgets, with runtime gate
+    
+    Retrain now passes --no-warm-start and an explicit --steps, so each checkpoint trains from
+    scratch in its own normalization space (HabitPolicy loads stats from the checkpoint, so
+    inference stays consistent). Step budgets are derived from HP["steps_per_n"] rather than
+    typed in: n=20 gets 10,000 and n=80 gets 28,000, matching what the batch warm-start chain
+    accumulates to at each grid point.
+    
+    Gate assertion (a) is restated for B-2. The ruling's "l2 difference between retrains == 0"
+    presumes plan A's single {80} trigger, where every retrain sees the same 80 episodes. Under
+    B-2 the n=20 and n=80 pools legitimately differ, so the check instead recomputes stats from
+    the checkpoint's own training slice and requires a match — that is what actually rules out a
+    warm-start crossing normalization spaces.
+    
+    Assertions run at runtime on every retrain, not only in smoke: smoke uses reduced steps and
+    therefore cannot verify the production budget. Both prior defects were of the "counter is
+    right, value is wrong" kind and surfaced hours in.
+    
+    Chain waits for CF, quarantines seed 0 with a do-not-cite README, runs the smoke gate, and
+    starts the rerun only if every assertion passes.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md |  3 ++
+ experiments/e5_driver.py   | 80 +++++++++++++++++++++++++++++++++++++++++++---
+ habits/train.py            |  4 ++-
+ results/e5/cf_0.jsonl      | 53 ++++++++++++++++++++++++++++++
+ tools/e5_rerun_chain.sh    | 55 +++++++++++++++++++++++++++++++
+ 5 files changed, 189 insertions(+), 6 deletions(-)
+
+commit cfb3f522a6952ad3f48d0c3c3b28b1ef62138f41
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 22:44:31 +0900
+
+    Accept rerun ruling; resolve both step-3 questions; flag a step-budget conflict in plan B
+    
+    3-(2): retrain HDF5 is the stream-accumulated file. All 33 clusters agree across four
+    independent counts (HDF5 episodes, meta successes, logged |B_k|, stream teacher successes),
+    so the earlier batch-data defect has not recurred in another form.
+    
+    3-(1): the 16,000 vs 28,000 step gap is arithmetic, not a bad argument. The batch chain
+    trains n=10/20/40/80 at 4,000/6,000/8,000/10,000; lazy {20,80} skips n=10 and n=40, which
+    is exactly the 12,000 difference.
+    
+    That surfaces a conflict worth deciding before implementing: plan B trains n=80 from
+    scratch, so its budget becomes 10,000 steps alone — 36% of the batch chain, down from the
+    current 57%. Ruling 3 flagged halved training as a candidate cause of maturity failure, and
+    plan B as written makes it worse. Recommending 28,000 for the scratch n=80 so training
+    volume matches the batch, and holding implementation until that is decided.
+    
+    Plan B is otherwise sound: HabitPolicy loads stats from the checkpoint, so per-checkpoint
+    normalization spaces are self-consistent once warm-start no longer crosses them.
+    
+    Mechanisms verified independent of the defect are recorded for post-rerun re-confirmation.
+    Withdrawn (a)/(b) marked in place, (c) retained as the defect evidence.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md      |   2 +
+ log.md                          |  45 +++++++++++++++++
+ results/e5/cf_0.jsonl           | 107 ++++++++++++++++++++++++++++++++++++++++
+ results/e5/formation_gap_0.json |  12 +++--
+ 4 files changed, 162 insertions(+), 4 deletions(-)
+
+commit b79f1f911e98a90a031609f61eb37a3b87f372a6
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 22:28:30 +0900
+
+    Formation-gap diagnostic fires rule 2(c): normalization space shifts across lazy retrains
+    
+    E3 trains with --n-grid 10 20 40 80 in one call, so compute_stats(episodes[:max(n_grid)])
+    runs once on the 80-episode pool and stays frozen across the warm-start chain — measured
+    l2 difference between n=10 and n=80 stats is exactly 0. E5 lazy retraining passes a single
+    --n-grid {n}, so max(n_grid) is n: the n=20 retrain normalizes on 20 episodes and the n=80
+    retrain on 80. Warm-start therefore crosses normalization spaces, violating the registered
+    "frozen across all n-grid stages" clause. Measured shift across all ten ineligible clusters:
+    action_mean l2rel 0.009-0.160, proprio_std up to 0.097.
+    
+    Two other differences found: stream BC pools cover 34-35 of 40 base states with duplicates
+    (batch covers 40/40 evenly), and cumulative steps to n=80 are 16,000 vs 28,000. The probe
+    band is the one difference favoring the stream — it reuses collection bases the pool already
+    saw, while E3 held-out is a disjoint band, so the easier evaluation produced lower scores.
+    
+    Caveat carried into the report: clusters that did reach maturity show the same normalization
+    shift, so this cannot be the sole cause of ineligibility. Referred for the researcher's
+    decision on fix strategy and whether seed 0 is rerun.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md      |   4 +
+ experiments/e5_formation_gap.py | 173 +++++++++++++++++++++++++++++++
+ log.md                          |  31 ++++++
+ results/e5/cf_0.jsonl           |  69 +++++++++++++
+ results/e5/formation_gap_0.json | 221 ++++++++++++++++++++++++++++++++++++++++
+ results/e5/reading_0.json       |  14 +--
+ tools/make_e5_reading_pack.sh   |  39 ++++++-
+ 7 files changed, 540 insertions(+), 11 deletions(-)
+
+commit 3a5f104f9f78f0ee9312219d8ee83fb2912cbf4e
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 22:18:11 +0900
+
+    Execute seed 0 rulings; ineligible post-mortem finds two design interactions
+    
+    Registered the four rulings, then ran the ineligible-cluster post-mortem under the
+    rules fixed beforehand. Rule 2 fired: 9 of 10 ineligible clusters had reached
+    maturity in the E3 batch (N* <= 80). Reconstructing probe scores from the sigma/phi
+    ledger explains why, and separates two causes that look identical in the state log:
+    
+    - E3 maturity is a point estimate (s_hat >= 0.8); E5 maturity is a posterior
+      (Pr >= 0.9), which at P=20 demands 19/20 = 0.95. Same tau, different threshold.
+    - c=0.25 reinitialization carries round-1 failures into phi, so a cluster with 9+
+      round-1 failures cannot pass round 2 even with a perfect 20/20. Five clusters were
+      in that state; object_task5 actually scored 20/20 in round 2 and was still marked
+      ineligible, despite E3 s_hat(80)=1.0.
+    
+    Both are consequences of registered constants, not implementation bugs. Reported as
+    exploratory; seed 0 design left unchanged pending a separate ruling.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md              |   5 +
+ experiments/e5_ineligible_postmortem.py | 181 +++++++
+ log.md                                  |  27 +
+ results/e5/cf_0.jsonl                   |  76 +++
+ results/e5/ineligible_postmortem_0.json | 885 ++++++++++++++++++++++++++++++++
+ results/e5/reading_0.json               |  12 +-
+ tools/make_e5_reading_pack.sh           |  46 +-
+ 7 files changed, 1222 insertions(+), 10 deletions(-)
+
+commit a01ecc90e75abd2e25cedec7fc8540e830b01edc
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 22:06:25 +0900
+
+    Put reading pack in project root like the other packs; gitignore it
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                    |  2 ++
+ results/e5/cf_0.jsonl         | 16 ++++++++++++++++
+ results/e5/reading_0.json     | 10 +++++-----
+ tools/make_e5_reading_pack.sh |  5 +++--
+ 4 files changed, 26 insertions(+), 7 deletions(-)
+
+commit 3fb16d418ddce6e318008a71ecd13395ccd7091f
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 22:03:47 +0900
+
+    E5 reading figures + full reviewer package; correct formation claim
+    
+    Figures caught a misreading in the earlier report: the formation ledger recorded
+    attempts per grid point but not passes, and I inferred "n=20 all failed / n=80 all
+    passed" from the round totals. Actual: n=20 passed 10/33 (0.303), n=80 passed 8/18
+    (0.444) — quadrupling the training set moves the pass rate far less than claimed.
+    Analyzer now stores attempts/passed/pass_rate per grid point so the split cannot be
+    inferred wrongly; log.md corrected.
+    
+    Shadow-jurisdiction panel plotted percentage-points and a ratio on one axis; split
+    into separate panels with latency shown in ms against the registered prediction.
+    
+    Package now follows CLAUDE.md §6: report, raw stream (all 4,000 rows), figures,
+    scripts, full preregistration + log, git history.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/e5_analyze.py          |  10 +-
+ experiments/fig_e5_reading.py      | 209 +++++++++++++++++++++++++++++++++++++
+ log.md                             |   4 +-
+ results/e5/cf_0.jsonl              |  47 +++++++++
+ results/e5/fig_e5_s0_behavior.png  | Bin 0 -> 171167 bytes
+ results/e5/fig_e5_s0_mechanism.png | Bin 0 -> 246450 bytes
+ results/e5/reading_0.json          |  34 ++++--
+ tools/make_e5_reading_pack.sh      |  51 ++++++---
+ 8 files changed, 330 insertions(+), 25 deletions(-)
+
+commit b7f366f5aac379216681ca60a383dafdcfee8074
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 21:56:54 +0900
+
+    log: E5 seed 1 completion and first reading
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ log.md                | 20 ++++++++++++++++++++
+ results/e5/cf_0.jsonl |  2 ++
+ 2 files changed, 22 insertions(+)
+
+commit 668bc9fdc383d340a9cbf35b2bc2892a8778a1a8
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 21:56:28 +0900
+
+    E5 seed 1 reading: stream analyzer, prereg-driven verdicts, reviewer package
+    
+    Analyzer executes only the registered decision rules and pulls every number from
+    results/ JSON (prediction values are extracted from the preregistration text rather
+    than hardcoded). Three defects found and fixed while building it:
+    
+    - partial-CF bootstrap reported a noninferiority verdict; fire episodes missing from
+      the sample collapse the baseline toward system, so it now withholds until complete
+    - shadow-jurisdiction latency was computed per-episode while the registered
+      prediction is per-query on the conservative_floor basis, making the two
+      incomparable; reconstruction of the OFF value now self-checks against the registry
+    - one-sided z underflowed to "p=0"; log-scale bound reported alongside
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/e5_analyze.py     |  366 +++++++++++
+ results/e5/cf_0.jsonl         |   95 +++
+ results/e5/cf_queue_0.jsonl   | 1337 +++++++++++++++++++++++++++++++++++++++++
+ results/e5/reading_0.json     |  707 ++++++++++++++++++++++
+ results/e5/stream_0.jsonl     |  781 ++++++++++++++++++++++++
+ results/e5/summary_0.json     |   59 ++
+ tools/e5_pack_after_cf.sh     |   13 +
+ tools/make_e5_reading_pack.sh |  113 ++++
+ 8 files changed, 3471 insertions(+)
+
+commit 8e3ad770b241f448bf78472ebb0078b37a087246
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 19:46:03 +0900
+
+    Add e5_status.sh for one-shot state recovery after client disconnection
+    
+    Archives superseded logs (the discarded batch-data run and early smoke attempts) so the
+    error counter reflects only the live run.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ results/e5/stream_0.jsonl | 1146 +++++++++++++++++++++++++++++++++++++++++++++
+ tools/e5_status.sh        |   41 ++
+ 2 files changed, 1187 insertions(+)
+
+commit d7977ea002a50a03a111ecd5d0b505e6ef89d015
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 15:45:47 +0900
+
+    Add counterfactual batch + auto-chain so the run survives client disconnection
+    
+    - e5_counterfactual.py: replays fire-episode specs with the teacher for the paired baseline;
+      gated by the preregistered determinism pre-check (sample x2 must agree, else stop and
+      report), tags output as the evaluation ledger, and emits McNemar exact p on discordant pairs
+    - tools/e5_chain_after_seed0.sh runs in its own tmux session, waits for seed 1 to finish, and
+      starts the counterfactual batch automatically. seeds 2-3 are deliberately NOT chained -
+      they wait for the mid-run reading per the researcher's sequencing.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/e5_counterfactual.py |  150 +++
+ results/e5/stream_0.jsonl        | 2073 ++++++++++++++++++++++++++++++++++++++
+ tools/e5_chain_after_seed0.sh    |   15 +
+ 3 files changed, 2238 insertions(+)
+
+commit d6b38c9ec3145e30cc43a47206a23bde25237746
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-17 07:39:17 +0900
+
+    Critical fix: BC pool must come from stream-accumulated trajectories, not batch collections
+    
+    - Defect found at 40% of seed 1 (surfaced as a crash on a novel cluster with no batch HDF5):
+      the driver retrained from data/e3|e2 batch collections while discarding the trajectories
+      the teacher actually produced in the stream. That violates Section 4h / design Section 4 T1
+      ("BC pool = stream-accumulated teacher successes only") and invalidates E5's core claim
+      that habits form *from the stream*. The 1,361-episode partial run is archived as
+      results/e5/seed0_batchdata_invalid/ and discarded.
+    - Fix: run_teacher now returns frames+actions; successes are written incrementally to
+      data/e5_s{seed}/{cluster}.hdf5 (collector schema, meta_json maintained so load_cluster
+      works), and retraining reads that file. Novel clusters resolve naturally since their
+      trajectories accumulate in-stream.
+    - Smoke 6 re-verified all six gate conditions plus the new requirement: every stored uid is
+      a stream uid, schema habitvla2-e5-stream-v1, dual ledger intact (task0: 22 successes /
+      23 meta). goal_task2 matured from 10 stream-accumulated trajectories, and a demotion
+      triggered a second retrain (decision 4: eligibility retained, r_k carried).
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/e5_driver.py                          |   36 +-
+ results/e5/seed0_batchdata_invalid/stream_0.jsonl | 1393 +++++++++++++++++++++
+ results/e5/smoke/cf_queue_0.jsonl                 |   12 +
+ results/e5/smoke/stream_0.jsonl                   |   55 +-
+ results/e5/smoke/summary_0.json                   |   24 +
+ 5 files changed, 1509 insertions(+), 11 deletions(-)
+
+commit cd36fdf9dfbda00ebef8641be325168230fd4cd8
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 23:52:34 +0900
+
+    E5 driver implemented; smoke gate blocks two preregistration-violating paths pre-data
+    
+    - Implementation: E5 stream/novel bands + 6-band startup assert; driver with 4-state machine,
+      three-ledger accounting, shadow jurisdiction (non-intervening), source tags, CF queue,
+      lazy retrain/probe. Single-process requirement verified (teacher + ACT + DINOv2 all import
+      under hv2_oft). train.py gains --warm-from (lazy warm-start carryover) and --steps.
+    - Negative result 1: retrain trigger lacked an R_max guard - once |B_k| passes the last grid
+      point, retrain/probe re-fire, and a demoted cluster would enter a 3rd round, violating
+      Section 4h (R_max = 2 global). Caught by the smoke gate before any real data. Fixed with a
+      probe_rounds < PROBE_MAX_ROUNDS guard. Lesson: a state machine's cap must be checked at
+      every entry point, not only where it is consumed.
+    - Negative result 2: the gate itself failed its purpose three times - 50 ep spread over 30
+      clusters never fired the trigger; P=5 makes maturity mathematically unreachable
+      (Pr=0.738 < 0.9 even at 5/5); n=3/300 steps cannot produce a usable policy (E3 shows n=10
+      is the minimum effective point). Smoke now uses 2 clusters, |B_k|>=10, P=10, 2500 steps,
+      and forced failure across all rounds of one cluster. Full-run constants unchanged
+      (PROBE_FULL=20, GRID_FULL=(20,80)) - smoke constants live only under the --smoke branch.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md                        |   5 +-
+ docs/E5_DRIVER_DESIGN.md                          |  30 ++-
+ envs/stream.py                                    |  67 +++++
+ experiments/e5_driver.py                          | 305 ++++++++++++++++++++++
+ habits/train.py                                   |   8 +-
+ log.md                                            |  36 +++
+ results/e5/smoke/stream_0.jsonl                   |   5 +
+ results/e5/smoke_run1_nocoverage/cf_queue_0.jsonl |   0
+ results/e5/smoke_run1_nocoverage/stream_0.jsonl   |  50 ++++
+ results/e5/smoke_run1_nocoverage/summary_0.json   |  45 ++++
+ tools/progress_heartbeat.py                       |   9 +
+ tools/with_heartbeat.sh                           |   8 +-
+ 12 files changed, 554 insertions(+), 14 deletions(-)
+
+commit 97aa0c5b16a18d6774e9435a62401a5e40b20397
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 23:21:00 +0900
+
+    Register auto-pack convention; refresh E5 design pack with E4-R implications and 25-cluster figures
+    
+    - CLAUDE.md working rule: whenever a ruling is needed (branch verdict, wording, design
+      review, interpretation fork), generate the reviewer package immediately without waiting
+      to be asked - REPORT.md with programmatically injected numbers + raw JSON + figures +
+      scripts + prereg/log + git history; generator kept as experiments/make_*_pack.py
+    - E5 design pack refreshed: v0.2 labeling, 25-cluster weighted budget (5.62 s/episode,
+      exposure 144.0, worst 47.7 h), decisions 1-6 marked as already ruled, and a new section
+      deriving what E4-R implies for E5 - at the stream's own width (w_id = 0.01) turning
+      jurisdiction on would buy +0.0444 success per episode while routing 31% of episodes to
+      the 85 ms path (4.3x mean latency), which supports the REDUCE decision and motivates
+      computing the "jurisdiction ON" counterfactual from shadow logs at zero extra cost
+    - Remaining open items for the reviewer: shadow-jurisdiction analysis plan, smoke trigger (a)/(b)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ CLAUDE.md                          |  6 +++++
+ experiments/make_e5_design_pack.py | 49 ++++++++++++++++++++++++++++----------
+ 2 files changed, 42 insertions(+), 13 deletions(-)
+
+commit 6638c7579198184bda4dc7fa1edfa7c1f2c16731
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 23:17:33 +0900
+
+    E4-R final: conditional routing gain (correcting a marginal-product error), H3 wording fixed
+    
+    - Correction (mine): "marginal gap x reject rate" treated the gate as a random rejector.
+      Recomputed conditionally over matched uids: sum_{rejected}(teacher-habit)/n_total =
+      +0.0444/+0.1111/+0.1591/+0.1163/+0.0488, mean gain among rejected +0.143..+0.318.
+      The gate IS better than random rejection - the old formula hid that. Regime-locality
+      conclusion unchanged (still peaks at w=0.04, shrinks at both ends).
+    - Cost axis added per width: VLA routing share and mean query latency (w=0.01 sends 31% of
+      episodes down the 85.07 ms path -> 4.3x mean latency vs all-habit).
+    - H3 final wording registered (candidate A + "weakly aligned"): gate value is confined to
+      the mid-width regime where a competence gap exists; within it the gate is only weakly
+      aligned (miss 0.410 / false alarm 0.268, floor 0.317 after recalibration) so the cause is
+      representation, not threshold; still better than random rejection.
+    - Miss/false-alarm interpretations registered as symmetric - neither softened alone.
+    - Training-width expansion experiment promoted to a paper appendix (2 clusters, collect
+      w=0.04, n-grid) to test whether a remedy for locality exists; E5 GPU has priority.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md         |  4 +++
+ experiments/make_e4r_final_pack.py | 56 ++++++++++++++++++++----------------
+ log.md                             | 36 +++++++++++++++++++++++
+ results/e4/e4r_teacher_ladder.json | 58 +++++++++++++++++++++++++++-----------
+ 4 files changed, 114 insertions(+), 40 deletions(-)
+
+commit 9b901b881b2c9ca333893fa9efcb1b5c8b344ed2
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 23:10:06 +0900
+
+    Fix episode count expression in E4-R final report generator
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ experiments/make_e4r_final_pack.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6349af94b168f9571acbf806d9e92c5846b228d2
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 23:09:56 +0900
+
+    E4-R final decision pack: competence map + teacher ladder + workspace extent unified
+    
+    Single package for the H3 ruling - all figures programmatically injected, includes the
+    workspace scatter figure and the three result JSONs with their embedded readings.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                         |   2 +
+ experiments/make_e4r_final_pack.py | 131 +++++++++++++++++++++++++++++++++++++
+ 2 files changed, 133 insertions(+)
+
+commit ca9b17d371a84112dd41be417b6668e7c7ad74ba
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 23:07:11 +0900
+
+    Teacher w-ladder control: routing gain is non-monotonic and vanishes at both ends
+    
+    - 3 clusters x 5 widths x 15 ep, teacher rollouts on E4-R's paired spec uids
+    - Gap (teacher - habit) by width: +0.044, +0.111, +0.202, +0.096, +0.053 -> peaks at
+      w=0.04 then narrows; Spearman(w, gap) = 0.100 (p=0.87), so "gap widens with w" fails
+      => reading 2 takes the latter branch: a routing-gain-vanishing regime exists
+    - Teacher itself collapses at wide widths (0.978 -> 0.335 at w=0.08, -0.642), so the
+      fine-tuning geometric-fragility hypothesis is NOT retracted (retraction condition unmet)
+    - Expected routing gain (gap x reject rate): +0.014 (w=0.01), +0.101 (w=0.04), +0.039
+      (w=0.08) per episode -> the gate's value exists only in the mid-width regime
+    - goal_task2 shows gap ~0 at every width (0.467 vs 0.467 even at w=0.08): no routing gain
+      in that cell at all
+    - Readings embedded programmatically into e4r_teacher_ladder.json
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ results/e4/e4r_teacher_ladder.json | 1623 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 1623 insertions(+)
+
+commit 01a1ea2981a1e8961bb7761a4a7e55fd3f466335
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 22:56:28 +0900
+
+    Workspace extent measured: w* is 8-23% of the verified reach (habit generalization is local)
+    
+    - Official placement bbox 0.46 x 0.66 m over 40 tasks x 50 init states (n=10,000 points)
+    - Verified reach from teacher-success specs (n=15,366): q99 0.394 x 0.585 m, convex hull
+      0.209 m^2, equivalent radius 0.258 m - no textbook Franka radius used, measurement only
+    - Reading: w=0.04 perturbation diameter is 15.5% of the verified reach diameter (2.4% by
+      area); w* range 0.02-0.06 spans 8-23% -> "habit geometric generalization is local" is the
+      accurate wording, and the training-width expansion experiment gains priority
+    - Figure: results/e4/fig_workspace_extent.png (table geom not exposed in MuJoCo, so the
+      placement bbox stands in as the measured boundary - stated on the figure)
+    - Teacher w-ladder control running in parallel (paired uids with E4-R)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md           |     2 +
+ experiments/e4r_teacher_ladder.py    |   162 +
+ experiments/plot_workspace_extent.py |    92 +
+ experiments/workspace_extent.py      |   162 +
+ log.md                               |    11 +
+ results/e4/fig_workspace_extent.png  |   Bin 0 -> 155378 bytes
+ results/e4/workspace_extent.json     | 24704 +++++++++++++++++++++++++++++++++
+ 7 files changed, 25133 insertions(+)
+
+commit 27987cb87478cc505db1e1c482abf39cc69b6f9a
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 22:40:41 +0900
+
+    E4-R decision material: competence AUC, threshold sweep, CI caveat (two self-corrections)
+    
+    - Competence-label AUC (positive = habit failure): macro 0.6707 vs band macro 0.6576;
+      5/6 clusters improve when the question changes, 2 pass 0.75 (goal_task2 0.808,
+      object_task5 0.755), one reverses (spatial_task0 0.758 -> 0.402). Macro still below 0.75,
+      so "wrong question" is partially supported, not a full reversal.
+    - Threshold sweep: the misalignment is NOT a calibration artifact - even at the globally
+      best threshold miss=0.317/false-alarm=0.317 is the floor, and constraining false alarms
+      to 10% pushes miss to 0.576. Cause lies in the score's representational power.
+    - Wilson CIs expose that "2/6 exceed usable_w_max" is a point estimate only: goal_task0
+      w=0.06 is 10/14 [0.454,0.883] and spatial_task0 w=0.06 is 11/14 [0.524,0.924], both
+      spanning 0.8 - not confirmable at 15 ep/cell.
+    - Added limitation: the gate observes I0 only, so some of the 32% floor may be structurally
+      unobservable at decision time (separate from representational limits).
+    - All figures embedded programmatically; e4r_pack for the H3-rewording ruling.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                         |   2 +
+ experiments/make_e4r_pack.py       | 103 ++++++++++++++
+ results/e4/e4r_competence_map.json | 283 ++++++++++++++++++++++++++++++++-----
+ 3 files changed, 356 insertions(+), 32 deletions(-)
+
+commit d7af925a48d514a47bac1b8cb2077f9a0b9979b8
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 22:35:55 +0900
+
+    E4-R competence map complete: partial beyond-training generalization + quantified gate misalignment
+    
+    - 6 clusters x w{0.01..0.08} x 15 ep, habit-only rollouts (423 valid); physical-validity
+      filtering with per-width reject rates (up to 16.7% at w=0.08)
+    - Rule 1 (w*): {0.01, 0.02, 0.04, 0.04, 0.06, 0.06}; 2/6 exceed usable_w_max - mature cells
+      (goal_task0, spatial_task0) hold 0.79-0.93 success at 6x the training width = beyond-training
+      generalization demonstrated; immature cells (object_task0, libero_10_task0) reported
+      separately as maturity shortfall, not competence boundary
+    - Rule 2 (alignment): Spearman(failure, reject) = 0.628 (p=2e-4) - direction yes, level no:
+      20% reject at the training width, false alarms where habits are intact (goal_task0 w=0.04:
+      .93 success vs .47 reject), misses where they collapse (spatial w=0.08: .36 success, reject
+      falls to .27). Confusion over valid episodes: miss rate 0.410 among failures, false-alarm
+      rate 0.268 among successes -> reading 2-(ii) misalignment confirmed
+    - Rule 3: w* spans 0.01-0.06 and varies within a suite -> per-cluster calibration required
+    - Guard fix: perturbed_init_state gains explicit `allow_beyond_usable` for boundary probing
+      (collection/stream/novel generators keep the E0-6 guard); resumable per-cluster fragments
+    - Readings embedded programmatically into e4r_competence_map.json (single source)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ envs/libero_env.py                            |   13 +-
+ experiments/e4r_competence_map.py             |   20 +-
+ log.md                                        |   45 +
+ results/e4/e4r_competence_map.json            | 3949 +++++++++++++++++++++++++
+ results/e4/e4r_frag/libero_10_task0.json      |    1 +
+ results/e4/e4r_frag/libero_goal_task0.json    |    1 +
+ results/e4/e4r_frag/libero_goal_task2.json    |    1 +
+ results/e4/e4r_frag/libero_object_task0.json  |    1 +
+ results/e4/e4r_frag/libero_object_task5.json  |    1 +
+ results/e4/e4r_frag/libero_spatial_task0.json |    1 +
+ 10 files changed, 4025 insertions(+), 8 deletions(-)
+
+commit 630488d46801cf99a147d9aa671ca6b754b78c4e
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 22:09:37 +0900
+
+    Time-ledger split (operational/formation/evaluation), 25-cluster E5 mix, E4-R competence map launched
+    
+    - Defect 1: three time ledgers registered - operational (sole basis for latency claims),
+      formation (retrain/probe, reported separately, excluded from claims), evaluation
+      (counterfactual, measurement artifact, not reported as cost); `ledger` tag added to schema
+    - Defect 2: E5 mix 22 -> 25 distinct clusters (libero_10 included) with per-suite usable_w_max
+      enforcement (long 0.02) and weighted episode cost 5.62s; exposure 144.0, worst 3-seed 47.9h
+    - E4-R revised to competence map: 6 clusters x w in {0.01..0.08} x 15 ep, habit-only rollout,
+      physical-validity filtering with per-width reject rates, gate scores logged non-intervening;
+      reading rules (w*, gate-alignment, per-cluster variance) registered BEFORE results
+    - Register-only: motor-equivalence cluster granularity + cross-cluster transfer matrix (post-E5)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md           |   3 +
+ docs/E5_DRIVER_DESIGN.md             |  36 +++++--
+ docs/PAPER2_E5_POSTHOC_CANDIDATES.md |   1 +
+ experiments/e4r_competence_map.py    | 185 +++++++++++++++++++++++++++++++++++
+ log.md                               |  32 ++++++
+ 5 files changed, 251 insertions(+), 6 deletions(-)
+
+commit ac0ff405d8367df79a95baf4b1c716f3e8615035
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 18:43:08 +0900
+
+    E5 design v0.2: 6 review decisions applied + 50-ep smoke gate; still no implementation code
+    
+    - Decisions registered (Section 4b/4h/5): stream bands (seed 70000+, noise 6e6+; novel
+      80000+/7e6+, base 0-39 reused as deployment-recurrence modeling, held-out forbidden,
+      6-band assert at startup); counterfactual = post-stream batch (in-stream execution would
+      contaminate the H4 measurand) with 5-10 spec x2 determinism pre-check; retrain trigger =
+      |B_k| teacher-success trajectories only; demotion keeps retrain eligibility but carries
+      r_k with global R_max=2 (verified already consistent with gates/two_stage.py - no code
+      change needed); novel injection joins normal lifecycle with log tag; budget unchanged
+      with seed-1-first sequential execution
+    - New gate: 50-ep smoke before the 4,000-ep run (bands/transitions/schema/executor/shadow
+      non-intervention/heartbeat); one open item flagged - smoke-only reduced trigger (a) vs
+      observing retrain path in the real run (b); implementation side recommends (a)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md |  5 +++
+ docs/E5_DRIVER_DESIGN.md   | 80 +++++++++++++++++++++++++++++++++-------------
+ log.md                     | 27 ++++++++++++++++
+ 3 files changed, 89 insertions(+), 23 deletions(-)
+
+commit 22510a2ccc8b4cdd9f12c46088d3d19687ec6cf9
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 18:36:03 +0900
+
+    E5 driver design draft v0.1 (no code) + design review pack
+    
+    - docs/E5_DRIVER_DESIGN.md: 4-state machine with transition table and per-episode procedure,
+      logging schema (source/lifecycle/shadow-jurisdiction/ACI/retrain events), counterfactual
+      queue policy (fire-only, post-stream batch, determinism pre-check), retrain/probe
+      pause-resume protocol, heartbeat integration; proposes new stream spec bands (6-band
+      disjoint assert at startup) pending Section-4b registration
+    - Budget from anchors: 6.0h stream + <=2.2h retrain + <=1.3h probe + <=5.4h counterfactual
+      -> ~44.7h worst case across 3 seeds; 163.6 exposures/cluster
+    - Checklist 6 lenses mapped section-by-section; 6 review decisions requested
+    - Implementation deliberately not started (code 0 lines) pending design review
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                         |   2 +
+ docs/E5_DRIVER_DESIGN.md           | 193 +++++++++++++++++++++++++++++++++++++
+ experiments/make_e5_design_pack.py |  84 ++++++++++++++++
+ log.md                             |  26 +++++
+ 4 files changed, 305 insertions(+)
+
+commit 3a1ed0bd4fb5e23c2a19ec922fbe1fa29a105b8f
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 18:32:49 +0900
+
+    E4 closure corrections: same-cell comparison, H3 = (i)+(ii) mixed, feasibility conditioned
+    
+    - Correction 1: same-cell columns added (judge recalculation independently verified):
+      jurisdiction 6-cell 0.6439 / goal-4 0.5314 vs hidden 0.7329 (+0.089) / 0.6856 (+0.154);
+      kNN at same cells +0.024 / -0.012 = no effect -> cause is representation, not aggregation.
+      25-cell vs 6-cell direct comparison demoted to a scope-mismatch footnote.
+    - Correction 2: H3 final wording = (i)+(ii) mixed (standalone (ii) retired): geometric
+      jurisdiction is representation-cost dependent, yet still below threshold at 21x cost
+      -> low-cost real-time jurisdiction unresolved.
+    - Correction 3: feasibility head described as conditional on the 96%-success regime
+      (positives ~3%), re-evaluable when failure samples are abundant - not "inferior".
+    - Scorer table rebuilt programmatically (e4_scorer_table.py); closure report pack refreshed.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md          |   3 +-
+ experiments/e4_scorer_table.py      | 103 ++++++++++++++++++++++++++++++++++++
+ experiments/make_e4_closure_pack.py |  19 +++++--
+ log.md                              |  22 ++++++--
+ results/e4/e4_scorer_table.json     |  68 ++++++++++++++++++++----
+ 5 files changed, 195 insertions(+), 20 deletions(-)
+
+commit 78a67bdbf6d82a140b503ba09d01be611b5c711d
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 18:26:16 +0900
+
+    E4 closure report pack generator (programmatic REPORT.md)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                          |  2 +
+ experiments/make_e4_closure_pack.py | 89 +++++++++++++++++++++++++++++++++++++
+ 2 files changed, 91 insertions(+)
+
+commit 86c8039bfc752bc22095d93493b67e16660b3a7c
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 18:16:47 +0900
+
+    E4 closure: formal readjudication REDUCE (0.6576), 6-row scorer diagnostics, H3 branch (ii) confirmed
+    
+    - Formal readjudication (one-shot commitment): macro 0.6576 < 0.75 (19/25) -> REDUCE per
+      preregistered graceful degradation; E5 = maturity-only + shadow jurisdiction logging
+      (recalibrated q procedure: FR 0.264 -> 0.060 demonstrated)
+    - Scorer table (6 rows): jurisdiction 0.658 / feasibility 0.544 (fail-frame re-render
+      training) / hidden L32 visual-mean (+85ms) goal 0.686 best-but-below / oracle 1.0 /
+      recalibrated FR row / kNN k5,k10 0.626,0.624 (researcher-added row, post-merge)
+    - H3 wording branch = (ii) fundamental difficulty: best instrument still <0.75 on goal at
+      21x cost; borrow-class categorical shifts (0.87-0.95) remain demonstrated
+    - long w=0.02 novel added; resample reclassified as in-distribution negative control
+      (accept 0.968); Paper2/E5 post-hoc candidates documented (register-only, incl. T5 hold)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md                         |   4 +
+ docs/PAPER2_E5_POSTHOC_CANDIDATES.md               |  17 +
+ experiments/e4_hidden_scorer.py                    | 169 ++++++
+ experiments/e4_knn_scorer.py                       | 124 +++++
+ experiments/e4_novel_frames.py                     |   3 +-
+ experiments/e4_readjudication.py                   | 117 ++++
+ experiments/e4_scorer_diag.py                      | 165 ++++++
+ log.md                                             |  37 ++
+ results/e4/e4_hidden_scorer.json                   |  40 ++
+ results/e4/e4_knn_scorer.json                      | 331 +++++++++++
+ results/e4/e4_readjudication.json                  | 617 +++++++++++++++++++++
+ results/e4/e4_scorer_diag.json                     | 244 ++++++++
+ results/e4/e4_scorer_table.json                    |  91 +++
+ .../libero_10_task0__w_expand__primary.meta.json   |   1 +
+ .../libero_10_task0__w_expand__secondary.meta.json |   1 +
+ .../libero_10_task2__w_expand__primary.meta.json   |   1 +
+ .../libero_10_task2__w_expand__secondary.meta.json |   1 +
+ .../libero_10_task5__w_expand__primary.meta.json   |   1 +
+ .../libero_10_task5__w_expand__secondary.meta.json |   1 +
+ results/e4/novel_manifest.json                     |  24 +
+ 20 files changed, 1988 insertions(+), 1 deletion(-)
+
+commit 596aac4635e912c7daad2f9d1dbf3bca7e92535f
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 17:05:32 +0900
+
+    Section-6 follow-ups + E4 pilot: known/novel frames, AUC verdict material, heartbeat infra
+    
+    - 1a collinearity appendix: free_joints perfectly collinear with suite dummies in formation
+      cells (VIF=inf) - negative-sign puzzle resolved as unidentifiable; median_len VIF=1.65
+    - 1b Section 4i: E6 seed subset (7 cells x 5 seeds, representative+anomaly rationale)
+    - E5 driver pitfall checklist (6 lenses from C-T2 saga); T5 held per ruling
+    - Progress heartbeat infra (tools/) with dual ETA + stall marker; first application calibrated
+      (1.20s/realize anchor registered)
+    - E4-1 known frames 25x20 (held-out only); E4-2 novel v2 after validity-checker correction
+      (v1 spawn-height false rejects 58.1% -> v2 settled-reference 2.7%; v1 archived as negative)
+    - E4-3 pilot AUC: primary-pool macro 0.465 (REDUCE on paper) - decomposition: resample path
+      is in-distribution center (0.270, E0-6 narrow-resample consistent), borrow strong (0.871),
+      w_expand weak on goal; known~calib (false-reject healthy)
+    - Decision-support simulation: recomposed macro 0.682 (16/22 below 0.75, goal structural)
+      + decision pack for researcher ruling; Section-5 branch record deferred pending ruling
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                                         |   2 +
+ configs/preregistration.md                         |  19 +
+ docs/E5_DRIVER_CHECKLIST.md                        |  19 +
+ experiments/e3_h2_analysis.py                      |  36 ++
+ experiments/e4_decision_sim.py                     | 109 ++++
+ experiments/e4_known_frames.py                     |  60 ++
+ experiments/e4_novel_frames.py                     | 278 +++++++++
+ experiments/e4_pilot_auc.py                        | 132 ++++
+ experiments/make_e4_decision_pack.py               | 108 ++++
+ log.md                                             |  32 +
+ results/e3/h2_analysis.json                        |  32 +
+ results/e4/e4_decision_support.json                | 677 +++++++++++++++++++++
+ results/e4/e4_pilot_auc.json                       | 482 +++++++++++++++
+ results/e4/e4_walltime.json                        |   9 +
+ .../libero_10_task0__resample__single.meta.json    |   1 +
+ .../libero_10_task2__resample__single.meta.json    |   1 +
+ .../libero_10_task5__resample__single.meta.json    |   1 +
+ .../libero_goal_task0__resample__single.meta.json  |   1 +
+ .../libero_goal_task0__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task0__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task1__resample__single.meta.json  |   1 +
+ .../libero_goal_task1__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task1__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task2__resample__single.meta.json  |   1 +
+ .../libero_goal_task2__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task2__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task3__resample__single.meta.json  |   1 +
+ .../libero_goal_task3__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task3__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task4__resample__single.meta.json  |   1 +
+ .../libero_goal_task4__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task4__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task5__resample__single.meta.json  |   1 +
+ .../libero_goal_task5__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task5__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task6__resample__single.meta.json  |   1 +
+ .../libero_goal_task6__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task6__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task7__resample__single.meta.json  |   1 +
+ .../libero_goal_task7__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task7__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task8__resample__single.meta.json  |   1 +
+ .../libero_goal_task8__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task8__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task9__resample__single.meta.json  |   1 +
+ .../libero_goal_task9__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task9__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task0__resample__single.meta.json |   1 +
+ ...ibero_object_task0__w_expand__primary.meta.json |   1 +
+ ...ero_object_task0__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task1__resample__single.meta.json |   1 +
+ ...ibero_object_task1__w_expand__primary.meta.json |   1 +
+ ...ero_object_task1__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task2__resample__single.meta.json |   1 +
+ ...ibero_object_task2__w_expand__primary.meta.json |   1 +
+ ...ero_object_task2__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task3__resample__single.meta.json |   1 +
+ ...ibero_object_task3__w_expand__primary.meta.json |   1 +
+ ...ero_object_task3__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task4__resample__single.meta.json |   1 +
+ ...ibero_object_task4__w_expand__primary.meta.json |   1 +
+ ...ero_object_task4__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task5__resample__single.meta.json |   1 +
+ ...ibero_object_task5__w_expand__primary.meta.json |   1 +
+ ...ero_object_task5__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task6__resample__single.meta.json |   1 +
+ ...ibero_object_task6__w_expand__primary.meta.json |   1 +
+ ...ero_object_task6__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task7__resample__single.meta.json |   1 +
+ ...ibero_object_task7__w_expand__primary.meta.json |   1 +
+ ...ero_object_task7__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task8__resample__single.meta.json |   1 +
+ ...ibero_object_task8__w_expand__primary.meta.json |   1 +
+ ...ero_object_task8__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task9__resample__single.meta.json |   1 +
+ ...ibero_object_task9__w_expand__primary.meta.json |   1 +
+ ...ero_object_task9__w_expand__secondary.meta.json |   1 +
+ ...libero_spatial_task0__borrow__primary.meta.json |   1 +
+ ...bero_spatial_task0__borrow__secondary.meta.json |   1 +
+ ...ibero_spatial_task0__resample__single.meta.json |   1 +
+ ...bero_spatial_task0__w_expand__primary.meta.json |   1 +
+ ...ro_spatial_task0__w_expand__secondary.meta.json |   1 +
+ ...libero_spatial_task1__borrow__primary.meta.json |   1 +
+ ...bero_spatial_task1__borrow__secondary.meta.json |   1 +
+ ...ibero_spatial_task1__resample__single.meta.json |   1 +
+ ...bero_spatial_task1__w_expand__primary.meta.json |   1 +
+ ...ro_spatial_task1__w_expand__secondary.meta.json |   1 +
+ .../libero_10_task0__resample__single.meta.json    |   1 +
+ .../libero_10_task2__resample__single.meta.json    |   1 +
+ .../libero_10_task5__resample__single.meta.json    |   1 +
+ .../libero_goal_task0__resample__single.meta.json  |   1 +
+ .../libero_goal_task0__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task0__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task1__resample__single.meta.json  |   1 +
+ .../libero_goal_task1__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task1__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task2__resample__single.meta.json  |   1 +
+ .../libero_goal_task2__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task2__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task3__resample__single.meta.json  |   1 +
+ .../libero_goal_task3__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task3__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task4__resample__single.meta.json  |   1 +
+ .../libero_goal_task4__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task4__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task5__resample__single.meta.json  |   1 +
+ .../libero_goal_task5__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task5__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task6__resample__single.meta.json  |   1 +
+ .../libero_goal_task6__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task6__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task7__resample__single.meta.json  |   1 +
+ .../libero_goal_task7__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task7__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task8__resample__single.meta.json  |   1 +
+ .../libero_goal_task8__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task8__w_expand__secondary.meta.json |   1 +
+ .../libero_goal_task9__resample__single.meta.json  |   1 +
+ .../libero_goal_task9__w_expand__primary.meta.json |   1 +
+ ...ibero_goal_task9__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task0__resample__single.meta.json |   1 +
+ ...ibero_object_task0__w_expand__primary.meta.json |   1 +
+ ...ero_object_task0__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task1__resample__single.meta.json |   1 +
+ ...ibero_object_task1__w_expand__primary.meta.json |   1 +
+ ...ero_object_task1__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task2__resample__single.meta.json |   1 +
+ ...ibero_object_task2__w_expand__primary.meta.json |   1 +
+ ...ero_object_task2__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task3__resample__single.meta.json |   1 +
+ ...ibero_object_task3__w_expand__primary.meta.json |   1 +
+ ...ero_object_task3__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task4__resample__single.meta.json |   1 +
+ ...ibero_object_task4__w_expand__primary.meta.json |   1 +
+ ...ero_object_task4__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task5__resample__single.meta.json |   1 +
+ ...ibero_object_task5__w_expand__primary.meta.json |   1 +
+ ...ero_object_task5__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task6__resample__single.meta.json |   1 +
+ ...ibero_object_task6__w_expand__primary.meta.json |   1 +
+ ...ero_object_task6__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task7__resample__single.meta.json |   1 +
+ ...ibero_object_task7__w_expand__primary.meta.json |   1 +
+ ...ero_object_task7__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task8__resample__single.meta.json |   1 +
+ ...ibero_object_task8__w_expand__primary.meta.json |   1 +
+ ...ero_object_task8__w_expand__secondary.meta.json |   1 +
+ ...libero_object_task9__resample__single.meta.json |   1 +
+ ...ibero_object_task9__w_expand__primary.meta.json |   1 +
+ ...ero_object_task9__w_expand__secondary.meta.json |   1 +
+ ...libero_spatial_task0__borrow__primary.meta.json |   1 +
+ ...bero_spatial_task0__borrow__secondary.meta.json |   1 +
+ ...ibero_spatial_task0__resample__single.meta.json |   1 +
+ ...bero_spatial_task0__w_expand__primary.meta.json |   1 +
+ ...ro_spatial_task0__w_expand__secondary.meta.json |   1 +
+ ...libero_spatial_task1__borrow__primary.meta.json |   1 +
+ ...bero_spatial_task1__borrow__secondary.meta.json |   1 +
+ ...ibero_spatial_task1__resample__single.meta.json |   1 +
+ ...bero_spatial_task1__w_expand__primary.meta.json |   1 +
+ ...ro_spatial_task1__w_expand__secondary.meta.json |   1 +
+ results/e4/novel_manifest.json                     | 298 +++++++++
+ results/e4/novel_manifest_v1_negative.json         | 298 +++++++++
+ results/e4/shared_pca_e4.joblib                    | Bin 0 -> 52031 bytes
+ tools/progress_heartbeat.py                        | 111 ++++
+ tools/with_heartbeat.sh                            |  16 +
+ 165 files changed, 2864 insertions(+)
+
+commit 36d7fd0983348b7668c77fd16f11b1cc11581aff
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 01:01:47 +0900
+
+    Video directive v2 complete: 72 videos (V1 27, V2 19, V3 25, V4 1), all verification lenses pass
+    
+    - 27-cluster manifest (chained included, canonical chunk-break executor, STAGE 2 markers)
+    - Assertions: V1 both-success 27/27, V2/V3 failure-reproduced 19/19 & 25/25 (zero determinism
+      violations); counters sourced from e1_latency.json (85.07/7.32ms); uid mapping in index.json
+    - V1 inference ratio median 11.6x (= registered conservative floor); mp4s gitignored (149MB on disk)
+    - Analysis pack delivered (analysis_pack_e3_final_20260816.tar.gz)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                           |   2 +
+ experiments/make_analysis_pack.py    |  99 ++++++
+ experiments/video_manifest.py        |   4 +-
+ experiments/video_rollout_teacher.py |   2 +-
+ log.md                               |  13 +
+ results/videos/_raw/chosen.json      |  33 ++
+ results/videos/index.json            | 639 +++++++++++++++++++++++++++++++++++
+ results/videos/manifest.json         | 189 ++++++++++-
+ 8 files changed, 975 insertions(+), 6 deletions(-)
+
+commit a35b981906f2a3d8f8de788be041c9de203aa8fa
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-16 00:46:52 +0900
+
+    Alpha pipeline complete: 27/27 Section-6 aggregation + H2 final analysis (H2-L' supported)
+    
+    - Re-smoke 10/10 & 8/10; recollection task0 117/120, task5 108/120=0.900 (diag5b prediction
+      S_V^2=0.871 holds under chunk-break executor); train/eval/h50-merge(50ep)/covariates 27/27
+    - e3_curves COMPLETE (exact member-set check). T2 product baseline: task0 chain 0.80 vs 0.9216
+      significantly BELOW (p=0.0049, bootstrap P(delta<0)=0.947) = coupling cost detected;
+      task5 chain 0.98 not below (above-trend n.s. p=0.089) -> within-cell dissociation,
+      consistent with E2 formation-speed heterogeneity
+    - T1-vs-T3 ceiling decrease one-sided p=0.097 (n.s. at 0.05 - honest report, long task0
+      diluted by task2/5 in pool)
+    - H2 final: level explains 2.5% of N* rank variance (KW p=0.772); median episode length
+      the only significant covariate (perm p=0.0155) -> H2-L' supported, preregistered framing
+      ("factorized architecture absorbs semantic burden") applicable
+    - Video tooling extended to 27 clusters (chained specs, canonical executor, STAGE 2 marker)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ envs/chained_env.py                                |    5 +-
+ experiments/video_manifest.py                      |   35 +-
+ experiments/video_render.py                        |   11 +-
+ experiments/video_rollout_habit.py                 |   40 +-
+ experiments/video_rollout_teacher.py               |   43 +-
+ log.md                                             |   37 +
+ results/e3/chained_libero_object_task0_curve.json  | 1450 ++++++++++++++++++++
+ .../e3/chained_libero_object_task0_curve_h20.json  |  608 ++++++++
+ results/e3/chained_libero_object_task5_curve.json  | 1450 ++++++++++++++++++++
+ .../e3/chained_libero_object_task5_curve_h20.json  |  608 ++++++++
+ results/e3/covariates.json                         |   22 +-
+ results/e3/e3_curves.json                          |  121 +-
+ results/e3/h2_analysis.json                        |    4 +-
+ .../chained_libero_object_task0_h50supp_curve.json |  888 ++++++++++++
+ .../chained_libero_object_task5_h50supp_curve.json |  888 ++++++++++++
+ 15 files changed, 6156 insertions(+), 54 deletions(-)
+
+commit e0f6b017be50827812d72913076ca3e4a37b0000
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 23:17:52 +0900
+
+    Ruling alpha: chunk-break executor (discard stale tail at transition) + restore task0+task5 chains
+    
+    - Shared helper execute_chunk_with_boundary in chained_env; collector+evaluate now identical
+      execution semantics (boundary requery, stale_discarded logged); 5 unit tests PASS
+    - Prereg 4e/5 (a)-(e) registered pre-collection: boundary-requery semantics (compatible with
+      K=8 open-loop), cause reattribution (tier-3 retracted, tiers 1-2 stand), roster restored
+      to task0+task5 (task6 path history-only, Wilson-lower^2 rule kept for degenerate cases),
+      trigger thresholds unchanged + no-relaxation-after-firing principle, blast radius = chains only
+    - Rosters reverted: e3_collect (T1 refs both E2-50), covariates, h50, runner
+    - Methodology appendix candidate logged: 3-act instrumentation saga + task6 counterfactual
+      (most-robust teacher would have silently contaminated T2 - no trigger would have fired)
+    - v3 collections archived as .v3bak; mechanics re-validation PASS
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                              |   2 +
+ configs/preregistration.md              |  19 +++++
+ envs/chained_env.py                     |  24 ++++++
+ experiments/e3_collect.py               |  11 ++-
+ experiments/e3_covariates.py            |   4 +-
+ experiments/e3_t2_h50.sh                |  18 +---
+ experiments/e3_t2_h50_merge.py          |   4 +-
+ experiments/e3_t2_run.sh                |   7 +-
+ experiments/e3_t2_validate.py           |   2 +-
+ experiments/executor_chunkbreak_test.py |  88 +++++++++++++++++++
+ experiments/make_referral_pack.py       | 146 ++++++++++++++++++++++++++++++++
+ experiments/video_manifest.py           |   3 +-
+ habits/evaluate.py                      |  15 ++--
+ log.md                                  |  34 ++++++++
+ teacher/collector.py                    |  25 +++---
+ 15 files changed, 353 insertions(+), 49 deletions(-)
+
+commit 910eb6d39977b8d4cab7030fa3b8bd3fa323dc75
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 23:03:20 +0900
+
+    diag5 World B + diag5b root cause: stale chunk tail executor flaw; task6 halted per pre-commitment
+    
+    - diag5: all 20 non-blindspot task5 stage-2 failures re-run fresh with identical inputs
+      -> 18/20 SUCCEED (band construction numerically identical) => v3 stage-2 not fresh-equiv
+    - Retraction: "within-distribution draw sensitivity" (3rd-tier finding) falsified;
+      tier 1 (pose OOD) and tier 2 (base17 in-distribution hole) stand
+    - diag5b: chunk-break executor (discard 2-7 stale pre-transition actions at transition)
+      flips 18/18 to success -> cause = executor x transition interaction, not teacher property
+    - task5 trigger firing reattributed to infra artifact; task6 replacement rationale weakened
+    - Per World-B pre-commitment: task6 chain NOT started; options (fix executor + restore
+      task5 / fix + keep task6 / no-fix rejected) referred to researcher
+    - Also: task6 trigger p0 rule registered (Wilson-lower^2 = 0.939, no retroactivity),
+      R3 closed as reviewer parsing error, new lenses (schema-dump-first, output-path uniqueness)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md  |  10 +-
+ experiments/e3_t2_check.py  |  35 +++++--
+ experiments/e3_t2_diag5.py  | 162 +++++++++++++++++++++++++++++++
+ experiments/e3_t2_diag5b.py |  98 +++++++++++++++++++
+ experiments/e3_t2_run.sh    |   6 +-
+ log.md                      |  38 ++++++++
+ results/e3/t2_diag5.json    | 231 ++++++++++++++++++++++++++++++++++++++++++++
+ results/e3/t2_diag5b.json   | 206 +++++++++++++++++++++++++++++++++++++++
+ 8 files changed, 773 insertions(+), 13 deletions(-)
+
+commit df346f0d455a355c5473f1f03d97773bbc8acdc4
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 22:47:13 +0900
+
+    Review items R1-R5: aggregator revised for task6 chain, v1 diag evidence recovered, H2 analysis script
+    
+    - R1: e3_collect - T2_CHAINED = task0+task6 (task5 retired to appendix); product-baseline
+      T1 refs (task0=E2-50, task6=single-h50 new path, standard-20 curve untouched);
+      completeness = exact 27-member set check; output unified to e3_curves.json.
+      h50 machinery extended (chains 0/6 + task6 single supplement); covariates roster updated
+      and rerun -> PARTIAL(26), pending chained_task6 only. Registered pre-readout in Section 5.
+    - R2: recovered v1 diag (task0, verdict B) from 791977f as t2_diag_task0_v1.json after
+      overwrite incident; task-suffixed diag output paths mandated; review-pack misattribution
+      fixed; "output path uniqueness" verification lens added.
+    - R3: reported premise mismatch - no missing median_len (25/25 both source and pack);
+      only structural chained pending, task0 now merged.
+    - R4: e3_h2_analysis.py (rank-primary with censored top-ties, KW + permutation OLS,
+      interval sensitivity cap=160) - dry-run OK, DRY_RUN status until Section-6 COMPLETE.
+    - R5: task5 trigger p corrected 3e-6 -> 4.03e-5 (hand-approximation error; verdict unaffected)
+    - Video directive v2 infra (manifest + 3 rollout/render scripts) built then PAUSED per
+      researcher instruction; partial raws harmless, resumable.
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ .gitignore                           |    4 +
+ configs/preregistration.md           |   11 +
+ experiments/e3_collect.py            |   50 +-
+ experiments/e3_covariates.py         |    3 +-
+ experiments/e3_h2_analysis.py        |  158 ++++
+ experiments/e3_t2_diag.py            |    8 +-
+ experiments/e3_t2_h50.sh             |   16 +-
+ experiments/e3_t2_h50_merge.py       |   61 +-
+ experiments/e3_t2_resume_task5.sh    |   33 +
+ experiments/make_review_pack.py      |  215 +++++
+ experiments/video_manifest.py        |   99 ++
+ experiments/video_render.py          |  241 +++++
+ experiments/video_rollout_habit.py   |  105 +++
+ experiments/video_rollout_teacher.py |  121 +++
+ log.md                               |  105 +++
+ results/e3/covariates.json           |   15 +-
+ results/e3/e3_curves.json            |  799 ++++++++++++++++
+ results/e3/h2_analysis.json          |  204 +++++
+ results/e3/t2_diag_task0_v1.json     |  137 +++
+ results/e3/t2_diag_task5_v2.json     |  137 +++
+ results/videos/manifest.json         | 1679 ++++++++++++++++++++++++++++++++++
+ 21 files changed, 4157 insertions(+), 44 deletions(-)
+
+commit c5f6dd0fdbc7c9521a20dd45d79838e008e0e7ae
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 13:59:26 +0900
+
+    C-T2 v2 transition also flawed (OSC state carryover, robot 0.48rad off home); v3 = full episode-boundary protocol
+    
+    - task5 smoke 0/10 under v2 while task0 passed: diag chain isolated two factors
+      (1) task5 base17 = deterministic teacher blind spot (3/3 collection fails, fresh-start fails even unperturbed)
+      (2) v2 transition != fresh: objects identical (d=0.0) but robot up to 0.48 rad off home
+          because set_init_state without env.reset carries OSC controller state - the exact
+          reason E0-6 mandated the 3-step reproduction protocol
+    - v3: transition reuses begin_episode (seed->reset->set_init_state->settle), constructively
+      fresh-equivalent; mechanics PASS; task5 probe 2/3 (residual = stochastic range)
+    - task0 v2-collected 120ep discarded for recollection (BC data / runtime process match);
+      v2 negatives preserved (t2_smoke_v2_negative.json)
+    - Prereg 4e: mechanism precision entry (semantics of ruling A unchanged)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md           |  33 +-
+ envs/chained_env.py                  |  33 +-
+ experiments/e3_collect.py            |  70 +++-
+ experiments/e3_t2_diag2.py           | 114 +++++
+ experiments/e3_t2_h50.sh             |  32 ++
+ experiments/e3_t2_h50_merge.py       |  63 +++
+ habits/evaluate.py                   |   6 +-
+ log.md                               |  43 ++
+ results/e3/e3_report.json            | 791 +++++++++++++++++++++++++++++++++++
+ results/e3/e3_t2_validation.json     |   6 +-
+ results/e3/t2_diag.json              | 124 +++---
+ results/e3/t2_diag2.json             | 306 ++++++++++++++
+ results/e3/t2_diag3.json             |  16 +
+ results/e3/t2_diag4.json             |  26 ++
+ results/e3/t2_diag_v3_probe.json     |  26 ++
+ results/e3/t2_smoke_v2_negative.json | 105 +++++
+ 16 files changed, 1705 insertions(+), 89 deletions(-)
+
+commit 791977fe98e8f109bc3e8ffe49fc3704c4ab0eac
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 13:26:10 +0900
+
+    C-T2 v1 negative result + Option A transition (full-state home reset); prereg 4e amendments
+    
+    - Smoke gate caught v1 wrapper flaw pre-collection: 10/10 stage-1 success then stage-2
+      freeze (teacher OOD at post-place pose; control from home pose succeeds in 153 steps)
+    - Finding: teacher jurisdiction bounds habit formability (no demos outside teacher's
+      operating distribution) - negative artifacts committed (t2_smoke_v1_negative, t2_diag*)
+    - chained_env: transition = set_init_state(full vector: objects relocated + robot home) + settle
+    - Validator updated to home-reset semantics; mechanics re-validation PASS (0.9mm, hash match)
+    - Prereg 4e: transition semantics (continuity break stated), primary test = product
+      baseline s_T1(80)^2, dynamic-ceiling primary evidence moved to C-T3 (researcher ruling A)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md           |  15 +++
+ envs/chained_env.py                  |  28 ++---
+ experiments/e3_t2_check.py           |  84 ++++++++++++++
+ experiments/e3_t2_diag.py            | 215 +++++++++++++++++++++++++++++++++++
+ experiments/e3_t2_run.sh             |  81 +++++++++++++
+ experiments/e3_t2_validate.py        |  36 ++++--
+ habits/evaluate.py                   |  17 ++-
+ log.md                               |  65 +++++++++++
+ results/e3/e3_t2_validation.json     |   7 +-
+ results/e3/t2_diag.json              | 137 ++++++++++++++++++++++
+ results/e3/t2_diag_probe.json        |  31 +++++
+ results/e3/t2_smoke_v1_negative.json | 108 ++++++++++++++++++
+ teacher/collector.py                 |  22 +++-
+ 13 files changed, 807 insertions(+), 39 deletions(-)
+
+commit 0d87053f172dd5d028e90ee010a90909d9684243
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 13:00:34 +0900
+
+    E3 batch complete (23/23 eval); preregistration rulings 1-1~1-4; A_mat ledger separation + 7 regression asserts; covariates table
+    
+    - E3 standard batch: collect 23/23, train 23/23, heldout-20 eval 23/23 (curves in results/e3/)
+    - Preregistration: 27 distinct clusters; per-cluster S_V^2 binomial abort trigger (a=0.01);
+      H3 arms (main + maturity-only + jurisdiction-only 500ep); counterfactual-completion baseline;
+      call-rate windows 1,000; probe band + Section 4f/4g/4h; A_mat ledger separation clause
+    - gates: A_mat counts habit sources (probe+fire) only; source tag required; 4-state lifecycle;
+      experiments/gate_regression.py [GATE-REGRESSION-PASS]
+    - Covariates: free_joints census (40 tasks), e1 per-task S_V re-derivation, covariates.json (25/27)
+    
+    Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+ configs/preregistration.md                 |  94 +++++-
+ envs/stream.py                             |  48 +++-
+ experiments/e1_latency.py                  |   2 +-
+ experiments/e1_sv_per_task.py              |  82 ++++++
+ experiments/e3_collect.py                  |   6 +-
+ experiments/e3_covariates.py               | 106 +++++++
+ experiments/e3_free_joints_census.py       |  74 +++++
+ experiments/gate_regression.py             | 146 ++++++++++
+ gates/two_stage.py                         |  74 ++++-
+ log.md                                     | 108 +++++++
+ results/e1/e1_latency.json                 |   7 +-
+ results/e1/e1_sv_per_task.json             | 254 ++++++++++++++++
+ results/e3/covariates.json                 | 235 +++++++++++++++
+ results/e3/free_joints_census.json         | 253 ++++++++++++++++
+ results/e3/libero_10_task0_curve.json      | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_10_task2_curve.json      | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_10_task5_curve.json      | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_goal_task0_curve.json    | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_goal_task1_curve.json    | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_goal_task2_curve.json    | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_goal_task3_curve.json    | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_goal_task4_curve.json    | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_goal_task5_curve.json    | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_goal_task6_curve.json    | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_goal_task7_curve.json    | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_goal_task8_curve.json    | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_goal_task9_curve.json    | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_object_task1_curve.json  | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_object_task2_curve.json  | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_object_task3_curve.json  | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_object_task4_curve.json  | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_object_task6_curve.json  | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_object_task7_curve.json  | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_object_task8_curve.json  | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_object_task9_curve.json  | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_spatial_task0_curve.json | 447 +++++++++++++++++++++++++++++
+ results/e3/libero_spatial_task1_curve.json | 447 +++++++++++++++++++++++++++++
+ 37 files changed, 11745 insertions(+), 25 deletions(-)
+
+commit 714c16be0a8a70d405d26a0bebada5e39a94b61a
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 04:34:57 +0900
+
+    C-T2 chained wrapper + mechanics validation PASS; E3 batch running
+    
+    - envs/chained_env.py: same-task x2 chaining (L constant, T doubled) via
+      deterministic object relocation (robot state preserved, qvel zeroed,
+      settle); spec carries relocate base/noise for full determinism
+    - e3_t2_validate: mechanics PASS (relocation deviation 0.9mm, state-hash
+      determinism, robot qpos preserved); teacher smoke deferred until GPU free
+    - e3_run.sh: 23-cluster standard batch (collect->train->eval, idempotent)
+    - e3_collect.py: curves + dual maturation report (cluster N*, stream index)
+      + H2-L level distribution + H2-T ceiling test (T1 vs T3, one-sided)
+    - prereg 4e: E3 cluster identities registered pre-collection
+    
+    Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+
+ configs/preregistration.md       |  18 ++++
+ envs/chained_env.py              | 170 +++++++++++++++++++++++++++++++++++++
+ experiments/e3_collect.py        | 179 +++++++++++++++++++++++++++++++++++++++
+ experiments/e3_run.sh            |  74 ++++++++++++++++
+ experiments/e3_t2_validate.py    | 166 ++++++++++++++++++++++++++++++++++++
+ results/e3/e3_t2_validation.json |  16 ++++
+ 6 files changed, 623 insertions(+)
+
+commit db450839bd636b4d4233c26568acad104ce97b9b
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 04:29:15 +0900
+
+    E2 = GO: formation proven, sole critical gate passed
+    
+    - C-L0 curve 0.04/0.20/0.48/0.96, p~0, McNemar 46 improved / 0 worsened
+    - C-L1rep curve 0.74/0.92/0.86/0.96, p=0.001; both reach teacher level
+    - Preregistered test passed on both clusters -> overall GO; risk R1 retired
+    - Side finding: intra-suite formation-speed spread (N*=20 vs 80) -> E3 hypothesis
+    - Anchor 5: ACT train (n=40, warm-start) 181.8s ~= 2,137 VLA-call equivalents
+    
+    Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+
+ log.md                                    |   32 +
+ results/e1/e1_latency.json                |    5 +-
+ results/e2/e2_gonogo.json                 |   43 ++
+ results/e2/libero_object_task0_curve.json | 1047 +++++++++++++++++++++++++++++
+ results/e2/libero_object_task5_curve.json | 1047 +++++++++++++++++++++++++++++
+ 5 files changed, 2173 insertions(+), 1 deletion(-)
+
+commit 907aadf8e5cb9f2a590e989aa60d14301d627d24
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 03:23:44 +0900
+
+    E1 complete: S_V all suites PASS (96.8-99.6%), latency anchors measured
+    
+    - e1_sv: 1000 eps, all suites >= 0.968 vs 0.85 bar; no relaxation needed
+    - e1_latency: OFT chunk 85.07ms vs ACT 3.36ms (0.040x) vs gate path 3.96ms
+      (0.047x); hidden states are a byproduct of OFT predict_action forward ->
+      hidden-gate arm pays full VLA forward cost (cost-axis anchor)
+    - prereg 4d: E2 cluster identities registered pre-collection (object task0/5)
+    - e2_run.sh + e2_collect.py: full E2 pipeline with preregistered test
+    - sklearn added to hv2_oft (E5 single-process requirement)
+    
+    Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+
+ configs/preregistration.md |  11 ++
+ experiments/e1_latency.py  | 137 ++++++++++++++++++++
+ experiments/e2_collect.py  | 106 ++++++++++++++++
+ experiments/e2_run.sh      |  58 +++++++++
+ log.md                     |  41 ++++++
+ results/e1/e1_latency.json |  35 ++++++
+ results/e1/e1_sv.json      | 306 +++++++++++++++++++++++++++++++++++++++++++++
+ 7 files changed, 694 insertions(+)
+
+commit 301db075e0773e395bb42d682089f1493f2a4bb9
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 01:24:54 +0900
+
+    Apply 26 confirmed infra findings; critical process_action bug caught pre-data
+    
+    Critical: collector now applies official process_action (gripper [0,1]->
+    {-1,+1} binarize + sign invert) before env.step and stores processed
+    actions — BC targets in env-execution space; HDF5 schema v2
+    
+    Major: FrozenBatchNorm2d backbone (ACT/DETR standard); jurisdiction gate
+    shuffled split (parity bias with base_idx cycling), min-N guard,
+    finite-sample conformal quantile; incremental HDF5 writes with finally-meta
+    
+    Minor: ImageNet RGB normalization; additional_pos_embed; per-cluster
+    normalization stats frozen at max-n pool; lr_backbone group wired;
+    InfraError for model-side exceptions; seed order matches official; ACI
+    constants registered in prereg 4c; jurisdiction_unfit vs out_of_jurisdiction
+    reasons; prep_gate_rgb input contract; pretrained=False at eval; TORCH_HOME
+    isolation; storage estimates corrected
+    
+    Smoke-verified: ACT forward/loss, gate quantile/accepts, maturity semantics,
+    lifecycle branches. E1 S_V: spatial 246/250 (98.4%), object in progress.
+    
+    Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+
+ MUJOCO_LOG.TXT             |   3 +
+ configs/preregistration.md |  15 ++++-
+ envs/libero_env.py         |  21 ++++++
+ gates/features.py          |  27 +++++++-
+ gates/two_stage.py         |  42 +++++++++---
+ habits/act.py              |  20 ++++--
+ habits/dataset.py          |  13 +++-
+ habits/policy.py           |  11 ++--
+ habits/train.py            |  30 +++++++--
+ log.md                     |  70 ++++++++++++++++++++
+ teacher/collector.py       | 158 ++++++++++++++++++++++++++-------------------
+ 11 files changed, 310 insertions(+), 100 deletions(-)
+
+commit f85b011107db9f03a2ded78656bc44c46a28a035
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 01:07:16 +0900
+
+    Infra: envs wrapper, stream specs, teacher collector, ACT, gates, evaluator
+    
+    - envs/libero_env.py: episode-level reproducibility protocol (seed->reset->
+      set_init_state, E0-6), depth on, InfraError raised (never masked as policy
+      failure), per-suite usable_w_max limits, EpisodeSpec deterministic ids
+    - envs/stream.py: collection/heldout/novel spec generators with triple
+      disjointness (base_idx 0-39/40-49, seed bands, noise bands), w_id=0.01
+    - teacher/collector.py: official OFT load+preprocess path, dual ledger
+      (stats keep failures, BC pool successes only), RGB-D 128 storage, HDF5
+    - habits/: standard ACT (CVAE+transformer, ResNet18 4ch RGB-D x2 cams, K=8
+      matching teacher requery), dataset, n-grid warm-start trainer, policy,
+      paired held-out evaluator
+    - gates/: DINOv2-S/14 + shared PCA(32), Mahalanobis jurisdiction with
+      Ledoit-Wolf + calibration quantile, Beta-Bernoulli maturity, ACI risk
+      controller, lifecycle dispatcher (unknown/immature/fire)
+    - preregistration 4b: stream/heldout numeric spec registered (approval pending)
+    
+    E1 S_V measurement running in background meanwhile.
+    
+    Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+
+ configs/preregistration.md   |  13 +++
+ envs/__init__.py             |   0
+ envs/libero_env.py           | 174 +++++++++++++++++++++++++++++++++
+ envs/stream.py               |  87 +++++++++++++++++
+ experiments/e1_sv.sh         |  39 ++++++++
+ experiments/e1_sv_collect.py | 150 +++++++++++++++++++++++++++++
+ gates/__init__.py            |   0
+ gates/features.py            |  65 +++++++++++++
+ gates/two_stage.py           | 143 ++++++++++++++++++++++++++++
+ habits/__init__.py           |   0
+ habits/act.py                | 163 +++++++++++++++++++++++++++++++
+ habits/dataset.py            |  99 +++++++++++++++++++
+ habits/evaluate.py           | 101 ++++++++++++++++++++
+ habits/policy.py             |  66 +++++++++++++
+ habits/train.py              | 131 +++++++++++++++++++++++++
+ teacher/__init__.py          |   0
+ teacher/collector.py         | 222 +++++++++++++++++++++++++++++++++++++++++++
+ 17 files changed, 1453 insertions(+)
+
+commit e5757fde2062e265e751991ebd9f06cede707450
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 00:59:04 +0900
+
+    Apply 27 confirmed findings from adversarial verification workflow
+    
+    Critical (rebuild reproducibility):
+    - setup_envs.sh fully rewritten: LIBERO pin checkout + both local patches
+      via git apply + editable compat + mujoco/numpy/opencv repins + third_party
+      openvla-oft install + .libero/config.yaml generation, idempotent
+    - E0_INSTRUCTIONS now points to setup_envs.sh as canonical rebuild path
+    
+    Verdict robustness:
+    - smoke collector: partial/crashed logs can never PASS (completeness n in
+      {10,20} required); RECHECK rule aligned with documented ISSUE-7 proposal
+    - smoke driver: PIPESTATUS exit check per suite, mkdir -p, TRIALS/SUITES
+      override for recheck runs
+    - env-var guards (LIBERO_CONFIG_PATH/HF_HOME/MUJOCO_GL setdefault) in all
+      E0 scripts to prevent shared-cache pollution
+    
+    E0-6 strengthened and extended to all 4 suites:
+    - nondegenerate+monotone variance on usable sub-grid, xy-settle validity,
+      invalid samples excluded from variance
+    - NEW FINDING: usable perturbation width is scene-density dependent
+      (Long task0 w=0.04 collapses to 3/8 valid; all suites OK at w<=0.02)
+    - criterion refined to per-suite usable_w_max >= 0.02, recorded in
+      preregistration 2b with change history (researcher approval pending)
+    
+    Preregistration gaps closed: E0 go criteria + published per-suite baselines
+    (97.6/98.4/97.9/94.5) + recheck rule now in configs/preregistration.md 2b;
+    E3=28 derivation disambiguated (T2=2, T3=3); E2=2 sourced.
+    
+    Budget renamed estimate (not upper bound) with 4 explicit caveats.
+    
+    Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+
+ configs/preregistration.md         |  32 +++-
+ docs/E0_INSTRUCTIONS.md            |  18 ++-
+ envs/setup_envs.sh                 |  97 ++++++++++--
+ experiments/e0_ckpt_load.py        |   5 +
+ experiments/e0_depth_check.py      |   5 +
+ experiments/e0_env_registry.py     |   4 +
+ experiments/e0_smoke.sh            |  17 ++-
+ experiments/e0_smoke_collect.py    |  41 ++++--
+ experiments/e0_variation_check.py  | 179 ++++++++++++++--------
+ experiments/e0_walltime_collect.py |  36 +++--
+ log.md                             |  62 ++++++++
+ results/e0/e0_5_smoke.json         |   8 +
+ results/e0/e0_6_variation.json     | 294 ++++++++++++++++++++++++++++++-------
+ results/e0/e0_7_walltime.json      |  18 ++-
+ 14 files changed, 649 insertions(+), 167 deletions(-)
+
+commit d96b7df2c75d3968ae3c363fe768c4ac74037886
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 00:36:16 +0900
+
+    E0 complete: all 7 items PASS, smoke 40/40, budget re-estimated to ~22.5h rollouts
+    
+    - E0-4: 4 checkpoints downloaded to project HF_HOME (60G), load+forward verified
+      (VRAM peak 16.1GB bf16, chunk (8,7), attn=sdpa)
+    - E0-5: per-suite 10-task x 1-ep smoke = 10/10 on all four suites
+      (+1.6..+5.5pp vs published) -> ISSUE-1 device-mismatch risk refuted
+    - E0-7: teacher episode mean 6.1s (success-only, lower-bound caveat logged);
+      E1+E2+E3+E5 rollout upper bound ~22.5h vs design estimate 200-350 GPU-h
+    - e0_walltime_collect: parser fixed for rich log format (sporadic timestamps)
+    - E0 gate decision: GO for E1
+    
+    Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+
+ experiments/e0_ckpt_load.py        | 96 ++++++++++++++++++++++++++++++++++++++
+ experiments/e0_walltime_collect.py | 94 +++++++++++++++++++++++++++++++++++++
+ log.md                             | 43 +++++++++++++++++
+ results/e0/e0_4_ckpt.json          | 58 +++++++++++++++++++++++
+ results/e0/e0_4a_download.json     | 18 +++++++
+ results/e0/e0_5_smoke.json         | 91 ++++++++++++++++++++++++++++++++++++
+ results/e0/e0_7_walltime.json      | 45 ++++++++++++++++++
+ 7 files changed, 445 insertions(+)
+
+commit 59a8740d17646c083f73aa0e41f5abb561f7bc27
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 00:25:42 +0900
+
+    E0-1/2/3/6 PASS: envs, LIBERO pin, depth, init-state variation control
+    
+    - hv2_oft (vla_oft clone) + hv2_hab (py3.11) both with LIBERO 8f1084e editable
+      (compat mode), robosuite 1.4.1, mujoco 3.1.6, numpy 1.26.4 pins
+    - e0_depth_check: agentview+wrist depth (256,256,1) f32 normalized [0,1] PASS
+    - e0_variation_check: perturbation-path width parameterization monotone,
+      100% valid, fully reproducible; BDDL resampling path verified
+    - Reproducibility protocol established: seed -> reset -> set_init_state
+      (controller state carry-over and RNG stream drift both measured and fixed)
+    - e0_env_registry: version/CUDA JSON + task_registry.json (40 task languages)
+    - LIBERO local patch (torch.load weights_only) saved as configs patch
+    - e0_smoke.sh + collector ready; checkpoint download in progress
+    
+    Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+
+ .libero/config.yaml               |   5 +
+ configs/libero_local.patch        |  13 ++
+ configs/openvla_oft_local.patch   |  50 +++++
+ configs/task_registry.json        |  50 +++++
+ envs/setup_envs.sh                |  23 ++
+ experiments/e0_depth_check.py     | 105 ++++++++++
+ experiments/e0_download_ckpts.py  |  16 ++
+ experiments/e0_env_registry.py    | 131 ++++++++++++
+ experiments/e0_smoke.sh           |  32 +++
+ experiments/e0_smoke_collect.py   |  69 ++++++
+ experiments/e0_variation_check.py | 193 +++++++++++++++++
+ log.md                            |  75 +++++++
+ results/e0/e0_1_envs.json         |  44 ++++
+ results/e0/e0_2_libero.json       | 427 ++++++++++++++++++++++++++++++++++++++
+ results/e0/e0_3_depth.json        |  83 ++++++++
+ results/e0/e0_6_variation.json    |  53 +++++
+ 16 files changed, 1369 insertions(+)
+
+commit 26654d123eadeebfcd4782a8eb0b8e7922719984
+Author: gnukim <hj.kim@gnu.ac.kr>
+Date:   2026-08-15 00:07:52 +0900
+
+    Bootstrap HabitVLA-2 repo: design context, frozen preregistration, E0 instructions
+    
+    - CLAUDE.md: design doc v1.0 sections 0-5 summary + carried-over work principles
+    - configs/preregistration.md: section 7 numbers frozen (pending researcher approval)
+    - docs/E0_INSTRUCTIONS.md: E0 checklist with pass criteria and PASS-marker log format
+    - log.md: running progress/issue log; first entry records asset survey + 8 issues
+    - .gitignore: excludes HF cache, checkpoints, trajectories, rollouts
+    
+    Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+
+ .gitignore                 |  40 ++++++++++
+ CLAUDE.md                  | 179 +++++++++++++++++++++++++++++++++++++++++++++
+ configs/preregistration.md |  70 ++++++++++++++++++
+ docs/E0_INSTRUCTIONS.md    | 164 +++++++++++++++++++++++++++++++++++++++++
+ log.md                     |  88 ++++++++++++++++++++++
+ logs/.gitkeep              |   0
+ results/.gitkeep           |   0
+ 7 files changed, 541 insertions(+)

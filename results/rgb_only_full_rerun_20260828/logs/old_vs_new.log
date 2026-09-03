@@ -1,0 +1,4 @@
+
+===== old_vs_new attempt=0 start=2026-08-31 20:38:06 =====
+/home/asmr/miniconda3/envs/hv2_hab/bin/python -u experiments/rgb_only_rerun/old_vs_new.py
+[OLDVSNEW-DONE] rows=159 families=['batch', 'compute', 'online', 'paired']

@@ -1,0 +1,16 @@
+{
+ "verdict": "PASS",
+ "checks": {
+  "training_runs": true,
+  "checkpoint_saved": true,
+  "ckpt_use_depth_false": true,
+  "ckpt_in_ch_3": true,
+  "ckpt_steps_as_specified": true,
+  "policy_use_depth_false": true,
+  "policy_conv1_is_3ch": true,
+  "inference_runs": true,
+  "success_evaluation_works": true,
+  "logging_per_episode": true,
+  "no_infra_error": true
+ }
+}

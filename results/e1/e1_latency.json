@@ -1,0 +1,43 @@
+{
+  "attn": "sdpa (flash-attn 미빌드, sm_120)",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "anchor1_oft_chunk_forward": {
+    "median_ms": 85.07,
+    "mean_ms": 84.96,
+    "p95_ms": 85.43,
+    "n": 100
+  },
+  "anchor4_hidden_extract": {
+    "same_cost_as_anchor1": true,
+    "evidence": "modeling_prismatic.py predict_action: output_hidden_states=True, hidden_states[-1] 사용",
+    "implication": "히든 gate arm은 VLA forward 비용을 그대로 지불 — 주 gate 경로(anchor3) 대비 비용 축 비교의 앵커"
+  },
+  "anchor2_act_forward": {
+    "median_ms": 3.36,
+    "mean_ms": 3.36,
+    "p95_ms": 3.37,
+    "n": 100
+  },
+  "anchor3_gate_path": {
+    "median_ms": 3.96,
+    "mean_ms": 4.12,
+    "p95_ms": 4.35,
+    "n": 100
+  },
+  "anchor5_act_train_n40": {
+    "train_seconds": 181.8,
+    "source": "checkpoints/libero_object_task0/train_summary.json (E2 C-L0, warm-start from n=20)",
+    "vla_call_equivalents": 2137.0,
+    "note": "손익분기(F5): 재학습 1회 비용 ≈ 2,137 VLA-호출 등가"
+  },
+  "ratios": {
+    "act_over_oft": 0.0395,
+    "gate_over_oft": 0.0465,
+    "note": "VLA-호출 등가 환산의 분모 = anchor1 (per-chunk, 8 steps)",
+    "basis": {
+      "per_chunk_speedup": 25.32,
+      "conservative_floor_speedup": 11.62,
+      "note": "중앙값 기준, 프로그래밍 산출 (T0-3e). per_chunk = anchor1/anchor2 (gate는 에피소드당 1회 — 발화 시 스텝당 회계); conservative_floor = anchor1/(anchor2+anchor3) (gate를 chunk마다 계상한 보수 하한). F3 수식은 사용하는 basis를 명기할 것."
+    }
+  }
+}

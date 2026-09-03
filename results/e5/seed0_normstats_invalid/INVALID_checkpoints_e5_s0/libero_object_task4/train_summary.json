@@ -1,0 +1,10 @@
+{
+  "cluster": "libero_object_task4",
+  "results": [
+    {
+      "n": 80,
+      "final_l1": 0.08835868868976832,
+      "train_seconds": 225.5
+    }
+  ]
+}

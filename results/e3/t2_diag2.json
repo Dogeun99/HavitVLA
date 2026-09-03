@@ -1,0 +1,306 @@
+{
+  "a_base0_collectnoise": {
+    "success": true,
+    "steps": 124,
+    "tomato_body": "tomato_sauce_1_main",
+    "basket_body": "basket_1_main",
+    "final_tomato": [
+      -0.029,
+      0.247,
+      0.111
+    ],
+    "final_basket": [
+      -0.011,
+      0.254,
+      -0.005
+    ],
+    "tomato_geometrically_in_basket_xy": true,
+    "predicate_final": true,
+    "trace_tail": [
+      {
+        "t": 104,
+        "succ": false,
+        "tomato": [
+          -0.021,
+          0.238,
+          0.224
+        ],
+        "basket": [
+          -0.011,
+          0.254,
+          -0.005
+        ]
+      },
+      {
+        "t": 112,
+        "succ": false,
+        "tomato": [
+          -0.024,
+          0.253,
+          0.17
+        ],
+        "basket": [
+          -0.011,
+          0.254,
+          -0.005
+        ]
+      },
+      {
+        "t": 120,
+        "succ": false,
+        "tomato": [
+          -0.028,
+          0.249,
+          0.168
+        ],
+        "basket": [
+          -0.011,
+          0.254,
+          -0.005
+        ]
+      },
+      {
+        "t": 124,
+        "succ": true,
+        "tomato": [
+          -0.029,
+          0.247,
+          0.111
+        ],
+        "basket": [
+          -0.011,
+          0.254,
+          -0.005
+        ]
+      }
+    ]
+  },
+  "b_base17_collectnoise": {
+    "success": false,
+    "steps": 280,
+    "tomato_body": "tomato_sauce_1_main",
+    "basket_body": "basket_1_main",
+    "final_tomato": [
+      0.057,
+      -0.107,
+      0.038
+    ],
+    "final_basket": [
+      -0.01,
+      0.25,
+      -0.005
+    ],
+    "tomato_geometrically_in_basket_xy": false,
+    "predicate_final": false,
+    "trace_tail": [
+      {
+        "t": 256,
+        "succ": false,
+        "tomato": [
+          0.057,
+          -0.107,
+          0.038
+        ],
+        "basket": [
+          -0.01,
+          0.25,
+          -0.005
+        ]
+      },
+      {
+        "t": 264,
+        "succ": false,
+        "tomato": [
+          0.057,
+          -0.107,
+          0.038
+        ],
+        "basket": [
+          -0.01,
+          0.25,
+          -0.005
+        ]
+      },
+      {
+        "t": 272,
+        "succ": false,
+        "tomato": [
+          0.057,
+          -0.107,
+          0.038
+        ],
+        "basket": [
+          -0.01,
+          0.25,
+          -0.005
+        ]
+      },
+      {
+        "t": 280,
+        "succ": false,
+        "tomato": [
+          0.057,
+          -0.107,
+          0.038
+        ],
+        "basket": [
+          -0.01,
+          0.25,
+          -0.005
+        ]
+      }
+    ]
+  },
+  "c_base17_w0": {
+    "success": false,
+    "steps": 280,
+    "tomato_body": "tomato_sauce_1_main",
+    "basket_body": "basket_1_main",
+    "final_tomato": [
+      0.05,
+      -0.1,
+      0.038
+    ],
+    "final_basket": [
+      -0.011,
+      0.252,
+      -0.005
+    ],
+    "tomato_geometrically_in_basket_xy": false,
+    "predicate_final": false,
+    "trace_tail": [
+      {
+        "t": 256,
+        "succ": false,
+        "tomato": [
+          0.05,
+          -0.1,
+          0.038
+        ],
+        "basket": [
+          -0.011,
+          0.252,
+          -0.005
+        ]
+      },
+      {
+        "t": 264,
+        "succ": false,
+        "tomato": [
+          0.05,
+          -0.1,
+          0.038
+        ],
+        "basket": [
+          -0.011,
+          0.252,
+          -0.005
+        ]
+      },
+      {
+        "t": 272,
+        "succ": false,
+        "tomato": [
+          0.05,
+          -0.1,
+          0.038
+        ],
+        "basket": [
+          -0.011,
+          0.252,
+          -0.005
+        ]
+      },
+      {
+        "t": 280,
+        "succ": false,
+        "tomato": [
+          0.05,
+          -0.1,
+          0.038
+        ],
+        "basket": [
+          -0.011,
+          0.252,
+          -0.005
+        ]
+      }
+    ]
+  },
+  "d_base17_relocnoise": {
+    "success": false,
+    "steps": 280,
+    "tomato_body": "tomato_sauce_1_main",
+    "basket_body": "basket_1_main",
+    "final_tomato": [
+      0.052,
+      -0.098,
+      0.038
+    ],
+    "final_basket": [
+      -0.008,
+      0.259,
+      -0.005
+    ],
+    "tomato_geometrically_in_basket_xy": false,
+    "predicate_final": false,
+    "trace_tail": [
+      {
+        "t": 256,
+        "succ": false,
+        "tomato": [
+          0.052,
+          -0.098,
+          0.038
+        ],
+        "basket": [
+          -0.008,
+          0.259,
+          -0.005
+        ]
+      },
+      {
+        "t": 264,
+        "succ": false,
+        "tomato": [
+          0.052,
+          -0.098,
+          0.038
+        ],
+        "basket": [
+          -0.008,
+          0.259,
+          -0.005
+        ]
+      },
+      {
+        "t": 272,
+        "succ": false,
+        "tomato": [
+          0.052,
+          -0.098,
+          0.038
+        ],
+        "basket": [
+          -0.008,
+          0.259,
+          -0.005
+        ]
+      },
+      {
+        "t": 280,
+        "succ": false,
+        "tomato": [
+          0.052,
+          -0.098,
+          0.038
+        ],
+        "basket": [
+          -0.008,
+          0.259,
+          -0.005
+        ]
+      }
+    ]
+  }
+}

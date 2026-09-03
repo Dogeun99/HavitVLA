@@ -1,0 +1,244 @@
+{
+  "note": "scorer 진단 프레임 (E4 종결 시퀀스 2). AUC = known vs novel주. 행5 재보정: AUC 불변(임계 무관 — 명기), FR만 재측정.",
+  "rows": {
+    "1_jurisdiction_mahalanobis": {
+      "cost_ms": 4.0,
+      "macro_auc": 0.6576,
+      "mean_fr": 0.264,
+      "suite_auc": {
+        "libero_10": 0.4812,
+        "libero_goal": 0.5805,
+        "libero_object": 0.7711,
+        "libero_spatial": 0.7401
+      }
+    },
+    "2_feasibility_head": {
+      "cost_ms": 4.0,
+      "macro_auc": 0.5435,
+      "mean_fr": 0.11,
+      "suite_auc": {
+        "libero_10": 0.5576,
+        "libero_goal": 0.5398,
+        "libero_object": 0.572,
+        "libero_spatial": 0.3987
+      },
+      "note": "실패 I₀ 재렌더로 학습 표본 복원 (~3% 양성 — class-weighted)"
+    },
+    "4_oracle_band_gt": {
+      "cost_ms": 0.0,
+      "macro_auc": 1.0,
+      "mean_fr": 0.0,
+      "note": "스펙 대역 GT — 명목 상한"
+    },
+    "5_jurisdiction_recalibrated": {
+      "cost_ms": 4.0,
+      "macro_auc": 0.6576,
+      "auc_note": "AUC 불변 — 임계 무관 (명기)",
+      "mean_fr": 0.06,
+      "mean_fr_before": 0.264,
+      "procedure": "known 50:50 보정/평가 (seed 0), q' = 유한표본 분위수(n=10 → max), FR은 평가 half만"
+    }
+  },
+  "per_cluster": {
+    "libero_object_task0": {
+      "jur_auc": 0.7053,
+      "jur_fr": 0.55,
+      "feas_auc": 0.6079,
+      "feas_fr": 0.0,
+      "recal_q": 10.339,
+      "recal_fr_evalhalf": 0.1
+    },
+    "libero_object_task1": {
+      "jur_auc": 0.805,
+      "jur_fr": 0.45,
+      "feas_auc": 0.4975,
+      "feas_fr": 0.0,
+      "recal_q": 10.706,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_object_task2": {
+      "jur_auc": 0.98,
+      "jur_fr": 0.1,
+      "feas_auc": 0.695,
+      "feas_fr": 0.05,
+      "recal_q": 7.18,
+      "recal_fr_evalhalf": 0.2
+    },
+    "libero_object_task3": {
+      "jur_auc": 0.7025,
+      "jur_fr": 0.45,
+      "feas_auc": 0.615,
+      "feas_fr": 0.1,
+      "recal_q": 12.908,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_object_task4": {
+      "jur_auc": 0.7658,
+      "jur_fr": 0.35,
+      "feas_auc": 0.5763,
+      "feas_fr": 0.0,
+      "recal_q": 7.744,
+      "recal_fr_evalhalf": 0.2
+    },
+    "libero_object_task5": {
+      "jur_auc": 0.6842,
+      "jur_fr": 0.15,
+      "feas_auc": 0.5895,
+      "feas_fr": 0.1,
+      "recal_q": 7.981,
+      "recal_fr_evalhalf": 0.1
+    },
+    "libero_object_task6": {
+      "jur_auc": 0.7882,
+      "jur_fr": 0.25,
+      "feas_auc": 0.6088,
+      "feas_fr": 0.15,
+      "recal_q": 8.863,
+      "recal_fr_evalhalf": 0.2
+    },
+    "libero_object_task7": {
+      "jur_auc": 0.7875,
+      "jur_fr": 0.2,
+      "feas_auc": 0.535,
+      "feas_fr": 0.45,
+      "recal_q": 8.16,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_object_task8": {
+      "jur_auc": 0.745,
+      "jur_fr": 0.2,
+      "feas_auc": 0.525,
+      "feas_fr": 0.15,
+      "recal_q": 8.033,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_object_task9": {
+      "jur_auc": 0.7475,
+      "jur_fr": 0.35,
+      "feas_auc": 0.47,
+      "feas_fr": 0.0,
+      "recal_q": 8.507,
+      "recal_fr_evalhalf": 0.1
+    },
+    "libero_goal_task0": {
+      "jur_auc": 0.61,
+      "jur_fr": 0.45,
+      "feas_auc": 0.54,
+      "feas_fr": 0.2,
+      "recal_q": 6.784,
+      "recal_fr_evalhalf": 0.1
+    },
+    "libero_goal_task1": {
+      "jur_auc": 0.675,
+      "jur_fr": 0.3,
+      "feas_auc": 0.65,
+      "feas_fr": 0.1,
+      "recal_q": 7.643,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_goal_task2": {
+      "jur_auc": 0.59,
+      "jur_fr": 0.15,
+      "feas_auc": 0.5375,
+      "feas_fr": 0.1,
+      "recal_q": 8.158,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_goal_task3": {
+      "jur_auc": 0.5575,
+      "jur_fr": 0.3,
+      "feas_auc": 0.535,
+      "feas_fr": 0.2,
+      "recal_q": 7.775,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_goal_task4": {
+      "jur_auc": 0.4861,
+      "jur_fr": 0.5,
+      "feas_auc": 0.5056,
+      "feas_fr": 0.1,
+      "recal_q": 7.466,
+      "recal_fr_evalhalf": 0.1
+    },
+    "libero_goal_task5": {
+      "jur_auc": 0.6447,
+      "jur_fr": 0.15,
+      "feas_auc": 0.5211,
+      "feas_fr": 0.0,
+      "recal_q": 7.162,
+      "recal_fr_evalhalf": 0.1
+    },
+    "libero_goal_task6": {
+      "jur_auc": 0.5278,
+      "jur_fr": 0.45,
+      "feas_auc": 0.5278,
+      "feas_fr": 0.2,
+      "recal_q": 9.071,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_goal_task7": {
+      "jur_auc": 0.4395,
+      "jur_fr": 0.2,
+      "feas_auc": 0.5289,
+      "feas_fr": 0.0,
+      "recal_q": 7.15,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_goal_task8": {
+      "jur_auc": 0.63,
+      "jur_fr": 0.4,
+      "feas_auc": 0.5575,
+      "feas_fr": 0.15,
+      "recal_q": 7.869,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_goal_task9": {
+      "jur_auc": 0.6447,
+      "jur_fr": 0.1,
+      "feas_auc": 0.4947,
+      "feas_fr": 0.05,
+      "recal_q": 8.618,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_spatial_task0": {
+      "jur_auc": 0.7579,
+      "jur_fr": 0.1,
+      "feas_auc": 0.3026,
+      "feas_fr": 0.2,
+      "recal_q": 7.46,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_spatial_task1": {
+      "jur_auc": 0.7224,
+      "jur_fr": 0.2,
+      "feas_auc": 0.4947,
+      "feas_fr": 0.0,
+      "recal_q": 6.744,
+      "recal_fr_evalhalf": 0.2
+    },
+    "libero_10_task0": {
+      "jur_auc": 0.4536,
+      "jur_fr": 0.0,
+      "feas_auc": 0.5929,
+      "feas_fr": 0.45,
+      "recal_q": 8.321,
+      "recal_fr_evalhalf": 0.0
+    },
+    "libero_10_task2": {
+      "jur_auc": 0.4375,
+      "jur_fr": 0.0,
+      "feas_auc": 0.6,
+      "feas_fr": 0.0,
+      "recal_q": 6.876,
+      "recal_fr_evalhalf": 0.1
+    },
+    "libero_10_task5": {
+      "jur_auc": 0.5525,
+      "jur_fr": 0.25,
+      "feas_auc": 0.48,
+      "feas_fr": 0.0,
+      "recal_q": 10.964,
+      "recal_fr_evalhalf": 0.0
+    }
+  }
+}

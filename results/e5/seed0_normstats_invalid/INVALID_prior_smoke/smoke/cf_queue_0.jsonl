@@ -1,0 +1,12 @@
+{"uid": "08ec239f1a71a6f9", "suite": "libero_goal", "task_id": 2, "seed": 70028, "base_idx": 28, "w": 0.01, "noise_seed": 6000028, "cluster": "libero_goal_task2", "habit_success": true}
+{"uid": "7a12bdb40da86556", "suite": "libero_goal", "task_id": 2, "seed": 70032, "base_idx": 32, "w": 0.01, "noise_seed": 6000032, "cluster": "libero_goal_task2", "habit_success": true}
+{"uid": "15afcfa47ec3f3e0", "suite": "libero_goal", "task_id": 2, "seed": 70033, "base_idx": 33, "w": 0.01, "noise_seed": 6000033, "cluster": "libero_goal_task2", "habit_success": true}
+{"uid": "9b4fc66a2af4ed0d", "suite": "libero_goal", "task_id": 2, "seed": 70035, "base_idx": 35, "w": 0.01, "noise_seed": 6000035, "cluster": "libero_goal_task2", "habit_success": true}
+{"uid": "d35a65b252c06572", "suite": "libero_goal", "task_id": 2, "seed": 70036, "base_idx": 36, "w": 0.01, "noise_seed": 6000036, "cluster": "libero_goal_task2", "habit_success": true}
+{"uid": "83e54bfb86fa7185", "suite": "libero_goal", "task_id": 2, "seed": 70039, "base_idx": 39, "w": 0.01, "noise_seed": 6000039, "cluster": "libero_goal_task2", "habit_success": true}
+{"uid": "7d7c758910339aff", "suite": "libero_goal", "task_id": 2, "seed": 70040, "base_idx": 0, "w": 0.01, "noise_seed": 6000040, "cluster": "libero_goal_task2", "habit_success": false}
+{"uid": "bd93ed2a2c0f272a", "suite": "libero_goal", "task_id": 2, "seed": 70041, "base_idx": 1, "w": 0.01, "noise_seed": 6000041, "cluster": "libero_goal_task2", "habit_success": true}
+{"uid": "f10b759be834446b", "suite": "libero_goal", "task_id": 2, "seed": 70042, "base_idx": 2, "w": 0.01, "noise_seed": 6000042, "cluster": "libero_goal_task2", "habit_success": true}
+{"uid": "9ce0cb5628752df4", "suite": "libero_goal", "task_id": 2, "seed": 70044, "base_idx": 4, "w": 0.01, "noise_seed": 6000044, "cluster": "libero_goal_task2", "habit_success": true}
+{"uid": "9eb0edc27ffc93e6", "suite": "libero_goal", "task_id": 2, "seed": 70047, "base_idx": 7, "w": 0.01, "noise_seed": 6000047, "cluster": "libero_goal_task2", "habit_success": true}
+{"uid": "5d03805302d510ed", "suite": "libero_goal", "task_id": 2, "seed": 70048, "base_idx": 8, "w": 0.01, "noise_seed": 6000048, "cluster": "libero_goal_task2", "habit_success": true}

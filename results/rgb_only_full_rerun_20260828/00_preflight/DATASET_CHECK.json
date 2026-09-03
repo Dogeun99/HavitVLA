@@ -1,0 +1,954 @@
+{
+ "run_id": "rgb_only_full_rerun_20260828",
+ "dataset": {
+  "n_clusters": 27,
+  "clusters": [
+   {
+    "cluster": "libero_object_task0",
+    "h5": "data/e2/libero_object_task0.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 117,
+    "n_episode_groups": 117,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     18,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     18,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_object_task1",
+    "h5": "data/e3/libero_object_task1.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 118,
+    "n_episode_groups": 118,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     16,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     16,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_object_task2",
+    "h5": "data/e3/libero_object_task2.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 117,
+    "n_episode_groups": 117,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     15,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     15,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_object_task3",
+    "h5": "data/e3/libero_object_task3.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 116,
+    "n_episode_groups": 116,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     14,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     14,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_object_task4",
+    "h5": "data/e3/libero_object_task4.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 119,
+    "n_episode_groups": 119,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     19,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     19,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_object_task5",
+    "h5": "data/e2/libero_object_task5.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 112,
+    "n_episode_groups": 112,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     16,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     16,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_object_task6",
+    "h5": "data/e3/libero_object_task6.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 120,
+    "n_episode_groups": 120,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     21,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     21,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_object_task7",
+    "h5": "data/e3/libero_object_task7.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 116,
+    "n_episode_groups": 116,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     16,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     16,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_object_task8",
+    "h5": "data/e3/libero_object_task8.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 117,
+    "n_episode_groups": 117,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     18,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     18,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_object_task9",
+    "h5": "data/e3/libero_object_task9.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 118,
+    "n_episode_groups": 118,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     16,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     16,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_goal_task0",
+    "h5": "data/e3/libero_goal_task0.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 110,
+    "n_episode_groups": 110,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     18,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     18,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_goal_task1",
+    "h5": "data/e3/libero_goal_task1.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 118,
+    "n_episode_groups": 118,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     11,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     11,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_goal_task2",
+    "h5": "data/e3/libero_goal_task2.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 119,
+    "n_episode_groups": 119,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     11,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     11,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_goal_task3",
+    "h5": "data/e3/libero_goal_task3.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 112,
+    "n_episode_groups": 112,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     24,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     24,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_goal_task4",
+    "h5": "data/e3/libero_goal_task4.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 115,
+    "n_episode_groups": 115,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     11,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     11,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_goal_task5",
+    "h5": "data/e3/libero_goal_task5.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 117,
+    "n_episode_groups": 117,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     16,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     16,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_goal_task6",
+    "h5": "data/e3/libero_goal_task6.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 119,
+    "n_episode_groups": 119,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     13,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     13,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_goal_task7",
+    "h5": "data/e3/libero_goal_task7.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 120,
+    "n_episode_groups": 120,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     11,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     11,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_goal_task8",
+    "h5": "data/e3/libero_goal_task8.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 118,
+    "n_episode_groups": 118,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     10,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     10,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_goal_task9",
+    "h5": "data/e3/libero_goal_task9.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 119,
+    "n_episode_groups": 119,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     20,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     20,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_spatial_task0",
+    "h5": "data/e3/libero_spatial_task0.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 114,
+    "n_episode_groups": 114,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     10,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     10,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_spatial_task1",
+    "h5": "data/e3/libero_spatial_task1.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 118,
+    "n_episode_groups": 118,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     14,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     14,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_10_task0",
+    "h5": "data/e3/libero_10_task0.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 109,
+    "n_episode_groups": 109,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     33,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     33,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_10_task2",
+    "h5": "data/e3/libero_10_task2.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 119,
+    "n_episode_groups": 119,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     31,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     31,
+     8
+    ]
+   },
+   {
+    "cluster": "libero_10_task5",
+    "h5": "data/e3/libero_10_task5.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 119,
+    "n_episode_groups": 119,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     22,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     22,
+     8
+    ]
+   },
+   {
+    "cluster": "chained_libero_object_task0",
+    "h5": "data/e3/chained_libero_object_task0.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 117,
+    "n_episode_groups": 117,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     38,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     38,
+     8
+    ]
+   },
+   {
+    "cluster": "chained_libero_object_task5",
+    "h5": "data/e3/chained_libero_object_task5.hdf5",
+    "exists": true,
+    "schema": "habitvla2-teacher-v2",
+    "n_meta": 120,
+    "n_success": 108,
+    "n_episode_groups": 108,
+    "episode_keys": [
+     "actions_flat",
+     "agentview_depth",
+     "agentview_rgb",
+     "chunk_lens",
+     "proprio",
+     "wrist_depth",
+     "wrist_rgb"
+    ],
+    "has_rgb": true,
+    "has_depth": true,
+    "has_proprio": true,
+    "has_actions": true,
+    "has_episode_id": true,
+    "has_success_label": true,
+    "rgb_shape": [
+     29,
+     128,
+     128,
+     3
+    ],
+    "rgb_dtype": "uint8",
+    "proprio_shape": [
+     29,
+     8
+    ]
+   }
+  ],
+  "problems": []
+ }
+}

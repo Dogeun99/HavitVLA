@@ -1,0 +1,306 @@
+{
+  "trials_per_task": 25,
+  "suites": {
+    "libero_spatial": {
+      "episodes": 250,
+      "successes": 246,
+      "S_V": 0.984,
+      "wilson_95": [
+        0.9596,
+        0.9938
+      ],
+      "status": "PASS",
+      "per_task": [
+        {
+          "task": "pick up the black bowl",
+          "n": 75,
+          "k": 75,
+          "rate": 1.0
+        },
+        {
+          "task": "pick up the black bowl on",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "pick up the black bowl in",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "pick up the black bowl on",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "pick up the black bowl",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "pick up the black bowl on",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "pick up the black bowl",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "pick up the black bowl on",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        }
+      ],
+      "walltime": {
+        "success_mean_s": 4.4,
+        "success_n": 246,
+        "fail_mean_s": 7.0,
+        "fail_n": 4
+      }
+    },
+    "libero_object": {
+      "episodes": 250,
+      "successes": 246,
+      "S_V": 0.984,
+      "wilson_95": [
+        0.9596,
+        0.9938
+      ],
+      "status": "PASS",
+      "per_task": [
+        {
+          "task": "pick up the alphabet soup",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "pick up the cream cheese",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "pick up the salad",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "pick up the bbq sauce and",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "pick up the ketchup and",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "pick up the tomato sauce",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "pick up the butter and",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "pick up the milk and",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "pick up the chocolate",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "pick up the orange juice",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        }
+      ],
+      "walltime": {
+        "success_mean_s": 4.5,
+        "success_n": 246,
+        "fail_mean_s": 7.5,
+        "fail_n": 4
+      }
+    },
+    "libero_goal": {
+      "episodes": 250,
+      "successes": 249,
+      "S_V": 0.996,
+      "wilson_95": [
+        0.9777,
+        0.9993
+      ],
+      "status": "PASS",
+      "per_task": [
+        {
+          "task": "open the middle drawer of",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "put the bowl on the stove",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "put the wine bottle on",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "open the top drawer and",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "put the bowl on top of",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "push the plate to the",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "put the cream cheese in",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "turn on the stove",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "put the bowl on the plate",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "put the wine bottle on",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        }
+      ],
+      "walltime": {
+        "success_mean_s": 4.0,
+        "success_n": 249,
+        "fail_mean_s": 8.0,
+        "fail_n": 1
+      }
+    },
+    "libero_10": {
+      "episodes": 250,
+      "successes": 242,
+      "S_V": 0.968,
+      "wilson_95": [
+        0.9381,
+        0.9837
+      ],
+      "status": "PASS",
+      "per_task": [
+        {
+          "task": "put both the alphabet",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "put both the cream cheese",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "turn on the stove and put",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "put the black bowl in the",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "put the white mug on the",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "pick up the book and",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "put the white mug on the",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        },
+        {
+          "task": "put both the alphabet",
+          "n": 25,
+          "k": 25,
+          "rate": 1.0
+        },
+        {
+          "task": "put both moka pots on the",
+          "n": 25,
+          "k": 21,
+          "rate": 0.84
+        },
+        {
+          "task": "put the yellow and white",
+          "n": 25,
+          "k": 24,
+          "rate": 0.96
+        }
+      ],
+      "walltime": {
+        "success_mean_s": 7.1,
+        "success_n": 242,
+        "fail_mean_s": 12.6,
+        "fail_n": 8
+      }
+    }
+  },
+  "status": "PASS"
+}

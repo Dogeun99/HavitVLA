@@ -1,0 +1,356 @@
+{
+  "n_seeds": 3,
+  "prereg_rule": "§5 2026-08-19 판독 4 — seed별 H4a·H4b 각각 산출, 종합은 평균±산포. 어느 seed에서든 판정이 뒤집히면 즉시 정지·보고(재량 진행 금지).",
+  "verdict": "3/3 seed 전 항목 PASS",
+  "H4a_call_rate": {
+    "per_seed": {
+      "0": {
+        "first1000": 0.887,
+        "last1000": 0.393,
+        "delta": 0.494,
+        "z": 23.013,
+        "p": "1.73e-117",
+        "verdict": "PASS"
+      },
+      "1": {
+        "first1000": 0.844,
+        "last1000": 0.454,
+        "delta": 0.39,
+        "z": 18.271,
+        "p": "6.98e-75",
+        "verdict": "PASS"
+      },
+      "2": {
+        "first1000": 0.891,
+        "last1000": 0.368,
+        "delta": 0.523,
+        "z": 24.216,
+        "p": "7.63e-130",
+        "verdict": "PASS"
+      }
+    },
+    "first1000": {
+      "mean": 0.874,
+      "sd": 0.0261,
+      "values": [
+        0.887,
+        0.844,
+        0.891
+      ]
+    },
+    "last1000": {
+      "mean": 0.405,
+      "sd": 0.0442,
+      "values": [
+        0.393,
+        0.454,
+        0.368
+      ]
+    },
+    "delta": {
+      "mean": 0.469,
+      "sd": 0.0699,
+      "values": [
+        0.494,
+        0.39,
+        0.523
+      ]
+    },
+    "all_pass": true
+  },
+  "H4b_noninferiority": {
+    "per_seed": {
+      "0": {
+        "system": 0.9627,
+        "full_vla": 0.964,
+        "diff": -0.0012,
+        "ci95": [
+          -0.005,
+          0.0025
+        ],
+        "n_paired": 4000,
+        "cf_missing": 0,
+        "ci_contains_zero": true,
+        "verdict": "PASS"
+      },
+      "1": {
+        "system": 0.956,
+        "full_vla": 0.9573,
+        "diff": -0.0013,
+        "ci95": [
+          -0.0058,
+          0.0033
+        ],
+        "n_paired": 4000,
+        "cf_missing": 0,
+        "ci_contains_zero": true,
+        "verdict": "PASS"
+      },
+      "2": {
+        "system": 0.9637,
+        "full_vla": 0.9675,
+        "diff": -0.0038,
+        "ci95": [
+          -0.0078,
+          0.0002
+        ],
+        "n_paired": 4000,
+        "cf_missing": 0,
+        "ci_contains_zero": true,
+        "verdict": "PASS"
+      }
+    },
+    "diff": {
+      "mean": -0.0021,
+      "sd": 0.0015,
+      "values": [
+        -0.0012,
+        -0.0013,
+        -0.0038
+      ]
+    },
+    "system_rate": {
+      "mean": 0.9608,
+      "sd": 0.0042,
+      "values": [
+        0.9627,
+        0.956,
+        0.9637
+      ]
+    },
+    "full_vla_rate": {
+      "mean": 0.9629,
+      "sd": 0.0052,
+      "values": [
+        0.964,
+        0.9573,
+        0.9675
+      ]
+    },
+    "margin": -0.03,
+    "all_pass": true,
+    "all_ci_contain_zero": true,
+    "ci_upper_min": 0.0002,
+    "equivalence_caveat": "CI가 0을 포함하면 '통계적으로 구별되지 않음' 서술이 가능하나 **동등성 검정을 별도로 수행하지 않았음**을 각주로 명시할 것 (§5 2026-08-19). 상한이 0에 근접한 seed는 이 서술이 약하다."
+  },
+  "risk_control": {
+    "per_seed": {
+      "0": {
+        "pr_fail_given_fire": 0.0234,
+        "ci95": [
+          0.017,
+          0.0323
+        ]
+      },
+      "1": {
+        "pr_fail_given_fire": 0.0362,
+        "ci95": [
+          0.0278,
+          0.047
+        ]
+      },
+      "2": {
+        "pr_fail_given_fire": 0.026,
+        "ci95": [
+          0.0193,
+          0.0349
+        ]
+      }
+    },
+    "pr_fail_given_fire": {
+      "mean": 0.0285,
+      "sd": 0.0068,
+      "values": [
+        0.0234,
+        0.0362,
+        0.026
+      ]
+    },
+    "epsilon": 0.2,
+    "all_within_bound": true
+  },
+  "system": {
+    "r_V_overall": {
+      "mean": 0.6152,
+      "sd": 0.019,
+      "values": [
+        0.616,
+        0.6338,
+        0.5958
+      ]
+    },
+    "system_success_rate": {
+      "mean": 0.9608,
+      "sd": 0.0042,
+      "values": [
+        0.9627,
+        0.956,
+        0.9637
+      ]
+    },
+    "n_fire": {
+      "mean": 1539.3,
+      "sd": 76.1,
+      "values": [
+        1536.0,
+        1465.0,
+        1617.0
+      ]
+    },
+    "fire_success_rate": {
+      "mean": 0.9715,
+      "sd": 0.0068,
+      "values": [
+        0.9766,
+        0.9638,
+        0.974
+      ]
+    }
+  },
+  "formation": {
+    "n_retrain": {
+      "mean": 50.7,
+      "sd": 0.6,
+      "values": [
+        51.0,
+        50.0,
+        51.0
+      ]
+    },
+    "n_passed": {
+      "mean": 22.0,
+      "sd": 1.0,
+      "values": [
+        22.0,
+        21.0,
+        23.0
+      ]
+    },
+    "pass_rate": {
+      "mean": 0.4341,
+      "sd": 0.0157,
+      "values": [
+        0.4314,
+        0.42,
+        0.451
+      ]
+    },
+    "by_grid_pass_rate": {
+      "20": {
+        "mean": 0.3838,
+        "sd": 0.035,
+        "values": [
+          0.3636,
+          0.4242,
+          0.3636
+        ]
+      },
+      "80": {
+        "mean": 0.5262,
+        "sd": 0.1029,
+        "values": [
+          0.5556,
+          0.4118,
+          0.6111
+        ]
+      }
+    },
+    "n_matured": {
+      "mean": 20.3,
+      "sd": 2.1,
+      "values": [
+        22.0,
+        18.0,
+        21.0
+      ]
+    },
+    "exposures_to_maturity_median": {
+      "mean": 22.7,
+      "sd": 0.6,
+      "values": [
+        23.0,
+        22.0,
+        23.0
+      ]
+    },
+    "final_states": {
+      "0": {
+        "M": 19,
+        "I": 6,
+        "X": 8
+      },
+      "1": {
+        "M": 16,
+        "I": 7,
+        "X": 10
+      },
+      "2": {
+        "M": 20,
+        "I": 6,
+        "X": 7
+      }
+    },
+    "n_demotions": {
+      "mean": 3.7,
+      "sd": 1.2,
+      "values": [
+        3.0,
+        5.0,
+        3.0
+      ]
+    },
+    "n_regained": {
+      "mean": 1.7,
+      "sd": 1.5,
+      "values": [
+        0.0,
+        3.0,
+        2.0
+      ]
+    }
+  },
+  "counterfactual": {
+    "per_seed": {
+      "0": {
+        "n_paired": 1536,
+        "habit": 0.9766,
+        "teacher": 0.9798,
+        "determinism": "5/5"
+      },
+      "1": {
+        "n_paired": 1465,
+        "habit": 0.9638,
+        "teacher": 0.9672,
+        "determinism": "5/5"
+      },
+      "2": {
+        "n_paired": 1617,
+        "habit": 0.974,
+        "teacher": 0.9833,
+        "determinism": "5/5"
+      }
+    },
+    "total_paired": 4618
+  },
+  "ledgers_hours": {
+    "operational": {
+      "mean": 9.34,
+      "sd": 0.24,
+      "values": [
+        9.33,
+        9.58,
+        9.1
+      ]
+    },
+    "formation": {
+      "mean": 6.07,
+      "sd": 0.12,
+      "values": [
+        6.15,
+        5.93,
+        6.12
+      ]
+    },
+    "note": "지연 주장은 운영 장부 단독. 형성은 별도 보고, 평가(CF)는 비용 미보고 (§4h)"
+  }
+}
