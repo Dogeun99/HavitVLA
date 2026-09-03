@@ -11,9 +11,14 @@
 #   5. 3·4 산출물을 저장 결과와 대조 (compare_outputs.py)
 #   6. GPU: 학습·추론 스모크, 체크포인트 held-out 재평가(RGB-only·RGB-D 각 1 클러스터)를
 #      저장된 에피소드별 결과와 대조, 레이턴시 재측정(teacher env), 무결성 감사(체크포인트 전수)
+#
+# **자산 없는 환경(git clone만 한 낯선 머신)에서도 그대로 실행된다.** 1~5단계는 저장소에 들어 있는
+# 결과 파일만 쓰므로 체크포인트 없이 완주하고, 체크포인트가 필요한 6단계는 자동으로 건너뛴다
+# (SUMMARY.json의 mode = "no_assets"). 6단계까지 돌리려면 ORIG로 자산 위치를 알려줘야 한다.
+#
 # 사용: verify/verify_release.sh [--no-gpu] [--run-dir=DIR]
 #   환경변수 HV2_HAB_PY / HV2_OFT_PY 로 두 env의 python을 지정 (기본 ~/miniconda3/envs/hv2_{hab,oft}/bin/python)
-#   ORIG = 대용량 자산(체크포인트·HDF5·HF 캐시)이 있는 원본 작업 디렉터리 (기본 /home/asmr/workspace/habitvla2)
+#   ORIG = 대용량 자산(체크포인트·HDF5·HF 캐시)이 있는 원본 작업 디렉터리. 없으면 6단계를 건너뛴다.
 set -uo pipefail
 SRC=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 REL=$(cd "$SRC/.." && pwd)
@@ -36,8 +41,16 @@ ln -sfn "$SRC/third_party" "$W/third_party"
 cp -r "$SRC/.libero" "$W/.libero"
 mkdir -p "$W/logs"
 cp -a "$REF" "$W/results"
-bash "$W/setup/link_local_assets.sh" "$ORIG" > "$LOGS/link_assets.log" 2>&1 || { cat "$LOGS/link_assets.log"; exit 1; }
-rm -f "$W/checkpoints/rgb_only_rerun/smoke" "$W/checkpoints/rgb_only_rerun/e5_smoke"   # 스모크 산출은 scratch에만
+# 대용량 자산은 선택적이다 — 없으면 자산이 필요한 단계만 건너뛴다 (저장소만 clone한 환경 지원).
+ASSETS=1
+if [ -d "$ORIG" ]; then
+  bash "$W/setup/link_local_assets.sh" "$ORIG" > "$LOGS/link_assets.log" 2>&1 || { cat "$LOGS/link_assets.log"; exit 1; }
+  rm -f "$W/checkpoints/rgb_only_rerun/smoke" "$W/checkpoints/rgb_only_rerun/e5_smoke"   # 스모크 산출은 scratch에만
+else
+  ASSETS=0; GPU=0
+  echo "[INFO] 대용량 자산 없음 (ORIG=$ORIG) → 체크포인트가 필요한 단계(스모크·롤아웃 재평가·레이턴시·무결성)를 건너뛴다."
+  echo "       저장 결과의 재산출·대조(1~5단계)는 그대로 수행한다."
+fi
 export HF_HOME=$W/.hf_cache TORCH_HOME=$W/.torch_cache LIBERO_CONFIG_PATH=$W/.libero
 export MUJOCO_GL=egl PYOPENGL_PLATFORM=egl TOKENIZERS_PARALLELISM=false
 cd "$W"
@@ -99,7 +112,10 @@ CPU_FILES=(e2/e2_gonogo.json e3/e3_curves.json e3/h2_analysis.json
   $RR/05_paired_replay/bootstrap_fullstream_seed0.npy $RR/05_paired_replay/bootstrap_fullstream_seed1.npy
   $RR/05_paired_replay/bootstrap_fullstream_seed2.npy $RR/05_paired_replay/bootstrap_pooled.npy
   $RR/08_statistics/OLD_VS_NEW_NUMERIC.csv $RR/08_statistics/OLD_VS_NEW_NUMERIC.json)
-step compare_cpu "[COMPARE-PASS]" $PYH -u verify/compare_outputs.py --ref "$REF" --new "$W/results" --files "${CPU_FILES[@]}" --out "$RUN/compare_cpu.json"
+# 자산이 없으면 수집 HDF5 메타에서만 유도되는 필드(e3_curves의 스트림 성숙 시점)는 재산출될 수 없다 → 비교에서 제외.
+IGNORE=()
+[ "$ASSETS" = 1 ] || IGNORE=(--ignore-keys stream_episodes_to_N_star)
+step compare_cpu "[COMPARE-PASS]" $PYH -u verify/compare_outputs.py --ref "$REF" --new "$W/results" --files "${CPU_FILES[@]}" "${IGNORE[@]}" --out "$RUN/compare_cpu.json"
 
 # ---------- 6. GPU
 if [ "$GPU" = 1 ]; then
@@ -133,12 +149,18 @@ PY
 fi
 
 # ---------- 요약
-$PYH - "$STEPS" "$RUN" <<'PY'
+MODE=$([ "$ASSETS" = 1 ] && echo with_assets || echo no_assets)
+$PYH - "$STEPS" "$RUN" "$MODE" <<'PY'
 import sys, json, csv
 steps = [dict(zip(["name","status","exit","elapsed_s","marker"], r)) for r in csv.reader(open(sys.argv[1]), delimiter="\t")]
 n_fail = sum(s["status"] != "PASS" for s in steps)
-out = {"run_dir": sys.argv[2], "n_steps": len(steps), "n_fail": n_fail, "verdict": "PASS" if n_fail == 0 else "FAIL", "steps": steps}
+out = {"run_dir": sys.argv[2], "mode": sys.argv[3], "n_steps": len(steps), "n_fail": n_fail,
+       "verdict": "PASS" if n_fail == 0 else "FAIL", "steps": steps}
+if sys.argv[3] == "no_assets":
+    out["skipped"] = ["gpu_smoke_train_infer", "gpu_eval_rgb_only_goal_task1", "gpu_eval_rgbd_object_task1",
+                      "gpu_latency_teacher_env", "gpu_integrity_audit", "compare_gpu"]
+    out["skipped_reason"] = "체크포인트·HDF5·모델 캐시가 없는 환경 (ORIG 미지정). 저장 결과의 재산출·대조는 전부 수행됨."
 json.dump(out, open(sys.argv[2] + "/SUMMARY.json", "w"), indent=1, ensure_ascii=False)
 for s in steps: print(f"{s['status']:5s} {s['name']:36s} {s['elapsed_s']:>6s}s")
-print(f"[VERIFY-RELEASE-{out['verdict']}] steps={len(steps)} fail={n_fail}  → {sys.argv[2]}/SUMMARY.json")
+print(f"[VERIFY-RELEASE-{out['verdict']}] mode={sys.argv[3]} steps={len(steps)} fail={n_fail}  → {sys.argv[2]}/SUMMARY.json")
 PY

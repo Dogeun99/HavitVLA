@@ -14,6 +14,7 @@ def main():
     ap.add_argument("--run", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--src", default=os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+    ap.add_argument("--clone-test", default=None, help="clone_build_test.json (자산 없는 clone 환경 실측 기록)")
     a = ap.parse_args()
     R = a.run
     S = json.load(open(f"{R}/SUMMARY.json"))
@@ -34,7 +35,8 @@ def main():
 
     L = []
     L.append(f"# VERIFICATION_REPORT — 릴리스 `src/`만으로 빌드해 `results/`와 일치하는가\n")
-    L.append(f"- 실행: `{os.path.basename(R)}` (verify/verify_release.sh) · 판정 **{S['verdict']}** ({S['n_steps']} 단계, FAIL {S['n_fail']})")
+    L.append(f"- 실행: `{os.path.basename(R)}` (verify/verify_release.sh) · 모드 `{S.get('mode', 'with_assets')}` · "
+             f"판정 **{S['verdict']}** ({S['n_steps']} 단계, FAIL {S['n_fail']})")
     L.append(f"- 원본 저장소 커밋 `{orig_commit}` · 릴리스 src 위치 `{a.src}`")
     L.append("- 빌드: 릴리스의 `envs/setup_envs.sh`로 **별도 conda env**(`hv2r_oft`, `hv2r_hab`; 원본 env를 clone한 뒤 릴리스 `third_party/`로 editable 재설치)를 구성해 사용. 원본 env·원본 저장소는 수정하지 않았다.")
     L.append(f"  - hab env: `{env_hab}`")
@@ -97,12 +99,42 @@ def main():
                     L.append(f"| `{parts[0]}` | {parts[1]} | {parts[2]} |")
             L.append("")
 
-    L.append("## 4. 해석\n")
+    if a.clone_test and os.path.exists(a.clone_test):
+        T = json.load(open(a.clone_test))
+        A, B, Cc, D = (T["A_clone_직후_pristine_상태"], T["B_서브모듈_init"],
+                       T["C_build_sh_실행"], T["D_자산_없이_검증"])
+        L.append("## 4. 저장소만 clone한 환경에서의 빌드·검증 (별도 실측)\n")
+        L.append(f"`{T['what']}`\n")
+        L.append("**(a) clone 직후 트리** — 절대 경로 심볼릭 링크가 없어야 다른 머신에서 바로 빌드된다.\n")
+        L.append(f"- 심볼릭 링크 전수: {', '.join('`' + x + '`' for x in A['심볼릭_링크_전수']) or '없음'} "
+                 f"→ 저장소 내부를 가리키는가: **{A['src/results_가_가리키는_대상이_저장소_내부인가']}**")
+        L.append(f"- 깨진 링크: **{len(A['깨진_링크'])}개**")
+        L.append(f"- 대용량 자산 디렉터리 존재: {A['대용량_자산_디렉터리_존재여부']} (전부 false = 로컬 전용, 저장소에 없음)")
+        L.append(f"- 학습된 가중치 `.pt` {A['가중치_pt_파일_수']}개 · 궤적 `.hdf5` {A['궤적_hdf5_파일_수']}개 "
+                 f"(의도적 제외 — 크기 때문. 목록·sha256은 `CHECKPOINT_MANIFEST.csv`)\n")
+        L.append("**(b) 서브모듈 + 로컬 패치**\n")
+        for x in B["결과"]:
+            L.append(f"- `{x.strip()}`")
+        L.append(f"- pristine 서브모듈에 로컬 패치 적용: {', '.join(B['pristine_서브모듈에_로컬패치_적용'])}\n")
+        L.append("**(c) `bash build.sh`**\n")
+        L.append(f"- 마커: `{Cc['setup_마커']}` → `{Cc['build_마커']}`")
+        for x in Cc["env_검증_출력"]:
+            L.append(f"- `{x.strip()}`")
+        L.append(f"- {Cc['주의']}\n")
+        L.append("**(d) 자산 없이 검증** — `" + D["command"] + "`\n")
+        L.append(f"- 모드 `{D['mode']}` · **{D['판정']}** ({D['단계수']} 단계, 실패 {D['실패']})")
+        L.append(f"- 대조 {D['대조_파일수']}개 파일: 완전 동일 {D['완전동일']}, 휘발 필드 제외 동일 {D['휘발필드_제외_동일']}")
+        L.append(f"- 건너뛴 단계(체크포인트 필요): {', '.join('`' + x + '`' for x in D['건너뛴_단계'])}")
+        L.append(f"- 재산출 불가로 비교에서 제외한 키: {', '.join('`' + x + '`' for x in D['재산출_불가로_제외한_키'])} "
+                 f"— {D['제외_사유']}\n")
+    L.append("## 5. 해석\n")
     L.append("- 저장된 모든 요약·통계(E2 go/no-go, E3 27 곡선·N*, H2 분석, E5 3 seed 판독·종합·사후분석, E4 scorer 표, "
              "RGB-only rerun의 배치/온라인/paired replay/부트스트랩 분포/old-vs-new)는 릴리스 코드로 원자료에서 **비트 단위로 재산출**된다.")
     L.append("- 시뮬레이터 + ACT 정책 스택은 릴리스 폴더의 third_party(핀 커밋 + 패치)와 릴리스 env에서 저장된 롤아웃을 **에피소드 단위로 결정적으로 재현**한다 "
              "(RGB-only·RGB-D 체크포인트 각 1 클러스터, 성공/실패와 스텝 수까지 일치).")
     L.append("- 레이턴시는 하드웨어 시간 측정이므로 ms 단위 소수점에서만 다르고 순위·비율(ACT/teacher ≈ 0.039)은 같다.")
+    L.append("- 저장소만 clone한 환경(체크포인트·궤적 없음)에서도 빌드가 끝나고 저장 결과의 재산출·대조가 전부 수행된다. "
+             "체크포인트가 있어야 하는 것은 GPU 롤아웃 재평가·무결성 감사뿐이다.")
     L.append("- 검증하지 않은 것: 70 h짜리 전체 재실행(배치 27 클러스터 학습, 온라인 12,000 ep, paired replay)과 teacher 궤적 재수집. "
              "이들은 결정적 에피소드 명세(§4h)와 seed 고정으로 재현 가능하도록 설계돼 있고, 위 체크포인트 재평가가 그 실행 경로(시뮬·정책·성공 판정)를 덮는다.")
     os.makedirs(os.path.dirname(a.out), exist_ok=True)

@@ -1,6 +1,6 @@
 # VERIFICATION_REPORT — 릴리스 `src/`만으로 빌드해 `results/`와 일치하는가
 
-- 실행: `20260903_release_final` (verify/verify_release.sh) · 판정 **PASS** (27 단계, FAIL 0)
+- 실행: `20260903_release_final` (verify/verify_release.sh) · 모드 `with_assets` · 판정 **PASS** (27 단계, FAIL 0)
 - 원본 저장소 커밋 `5c12f9b` · 릴리스 src 위치 `/home/asmr/workspace/habitvla2_release/src`
 - 빌드: 릴리스의 `envs/setup_envs.sh`로 **별도 conda env**(`hv2r_oft`, `hv2r_hab`; 원본 env를 clone한 뒤 릴리스 `third_party/`로 editable 재설치)를 구성해 사용. 원본 env·원본 저장소는 수정하지 않았다.
   - hab env: `/home/asmr/miniconda3/envs/hv2r_hab/bin/python 2.7.0+cu128 True /home/asmr/workspace/habitvla2_release/src/third_party/LIBERO/libero 1.26.4 3.1.6 1.4.1`
@@ -11,19 +11,19 @@
 
 | 단계 | 판정 | 소요(s) | 성공 마커 |
 |---|---|---:|---|
-| `env_hab` | PASS | 1 | `-` |
+| `env_hab` | PASS | 2 | `-` |
 | `env_oft` | PASS | 7 | `-` |
 | `unit_gate_regression` | PASS | 0 | `[GATE-REGRESSION-PASS]` |
 | `unit_executor_chunkbreak` | PASS | 0 | `[EXECUTOR-TEST-PASS]` |
-| `verify_package` | PASS | 0 | `[PACKAGE-VERIFY-PASS]` |
-| `rederive_e2_gonogo` | PASS | 1 | `-` |
+| `verify_package` | PASS | 1 | `[PACKAGE-VERIFY-PASS]` |
+| `rederive_e2_gonogo` | PASS | 0 | `-` |
 | `rederive_e3_curves` | PASS | 0 | `[E3-CURVES]` |
 | `rederive_e3_h2` | PASS | 1 | `-` |
 | `rederive_e5_reading_0` | PASS | 0 | `-` |
 | `rederive_e5_reading_1` | PASS | 1 | `-` |
-| `rederive_e5_reading_2` | PASS | 0 | `-` |
+| `rederive_e5_reading_2` | PASS | 1 | `-` |
 | `rederive_e5_seed_synthesis` | PASS | 0 | `-` |
-| `rederive_e5_postmortem_0` | PASS | 1 | `-` |
+| `rederive_e5_postmortem_0` | PASS | 0 | `-` |
 | `rederive_e5_postmortem_1` | PASS | 0 | `-` |
 | `rederive_e5_postmortem_2` | PASS | 1 | `-` |
 | `rederive_e4_scorer_table` | PASS | 0 | `-` |
@@ -32,10 +32,10 @@
 | `rederive_rr_replay` | PASS | 1 | `[PAIRED-DONE]` |
 | `rederive_rr_old_vs_new` | PASS | 0 | `[OLDVSNEW-DONE]` |
 | `compare_cpu` | PASS | 0 | `[COMPARE-PASS]` |
-| `gpu_smoke_train_infer` | PASS | 25 | `[SMOKE-PASS]` |
-| `gpu_eval_rgb_only_goal_task1` | PASS | 83 | `[EVAL-PASS]` |
+| `gpu_smoke_train_infer` | PASS | 23 | `[SMOKE-PASS]` |
+| `gpu_eval_rgb_only_goal_task1` | PASS | 82 | `[EVAL-PASS]` |
 | `gpu_eval_rgbd_object_task1` | PASS | 49 | `[EVAL-PASS]` |
-| `gpu_latency_teacher_env` | PASS | 29 | `[LATENCY-DONE]` |
+| `gpu_latency_teacher_env` | PASS | 30 | `[LATENCY-DONE]` |
 | `gpu_integrity_audit` | PASS | 19 | `[INTEGRITY-DONE]` |
 | `compare_gpu` | PASS | 0 | `[COMPARE-PASS]` |
 
@@ -97,20 +97,20 @@
 
 | metric | 저장값 | 재측정 |
 |---|---:|---:|
-| `act_forward_rgb_only.median_ms` | 3.35 | 3.375 |
-| `act_forward_rgb_only.p95_ms` | 3.363 | 3.422 |
+| `act_forward_rgb_only.median_ms` | 3.35 | 3.395 |
+| `act_forward_rgb_only.p95_ms` | 3.363 | 3.412 |
 | `act_forward_rgb_only.n_params` | 9.503e+07 | 9.503e+07 |
-| `act_forward_rgbd.median_ms` | 3.353 | 3.385 |
-| `act_forward_rgbd.p95_ms` | 3.364 | 3.397 |
+| `act_forward_rgbd.median_ms` | 3.353 | 3.394 |
+| `act_forward_rgbd.p95_ms` | 3.364 | 3.443 |
 | `act_forward_rgbd.n_params` | 9.5036e+07 | 9.5036e+07 |
-| `gate_path.median_ms` | 4.179 | 4.084 |
-| `gate_path.p95_ms` | 5.011 | 4.714 |
-| `teacher_oft_chunk_forward.median_ms` | 85.466 | 85.386 |
-| `teacher_oft_chunk_forward.p95_ms` | 86.808 | 86.499 |
-| `ratios.act_rgb_only_over_teacher` | 0.0392 | 0.03953 |
-| `ratios.act_rgbd_over_teacher` | 0.03923 | 0.03964 |
-| `ratios.gate_over_teacher` | 0.0489 | 0.04783 |
-| `ratios.denominator_ms` | 85.466 | 85.386 |
+| `gate_path.median_ms` | 4.179 | 4.038 |
+| `gate_path.p95_ms` | 5.011 | 4.273 |
+| `teacher_oft_chunk_forward.median_ms` | 85.466 | 85.913 |
+| `teacher_oft_chunk_forward.p95_ms` | 86.808 | 115.94 |
+| `ratios.act_rgb_only_over_teacher` | 0.0392 | 0.03952 |
+| `ratios.act_rgbd_over_teacher` | 0.03923 | 0.03951 |
+| `ratios.gate_over_teacher` | 0.0489 | 0.047 |
+| `ratios.denominator_ms` | 85.466 | 85.913 |
 | `formation_timing.training_by_n.20.median_s` | 226.6 | 226.6 |
 | `formation_timing.training_by_n.80.median_s` | 627.9 | 627.9 |
 | `formation_timing.formation_event_total.median_s` | 288.8 | 288.8 |
@@ -119,9 +119,42 @@
 | `operational_time_summary.operational_h.median_s` | 9.2 | 9.2 |
 | `operational_time_summary.formation_h.median_s` | 5.48 | 5.48 |
 
-## 4. 해석
+## 4. 저장소만 clone한 환경에서의 빌드·검증 (별도 실측)
+
+`저장소만 git clone한 환경에서 빌드·검증이 되는지 실측 (2026-09-03)`
+
+**(a) clone 직후 트리** — 절대 경로 심볼릭 링크가 없어야 다른 머신에서 바로 빌드된다.
+
+- 심볼릭 링크 전수: `<clone>/src/results -> ../results` → 저장소 내부를 가리키는가: **True**
+- 깨진 링크: **0개**
+- 대용량 자산 디렉터리 존재: {'checkpoints': False, 'data': False, '.hf_cache': False, '.torch_cache': False, '.libero': False} (전부 false = 로컬 전용, 저장소에 없음)
+- 학습된 가중치 `.pt` 0개 · 궤적 `.hdf5` 0개 (의도적 제외 — 크기 때문. 목록·sha256은 `CHECKPOINT_MANIFEST.csv`)
+
+**(b) 서브모듈 + 로컬 패치**
+
+- `8f1084e3132a39270c3a13ebe37270a43ece2a01 src/third_party/LIBERO (heads/master)`
+- `e4287e94541f459edc4feabc4e181f537cd569a8 src/third_party/openvla-oft (heads/main)`
+- pristine 서브모듈에 로컬 패치 적용: libero_local.patch applied, openvla_oft_local.patch applied
+
+**(c) `bash build.sh`**
+
+- 마커: `[E0-SETUP-DONE]` → `[BUILD-DONE]`
+- `hv2c_oft OK: numpy 1.26.4 mujoco 3.1.6 robosuite 1.4.1 libero@ <clone>/src/third_party/LIBERO/libero`
+- `hv2c_hab OK: numpy 1.26.4 mujoco 3.1.6 robosuite 1.4.1 libero@ <clone>/src/third_party/LIBERO/libero`
+- `hv2c_oft openvla-oft @ <clone>/src/third_party/openvla-oft/prismatic`
+- setup_envs.sh 는 빈 checkpoints/·data/·.hf_cache/·.libero/ 디렉터리를 생성한다 (자산이 채워지는 것은 아님).
+
+**(d) 자산 없이 검증** — `ORIG=/nonexistent bash verify/verify_release.sh --no-gpu`
+
+- 모드 `no_assets` · **PASS** (21 단계, 실패 0)
+- 대조 36개 파일: 완전 동일 33, 휘발 필드 제외 동일 3
+- 건너뛴 단계(체크포인트 필요): `gpu_smoke_train_infer`, `gpu_eval_rgb_only_goal_task1`, `gpu_eval_rgbd_object_task1`, `gpu_latency_teacher_env`, `gpu_integrity_audit`, `compare_gpu`
+- 재산출 불가로 비교에서 제외한 키: `stream_episodes_to_N_star` — stream_episodes_to_N_star 는 수집 HDF5 메타(성공 궤적 위치)에서만 유도된다 — e3_collect.stream_maturation
+
+## 5. 해석
 
 - 저장된 모든 요약·통계(E2 go/no-go, E3 27 곡선·N*, H2 분석, E5 3 seed 판독·종합·사후분석, E4 scorer 표, RGB-only rerun의 배치/온라인/paired replay/부트스트랩 분포/old-vs-new)는 릴리스 코드로 원자료에서 **비트 단위로 재산출**된다.
 - 시뮬레이터 + ACT 정책 스택은 릴리스 폴더의 third_party(핀 커밋 + 패치)와 릴리스 env에서 저장된 롤아웃을 **에피소드 단위로 결정적으로 재현**한다 (RGB-only·RGB-D 체크포인트 각 1 클러스터, 성공/실패와 스텝 수까지 일치).
 - 레이턴시는 하드웨어 시간 측정이므로 ms 단위 소수점에서만 다르고 순위·비율(ACT/teacher ≈ 0.039)은 같다.
+- 저장소만 clone한 환경(체크포인트·궤적 없음)에서도 빌드가 끝나고 저장 결과의 재산출·대조가 전부 수행된다. 체크포인트가 있어야 하는 것은 GPU 롤아웃 재평가·무결성 감사뿐이다.
 - 검증하지 않은 것: 70 h짜리 전체 재실행(배치 27 클러스터 학습, 온라인 12,000 ep, paired replay)과 teacher 궤적 재수집. 이들은 결정적 에피소드 명세(§4h)와 seed 고정으로 재현 가능하도록 설계돼 있고, 위 체크포인트 재평가가 그 실행 경로(시뮬·정책·성공 판정)를 덮는다.

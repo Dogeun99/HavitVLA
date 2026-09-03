@@ -41,30 +41,54 @@ robosuite 1.4.1, LIBERO 핀 커밋, flash-attn 미빌드 → **attention = sdpa*
 | `hv2_hab` (py3.11) | ACT 학습·평가, gate, 모든 분석 | transformers 5.15, scikit-learn, scipy, h5py |
 
 ```bash
-git clone --recurse-submodules <이 저장소>   # third_party 서브모듈 포함
+git clone --recurse-submodules <이 저장소>   # third_party(LIBERO, openvla-oft) 서브모듈 포함
 cd habitvla2_release/src
-bash build.sh                                # = envs/setup_envs.sh (핀/패치 → env 2개 → import 검증)
-#   env 이름을 바꾸거나 기존 env를 복제해서 만들려면:
-#   OFT_ENV=hv2r_oft HAB_ENV=hv2r_hab CLONE_OFT_FROM=hv2_oft CLONE_HAB_FROM=hv2_hab bash build.sh
-#   대용량 자산(체크포인트·HDF5·모델 캐시)이 있는 원본 디렉터리를 링크하려면:
-#   ORIG=/home/asmr/workspace/habitvla2 bash build.sh
+bash build.sh                                # 핀 체크아웃·패치 → conda env 2개 → import 검증
 ```
-마지막 줄 `[E0-SETUP-DONE]`이 성공 마커다. 정확한 패키지 버전 전체는 `setup/*.requirements.lock`.
-처음부터 만들 때는 torch(cu128) 다운로드 ≈ 3 GB, OFT 체크포인트 4종 ≈ 60 GB(`experiments/e0_download_ckpts.py`,
-`HF_HOME=<src>/.hf_cache` 필수)가 필요하다.
+마지막 줄 `[BUILD-DONE]`이 성공 마커다 (그 앞의 `[E0-SETUP-DONE]`은 env 구성 완료).
+**clone 직후 이 두 줄만으로 빌드가 끝난다** — 저장소 안에 절대 경로 심볼릭 링크가 없고,
+`src/results → ../results`는 저장소 내부를 가리키는 상대 링크이며, third_party 로컬 패치는 빌드가 적용한다.
+(2026-09-03에 별도 디렉터리로 clone → 서브모듈 init → `build.sh` 완주를 실측 확인했다.)
+
+변형:
+```bash
+# 기존 env를 복제해 새 이름으로 만들기 (torch 재다운로드 없음)
+OFT_ENV=hv2c_oft HAB_ENV=hv2c_hab CLONE_OFT_FROM=hv2_oft CLONE_HAB_FROM=hv2_hab SKIP_TORCH_INSTALL=1 bash build.sh
+# 대용량 자산이 있는 원본 디렉터리를 심볼릭 링크로 연결 (선택 — §4)
+ORIG=/home/asmr/workspace/habitvla2 bash build.sh
+```
+정확한 패키지 버전 전체는 `setup/*.requirements.lock`. 자산이 전혀 없는 새 머신에서 **실험을 재실행**하려면
+OFT 체크포인트 4종 ≈ 60 GB 다운로드(`experiments/e0_download_ckpts.py`, `HF_HOME=<src>/.hf_cache` 필수)와
+teacher 궤적 재수집이 추가로 필요하다. 저장된 결과의 **재산출·검증**만 할 것이라면 불필요하다(§3 a).
 
 ## 3. 검증 (이 폴더만으로 저장 결과가 재현되는가)
 
 ```bash
+# (a) 저장소만 clone한 환경 — 체크포인트·궤적이 없어도 그대로 돈다 (21단계)
+bash verify/verify_release.sh --no-gpu
+
+# (b) 대용량 자산이 있는 환경 — GPU 롤아웃·무결성까지 (27단계)
 HV2_HAB_PY=~/miniconda3/envs/hv2_hab/bin/python HV2_OFT_PY=~/miniconda3/envs/hv2_oft/bin/python \
-ORIG=/home/asmr/workspace/habitvla2 bash verify/verify_release.sh          # --no-gpu 로 CPU 단계만
+ORIG=/home/asmr/workspace/habitvla2 bash verify/verify_release.sh
 ```
-`verify_runs/<stamp>/`에 scratch 복제본을 만들어 (릴리스 results는 건드리지 않고) 다음을 수행한다:
-단위 테스트 2종 → 패키지 자체 검증(원장→요약 재계산 52검사) → RGB-D 본 실험 분석 재산출(e2/e3/H2/E5 판독·
-seed 종합·사후분석·E4 표) → RGB-only rerun 분석 재산출(batch/online/replay/old-vs-new) → 저장 결과와 대조 →
-GPU(학습·추론 스모크, 체크포인트 held-out 재평가 2 클러스터를 에피소드별로 대조, teacher env 레이턴시 재측정,
-체크포인트 전수 무결성 감사). 결과는 `SUMMARY.json`, `compare_cpu.json`, `compare_gpu.json`,
-`latency_side_by_side.txt`. 2026-09-03 실행 결과 → `../results/VERIFICATION_REPORT.md`.
+
+`verify_runs/<stamp>/`에 scratch 복제본을 만들어 (릴리스 results는 건드리지 않고) 다음을 수행한다.
+
+| 단계 | 내용 | 자산 필요 |
+|---|---|---|
+| 1 | 단위 테스트 2종 (gate 회귀, 실행기 chunk-break) | 불필요 |
+| 2 | 패키지 자체 검증 — 원장 CSV에서 요약 재계산 52검사 | 불필요 |
+| 3 | RGB-D 본 실험 분석 재산출 (e2/e3/H2/E5 판독·seed 종합·사후분석/E4 표) | 불필요 |
+| 4 | RGB-only rerun 분석 재산출 (batch/online/replay/old-vs-new) | 불필요 |
+| 5 | 3·4 산출물을 저장 결과와 대조 | 불필요 |
+| 6 | GPU — 학습·추론 스모크, 체크포인트 held-out 재평가(에피소드별 대조), 레이턴시 재측정, 체크포인트 전수 무결성 감사 | **필요** |
+
+`ORIG`가 없으면 6단계를 자동으로 건너뛰고 `SUMMARY.json`의 `mode`가 `no_assets`가 된다.
+이때 `e3_curves.json`의 `stream_episodes_to_N_star`(수집 HDF5 메타에서 유도되는 스트림 성숙 시점)만
+재산출이 불가능하므로 비교에서 명시적으로 제외하며, 제외한 키는 `compare_cpu.json`의 `ignored_keys`에 남는다.
+
+산출물: `SUMMARY.json`, `compare_cpu.json`, `compare_gpu.json`, `latency_side_by_side.txt`.
+2026-09-03 실행 결과는 `../results/VERIFICATION_REPORT.md`.
 
 ## 4. 포함되지 않은 것과 복원
 

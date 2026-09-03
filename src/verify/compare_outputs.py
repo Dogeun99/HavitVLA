@@ -32,10 +32,13 @@ VOLATILE_KEYS = {
 }
 VOLATILE_PATTERNS = re.compile(r"(_at|_time|_sec|_s|_wall|_path|_dir|_root)$")
 FTOL = 1e-9
+# --ignore-keys 로 실행 시 채워진다. 저장소에 없는 대용량 자산에서만 유도되는 필드를 비교에서 빼기 위한 것.
+EXTRA_IGNORED = set()
 
 
 def is_volatile(key):
-    return key in VOLATILE_KEYS or bool(VOLATILE_PATTERNS.search(str(key)))
+    return (key in VOLATILE_KEYS or key in EXTRA_IGNORED
+            or bool(VOLATILE_PATTERNS.search(str(key))))
 
 
 def deep_diff(a, b, path="", diffs=None, ignored=None):
@@ -154,8 +157,13 @@ def main():
     ap.add_argument("--files", nargs="*", default=[])
     ap.add_argument("--rollout", nargs=2, action="append", default=[], metavar=("NEW_CURVE", "REF_CURVE"))
     ap.add_argument("--out", default=None)
+    ap.add_argument("--ignore-keys", nargs="*", default=[],
+                    help="비교에서 제외할 키 이름 (대용량 자산이 있어야만 산출되는 파생 필드 등). "
+                         "제외한 키는 보고서에 기록된다.")
     a = ap.parse_args()
-    report = {"ref": a.ref, "new": a.new, "files": {}, "rollouts": []}
+    EXTRA_IGNORED.update(a.ignore_keys)
+    report = {"ref": a.ref, "new": a.new, "ignored_keys": sorted(EXTRA_IGNORED),
+              "files": {}, "rollouts": []}
     n_fail = 0
     for rel in a.files:
         r, n = os.path.join(a.ref, rel), os.path.join(a.new, rel)
