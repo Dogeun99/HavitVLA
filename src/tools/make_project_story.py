@@ -391,8 +391,11 @@ def main():
     W("")
     W("---")
     W("")
-    W(f"*생성 {sh('date +%Y-%m-%d')} · 생성기 `src/tools/make_project_story.py` · "
-      f"저장소 커밋 `{sh('git rev-parse --short HEAD')}`*")
+    # 커밋 해시는 이 문서를 담을 커밋보다 항상 하나 뒤처지므로 넣지 않는다.
+    # 대신 데이터 상태를 특정하는 run id와 결과 폴더의 최종 변경 시각을 적는다.
+    res_mtime = sh("git log -1 --format=%cd --date=short -- results/") or "?"
+    W(f"*생성기 `src/tools/make_project_story.py` — 다시 실행하면 최신 결과로 갱신된다. "
+      f"기준 데이터: run `{RR}`, 결과 폴더 최종 변경 {res_mtime}.*")
 
     with open(a.out, "w", encoding="utf-8") as f:
         f.write("\n".join(L) + "\n")

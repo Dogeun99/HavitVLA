@@ -194,4 +194,4 @@ H2의 앞쪽 절반 — "의미가 복잡할수록 학습이 느려진다" — �
 
 ---
 
-*생성 2026-09-03 · 생성기 `src/tools/make_project_story.py` · 저장소 커밋 `043626e`*
+*생성기 `src/tools/make_project_story.py` — 다시 실행하면 최신 결과로 갱신된다. 기준 데이터: run `rgb_only_full_rerun_20260828`, 결과 폴더 최종 변경 2026-09-03.*
