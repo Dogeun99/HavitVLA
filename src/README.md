@@ -2,7 +2,9 @@
 
 **Amortized Inference via Habit Formation.** VLA(OpenVLA-OFT) 교사가 반복 상황에서 성공 궤적을 쌓으면
 클러스터별 경량 습관 정책(ACT)이 형성되고, 관할(Mahalanobis)·성숙도(Beta-Bernoulli)·ACI 위험 통제의
-2단 gate가 VLA 호출을 선택적으로 생략한다. 플랫폼은 LIBERO(robosuite/MuJoCo). 실험 프로토콜은
+2단 gate가 VLA 호출을 선택적으로 생략하도록 **설계**됐다. 다만 E5 온라인 실험에서 실제 발화를 결정한 것은
+**성숙도 단독**이며, 관할은 임계 미달로 그림자 로깅(행동 불개입)으로 강등됐다
+(`experiments/e5_driver.py` 발화 조건, `configs/preregistration.md` §5 2026-08-16). 플랫폼은 LIBERO(robosuite/MuJoCo). 실험 프로토콜은
 `configs/preregistration.md`(사전등록 동결본)에, 프로젝트 맥락은 `CLAUDE.md`에, 전 과정 진행·이슈 기록은
 `log.md`(append-only, 2026-08-15 → 08-31)에 있다.
 

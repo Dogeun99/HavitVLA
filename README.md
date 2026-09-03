@@ -1,7 +1,7 @@
 # HabitVLA-2 — Amortized Inference via Habit Formation (release)
 
 LIBERO 시뮬레이션에서 VLA(OpenVLA-OFT) 교사의 반복 경험으로 클러스터별 경량 습관 정책(ACT)이 형성되고,
-관할·성숙도 2단 gate가 위험 보장 하에 VLA 호출을 선택적으로 생략함을 보인 연구의 **실제 동작 소스와 결과**를
+성숙도 gate가 위험 보장 하에 VLA 호출을 선택적으로 생략함을 보인 연구의 **실제 동작 소스와 결과**를
 두 폴더로 나눠 정리한 것이다 (원본 작업 저장소 커밋 `5c12f9b`, 2026-08-31 → 릴리스 2026-09-03).
 
 **Author** DoGeun Lee ([@Dogeun99](https://github.com/Dogeun99)) · 연구 방향은 지도교수 지도 아래 진행됐다 ([`PROJECT_STORY.md`](PROJECT_STORY.md) §4).
@@ -9,12 +9,16 @@ LIBERO 시뮬레이션에서 VLA(OpenVLA-OFT) 교사의 반복 경험으로 클�
 
 **In one paragraph.** A vision-language-action (VLA) robot policy is accurate but costs about 85 ms per
 decision. This project tests whether a robot can *amortize* that inference: as successful VLA trajectories
-accumulate for a recurring situation, a lightweight habit policy (ACT, ~3.4 ms) is trained for it, and a
-two-stage gate — is this situation familiar, and has the habit proven itself — decides when the large model
-can be skipped. On the LIBERO benchmark across 3 seeds x 4,000-episode online streams, the VLA call rate
-fell from 0.874 to 0.405 while task success stayed within -0.0021 of always calling the VLA (pre-registered
-margin -0.03), with habit failure probability 0.0285 against a 0.2 ceiling. One hypothesis was rejected by
-the data and one gate component was recorded as unsolved; both are documented rather than hidden.
+accumulate for a recurring situation, a lightweight habit policy (ACT, ~3.4 ms) is trained for it, and a gate
+decides when the large model can be skipped. The design called for two stages — is this situation familiar,
+and has the habit proven itself — but the familiarity stage failed its pre-registered AUC threshold and was
+demoted to shadow logging before the online runs, so **what actually gated was maturity alone**
+(`src/experiments/e5_driver.py`). On LIBERO, across 3 seeds x 4,000-episode streams with the habit policy
+given the same RGB inputs as the teacher, the VLA call rate fell from 0.853 to 0.432 while task success
+stayed within -0.0065 of always calling the VLA (pre-registered margin -0.03), though all three seed
+intervals sit below zero. Forming the habits is not free and is accounted separately; within the measured
+window it costs more compute than the calls it saves. One hypothesis was rejected by the data and the
+familiarity gate was recorded as unsolved; both are documented rather than hidden.
 Full narrative (Korean): [`PROJECT_STORY.md`](PROJECT_STORY.md).
 
 | 문서 | 내용 |

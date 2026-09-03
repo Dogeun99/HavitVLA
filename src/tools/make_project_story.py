@@ -91,21 +91,31 @@ def main():
       "매번 그 큰 모델을 불러야 할까 — 이것이 출발점이었다.")
     W("")
     W("이 연구는 VLA가 성공한 궤적만 모아 상황 묶음마다 가벼운 습관 정책을 학습시키고, "
-      "그 습관을 믿어도 되는지 판정하는 2단 관문(익숙한 상황인가 · 충분히 검증됐는가)을 두어 "
-      "VLA 호출을 선택적으로 생략한다. 습관 정책의 판단 비용은 "
-      f"{ms(lat['anchor2_act_forward']['median_ms'])}로 VLA의 {pct(lat['ratios']['act_over_oft'], 1)} 수준이다.")
+      "그 습관을 믿어도 되는지 판정하는 관문을 두어 VLA 호출을 선택적으로 생략한다. "
+      f"습관 정책의 판단 비용은 {ms(lat['anchor2_act_forward']['median_ms'])}로 "
+      f"VLA의 {pct(lat['ratios']['act_over_oft'], 1)} 수준이다.")
+    W("")
+    W("**설계는 2단 관문(익숙한 상황인가 · 충분히 검증됐는가)이었지만, 온라인 실험에서 실제로 발화를 결정한 것은 "
+      "성숙도 한 단계뿐이다.** 익숙함 판정이 사전등록 임계(AUC 0.75)를 넘지 못해, 실험 전에 "
+      "행동에 개입하지 않고 기록만 하는 그림자 로깅으로 강등됐다 "
+      "(`src/experiments/e5_driver.py` 발화 조건, `src/configs/preregistration.md` §5 2026-08-16). "
+      "아래 수치는 전부 그 단일 관문 시스템의 것이다.")
     W("")
     h4a, h4b, risk = e5["H4a_call_rate"], e5["H4b_noninferiority"], e5["risk_control"]
-    W(f"결과는 3개 seed × 4,000 에피소드 온라인 스트림에서 VLA 호출 비율이 "
-      f"**{h4a['first1000']['mean']} → {h4a['last1000']['mean']}**로 떨어지는 동안 "
-      f"작업 성공률은 항상 VLA를 부른 경우 대비 **{h4b['diff']['mean']:+.4f}**(허용 한계 {h4b['margin']})로 유지됐다는 것이다. "
-      f"습관이 발화했을 때의 실패 확률은 {risk['pr_fail_given_fire']['mean']}로 상한 {risk['epsilon']} 안에 있었다. "
-      f"판정은 `{e5['verdict']}`.")
+    W("결과는 3개 seed × 4,000 에피소드 온라인 스트림에서 나왔다. 조건이 둘이라 함께 적는다.")
     W("")
-    W(f"다만 이 수치는 습관 정책만 깊이 정보를 더 받은 조건에서 나왔다. 교락을 없애려고 입력을 맞춰 "
-      f"전체를 다시 돌린 결과는 **{pr['full_stream_seed_mean']['diff_mean']}±"
-      f"{pr['full_stream_seed_mean']['diff_sd']}**로, 사전 등록 한계 안이지만 **세 seed의 신뢰구간이 모두 0 아래**다. "
-      f"습관이 실제로 발화한 구간만 보면 격차는 {pr['seed_mean']['paired_difference_mean']}로 더 커진다. "
+    W("| 조건 | VLA 호출 비율 (첫→끝 1,000 ep) | 항상 VLA 대비 성공률 차이 | 발화 시 실패 확률 |")
+    W("|---|---|---|---|")
+    W(f"| 사전등록 주 조건 (습관만 깊이 사용) | {h4a['first1000']['mean']} → {h4a['last1000']['mean']} | "
+      f"{h4b['diff']['mean']:+.4f} (CI가 0 포함) | {risk['pr_fail_given_fire']['mean']} |")
+    W(f"| **교락 제거 (교사와 입력 일치)** | {on['vla_routing_first_1000']['mean']} → "
+      f"{on['vla_routing_last_1000']['mean']} | **{pr['full_stream_seed_mean']['diff_mean']}±"
+      f"{pr['full_stream_seed_mean']['diff_sd']}** (세 seed CI 모두 0 아래) | "
+      f"{on['pr_fail_given_fire']['mean']} |")
+    W("")
+    W(f"허용 한계는 {h4b['margin']}이고 두 조건 모두 통과한다. 다만 **방법론적으로 깨끗한 쪽은 아래 줄**이고, "
+      f"거기서는 차이가 0과 구별된다. 습관이 실제로 발화한 구간만 보면 격차는 "
+      f"{pr['seed_mean']['paired_difference_mean']}로 더 커진다. "
       "비용을 줄이는 대가가 0은 아니라는 뜻이며, 이 점을 §3.2와 §6에 그대로 적었다.")
     W("")
     W("동시에 **가설 하나는 데이터에 의해 기각됐고**, 게이트의 한 축은 **미해결로 확정**했다. "
@@ -129,7 +139,8 @@ def main():
     W("|---|---|---|")
     W("| H1 형성 | VLA 성공 궤적만으로 상황별 경량 정책이 형성되는가 | **지지** |")
     W("| H2 이중 해리 | 의미 복잡도는 형성 *속도*를, 작업 길이는 도달 *천장*을 지배하는가 | **원가설 기각** → 경쟁 가설 채택 |")
-    W("| H3 2단 게이트 | 익숙함 판정과 성숙도 판정의 결합이 각각 단독보다 안전한가 | **부분 · 저비용 익숙함 판정은 미해결** |")
+    W("| H3 2단 게이트 | 익숙함 판정과 성숙도 판정의 결합이 각각 단독보다 안전한가 | "
+      "**사전등록 형태로는 검정 못 함** — 익숙함 단독 arm이 폐지돼 맞비교가 없다 |")
     W("| H4 시스템 상각 | 온라인 스트림에서 호출률이 줄면서 성공률이 유지되는가 | **지지** |")
     W("")
 
@@ -197,8 +208,13 @@ def main():
         W("")
         W(f"> {br['statement']}")
     W("")
-    W("**미해결을 미해결로 확정하고 다음 논문 과제로 넘겼다.** 성숙도 판정 단독으로도 위험 상한은 지켜졌기 때문에 "
+    W("**미해결을 미해결로 확정하고 다음 논문 과제로 넘겼다.** 성숙도 판정 단독으로도 위험 상한은 지켜져 "
       "시스템은 그대로 진행할 수 있었다.")
+    W("")
+    W("대신 대가가 있다. 익숙함 판정을 그림자 로깅으로 내리면서 **익숙함 단독 arm을 폐지**했고, "
+      "그 결과 H3가 원래 요구한 \"결합이 각 단독보다 나은가\"의 맞비교가 저장소에 없다. "
+      "H3는 부분 확인이 아니라 **사전등록한 형태로는 검정되지 않았다**고 읽는 것이 정확하다 "
+      "(`src/configs/preregistration.md` §5 2026-08-16).")
     W("")
     W("### 2.6 통째로 버린 실행")
     W("")
@@ -300,21 +316,33 @@ def main():
     W("")
     W("### 3.3 습관을 만드는 비용은 따로 있다")
     W("")
-    lg = e5["ledgers_hours"]
-    a5 = lat["anchor5_act_train_n40"]
-    W(f"호출률 감소는 **운영 장부** 기준이다. 습관을 만드는 비용은 별도 장부로 계상했고, 지연 주장에 넣지 않았다 "
-      f"(사전등록 §4h의 3장부 분리).")
+    ots = lat2["operational_time_summary"]
+    vce = lat2["vla_call_equivalents"]
+    ft = lat2["formation_timing"]
+    W("호출률 감소는 **운영 장부** 기준이다. 습관을 만드는 비용은 별도 장부로 계상했고, 지연 주장에 넣지 않았다 "
+      "(사전등록 §4h의 3장부 분리). 아래는 §3.2의 재실행 자체 실측이다.")
     W("")
     W("| 장부 | 시간 (3 seed 평균) | 지연 주장 산입 |")
     W("|---|---|---|")
-    W(f"| 운영 (스트림 실행) | {lg['operational']['mean']}±{lg['operational']['sd']} h | 산입 |")
-    W(f"| 형성 (재학습·probe) | {lg['formation']['mean']}±{lg['formation']['sd']} h | **미산입** |")
+    W(f"| 운영 (스트림 실행) | {ots['operational_h']['mean_s']} h | 산입 |")
+    W(f"| 형성 (재학습·probe) | {ots['formation_h']['mean_s']} h | **미산입** |")
     W("| 평가 (짝지은 재현) | 비용 미보고 | 미산입 |")
     W("")
-    W(f"재학습은 seed당 {e5['formation']['n_retrain']['mean']}회 일어났고, 1회가 약 "
-      f"{int(a5['vla_call_equivalents']):,} VLA-호출에 해당한다 (`results/e1/e1_latency.json` anchor5). "
-      f"즉 측정 구간 4,000 에피소드 안에서만 보면 **습관을 만드는 데 든 시간이 운영 시간의 약 "
-      f"{lg['formation']['mean'] / lg['operational']['mean']:.0%}**다.")
+    W(f"재학습은 3 seed 합계 {ft['n_events']}회 일어났고, 1회가 약 "
+      f"{vce['per_formation_event']:,.0f} VLA-호출에 해당한다 (학습분만 {vce['per_training_only']:,.0f}, "
+      f"`results/{RR}/07_latency_cost/COMPUTE_SUMMARY.json`).")
+    W("")
+    # 아낀 VLA 추론량 = 습관이 대신 처리한 호출 수 × 호출당 teacher 지연 (원장에서 계산)
+    s0 = json.load(open(os.path.join(RES, RR, "02_online_seed0", "ONLINE_SUMMARY_seed0.json")))
+    ca = s0["call_accounting"]
+    per_call_s = vce["denominator_s_per_call"]
+    saved_s = ca["total_habit_calls_stream"] * per_call_s
+    form_s = lat2["operational_time_per_seed"]["0"]["formation_s"]
+    W("**시간이 아니라 아낀 VLA 추론량 기준으로 보면 격차가 더 크다.** 운영 장부의 시간은 대부분 시뮬레이터 구동이지 "
+      "이 연구가 줄이겠다는 VLA 추론이 아니다. seed 0에서 습관이 대신 처리한 호출은 "
+      f"{ca['total_habit_calls_stream']:,}건이고, 이를 teacher가 했다면 약 {saved_s:,.0f} 초가 든다. "
+      f"그 습관을 만드는 데는 {form_s:,.0f} 초를 썼다. "
+      f"**측정 구간 안에서는 약 {form_s / saved_s:.0f}배 적자다.**")
     W("")
     W("**따라서 이 결과는 \"총 연산량이 줄었다\"가 아니라 \"호출률이 줄었고 성공률은 유지됐다\"로 읽어야 한다.** "
       "상각이 총비용에서 이익으로 넘어가려면 형성 비용을 나눠 갚을 만큼 긴 배치 기간이 필요하고, "
