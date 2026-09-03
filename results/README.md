@@ -11,7 +11,7 @@ RGB-only 전체 재실행 데이터 패키지, 판정 보고서 문서를 모았
 
 | 라인 | 기간 | 습관 입력 | 위치 |
 |---|---|---|---|
-| **본 실험 E0–E6** (사전등록 프로토콜) | 2026-08-15 → 08-21 (+ 08-28 depth ablation) | RGB-D (2-view RGB + depth + proprio) | `e0/ … e5/`, `rgb_depth_ablation/` |
+| **본 실험 E0–E5** (사전등록 프로토콜, E6 다중 seed는 미실시 — E5 안에서 3 seed 수행) | 2026-08-15 → 08-21 (+ 08-28 depth ablation) | RGB-D (2-view RGB + depth + proprio) | `e0/ … e5/`, `rgb_depth_ablation/` |
 | **RGB-only 전체 재실행** — teacher(RGB)와 habit의 modality mismatch 제거, 변경은 depth 제거 하나 | 2026-08-28 23:03 → 08-31 20:39 (≈70 h 무인) | RGB (2-view RGB + proprio) | `rgb_only_full_rerun_20260828/` |
 
 ## 2. 디렉터리
