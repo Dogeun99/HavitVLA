@@ -4,10 +4,18 @@ LIBERO 시뮬레이션에서 VLA(OpenVLA-OFT) 교사의 반복 경험으로 클�
 관할·성숙도 2단 gate가 위험 보장 하에 VLA 호출을 선택적으로 생략함을 보인 연구의 **실제 동작 소스와 결과**를
 두 폴더로 나눠 정리한 것이다 (원본 작업 저장소 커밋 `5c12f9b`, 2026-08-31 → 릴리스 2026-09-03).
 
-| 폴더 | 내용 | 시작점 |
-|---|---|---|
-| [`src/`](src/) | 빌드해서 바로 쓰는 메인 소스 (envs/teacher/habits/gates/experiments/tools/configs/docs + third_party 서브모듈 + 빌드·검증 스크립트) | [`src/README.md`](src/README.md) · [`src/RELEASE_CHANGES.md`](src/RELEASE_CHANGES.md) |
-| [`results/`](results/) | 본 실험 E0–E5 결과 JSON/CSV/그림, depth ablation, RGB-only 전체 재실행 데이터 패키지, 판정 보고서, git 이력 | [`results/README.md`](results/README.md) · [`results/VERIFICATION_REPORT.md`](results/VERIFICATION_REPORT.md) |
+| 문서 | 내용 |
+|---|---|
+| **[`PROJECT_STORY.md`](PROJECT_STORY.md)** | **먼저 읽을 것.** 왜 시작했고, 어떻게 진행됐고, 무엇이 나왔는지의 전체 서사. 막힌 자리에서 내린 판단과 한계, 인용하면 안 되는 산출물까지 한 문서에 정리돼 있다 |
+| [`src/README.md`](src/README.md) | 소스 구조, 빌드 절차, 재현 명령 |
+| [`results/README.md`](results/README.md) | 결과 수치와 각 값의 출처 파일 |
+| [`results/VERIFICATION_REPORT.md`](results/VERIFICATION_REPORT.md) | 이 저장소만으로 결과가 재현되는지 검증한 기록 |
+| [`src/log.md`](src/log.md) | 날짜별 연구 일지 49개 항목 (원기록) |
+
+| 폴더 | 내용 |
+|---|---|
+| [`src/`](src/) | 빌드해서 바로 쓰는 메인 소스 (envs/teacher/habits/gates/experiments/tools/configs/docs + third_party 서브모듈 + 빌드·검증 스크립트) |
+| [`results/`](results/) | 본 실험 E0–E5 결과, depth ablation, RGB-only 전체 재실행 데이터 패키지, 판정 보고서 25개, 그림 |
 
 ```bash
 git clone --recurse-submodules <repo> && cd habitvla2_release/src
