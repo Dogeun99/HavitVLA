@@ -92,14 +92,44 @@ ORIG=/home/asmr/workspace/habitvla2 bash verify/verify_release.sh
 산출물: `SUMMARY.json`, `compare_cpu.json`, `compare_gpu.json`, `latency_side_by_side.txt`.
 2026-09-03 실행 결과는 `../results/VERIFICATION_REPORT.md`.
 
-## 4. 포함되지 않은 것과 복원
+## 4. 포함되지 않은 것과 그 이유
 
-| 항목 | 크기 | 복원 |
-|---|---|---|
-| `checkpoints/` (E2/E3 RGB-D 27 클러스터, E5 3 seed, depth ablation, RGB-only rerun 253개) | 192 GB | 원본 디렉터리 링크(`setup/link_local_assets.sh`) 또는 재학습(seed 결정적). sha256은 `../results/rgb_only_full_rerun_20260828/CHECKPOINT_MANIFEST.csv` |
-| `data/` teacher 궤적·스트림 HDF5 | 15 GB | teacher 재수집 (`teacher/collector.py`, 에피소드 명세 결정적) |
-| `.hf_cache/` OFT 체크포인트 4종 + DINOv2 | 60 GB | `experiments/e0_download_ckpts.py` |
-| `logs/` | — | 실행 시 생성. RGB-only rerun 로그는 결과 패키지에 포함 |
+저장소에 넣지 않은 것은 아래가 전부다. 이유는 셋 중 하나다 — **용량**, **빌드가 알아서 만드는 것**,
+**실행할 때마다 새로 생기는 것**. 연구 내용을 이해하거나 결과를 재산출하는 데 필요한 것은 빠진 게 없다.
+
+### 용량 때문에 뺀 것
+
+| 항목 | 크기 | 왜 뺐나 | 복원 |
+|---|---|---|---|
+| `checkpoints/` — 학습된 습관 정책 (E2/E3 RGB-D 27 클러스터, E5 3 seed, depth ablation, RGB-only rerun 253개) | 192 GB | GitHub 파일당 한도 100 MB, 체크포인트 1개가 381 MB | `setup/link_local_assets.sh`로 원본 디렉터리 링크, 또는 재학습(에피소드 명세 결정적, 27 클러스터 약 4.8 h). 대조용 sha256은 [`CHECKPOINT_MANIFEST.csv`](../results/rgb_only_full_rerun_20260828/CHECKPOINT_MANIFEST.csv) |
+| `data/` — teacher 궤적·스트림 HDF5 | 15 GB | 위와 같음 | teacher 재수집 (`teacher/collector.py`) |
+| `.hf_cache/` — OpenVLA-OFT 체크포인트 4종 + DINOv2 | 60 GB | 공개 모델이라 원본을 다시 받으면 된다 | `experiments/e0_download_ckpts.py` |
+| `../results/videos/` mp4 — 롤아웃 영상 | 2.1 GB | 인덱스와 매니페스트 JSON만으로 무엇을 찍었는지 확인 가능 | `experiments/video_rollout_*.py` |
+| 무효 실행의 대용량 산출물 | — | 인용 금지 대상이라 보존 가치가 낮다. 어떤 실행이 왜 무효인지는 [`PROJECT_STORY.md`](../PROJECT_STORY.md) §7과 각 폴더의 README에 남겼다 | 재생성 불필요 |
+| `results/e4/known_frames` | — | 원본 저장소에서도 git 추적 대상이 아니었다. 이 때문에 E4 관할 파일럿은 완전 재산출이 불가능하다 (한계로 기록) | `experiments/e4_known_frames.py` |
+
+### 빌드가 만들어 주는 것
+
+| 항목 | 왜 뺐나 |
+|---|---|
+| `.libero/` | LIBERO 설정 파일. 경로가 머신마다 달라 `envs/setup_envs.sh`가 생성한다 |
+| `.torch_cache/` | torchvision 가중치 캐시. 첫 실행 시 자동 생성 |
+| `third_party/` 실물 | 서브모듈로 핀 커밋만 기록. `build.sh`가 체크아웃 후 `configs/*.patch`를 적용한다 |
+
+### 실행하면 생기는 것
+
+| 항목 | 왜 뺐나 |
+|---|---|
+| `logs/` | 실행 로그. 단 RGB-only 재실행의 로그는 결과 패키지에 포함돼 있다 |
+| `verify_runs/` | 검증 스크립트의 작업 폴더(실행당 약 450 MB). scratch 복제본이라 보존 가치가 없다 |
+| `__pycache__/`, `*.egg-info/` | 파이썬 빌드 부산물 |
+
+### 연구 자료 중 없는 것
+
+| 항목 | 이유 |
+|---|---|
+| 논문 본문 | 다른 환경에서 집필됐다. 집필용 자료 목록과 수치 대조 지시서는 `../results/reports/`에 있다 |
+| 원 설계서 v1.0 (2026-08-14) | 지도교수의 설계 문서. `CLAUDE.md`가 그 요약본이다 |
 
 ## 5. 실행 예시 (모두 `src/`에서, `HF_HOME`·`LIBERO_CONFIG_PATH`는 스크립트가 기본값을 잡는다)
 
