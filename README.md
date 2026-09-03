@@ -40,8 +40,8 @@ bash verify/verify_release.sh --no-gpu   # 저장 결과를 원자료에서 재�
 
 ```bash
 cd habitvla2_release
-git remote add origin git@github.com:<user>/<repo>.git
-git push -u origin master
+git remote add origin https://github.com/Dogeun99/HavitVLA.git   # 이미 설정돼 있으면 생략
+git push -u origin main
 ```
 third_party는 서브모듈(LIBERO `8f1084e`, openvla-oft `e4287e9`, 각자 MIT 라이선스)로 업스트림 URL을 가리키며,
-로컬 패치 2개는 `src/configs/*.patch`에 있고 `build.sh`가 적용한다.
+로컬 패치 2개는 `src/configs/*.patch`에 있고 `build.sh`가 적용한다. 받는 쪽은 `--recurse-submodules`로 clone하면 된다.
