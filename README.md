@@ -4,6 +4,16 @@ LIBERO 시뮬레이션에서 VLA(OpenVLA-OFT) 교사의 반복 경험으로 클�
 관할·성숙도 2단 gate가 위험 보장 하에 VLA 호출을 선택적으로 생략함을 보인 연구의 **실제 동작 소스와 결과**를
 두 폴더로 나눠 정리한 것이다 (원본 작업 저장소 커밋 `5c12f9b`, 2026-08-31 → 릴리스 2026-09-03).
 
+**In one paragraph.** A vision-language-action (VLA) robot policy is accurate but costs about 85 ms per
+decision. This project tests whether a robot can *amortize* that inference: as successful VLA trajectories
+accumulate for a recurring situation, a lightweight habit policy (ACT, ~3.4 ms) is trained for it, and a
+two-stage gate — is this situation familiar, and has the habit proven itself — decides when the large model
+can be skipped. On the LIBERO benchmark across 3 seeds x 4,000-episode online streams, the VLA call rate
+fell from 0.874 to 0.405 while task success stayed within -0.0021 of always calling the VLA (pre-registered
+margin -0.03), with habit failure probability 0.0285 against a 0.2 ceiling. One hypothesis was rejected by
+the data and one gate component was recorded as unsolved; both are documented rather than hidden.
+Full narrative (Korean): [`PROJECT_STORY.md`](PROJECT_STORY.md).
+
 | 문서 | 내용 |
 |---|---|
 | **[`PROJECT_STORY.md`](PROJECT_STORY.md)** | **먼저 읽을 것.** 왜 시작했고, 어떻게 진행됐고, 무엇이 나왔는지의 전체 서사. 막힌 자리에서 내린 판단과 한계, 인용하면 안 되는 산출물까지 한 문서에 정리돼 있다 |
