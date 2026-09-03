@@ -4,6 +4,9 @@ LIBERO 시뮬레이션에서 VLA(OpenVLA-OFT) 교사의 반복 경험으로 클�
 관할·성숙도 2단 gate가 위험 보장 하에 VLA 호출을 선택적으로 생략함을 보인 연구의 **실제 동작 소스와 결과**를
 두 폴더로 나눠 정리한 것이다 (원본 작업 저장소 커밋 `5c12f9b`, 2026-08-31 → 릴리스 2026-09-03).
 
+**Author** DoGeun Lee ([@Dogeun99](https://github.com/Dogeun99)) · 연구 방향은 지도교수 지도 아래 진행됐다 ([`PROJECT_STORY.md`](PROJECT_STORY.md) §4).
+*커밋 `21a45b9`~`3f28db8`의 작성자가 `gnukim`으로 기록된 것은 공용 워크스테이션의 git 전역 설정이 그대로 쓰였기 때문이며, 실제 작업자는 위 저자다.*
+
 **In one paragraph.** A vision-language-action (VLA) robot policy is accurate but costs about 85 ms per
 decision. This project tests whether a robot can *amortize* that inference: as successful VLA trajectories
 accumulate for a recurring situation, a lightweight habit policy (ACT, ~3.4 ms) is trained for it, and a
